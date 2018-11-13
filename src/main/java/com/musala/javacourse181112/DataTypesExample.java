@@ -61,8 +61,8 @@ public class DataTypesExample {
         multi-line comment
          */
 
-        // asd"\12   ( asd"\3 )
-        System.out.println();
+        // asd"\12
+        System.out.println(myStringVariable);
     }
 
     public static void main(String[] args) {
