@@ -6,8 +6,8 @@ public class Vote {
         String[][] voteArr = new String[2][30];
         String v1 = "yes";
         String v2 = "no";
-        String v3 = "yes";
-        String v4 = "yes";
+        String v3 = "no";
+        String v4 = "no";
         String v5 = "no";
         String v6 = "yes";
 
@@ -17,14 +17,17 @@ public class Vote {
         voteArr[1][0] = v4;
         voteArr[1][1] = v5;
         voteArr[1][2] = v6;
+
         System.out.println("Отговори на първи въпрос: ");
+
         for (int i = 0; i < voteArr.length + 1; i++) {
             System.out.println(voteArr[0][i]);
         }
-        System.out.println("Отговори на втори въпрос");
-        for (int i = 0; i <voteArr.length +1; i++) {
-            System.out.println(voteArr[1][i]);
 
+        System.out.println("Отговори на втори въпрос");
+
+        for (int i = 0; i < voteArr.length + 1; i++) {
+            System.out.println(voteArr[1][i]);
         }
     }
 }
