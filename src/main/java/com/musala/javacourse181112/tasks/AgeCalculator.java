@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.tasks;
 
 public class AgeCalculator {
     public static void main(String[] args) {

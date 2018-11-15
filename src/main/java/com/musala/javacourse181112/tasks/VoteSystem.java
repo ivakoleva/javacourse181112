@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.tasks;
 
 // clean
 public class VoteSystem {
