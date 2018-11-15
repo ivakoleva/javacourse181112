@@ -2,24 +2,25 @@ package com.musala.javacourse181112;
 
 public class Poll {
     public static void main(String[] args) {
-        String[][] voters = new String[30][2];
+        int Maxvoters = 30;
+        int Maxquestions = 2;
+        String[][] voters = new String[Maxvoters][Maxquestions];
         System.out.println("Welcome!!! \nThe first question is: \nDo you like pizza?");
-        for(int i=0; i<30; i++){
-            if((i%2)==0){
-                    voters[i][0]="Yes";
+        for (int j = 0; j < Maxquestions; j++) {
+            for(int i=0; i<Maxvoters; i++){
+
+
+                if ((i % 2) == 0) {
+                    voters[i][j] = "Yes";
+                } else {
+                    voters[i][j] = "No";
+                }
+                System.out.println(voters[i][j]);
             }
-            {
-                else voters[i][0]="No";
-            }
-            System.out.println("Voter " + i + " voted: " + voters[i][0]);
         }
 
-        for(int i=0; i<30; i++){
-            if(i/2==0) voters[i][1]="No";
-            else voters[i][1]="Yes";
 
-        }
         System.exit(0);
-    }
 
-}
+}}
+
