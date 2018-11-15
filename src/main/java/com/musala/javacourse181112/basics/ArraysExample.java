@@ -16,5 +16,8 @@ public class ArraysExample {
 
         long[] longArray = {1, 4, 5};
         // System.out.println({1, 4, 5}); // error, expects to have type defined
+
+        boolean[][] twoDimensionalTable = new boolean[2][20]; // 2 rows, 20 columns
+        System.out.println(twoDimensionalTable[1][0]); // row 2 column A
     }
 }
