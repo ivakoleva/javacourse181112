@@ -37,5 +37,7 @@ public class AgeCalculator {
         age/=10;
         years/=10;
         System.out.println("New age="+(age+years));
+        System.gc();
+        System.exit(0);
     }
 }
