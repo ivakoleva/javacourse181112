@@ -8,7 +8,7 @@
         * When starting the program, print the two numbers
         * Then add numbers, and print to standard output
         * Then exit
-* Distribute to end user (push to github)    
+    * Distribute to end user (push to github)    
 
 * Votes v0.1 application (all data hardcoded)
     * Supports:
@@ -23,6 +23,7 @@
         * TODO: design method for future votes counter implementation (method with empty body)
         
     * Hint: multi-dimensional array usage
+    * Distribute to end user (push to github)    
     
         
  
