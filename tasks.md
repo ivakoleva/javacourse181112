@@ -24,6 +24,10 @@
         
     * Hint: multi-dimensional array usage
     * Distribute to end user (push to github)    
-    
+    * Sample data:
+        * Question 1: Is it snowing today? Yes/No
+        * Question 2: Do you want rather to be snowing today? Yes/No
+        * 3 votes per each question
+           
         
  
