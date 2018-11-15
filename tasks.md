@@ -1,9 +1,12 @@
 15.11:
-* Parameters, supplied by user: 
-    *  person age  - in years
-    * years to add to age
-* Features:
-    * When starting the program , ask for two numbers
-    * THen add numbers, and print to standart output
-    * then quit
-* Distribute to end user ( push to github)
+
+* Future age calculator application 
+    * Program parameters, supplied by user (dynamic):
+        * person age in years 
+        * years to add to age
+    * Program flow:
+        * When starting the program, print the two numbers
+        * Then add numbers, and print to standard output
+        * Then exit
+* Distribute to end user (push to github)        
+ 
