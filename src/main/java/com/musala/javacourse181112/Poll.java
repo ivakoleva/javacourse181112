@@ -17,7 +17,29 @@ public class Poll {
                 }
             }
         }
+        int VotesYes=0, VotesNo=0;
 
+        for (int i=0; i<Maxvoters; i++){
+            if(voters[i][0]=="Yes"){
+                VotesYes++;
+            }
+            else{VotesNo++;
+            }
+        }
+        System.out.println(Maxvoters + " voted out of which " + VotesYes + " voted Yes \nThe remaining " + VotesNo + " voted No.");
+
+        System.out.println("\nThe second question is: \nIs it snowing?");
+
+        VotesYes = 0; VotesNo = 0;
+
+        for (int i=0; i<Maxvoters; i++){
+            if(voters[i][1]=="Yes"){
+                VotesYes++;
+            }
+            else{VotesNo++;
+            }
+        }
+        System.out.println(Maxvoters + " voted out of which " + VotesYes + " voted Yes \nThe remaining " + VotesNo + " voted No.");
 
         System.exit(0);
 
