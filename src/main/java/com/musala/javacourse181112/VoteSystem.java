@@ -16,7 +16,7 @@ public class VoteSystem {
                     dataArray[question][0] = "No";
                 }
                 System.out.println("Person: "+ (person+1)+" Voted for: "
-                        + dataArray[question][0]+ " on question"+ (question+1));
+                        + dataArray[question][0]+ " on question: "+ (question+1));
             }
         }
     }
