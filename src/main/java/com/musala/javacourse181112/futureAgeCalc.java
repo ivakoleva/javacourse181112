@@ -19,7 +19,7 @@ public class futureAgeCalc {
 //        int ageAfter = age + addAge;
 //        System.out.println("Годините на човека са :" + ageAfter);
 //        Integer.
-
+        System.exit(0);
     }
 
 }
