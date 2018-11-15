@@ -15,7 +15,6 @@ public class Poll {
                 } else {
                     voters[i][j] = "No";
                 }
-                System.out.println(voters[i][j]);
             }
         }
 
