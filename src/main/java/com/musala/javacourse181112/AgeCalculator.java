@@ -3,12 +3,13 @@ package com.musala.javacourse181112;
 import java.util.Scanner;
 import java.lang.String;
 public class AgeCalculator {
+
     public static void main(String[] args) {
-        AgeCalc1();
-        AgeCalc2(args);
+       // AgeCalc1();
+        //AgeCalc2(args);
         AgeCalc3(args);
     }
-    public static void AgeCalc1(){
+    private static void AgeCalc1(){
         int age, years;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your age:");
@@ -17,11 +18,11 @@ public class AgeCalculator {
         years=scanner.nextInt();
         System.out.println("After "+years+" years you will be "+(age+years)+" old.");
     }
-    public static void AgeCalc2(String[] args){
+    private static void AgeCalc2(String[] args){
         int age=Integer.parseInt(args[0]),years=Integer.parseInt(args[1]);
         System.out.println("New age="+(age+years));
     }
-    public static void AgeCalc3(String[] args){
+    private static void AgeCalc3(String[] args){
         int age=0,years=0;
         for(int i=0;i<args[0].length();i++)
         {
