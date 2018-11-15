@@ -56,7 +56,7 @@ public class DataTypesExample {
         final String myStringVariable = "asd\"\\" + 1 + 1 * 2; // final is immutable
         //myStringVariable = "asd1"; // single-line comment
 
-        /*
+        /*`
         multi-line comment
         multi-line comment
          */
