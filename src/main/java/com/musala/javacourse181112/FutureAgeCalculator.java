@@ -2,11 +2,13 @@ package com.musala.javacourse181112;
 
 public class FutureAgeCalculator {
     public static void main(String[] args) {
-        int age=25;
-        int addAge=5;
+        int age=0;
+        int addYears=5;
 
-        System.out.println("Age:"+age+"Added Age:"+addAge);
-        System.out.println("Result:"+(age+addAge));
+        age=Integer.parseInt(args[0]);
+
+        System.out.println("Age:"+age+"\nAdded Age:"+addYears);
+        System.out.println("Result:"+(age+addYears));
 System.exit(0);
 
     }
