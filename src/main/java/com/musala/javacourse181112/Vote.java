@@ -1,9 +1,9 @@
 package com.musala.javacourse181112;
 
 public class Vote {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         System.out.println("Wellcome ,you can vote now");
-        String[][] voteArr = new String[2][30];
+        final String[][] voteArr = new String[2][30];
         String v1 = "yes";
         String v2 = "no";
         String v3 = "no";
