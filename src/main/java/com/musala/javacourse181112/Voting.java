@@ -7,7 +7,7 @@ public class Voting {
         Q2();
     }
     private static void Q1(){
-        System.out.println("Q1:...?");
+        System.out.println("Q1:Is it snowing today?");
         boolean votes[]={true,false,true};
         int brTrue=0,brFalse=0;
         for(int i=0;i<3;i++)
@@ -24,7 +24,7 @@ public class Voting {
         System.out.println("Q1:\n\tTrues= "+brTrue+"\n\tFalses= "+brFalse);
     }
     private  static void Q2(){
-        System.out.println("Q2:...?");
+        System.out.println("Q2:Do you want rather to be snowing today?");
         boolean votes[]={false,false,true};
         int brTrue=0,brFalse=0;
         for(int i=0;i<3;i++)
