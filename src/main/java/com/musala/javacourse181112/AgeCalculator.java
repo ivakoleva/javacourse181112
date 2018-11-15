@@ -8,6 +8,7 @@ public class AgeCalculator {
        // AgeCalc1();
         //AgeCalc2(args);
         AgeCalc3(args);
+        //System.out.println(0>>>1);
     }
     private static void AgeCalc1(){
         int age, years;
