@@ -5,10 +5,10 @@ package com.musala.javacourse181112;
  * a significant bit of leva.bg project.
  */
 public class Hi {
-    static final String CONSTANT_VALUE = "asd";
-
-    String value;
-
+//    static final String CONSTANT_VALUE = "asd";
+//
+//    String value;
+//
 
     public static void main(String[] args) {
         System.out.println("Hi!"); // hardcoded
