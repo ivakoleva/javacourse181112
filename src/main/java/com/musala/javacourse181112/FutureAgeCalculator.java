@@ -12,5 +12,6 @@ public class FutureAgeCalculator {
         /*System.out.println("Future age calculated: " +
                 (Integer.parseInt(args[0]) +
                         Integer.parseInt(args[1])));*/
+        System.exit(0);
     }
 }
