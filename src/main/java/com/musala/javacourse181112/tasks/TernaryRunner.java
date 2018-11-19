@@ -13,7 +13,7 @@ public class TernaryRunner {
         if("yes".equals(value)) {
             yesCounter++;
         } else if("no".equals(value)) {
-            yesCounter++;
+            noCounter++;
         }
 
         // TODO: 2-lines implementation, using ternary operator
