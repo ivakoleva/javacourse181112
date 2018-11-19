@@ -2,7 +2,7 @@ package com.musala.javacourse181112.basics;
 
 public class ChromosomesApp {
     public static void main(String[] args) {
-        String male ="male";
+
         String famele = "female";
         String maleChromo="xy";
         String femaleChromo = "xx";
