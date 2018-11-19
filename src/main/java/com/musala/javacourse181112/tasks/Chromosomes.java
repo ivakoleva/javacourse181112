@@ -4,23 +4,21 @@ import java.util.Scanner;
 
 public class Chromosomes {
 
+    private static final String FEMALE_CHROMOSOMES = "xx";
+    private static final String MALE_CHROMOSOMES = "xy";
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        String gender = sc.nextLine();
-
-        if (gender.equals("male") || gender.equals("female")) {
-            switch (gender) {
-                case "male":
-                    System.out.println("yx");
-                    break;
-                case "female":
-                    System.out.println("xx");
-                    break;
-            }
-        } else {
-            System.out.println("Invalid input");
+        System.out.println("Enter your gender: ");
+        Scanner scanner = new Scanner(System.in);
+        String gender = scanner.nextLine();
+        switch (gender.toLowerCase()) {
+            case "female":
+                System.out.println(FEMALE_CHROMOSOMES);
+                break;
+            case "male":
+                System.out.println(MALE_CHROMOSOMES);
+                break;
+             default:
         }
     }
-
 }
