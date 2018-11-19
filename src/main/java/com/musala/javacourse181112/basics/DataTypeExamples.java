@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.basics;
 
 public class DataTypeExamples {
     public static void defineAndInitializePrimitives(String primitives) {
