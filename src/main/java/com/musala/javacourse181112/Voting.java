@@ -27,12 +27,12 @@ public class Voting {
         // populate data
         final String q1 = "Do you want it to snow today?";
         votes[++qIndex][0] = YES;
-        votes[++qIndex][1] = NO;
-        votes[++qIndex][2] = NO;
+        votes[qIndex][1] = NO;
+        votes[qIndex][2] = NO;
 
         // print data
-        printQuestion(++qIndex, q1);
-        printVotes(votes,++ qIndex);
+        printQuestion(qIndex, q1);
+        printVotes(votes,qIndex);
 
         countVotes(votes);
     }
