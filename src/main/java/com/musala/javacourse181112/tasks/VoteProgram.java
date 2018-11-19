@@ -18,11 +18,11 @@ public class VoteProgram {
             for (int j = 0; j < voters; j++) {
                 int vote = RANDOM.nextInt(3) + 1;
                 if (vote == 1)
-                    votes[j] = Vote.yes;
+                    votes[j] = Vote.Yes;
                 else if (vote == 2)
-                    votes[j] = Vote.no;
+                    votes[j] = Vote.No;
                 else
-                    votes[j] = Vote.abstainer;
+                    votes[j] = Vote.Abstainer;
 
             }
             voting.put(i, votes);
