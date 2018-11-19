@@ -30,9 +30,11 @@ public class VoteProgram {
 
         for (Map.Entry<Integer, Vote[]> entry:voting.entrySet()) {
             System.out.println("Question: " + entry.getKey());
+            System.out.println();
             Arrays.stream(entry.getValue())
                     .collect(Collectors.groupingBy(s -> s))
-                    .forEach((k, v) -> System.out.println(k+" "+v.size()));
+                    .forEach((k, v) -> System.out.println(k+": "+v.size()));
+            System.out.println();
         }
 
 
