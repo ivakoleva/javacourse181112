@@ -21,5 +21,7 @@ public class TernaryRunner {
                 : "no".equals(value) ?  noCounter++ : 0;
 
 
+
+
     }
 }
