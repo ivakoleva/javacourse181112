@@ -2,6 +2,7 @@ package com.musala.javacourse181112.tasks;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import com.musala.javacourse181112.enums.Vote;
 
 // nice
 public class VoteProgram {
@@ -9,18 +10,25 @@ public class VoteProgram {
     private static final int voters = 30;
     public static void main(final String[] args) {
 
-        final Map<Integer, String[]> voting = new HashMap<>();
+        final Map<Integer, Vote[]> voting = new HashMap<>();
 
         // generate 30 votes
         for (int i = 1; i <=5 ; i++) {
-            final String[] votes = new String[voters];
+            final Vote[] votes = new Vote[voters];
             for (int j = 0; j < voters; j++) {
-                votes[j] = RANDOM.nextInt(2) + 1 == 1 ? "Yes" : "No"; // expression ? if-true-do-that : else-do-that
+                int vote = RANDOM.nextInt(3) + 1;
+                if (vote == 1)
+                    votes[j] = Vote.yes;
+                else if (vote == 2)
+                    votes[j] = Vote.no;
+                else
+                    votes[j] = Vote.abstainer;
+
             }
             voting.put(i, votes);
         }
 
-        for (Map.Entry<Integer, String[]> entry:voting.entrySet()) {
+        for (Map.Entry<Integer, Vote[]> entry:voting.entrySet()) {
             System.out.println("Question: " + entry.getKey());
             Arrays.stream(entry.getValue())
                     .collect(Collectors.groupingBy(s -> s))
