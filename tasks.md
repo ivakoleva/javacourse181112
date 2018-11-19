@@ -1,3 +1,11 @@
+19.11:
+* Create an app that :
+    * based on human gender, print chromosomes (male: xy, female: xx)
+    * use switch=based check
+    * parameters supplied by user
+    * accepts program arguments
+    * prints chromosomes to stdout
+
 15.11:
 
 * Future age calculator application 
@@ -29,5 +37,5 @@
         * Question 2: Do you want rather to be snowing today? Yes/No
         * 3 votes per each question
            
-        
+    
  

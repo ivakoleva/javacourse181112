@@ -22,6 +22,25 @@ public class ConditionsExample {
 
         final String variable = 1 != 1 ? "true" : "false";
 
+        // switch
+        String value = "yes";
+
+        switch (value) {
+            case "yes":
+
+                System.out.println("value : yes");
+                break;
+            case "asd" :
+                System.out.println("value : asd");
+                break;
+            case "asd1":
+                System.out.println("value : asd1");
+                break;
+            default:
+                System.out.println("defalt");
+                break;
+        }
+
     }
 
 }

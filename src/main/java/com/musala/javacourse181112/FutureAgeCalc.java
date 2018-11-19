@@ -4,7 +4,7 @@ package com.musala.javacourse181112;
 import java.util.Scanner;
 
 
-public class futureAgeCalc {
+public class FutureAgeCalc {
 
 
     public static void main(String[]args){
