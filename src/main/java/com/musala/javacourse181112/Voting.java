@@ -31,7 +31,7 @@ public class Voting {
         votes[++qIndex][2] = NO;
 
         // print data
-        printQuestion(qIndex, q1);
+        printQuestion(++qIndex, q1);
         printVotes(votes,++ qIndex);
 
         countVotes(votes);
