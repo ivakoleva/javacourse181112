@@ -1,5 +1,5 @@
 package com.musala.javacourse181112;
-
+import com.musala.javacourse181112.basics.Vote;
 public class Poll {
     public static void main(String[] args) {
         int Maxvoters = 30;
@@ -11,16 +11,16 @@ public class Poll {
 
 
                 if ((i % 2) == 0) {
-                    voters[i][j] = "Yes";
+                    voters[i][j] = String.valueOf(Vote.YES);
                 } else {
-                    voters[i][j] = "No";
+                    voters[i][j] = String.valueOf(Vote.No);
                 }
             }
         }
         int VotesYes=0, VotesNo=0;
 
         for (int i=0; i<Maxvoters; i++){
-            if(voters[i][0].equals("Yes")){
+            if(voters[i][0].equals(String.valueOf(Vote.YES))){
                 VotesYes++;
             }
             else{VotesNo++;
@@ -33,7 +33,7 @@ public class Poll {
         VotesYes = 0; VotesNo = 0;
 
         for (int i=0; i<Maxvoters; i++){
-            if(voters[i][1].equals("Yes")){
+            if(voters[i][1].equals(String.valueOf(Vote.YES))){
                 VotesYes++;
             }
             else{VotesNo++;
