@@ -1,0 +1,16 @@
+
+
+* Votes v0.1 application ( all data hardcored)
+   * Supports:
+      * Yes/No Poll
+      * 30 voters per question
+      * 2 questions
+
+
+   * Flow - per each question
+       * print welcome message, stating the poll question
+       * hardcore 3 person votes ( voted yes/no)
+       * assign votes to array
+       * TODO: design method for future votes counter implementation
+
+ * Hint : multi-dimensial array usage
