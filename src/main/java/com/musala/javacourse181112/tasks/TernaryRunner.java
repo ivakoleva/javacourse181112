@@ -6,7 +6,7 @@ package com.musala.javacourse181112.tasks;
 public class TernaryRunner {
     public static void main(final String[] args) {
         String value = "yes";
-
+int  a=0;
         int yesCounter = 0;
         int noCounter = 0;
 
@@ -15,6 +15,8 @@ public class TernaryRunner {
         } else if("no".equals(value)) {
             noCounter++;
         }
+a=("yes".equals(value)? yesCounter++:noCounter++);
+        System.out.println("Yes:"+ yesCounter+"No:"+noCounter);
 
         // TODO: 2-lines implementation, using ternary operator
     }
