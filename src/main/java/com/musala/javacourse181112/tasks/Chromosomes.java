@@ -15,11 +15,10 @@ public class Chromosomes {
                     break;
                 case "female":
                     System.out.println("xx");
+                    break;
             }
         } else {
             System.out.println("Invalid input");
         }
-
-
     }
 }
