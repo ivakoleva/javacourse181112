@@ -1,27 +1,30 @@
 package com.musala.javacourse181112.tasks;
 
+import com.musala.javacourse181112.enums.Gender;
+
 import java.util.Scanner;
 public class ChromosomesApp {
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
-        String gender = scan.next();
-        switch (gender.toLowerCase()){
-            case "male":
-                System.out.print("Y");
-            case "female":
-                if (gender.toLowerCase().equals("female")){
-                System.out.print("X");}
-            default:
+        final Scanner scan = new Scanner(System.in);
+        final Gender gender;
+        gender = scan.next().equalsIgnoreCase("female") ?  Gender.Female :  Gender.Male;
+        switch (gender){
+            case Female:
                 System.out.print("X");
+            case Male:
+                if (gender.equals(Gender.Male)){
+                System.out.print("Y");}
+            default:
+                System.out.println("X");
 
         }
-        switch (gender.toLowerCase()){
-            case "female":
+        switch (gender){
+            case Female:
                 System.out.print("X");
-            case "male":
+            case Male:
                 System.out.print("X");
             default:
-                if (gender.toLowerCase().equals("male"))
+                if (gender.equals(Gender.Male))
                 System.out.print("Y");
 
         }
