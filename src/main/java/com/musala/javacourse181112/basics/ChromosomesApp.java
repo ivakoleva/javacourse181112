@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.basics;
 
 public class ChromosomesApp {
     public static void main(String[] args) {
