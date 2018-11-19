@@ -6,7 +6,7 @@ public class Voting {
     public static final int VOTES_COUNT = 30;
     public static final String QUESTION_PREFIX = "Question ";
     public static final String QUESTION_SEPARATOR = ": ";
-    public static final String YES = "yes";
+   public static final String YES = "yes";
     public static final String NO = "no";
 
     public static void main(final String[] args) {

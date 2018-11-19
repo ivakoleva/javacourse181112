@@ -5,8 +5,8 @@ import com.musala.javacourse181112.basics.Gender;
 import java.util.Scanner;
 
 public class Chromosomes {
-public static final String MALE_CHROMOSOMES="XY";
-    public static final String FEMALE_CHROMOSOMES="XX";
+//public static final String MALE_CHROMOSOMES="XY";
+//    public static final String FEMALE_CHROMOSOMES="XX";
     public static void main( final String[] args) {
         Gender gender;
         if(args[0].equals("female")){
