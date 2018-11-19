@@ -1,5 +1,5 @@
 package com.musala.javacourse181112.tasks;
-
+// Version V2
 // clean
 public class VoteSystem {
     private static final int QUESTIONS_COUNT = 3;
