@@ -6,15 +6,18 @@ package com.musala.javacourse181112.tasks;
 public class TernaryRunner {
     public static void main(final String[] args) {
         String value = "yes";
-
+        boolean l=true;
         int yesCounter = 0;
         int noCounter = 0;
+        yesCounter+="yes".equals(value) ? 1 : 0;
 
-        if("yes".equals(value)) {
+        noCounter+="no".equals(value) ? 1 : 0;
+
+        /*f("yes".equals(value)) {
             yesCounter++;
         } else if("no".equals(value)) {
             noCounter++;
-        }
+        }*/
 
         // TODO: 2-lines implementation, using ternary operator
     }
