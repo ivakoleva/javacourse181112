@@ -34,17 +34,30 @@ public class VotesApplication {
     }
 
     public static void countAndPrintVotes(final String[] questions, final String[][] votes) {
-        /*int votesYesCount = 0;
-        int votesNoCount = 0;*/
+        int votesYesCount = 0;
+        int votesNoCount = 0;
         for (int i = 0; i < votes.length; i++) {
             System.out.println(questions[i]);
             for (int k = 0; k < votes[i].length; k++) {
-                // TODO: implement if-else incrementing yes/no counters
+                // 2-lines
+
+                if ("yes".equals(votes[i][k])) {
+                    votesYesCount++;
+                } else if ("no".equals(votes[i][k])) {
+                    votesNoCount++;
+                } /*else {
+                    // TODO: handle
+                }*/
                 System.out.println(votes[i][k]);
             }
+            System.out.println();
+            System.out.println("Result:");
+            System.out.println("Yes: " + votesYesCount);
+            System.out.println("No: " + votesNoCount);
             System.out.println();
         }
         System.out.println();
         System.out.println(Arrays.deepToString(votes));
+
     }
 }
