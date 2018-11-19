@@ -20,7 +20,7 @@ public class Poll {
         int VotesYes=0, VotesNo=0;
 
         for (int i=0; i<Maxvoters; i++){
-            if(voters[i][0]=="Yes"){
+            if(voters[i][0].equals("Yes")){
                 VotesYes++;
             }
             else{VotesNo++;
@@ -33,7 +33,7 @@ public class Poll {
         VotesYes = 0; VotesNo = 0;
 
         for (int i=0; i<Maxvoters; i++){
-            if(voters[i][1]=="Yes"){
+            if(voters[i][1].equals("Yes")){
                 VotesYes++;
             }
             else{VotesNo++;
