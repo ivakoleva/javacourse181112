@@ -13,7 +13,7 @@ public class ChromosomesApp {
            case "yx" :
                System.out.println(male);
                break;
-           case "xx"
+           case "xx" :
        }
     }
 }
