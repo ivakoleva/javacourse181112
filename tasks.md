@@ -1,3 +1,12 @@
+19.11:
+
+* Create a Chromosomes application that:
+    ** based on human gender, prints chromosomes (male: yx; female: xx)
+    ** use switch-based check
+    ** parameters supplied by user
+    ** prints chromosomes to stdout (letter by letter) 
+* port the code to use Gender enum instead of any string value
+
 15.11:
 
 * Future age calculator application 
