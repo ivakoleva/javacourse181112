@@ -4,7 +4,6 @@
     ** based on human gender, prints chromosomes (male: yx; female: xx)
     ** use switch-based check
     ** parameters supplied by user
-    ** accepts program arguments
     ** prints chromosomes to stdout
 
 15.11:
