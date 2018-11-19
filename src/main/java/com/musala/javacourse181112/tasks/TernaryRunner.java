@@ -16,6 +16,9 @@ public class TernaryRunner {
             noCounter++;
         }
 
+
         // TODO: 2-lines implementation, using ternary operator
+        yesCounter +=  ("yes".equals(value)) ?   1 : 0;
+        noCounter +=  ("no".equals(value)) ?   1 : 0;
     }
 }
