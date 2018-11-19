@@ -5,17 +5,18 @@ public class Chromosomes {
         final String gender = args[0];
 
         String chromosomesString = "";
-        switch (gender.toLowerCase()){
-            case "male:"
-                chromosomesString += "y";
+        // to print yx instead, flip gender's order
+        switch (gender.toLowerCase()) {
             case "female":
+                chromosomesString += "x";
+            case "male":
                 chromosomesString += "x";
                 if(chromosomesString.length() == 2) {
                     break;
                 }
-
-                default:
-                    chromosomesString += "x";
+            default:
+                chromosomesString += "y";
+        }
     }
 
 }
