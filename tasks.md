@@ -8,7 +8,8 @@
 * port the code to use Gender enum instead of any string value
 
 * Votes v0.2 application
-    * Introduce enum usage (vote answer yes/no)
+    * introduce enum usage (vote answer yes/no)
+    * implement votes counting then printing to stdout
 
 15.11:
 
