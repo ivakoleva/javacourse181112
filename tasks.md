@@ -1,7 +1,7 @@
 19.11:
 * Create an app that :
     * based on human gender, print chromosomes (male: xy, female: xx)
-    * use switch=based check
+    * use switch-based check
     * parameters supplied by user
     * accepts program arguments
     * prints chromosomes to stdout
