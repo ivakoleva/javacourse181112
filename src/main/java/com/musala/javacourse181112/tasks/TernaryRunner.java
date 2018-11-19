@@ -14,6 +14,10 @@ public class TernaryRunner {
             yesCounter++;
         } else if("no".equals(value)) {
             noCounter++;
+        } else if ("asd".equals(value)) {
+
+        } else if ("asd1".equals(value)) {
+
         }
 
         // TODO: 2-lines implementation, using ternary operator
