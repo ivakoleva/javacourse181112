@@ -3,22 +3,33 @@ package com.musala.javacourse181112.tasks;
 // OKI
 public class Voting {
     public static final int QUESTIONS_COUNT = 2;
-    public static final int VOTES_COUNT = 30;
+    public static final int VOTES_COUNT = 3;
     public static final String QUESTION_PREFIX = "Question ";
     public static final String QUESTION_SEPARATOR = ": ";
+    public static final int PEOPLE_NUMBER=3;
+    public static final int PEOPLE_ELEMENTS=3;
 //   public static final String YES = "yes";
   //  public static final String NO = "no";
 
     public static void main(final String[] args) {
         final Vote[][] votes = new Vote[QUESTIONS_COUNT][VOTES_COUNT];
-
+        final String[][] person= new String[PEOPLE_NUMBER][PEOPLE_ELEMENTS];
+        person[0][0]="9812124505";
+        person[0][1]="Todor";
+        person[0][2]="YES";
+        person[1][0]="9812124505";
+        person[1][1]="krisa";
+        person[1][2]="NO";
+        person[2][0]="9812124505";
+        person[2][1]="radost";
+        person[2][2]="YES";
         int qIndex = 0; // TODO: use loops
-
+    int pIndex=0;
         // populate data
         final String q0 = "Do You like snow?";
-        votes[qIndex][0] = Vote.NO;
-        votes[qIndex][1] = Vote.YES;
-        votes[qIndex][2] = Vote.NO;
+        votes[qIndex][0] = "yes".equalsIgnoreCase(person[pIndex][2])?Vote.YES:Vote.NO;
+        votes[qIndex][1] = "yes".equalsIgnoreCase(person[++pIndex][2])?Vote.YES:Vote.NO;
+        votes[qIndex][2] = "yes".equalsIgnoreCase(person[++pIndex][2])?Vote.YES:Vote.NO;
 
         // print data
         printQuestion(qIndex, q0);
@@ -59,8 +70,9 @@ public class Voting {
                 }else{
                     voteNo++;
                 }
-          //      System.out.println("Votes for Question"+votes[i+1]);
             }
+            System.out.println("Votes for Question "+(i+1)+" Yes: "+voteYes+" No: "+voteNo);
+            voteNo=0;voteYes=0;
         }
 
     }
