@@ -13,7 +13,7 @@ public class TernaryRunner {
             noCounter++;
         }
 
-        // TODO: 2-lines implementation, using ternary operator
+        // TODO: 2-lines implementation, using ternary operato
 
 
         final int checkYes = "yes".equals(value) ? yesCounter++ : noCounter++;
