@@ -1,12 +1,37 @@
 package com.musala.javacourse181112.tasks;
 
+import com.musala.javacourse181112.basics.Gender;
+
 import java.util.Scanner;
 import java.lang.String;
 public class Chromosomes {
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         String gender=s.next(),chrom="";
-       // int l=0;
+        Gender g ;
+        if(gender.equals("male"))
+        {
+            g=Gender.MALE;
+        }else if(gender.equals("female"))
+        {
+            g=Gender.FEMALE;
+        }
+        else
+        {
+            g=Gender.OTHER;
+        }
+        switch (g)
+        {
+            case MALE:
+                System.out.println(g+" XY");
+                break;
+            case FEMALE:
+                System.out.println(g+" XX");
+                break;
+            default:
+                System.out.println(g);
+        }
+       /*int l=0;
         switch(gender.toLowerCase()){
             case "male":
                 chrom+="Y";
@@ -23,7 +48,7 @@ public class Chromosomes {
                     System.out.println("Error");
                 }
         }
-        /*switch(gender.toLowerCase()){
+        switch(gender.toLowerCase()){
             case "male":
                 System.out.println("YX");
                 break;
