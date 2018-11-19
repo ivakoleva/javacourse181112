@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.voting;
 
 public class Voting {
     public static void main(String[] args){
@@ -38,6 +38,6 @@ public class Voting {
                 brFalse++;
             }
         }
-        System.out.println("Q2:\n\tTrues= "+brTrue+"\n\tFalses= "+brFalse);
+        System.out.println("Q2:=p\tTrues= "+brTrue+"\n\tFalses= "+brFalse);
     }
 }

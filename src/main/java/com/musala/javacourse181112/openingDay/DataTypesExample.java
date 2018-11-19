@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.openingDay;
 
 /**
  * Created by Iva Koleva, ClearCode Ltd. on 13.11.2018,
