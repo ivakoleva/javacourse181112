@@ -2,25 +2,25 @@ package com.musala.javacourse181112.tasks;
 
 import java.util.Scanner;
 
+// super
 public class Chromosomes {
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
-        String gender=s.next();
-        int l=0;
-        switch(gender.toLowerCase()){
+        Scanner s = new Scanner(System.in);
+        String gender = s.next();
+        int i = 0;
+        switch (gender.toLowerCase()) {
             case "male":
                 System.out.print("Y");
-                l=1;
+                i++;
             case "female":
-                if(l!=1) {
+                if (i > 1) {
                     System.out.print("X");
-                    l=2;
+                    i++;
                 }
             default:
-                if(l!=0){
+                if (i > 0) {
                     System.out.println("X");
-                }
-                else{
+                } else {
                     System.out.println("Error");
                 }
         }
