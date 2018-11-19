@@ -10,11 +10,18 @@ public class TernaryRunner {
         int yesCounter = 0;
         int noCounter = 0;
 
+        yesCounter = value.equals("yes") ? ++yesCounter : yesCounter ;
+        noCounter =   value.equals("no") ? ++noCounter :  noCounter ;
+
+        System.out.println(yesCounter);
+        System.out.println(noCounter);
+
+        /*
         if("yes".equals(value)) {
             yesCounter++;
         } else if("no".equals(value)) {
             noCounter++;
-        }
+        }*/
 
         // TODO: 2-lines implementation, using ternary operator
     }
