@@ -15,5 +15,15 @@ public class ChromosomesApp {
                 System.out.print("X");
 
         }
+        switch (gender.toLowerCase()){
+            case "female":
+                System.out.print("X");
+            case "male":
+                System.out.print("X");
+            default:
+                if (gender.toLowerCase().equals("male"))
+                System.out.print("Y");
+
+        }
     }
 }
