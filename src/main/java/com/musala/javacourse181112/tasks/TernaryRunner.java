@@ -10,19 +10,21 @@ public class TernaryRunner {
         int yesCounter = 0;
         int noCounter = 0;
 
-        yesCounter = value.equals("yes") ? ++yesCounter : yesCounter ;
-        noCounter =   value.equals("no") ? ++noCounter :  noCounter ;
-
-        System.out.println(yesCounter);
-        System.out.println(noCounter);
-
-        /*
-        if("yes".equals(value)) {
+        if ("yes".equals(value)) {
             yesCounter++;
-        } else if("no".equals(value)) {
+        } else if ("no".equals(value)) {
             noCounter++;
-        }*/
+        } else if ("asd".equals(value)) {
+
+        } else if ("asd1".equals(value)) {
+
+        }
 
         // TODO: 2-lines implementation, using ternary operator
+        /*yesCounter = "yes".equals(value) ? yesCounter + 1 : yesCounter;
+        noCounter = "no".equals(value) ? noCounter + 1 : noCounter;*/
+
+        yesCounter += "yes".equals(value) ? 1 : 0;
+        noCounter += "no".equals(value) ? 1 : 0;
     }
 }
