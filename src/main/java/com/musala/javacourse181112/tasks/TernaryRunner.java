@@ -15,7 +15,10 @@ public class TernaryRunner {
         } else if("no".equals(value)) {
             noCounter++;
         }
-
         // TODO: 2-lines implementation, using ternary operator
     }
+
+
 }
+
+
