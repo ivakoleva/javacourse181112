@@ -8,7 +8,7 @@ public class Chromosomes {
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         String gender=s.next(),chrom="";
-        Gender g ;
+        /*Gender g ;
         if(gender.equals("male"))
         {
             g=Gender.MALE;
@@ -31,7 +31,7 @@ public class Chromosomes {
             default:
                 System.out.println(g);
         }
-       /*int l=0;
+       int l=0;
         switch(gender.toLowerCase()){
             case "male":
                 chrom+="Y";
@@ -58,7 +58,7 @@ public class Chromosomes {
             default:
                 System.out.println("Error");
                 break;
-        }
+        }*/
         char ch1='X',ch2='E';
         switch (gender.toLowerCase())
         {
@@ -78,6 +78,6 @@ public class Chromosomes {
         else
         {
             System.out.println("ERROR");
-        }*/
+        }
     }
 }
