@@ -5,6 +5,13 @@
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
         *** bonus: do input validation - natural numbers only; exit(1) if otherwise
+        
+* Loops exercise - for each loop type (while; do-while; for; foreach)
+    ** automatically (using loop), initialize an array with values
+    ** print the array to stdout
+    
+* Votes v0.3 application
+    * refactor, using loops
 
 19.11:
 
