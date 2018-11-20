@@ -6,8 +6,14 @@ public class FutureAgeCalculator {
 
         final int age = Integer.parseInt(args[0]);
         final int yearToAdd = Integer.parseInt(args[1]);
+        int a = 0;
 
         System.out.println("Future age calculated: " + (age + yearToAdd));
+        do {
+            a++;
+        } while (a<args.length);
+        System.out.println("The age is"+ (a));
+
 
         /*System.out.println("Future age calculated: " +
                 (Integer.parseInt(args[0]) +
