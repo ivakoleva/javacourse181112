@@ -18,11 +18,13 @@ public class VotesApplication {
             System.out.println(questions[i]);
 
             for (int v = 0; v < votes.length; v++) {
-                // TODO: while check until valid
-                System.out.println("Enter EGN");
-                votes[v][0] = input.next();
+                // while validation usage
+                while((votes[v][0] = getValidEgn(input)) == null) {
+                    System.out.println("Non-valid ENG");
+                    System.out.println("Retrying...");
+                }
 
-                /*if(!isEgnValid((String) votes[v][0])) {
+                /*if(!getValidEgn((String) votes[v][0])) {
                     System.out.println("Please type a valid EGN");
                     System.exit(1);
                 }*/
@@ -47,8 +49,14 @@ public class VotesApplication {
         System.out.println("Results " + " YES - " + yesCount + " NO - " + noCount);
     }
 
-    private static boolean isEgnValid(final String egn) {
-        return egn.length() == 10;
+    private static String getValidEgn(final Scanner scanner) {
+        System.out.println("Enter EGN");
+        final String egn = scanner.next();
+
+        if(egn != null && egn.length() == 10) {
+            return egn;
+        }
+        return null;
     }
 
     //EnumVote voteEnumYes = EnumVote.YES;
