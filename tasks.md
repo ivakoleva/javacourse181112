@@ -1,3 +1,11 @@
+20.11:
+
+* Future age calculator v0.2
+    ** implement multiple program arguments support (unlimited number)
+    ** assume and rely on user input (int values)
+    ** sum all of the parameters, then print to output (use while or do-while)
+        ** bonus: do input input validation - natural numbers only; exit(1) if otherwise
+
 19.11:
 
 * Create a Chromosomes application that:
