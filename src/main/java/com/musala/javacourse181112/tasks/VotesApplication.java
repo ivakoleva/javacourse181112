@@ -5,44 +5,50 @@ import java.util.Scanner;
 
 public class VotesApplication {
 
-    public static void main(String[] args) {
-        Object[][] vote = new Object[3][3];
-        Scanner input = new Scanner(System.in);
+    public static void main(final String[] args) {
+        final Object[][] votes = new Object[3][3];
+        final Scanner input = new Scanner(System.in);
 
-
-        String[] questions = {"Do you like ice cream", "Do you drink coffee"};
-        String voteFromConsole ="";
+        final String[] questions = {"Do you like ice cream", "Do you drink coffee"};
+        String voteFromConsole;
         int yesCount = 0;
-        int noCout = 0;
+        int noCount = 0;
 
         for (int i = 0; i < questions.length; i++) {
-
             System.out.println(questions[i]);
 
-            for (int voter = 0; voter < vote.length; voter++) {
-
+            for (int v = 0; v < votes.length; v++) {
+                // TODO: while check until valid
                 System.out.println("Enter EGN");
-                vote[voter][0] = input.next();
+                votes[v][0] = input.next();
+
+                /*if(!isEgnValid((String) votes[v][0])) {
+                    System.out.println("Please type a valid EGN");
+                    System.exit(1);
+                }*/
 
                 System.out.println("Enter name");
-                vote[voter][1] = input.next();
+                votes[v][1] = input.next();
 
-                System.out.println("Enter vote YES/NO ");
+                System.out.println("Enter vote YES/NO");
                 voteFromConsole = input.next().toUpperCase();
-                EnumVote enumVote  = EnumVote.valueOf(voteFromConsole);
-                vote[voter][2] = enumVote;
+                votes[v][2] = Vote.valueOf(voteFromConsole);
 
-                if(enumVote.equals(EnumVote.YES)){
+                if (Vote.YES.equals(votes[v][2])) {
                     yesCount++;
-                }else {
-                    noCout++;
+                } else {
+                    noCount++;
                 }
             }
-            System.out.println(Arrays.deepToString(vote));
+            System.out.println(Arrays.deepToString(votes));
             System.out.println();
         }
 
-        System.out.println("Results " + " YES - " + yesCount + " NO - " + noCout);
+        System.out.println("Results " + " YES - " + yesCount + " NO - " + noCount);
+    }
+
+    private static boolean isEgnValid(final String egn) {
+        return egn.length() == 10;
     }
 
     //EnumVote voteEnumYes = EnumVote.YES;
