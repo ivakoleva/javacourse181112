@@ -9,6 +9,7 @@ import com.musala.javacourse181112.enums.FirstName;
 import com.musala.javacourse181112.enums.LastName;
 import com.musala.javacourse181112.enums.Vote;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 // nice
 public class VoteProgram {
@@ -34,11 +35,12 @@ public class VoteProgram {
     }
 
     private static Poll[] createPolls(Poll[] polls, int voteGivers) {
+        final Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < polls.length; i++) {
             System.out.print("Enter question: ");
-            String question = scan.nextLine();
+            String quest = scanner.nextLine();
             Date startDate = Date.from(Instant.now());
-            polls[i] = new Poll(question, startDate, voteGivers);
+            polls[i] = new Poll(quest, startDate, voteGivers);
         }
         return polls;
     }
@@ -47,7 +49,7 @@ public class VoteProgram {
         for (int i = 0; i < voters.length; i++) {
             String firstName = FirstName.values()[RANDOM.nextInt(4) + 1].toString();
             String lastName = LastName.values()[RANDOM.nextInt(4) + 1].toString();
-            int age = RANDOM.nextInt(18) + 110;
+            int age = RANDOM.nextInt(110-18) + 18;
             voters[i] = new Person(firstName, lastName, age);
         }
         return voters;
@@ -55,33 +57,30 @@ public class VoteProgram {
 
     private static void printResult(Poll[] result) {
         for (Poll poll : result) {
-            System.out.printf("%s%nDate: %s%n",poll.getQuestion(), poll.getDate());
+            System.out.printf("%nQuestion: %s%nDate: %s%n",poll.getQuestion(), poll.getDate());
             for (Person voter : poll.getVoters()) {
                 System.out.printf("%n--First name: %s%n--Last name: %s%n--Age: %d%n--Vote: %s%n", voter.getFirstName(), voter.getLastName(), voter.getAge(), voter.getVote());
             }
+
+            System.out.println();
         }
     }
 
     private static Poll[] vote(Person[] voters, Poll[] polls) {
-        for (int i = 0; i < polls.length ; i++) {
+        for (Poll poll : polls) {
             for (int j = 0; j < voters.length; j++) {
                 int vote = RANDOM.nextInt(3) + 1;
                 if (vote == 1) {
                     voters[j].vote(Vote.Yes);
-                    Person per = voters[j];
-                    polls[i].getVoters()[j] = (per);
-                }
-                else if (vote == 2) {
-                    voters[j].vote(Vote.Yes);
-                    Person per = voters[j];
-                    polls[i].getVoters()[j] = (per);
 
-                }
-                else {
-                    voters[j].vote(Vote.Yes);
-                    Person per = voters[j];
-                    polls[i].getVoters()[j] = (per);
+                    poll.getVoters()[j] = (voters[j]);
+                } else if (vote == 2) {
+                    voters[j].vote(Vote.No);
+                    poll.getVoters()[j] = (voters[j]);
 
+                } else {
+                    voters[j].vote(Vote.Abstainer);
+                    poll.getVoters()[j] = (voters[j]);
                 }
             }
         }
