@@ -9,9 +9,11 @@ public class FutureAgeCalculator {
         int age = scan.nextInt();
         System.out.println("Enter years:");
         int futureAge = age;
+
         while (scan.hasNextInt()){
             futureAge += scan.nextInt();
         }
+
         System.out.println("Input age: " + age);
         System.out.println("Input period: " + (futureAge - age));
         System.out.println("Age in future: " + futureAge);
