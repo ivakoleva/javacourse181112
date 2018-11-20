@@ -36,6 +36,13 @@ public class ArraysExample {
         stringTwoDimensionalArray[1][4] = "value1.4";
         stringTwoDimensionalArray[2][2] = "value2.2";
 
+        String value2_2 = stringTwoDimensionalArray[2][2];
+        value2_2 = "asd";
+
+        System.out.println("Printing array value - by position; by variable");
+        System.out.println(stringTwoDimensionalArray[2][2]);
+        System.out.println(value2_2);
+
         final String[][] stringTwoDimensionalArray1 = {
                 {"value0.0", null, null, null, null},
                 {null, null, null, null, "value1.4"},
