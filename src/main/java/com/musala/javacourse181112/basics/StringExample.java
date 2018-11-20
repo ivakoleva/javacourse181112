@@ -11,5 +11,10 @@ public class StringExample {
 
         System.out.println(value + " asd1");
         System.out.println(value.concat(" asd1"));
+
+        String[] stringArray = new String[3];
+        stringArray[0] = "value1";
+
+
     }
 }
