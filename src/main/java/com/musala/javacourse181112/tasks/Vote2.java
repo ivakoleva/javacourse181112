@@ -21,11 +21,8 @@ public class Vote2 {
                     noCount++;
                 }
             }
-// TODO Count the yes/no votes
         }
         System.out.println(yesCount);
         System.out.println(noCount);
     }
-
-
 }

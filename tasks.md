@@ -1,3 +1,11 @@
+20.11:
+*future age calculator v0.2:
+    * implement multiple program arguments support (unlimited number)
+    *assume and rely on user input (int values)
+    *sum all of the parameters,then print to output 
+
+
+
 19.11:
 * Create an app that :
     * based on human gender, print chromosomes (male: xy, female: xx)
