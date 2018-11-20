@@ -43,7 +43,5 @@ public class Poll {
         }
     System.out.println(maxVoters + " voted out of which " + votesYes + " voted " + Vote.YES + " \nThe remaining " + votesNo + " voted " + Vote.NO + ".");
     }
-
-
 }
 
