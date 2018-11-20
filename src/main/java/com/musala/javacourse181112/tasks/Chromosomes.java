@@ -8,9 +8,15 @@ public class Chromosomes {
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 //
-//        String gender = sc.nextLine().toLowerCase();
+//        String gender = sc.nextLine().toLowerCase()
         Gender gender = Gender.FEMALE;
         gender = Gender.MALE;
+//        if(args.length > 0 && args[0] != null);{
+//            System.out.println("Usage : java ChromosomesApplication male|female");
+//            System.exit(1);
+//        }
+//        final Gender gender = "female".equalsIgnoreCase(args[0]) ? Gender.FEMALE : Gender.MALE;
+
         if (gender.equals(Gender.MALE) || gender.equals(Gender.FEMALE)) {
             switch (gender) {
                 case MALE:
@@ -24,8 +30,8 @@ public class Chromosomes {
             }
             System.out.println("x");
         }
-//        else {
-//            System.out.println("Invalid input");
-//        }
+        else {
+            System.out.println("Invalid input");
+        }
     }
 }
