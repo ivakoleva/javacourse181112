@@ -5,9 +5,12 @@ import java.util.Scanner;
 
 public class VotesApplication {
     public static void main(final String[] args) {
+
         Scanner sc = new Scanner(System.in);
         Person person = new Person();
+        System.out.println("Enter egn: ");
         person.setEGN(sc.nextLine());
+        System.out.println("Enter name: ");
         person.setName(sc.nextLine());
 
         final String[] questions = {
@@ -18,7 +21,7 @@ public class VotesApplication {
                 {"yes", "no", "yes"},
                 {"yes", "yes", "no"}
         };
-        //System.out.println(Arrays.deepToString(questions) + Arrays.deepToString(votes));
+        System.out.println(Arrays.deepToString(questions) + Arrays.deepToString(votes));
 
         //voteCounter(); //- not finished
         countAndPrintVotes(questions, votes);
@@ -82,7 +85,7 @@ public class VotesApplication {
             System.out.println();
         //}
         System.out.println();
-        //System.out.println(Arrays.deepToString(votes));
+        System.out.println(Arrays.deepToString(votes));
 
     }
 }
