@@ -2,7 +2,7 @@ package com.musala.javacourse181112.voteapp;
 
 // :)
 public class Poll {
-    static int votesYes = 0, votesNo = 0, i =0;
+    private static int votesYes, votesNo, i;
     public static void main(final String[] args) {
         final int maxVoters = 30;
         final int maxQuestions = 2;
@@ -19,20 +19,19 @@ public class Poll {
                 voters[i][j] = String.valueOf((i % 2) == 0 ? Vote.YES : Vote.NO);
             }
         }
+
         VoteCounter(maxVoters, voters,0);
-
-        // count votes
-
-
-
-
-
         PrintIn(2, "Do you like snow?");
         VoteCounter(maxVoters, voters,1);
+
     }
+
+    //Question Printer
     private static void PrintIn(int questionNumber, String questionContent){
         System.out.println("\nQuestion number: " + questionNumber + "  "+ questionContent);
     }
+
+    //Vote counter and printer
     private static void VoteCounter(int maxVoters, String[][] voters, int m){
         votesYes = votesNo = 0;
         for (i = 0; i < maxVoters; i++) {
@@ -42,7 +41,9 @@ public class Poll {
                 votesNo++;
             }
         }
-     System.out.println(maxVoters + " voted out of which " + votesYes + " voted " + Vote.YES + " \nThe remaining " + votesNo + " voted " + Vote.NO + ".");
-     }
+    System.out.println(maxVoters + " voted out of which " + votesYes + " voted " + Vote.YES + " \nThe remaining " + votesNo + " voted " + Vote.NO + ".");
+    }
+
+
 }
 
