@@ -65,6 +65,6 @@ public class FutureAgeCalculator {
 
     public static void calculate(final int n1, final int n2) {
         System.out.println("Age:" + n1 + "\nAdded Age:" + n2);
-        System.out.println("Result:" + (n1 + n2));
+        System.out.println("Result:" + (n1 + n2)+"\n");
     }
 }
