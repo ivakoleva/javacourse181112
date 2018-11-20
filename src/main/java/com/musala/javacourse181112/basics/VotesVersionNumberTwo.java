@@ -8,7 +8,7 @@ public class VotesVersionNumberTwo {
         int counterYes = 0;
         int counterNo = 0;
 
-        //it say that I cannot convert it to int
+
         if (EnumForVotes.YES.equals(answerForVote)) {
             counterYes++;
 
@@ -26,7 +26,7 @@ public class VotesVersionNumberTwo {
            data[0][columb]=name[columb];
            data[1][columb]=numbers[columb];
            data[2][columb]= String.valueOf(vote);
-            System.out.println("Data for every person" + data[0][columb]+" " + data[1][columb]+" " + data[2][columb]);
+            System.out.println("Data for every person: " + data[0][columb]+" " + data[1][columb]+" " + data[2][columb]);
 
         }
     }
