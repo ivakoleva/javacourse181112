@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FutureAgeCalculator {
     public static void main(String[] args) {
-       public Scanner input=new Scanner(System.in);
+        Scanner input=new Scanner(System.in);
         int age=0;
         int addYears=0;
 System.out.println("Enter your age: ");
@@ -23,7 +23,7 @@ System.exit(0);
     }
     private static String enterAge(){
         String in=null;
-        in=
+
         return in;
     }
 
