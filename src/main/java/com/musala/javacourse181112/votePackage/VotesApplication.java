@@ -13,6 +13,8 @@ public class VotesApplication {
         System.out.println("Enter name: ");
         person.setName(sc.nextLine());
 
+
+
         final String[] questions = {
                 "Do you follow the news?",
                 "Do you think that Valeri Simeonov should resign?"
@@ -21,6 +23,7 @@ public class VotesApplication {
                 {"yes", "no", "yes"},
                 {"yes", "yes", "no"}
         };
+
         System.out.println(Arrays.deepToString(questions) + Arrays.deepToString(votes));
 
         //voteCounter(); //- not finished
@@ -52,6 +55,26 @@ public class VotesApplication {
                 // - first element of each inner person array - egn
                 // - second element - name
                 // third Vote (enum)
+        for(String question: questions){
+            System.out.println(question);
+            for(String array1[]: votes){
+                for(String value: array1){
+                    if (value.equalsIgnoreCase(Votes.YES.name())) {
+                        votesYesCount++;
+                    } else if (value.equalsIgnoreCase(Votes.NO.name())) {
+                        votesNoCount++;
+                    }else {
+                        // TODO: handle
+                        throw new IllegalArgumentException("Vote is invalid");
+                    }
+                    System.out.println(value);
+
+                }
+            }
+        }
+
+
+        /* alternative implementation:
         for (int i = 0; i < votes.length; i++) {
             System.out.println(questions[i]);
             for (int k = 0; k < votes[i].length; k++) {
@@ -62,7 +85,7 @@ public class VotesApplication {
                 }else {
                     // TODO: handle
                     throw new IllegalArgumentException("Vote is invalid");
-                }
+                }*/
 
 
                 /*old implementation:
@@ -74,18 +97,18 @@ public class VotesApplication {
                 } */
 
                 System.out.println(Arrays.deepToString(votes));
-            }
-        }
+           // }
+       // }
 
             //}
             System.out.println();
             System.out.println("Result:");
-            System.out.println("Yes: " + votesYesCount);
-            System.out.println("No: " + votesNoCount);
+            System.out.println("Yes: " + votesYesCount); // prints them x2
+            System.out.println("No: " + votesNoCount); // print x2
             System.out.println();
         //}
         System.out.println();
-        System.out.println(Arrays.deepToString(votes));
+        //System.out.println(Arrays.deepToString(votes));
 
     }
 }
