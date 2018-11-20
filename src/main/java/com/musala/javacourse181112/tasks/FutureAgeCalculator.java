@@ -20,11 +20,12 @@ public class FutureAgeCalculator {
     public static void v2(final String[] args)
     {
         int k=0;
-        while(k!=args.length){
+        while(k<args.length){
             for(int i=0;i<args[k].length();i++){
                 if(args[k].charAt(i)<'0'||args[k].charAt(i)>'9')
                 {
-                    System.exit(1);
+                    System.out.println(1);
+                    //System.exit(1);
                 }
             }
             if(k%2!=0){
