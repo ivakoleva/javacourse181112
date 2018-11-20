@@ -8,15 +8,14 @@ public class VotesVersionNumberTwo {
         int counterYes = 0;
         int counterNo = 0;
 
-            switch ( answerForVote)
-            {
-                case "YES":
-                    counterYes++;
-                    break;
-                case "NO":
-                    counterNo++;
-                    break;//it say that I cannot convert it to int
-            }
+        //it say that I cannot convert it to int
+        if (EnumForVotes.YES.equals(answerForVote)) {
+            counterYes++;
+
+        } else if (EnumForVotes.NO.equals(answerForVote)) {
+            counterNo++;
+
+        }
 
         System.out.println("Total Yes answers:" + counterYes);
         System.out.println("Total No answers:" + counterNo);
@@ -26,7 +25,9 @@ public class VotesVersionNumberTwo {
         for(int columb=0;columb < data.length;columb++){
            data[0][columb]=name[columb];
            data[1][columb]=numbers[columb];
-          // data[2][columb]=vote;
+           data[2][columb]= String.valueOf(vote);
+            System.out.println("Data for every person" + data[0][columb]+" " + data[1][columb]+" " + data[2][columb]);
+
         }
     }
 
@@ -50,6 +51,7 @@ public class VotesVersionNumberTwo {
         answer= YES;
         countAndPrintVote(answer);//
         writingDataInArray(names,egn,personalData,answer);
+
 
     }
 }
