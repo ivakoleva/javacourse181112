@@ -4,6 +4,7 @@ public class FutureAgeCalculator {
     public static void main(final String[] args) {
         v1(args);
         v2(args);
+        System.exit(0);
     }
     public static void v1(final String[] args){
         int i=0;
