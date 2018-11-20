@@ -6,8 +6,8 @@ public class Poll {
     private static final int maxVoters = 30;
     private static final int voterQualities = 3;
     private static final int voteAttribute = 2;
-
     private static final Object[][] voters =new Object[maxVoters][voterQualities];
+
     public static void main(final String[] args) {
 
         System.out.println("Welcome!!!");
