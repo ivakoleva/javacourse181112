@@ -61,6 +61,10 @@ public class VoteProgram {
             for (Person voter : poll.getVoters()) {
                 System.out.printf("%n--First name: %s%n--Last name: %s%n--Age: %d%n--Vote: %s%n", voter.getFirstName(), voter.getLastName(), voter.getAge(), voter.getVote());
             }
+            System.out.printf("Results%n");
+            Arrays.stream(poll.getVoters())
+                    .collect(Collectors.groupingBy(s -> s.getVote()))
+                    .forEach((k, v) -> System.out.println("-"+k+" "+v.size()));
 
             System.out.println();
         }
