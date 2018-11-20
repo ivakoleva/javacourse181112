@@ -73,7 +73,7 @@ public class VotesApplication {
                     votesNoCount++;
                 } */
 
-                System.out.println(votes);
+                System.out.println(Arrays.deepToString(votes));
             }
         }
 
