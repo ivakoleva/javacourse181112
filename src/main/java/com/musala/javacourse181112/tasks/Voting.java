@@ -64,7 +64,7 @@ public class Voting {
         int voteYes=0;
         int voteNo=0;
         for(int i=0;i<votes.length;i++){
-            for(int j=0;j<votes[i].length;j++){
+            for(int j = 0; j < votes[i].length; j++){
                 if(votes[i][j]==Vote.YES){
                     voteYes++;
                 }else{
