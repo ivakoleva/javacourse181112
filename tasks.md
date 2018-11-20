@@ -4,7 +4,7 @@
     ** implement multiple program arguments support (unlimited number)
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
-        ** bonus: do input validation - natural numbers only; exit(1) if otherwise
+        *** bonus: do input validation - natural numbers only; exit(1) if otherwise
 
 19.11:
 
