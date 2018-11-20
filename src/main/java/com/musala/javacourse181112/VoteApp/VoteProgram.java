@@ -65,7 +65,6 @@ public class VoteProgram {
             Arrays.stream(poll.getVoters())
                     .collect(Collectors.groupingBy(s -> s.getVote()))
                     .forEach((k, v) -> System.out.println("-"+k+" "+v.size()));
-
             System.out.println();
         }
     }
