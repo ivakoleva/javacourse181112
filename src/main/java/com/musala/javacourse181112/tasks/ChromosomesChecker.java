@@ -10,16 +10,27 @@ public class ChromosomesChecker {
         System.out.println("Enter your gender");
         Scanner scanner = new Scanner(System.in);
         String gender = scanner.nextLine();
-        switch (gender){
+        String chromosomeString = "";
+        switch (gender.toLowerCase()){
             case "female":
+                chromosomeString += "x";
                 System.out.println(FEMALE_CHROMOSOMES);
-                break;
+
             case "male":
+                chromosomeString += "x";
+                if(chromosomeString.length() == 2) {
+                    break;
+                }
                 System.out.println(MALE_CHROMOSOMES);
-                break;
+
             default:
+                chromosomeString += "y";
                 System.out.println("Sorry we assumed your gender. ");
         }
+
+        System.out.println("Chromosomes for gender: " + gender);
+        System.out.println(chromosomeString);
+
 
 
     }

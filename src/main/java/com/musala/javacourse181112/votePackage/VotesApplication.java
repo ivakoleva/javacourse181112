@@ -1,9 +1,15 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.votePackage;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class VotesApplication {
     public static void main(final String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Person person = new Person();
+        person.setEGN(sc.nextLine());
+        person.setName(sc.nextLine());
+
         final String[] questions = {
                 "Do you follow the news?",
                 "Do you think that Valeri Simeonov should resign?"
@@ -15,7 +21,7 @@ public class VotesApplication {
         //System.out.println(Arrays.deepToString(questions) + Arrays.deepToString(votes));
 
         //voteCounter(); //- not finished
-        countAndPrintVotes(questions, votes);
+        countAndPrintVotes(questions);
     }
 
     //todo: design method for future votes counter implementation
@@ -33,31 +39,50 @@ public class VotesApplication {
         System.out.println(Arrays.deepToString(alternativeVotes));
     }
 
-    public static void countAndPrintVotes(final String[] questions, final String[][] votes) {
+    public static void countAndPrintVotes(final String[] questions) {
         int votesYesCount = 0;
         int votesNoCount = 0;
-        for (int i = 0; i < votes.length; i++) {
+        /*for (int i = 0; i < votes.length; i++) {
             System.out.println(questions[i]);
-            for (int k = 0; k < votes[i].length; k++) {
-                // 2-lines
-
-                if ("yes".equals(votes[i][k])) {
+            for (int k = 0; k < votes[i].length; k++) {*/
+               // introduce person multi-dimensional array (object), then populate:
+                // - first element of each inner person array - egn
+                // - second element - name
+                // third Vote (enum)
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            for (Votes vote : Votes.values()) {
+                if ("yes".equalsIgnoreCase(Votes.YES.name())) {
                     votesYesCount++;
-                } else if ("no".equals(votes[i][k])) {
+                } else if ("yes".equalsIgnoreCase(Votes.NO.name())) {
                     votesNoCount++;
-                } /*else {
+                }else {
                     // TODO: handle
-                }*/
-                System.out.println(votes[i][k]);
+                    throw new IllegalArgumentException("Vote is invalid");
+                }
+
+
+                /*old implementation:
+                if ("yes".equals(votes[i][k])) {
+                votesYesCount++;
+                }
+                else if ("no".equals(votes[i][k])) {
+                    votesNoCount++;
+                } */
+
+                System.out.println(vote);
             }
+        }
+
+            //}
             System.out.println();
             System.out.println("Result:");
             System.out.println("Yes: " + votesYesCount);
             System.out.println("No: " + votesNoCount);
             System.out.println();
-        }
+        //}
         System.out.println();
-        System.out.println(Arrays.deepToString(votes));
+        //System.out.println(Arrays.deepToString(votes));
 
     }
 }
