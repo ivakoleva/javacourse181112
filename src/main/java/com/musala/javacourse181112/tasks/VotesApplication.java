@@ -18,16 +18,24 @@ public class VotesApplication {
             System.out.println(questions[i]);
 
             for (int v = 0; v < votes.length; v++) {
-                // while validation usage
-                while((votes[v][0] = getValidEgn(input)) == null) {
-                    System.out.println("Non-valid ENG");
-                    System.out.println("Retrying...");
-                }
-
                 /*if(!getValidEgn((String) votes[v][0])) {
                     System.out.println("Please type a valid EGN");
                     System.exit(1);
                 }*/
+
+                // while validation usage
+                /*while((votes[v][0] = getValidEgn(input)) == null) {
+                    System.out.println("Non-valid ENG");
+                    System.out.println("Retrying...");
+                }*/
+
+                do {
+                    votes[v][0] = getValidEgn(input);
+                    if(votes[v][0] == null) {
+                        System.out.println("Non-valid ENG");
+                        System.out.println("Retrying...");
+                    }
+                } while (votes[v][0] == null);
 
                 System.out.println("Enter name");
                 votes[v][1] = input.next();
@@ -53,7 +61,7 @@ public class VotesApplication {
         System.out.println("Enter EGN");
         final String egn = scanner.next();
 
-        if(egn != null && egn.length() == 10) {
+        if (egn != null && egn.length() == 10) {
             return egn;
         }
         return null;
