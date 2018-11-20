@@ -29,12 +29,12 @@ public class Poll {
 
         PrintIn(2, "Do you like snow?");
         VoteCounter(maxVoters, voters,1);
-        System.out.println(maxVoters + " voted out of which " + votesYes + " voted Yes \nThe remaining " + votesNo + " voted NO.");
     }
     private static void PrintIn(int questionNumber, String questionContent){
         System.out.println("\nQuestion number: " + questionNumber + "  "+ questionContent);
     }
     private static void VoteCounter(int maxVoters, String[][] voters, int m){
+        votesYes = votesNo = 0;
         for (i = 0; i < maxVoters; i++) {
             if (String.valueOf(Vote.YES).equals(voters[i][m])) {
                 votesYes++;
