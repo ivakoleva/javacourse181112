@@ -7,12 +7,10 @@ public class FutureAgeCalculator {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter current age:");
         int age = scan.nextInt();
-        System.out.println("Enter period if you want to stop enter '0'");
-        int period = scan.nextInt();
+        System.out.println("Enter years:");
         int futureAge = age;
-        while (period != 0){
-            futureAge+=period;
-            period = scan.nextInt();
+        while (scan.hasNextInt()){
+            futureAge += scan.nextInt();
         }
         System.out.println("Input age: " + age);
         System.out.println("Input period: " + (futureAge - age));
