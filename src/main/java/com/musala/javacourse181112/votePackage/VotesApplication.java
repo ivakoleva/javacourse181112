@@ -21,7 +21,7 @@ public class VotesApplication {
         //System.out.println(Arrays.deepToString(questions) + Arrays.deepToString(votes));
 
         //voteCounter(); //- not finished
-        countAndPrintVotes(questions);
+        countAndPrintVotes(questions, votes);
     }
 
     //todo: design method for future votes counter implementation
@@ -39,7 +39,7 @@ public class VotesApplication {
         System.out.println(Arrays.deepToString(alternativeVotes));
     }
 
-    public static void countAndPrintVotes(final String[] questions) {
+    public static void countAndPrintVotes(final String[] questions, String[][] votes) {
         int votesYesCount = 0;
         int votesNoCount = 0;
         /*for (int i = 0; i < votes.length; i++) {
@@ -49,12 +49,12 @@ public class VotesApplication {
                 // - first element of each inner person array - egn
                 // - second element - name
                 // third Vote (enum)
-        for (int i = 0; i < questions.length; i++) {
+        for (int i = 0; i < votes.length; i++) {
             System.out.println(questions[i]);
-            for (Votes vote : Votes.values()) {
-                if ("yes".equalsIgnoreCase(Votes.YES.name())) {
+            for (int k = 0; k < votes[i].length; k++) {
+                if (votes[i][k].equalsIgnoreCase(Votes.YES.name())) {
                     votesYesCount++;
-                } else if ("yes".equalsIgnoreCase(Votes.NO.name())) {
+                } else if (votes[i][k].equalsIgnoreCase(Votes.NO.name())) {
                     votesNoCount++;
                 }else {
                     // TODO: handle
@@ -70,7 +70,7 @@ public class VotesApplication {
                     votesNoCount++;
                 } */
 
-                System.out.println(vote);
+                System.out.println(votes);
             }
         }
 
