@@ -1,9 +1,10 @@
 package com.musala.javacourse181112.tasks;
-
+import java.util.regex.Pattern;
 public class FutureAgeCalculator {
     public static void main(final String[] args) {
-        v1(args);
-        v2(args);
+       // v1(args);
+       // v2(args);
+        v3(args);
         System.exit(0);
     }
 
@@ -36,6 +37,24 @@ public class FutureAgeCalculator {
                     System.out.println(1);
                     //System.exit(1);
                 }
+            }
+            if (k % 2 != 0) {
+                calculate(Integer.parseInt(args[k - 1]), Integer.parseInt(args[k]));
+            }
+            k++;
+        }
+    }
+
+    public static void v3(final String[] args)
+    {
+        int k = 0;
+        while (k < args.length) {
+
+            String re="^([0-9]+)$";
+            if (!Pattern.matches(re,args[k])){
+                System.out.println(1);
+                return ;
+                //System.exit(1);
             }
             if (k % 2 != 0) {
                 calculate(Integer.parseInt(args[k - 1]), Integer.parseInt(args[k]));
