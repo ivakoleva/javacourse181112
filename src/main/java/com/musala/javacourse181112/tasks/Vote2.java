@@ -1,9 +1,5 @@
 package com.musala.javacourse181112.tasks;
 
-
-import java.util.Arrays;
-
-
 public class Vote2 {
     public static final int QUESTION = 2;
     public static final int MAX_VOTERS = 30;

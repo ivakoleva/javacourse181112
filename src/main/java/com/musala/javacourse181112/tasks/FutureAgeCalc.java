@@ -8,18 +8,16 @@ public class FutureAgeCalc {
 
     public static int age = 0;
     public static int i = 0;
-    public static void main(String[]args){
+
+    public static void main(String[] args) {
 //        int age = Integer.parseInt(args[0]) + Integer.parseInt(args[1]);
 //        System.out.println("FutureAgeCal age calculated: " + age);
-                do {
-                    age +=Integer.parseInt(args[i]);
-                    i++;
+        do {
+            age += Integer.parseInt(args[i]);
+            i++;
 //                    System.out.println("Future age is:" +age);
-                }while(args.length > i);
-        System.out.println("Future age is:" +age);
-
-
-
+        } while (args.length > i);
+        System.out.println("Future age is:" + age);
 
 
 //        Scanner sc = new Scanner(System.in);
