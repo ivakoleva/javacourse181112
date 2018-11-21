@@ -3,16 +3,19 @@ package com.musala.javacourse181112.tasks;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class VotesApplication {
+public class VotesApplicationVersion3 {
 
     public static void main(final String[] args) {
-        final Object[][] votes = new Object[3][3];
-        final Scanner input = new Scanner(System.in);
 
-        final String[] questions = {"Do you like ice cream", "Do you drink coffee"};
-        String voteFromConsole;
+        final Scanner input = new Scanner(System.in);
+        System.out.print("Enter number of participants: ");
+        final int n = input.nextInt();
+        final Object[][] votes = new Object[n][3];
+        final String[] questions = {"Do you like ice-cream", "Do you drink coffee"};
+        //String voteFromConsole;
         int yesCount = 0;
         int noCount = 0;
+        int choice;
 
         for (int i = 0; i < questions.length; i++) {
             System.out.println(questions[i]);
@@ -40,9 +43,23 @@ public class VotesApplication {
                 System.out.println("Enter name");
                 votes[v][1] = input.next();
 
-                System.out.println("Enter vote YES/NO");
-                voteFromConsole = input.next().toUpperCase();
-                votes[v][2] = Vote.valueOf(voteFromConsole);
+
+                do{
+                System.out.println("Choose your vote: press 1 for YES or press 2 for NO");
+                 choice = input.nextInt();
+                switch (choice){
+                    case 1:
+                        votes[v][2] = Vote.YES;
+                        break;
+                    case 2:
+                        votes[v][2] = Vote.NO;
+                        break;
+                        default:
+                            System.out.println("Please enter a valid number");
+                            break;
+                }}while (choice < 1 || choice > 2 );
+                //voteFromConsole = input.next().toUpperCase();
+                //votes[v][2] = Vote.valueOf(voteFromConsole);
 
                 if (Vote.YES.equals(votes[v][2])) {
                     yesCount++;
@@ -67,27 +84,6 @@ public class VotesApplication {
         return null;
     }
 
-    //EnumVote voteEnumYes = EnumVote.YES;
-    //EnumVote voteEnumNo = EnumVote.NO;
-    //Object[][] vote = new String[3][3];
-
-    //array[0][0] = "Ivan";
-    // array [0][1] = "92212312";
-    //array[0][2] = voteEnumYes;
-
-       /*vote[0][0] = "6854455240";
-        vote[0][1] = "Ivan";
-        vote[0][2] = voteEnumYes;
-
-        vote [1][0] = "45522142";
-        vote[1][1] = "Pehso";
-        vote[1][2] = voteEnumNo;
-
-        vote [2][0] = "1000000";
-        vote[2][1] = "Gosho";
-        vote[2][2] = voteEnumNo;
-
-        System.out.println(Arrays.deepToString(array));*/
 }
 
 
