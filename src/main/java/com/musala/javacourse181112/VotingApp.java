@@ -28,13 +28,13 @@ public class VotingApp {
         //question 1
         System.out.println("Did you like football ?  ");
 
-        for (int i = 0; i < votersArr.length + 1; i++) {
+        for (int i = 0; i <= votersArr.length ; i++) {
             System.out.println(" " + votersArr[0][i]);
         }
         //question 2
         System.out.println("Did you play football ? ");
 
-        for (int i = 0; i < votersArr.length + 1; i++) {
+        for (int i = 0; i <= votersArr.length ; i++) {
             System.out.println(" " + votersArr[1][i]);
         }
     }
