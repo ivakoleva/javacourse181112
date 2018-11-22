@@ -1,4 +1,7 @@
 package com.musala.javacourse181112.basics;
+import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Iva Koleva on 20.11.2018
@@ -78,11 +81,34 @@ public class LoopsExample {
             System.out.println(i);
         }*/
 
-        final int[] intArray = {1, 2, 3};
+        /*final int[] intArray = {1, 2, 3};
         //int i = 0;
         for (int element : intArray) { // foreach; implements Iterable interface
             System.out.println(element);
             //i++;
+        }*/
+         List<String> names = new ArrayList<>();
+        names.add("Christina");
+        names.add("Marina");
+        names.add("Krasena");
+
+        Iterator <String> it = names.iterator();
+
+        while(it.hasNext()) {
+
+            String obj = (String)it.next();
+            if (obj.length()%2 ==0) {
+              it.remove();
+            } else{
+                System.out.println(obj);
+            }
         }
+
+
+
     }
+
+
+
+
 }
