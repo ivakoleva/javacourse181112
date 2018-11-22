@@ -1,10 +1,14 @@
 package com.musala.javacourse181112.tasks;
 
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+
 import java.util.Scanner;
 
 public class PopulateArraysWithLoops {
     static {
-        System.out.println("elements: ");
+        System.out.println("Enter elements: ");
     }
 
     public static final Scanner SCANNER = new Scanner(System.in);
@@ -39,14 +43,13 @@ public class PopulateArraysWithLoops {
 
     // fill using for
     public static void forArray() {
-        int i = 0;
-        for (int j = 0; j < intArr.length; j++) {
-            intArr[j] = j;
-            System.out.println(intArr[j]);
+        for (int i = 0; i < intArr.length; i++) {
+            intArr[i] = i;
+            System.out.println(intArr[i]);
         }
     }
 
-    // fill using for
+    // fill using for-each
     public static void forEachArray() {
         int k = 0;
         for (int ignored : intArr) {
@@ -54,6 +57,18 @@ public class PopulateArraysWithLoops {
             k++;
             System.out.println(intArr[k]);
         }
+//        Arrays.stream(intArr).forEach(i -> {
+//            intArr[i] = i;
+//            System.out.println(intArr[i]);
+//
+//        });
+//    }
+//
+//    public static void usingLambdaAndIterator(){
+//
+//        final List<Integer> myList = new ArrayList<>();
+//    }
     }
+    //TODO Implement Lambda expression
+    // TODO Implement Iterator
 }
-

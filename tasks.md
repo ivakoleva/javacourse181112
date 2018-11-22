@@ -1,18 +1,40 @@
+22.11:
+
+* Loops exercise elaboration
+    ** add lambda stream.forEach implementation
+    ** add looping and modifying a collection (using iterator)
+
 20.11:
-*future age calculator v0.2:
-    * implement multiple program arguments support (unlimited number)
-    *assume and rely on user input (int values)
-    *sum all of the parameters,then print to output 
 
-
+* Future age calculator v0.2
+    ** implement multiple program arguments support (unlimited number)
+    ** assume and rely on user input (int values)
+    ** sum all of the parameters, then print to stdout (use while or do-while)
+        *** bonus: do input validation - natural numbers only; exit(1) if otherwise
+        
+* Loops exercise - for each loop type (while; do-while; for; foreach)
+    ** automatically (using loop), initialize an array with values
+    ** print the array to stdout
+    
+* Votes v0.3 application
+    * refactor, using loops
 
 19.11:
-* Create an app that :
-    * based on human gender, print chromosomes (male: xy, female: xx)
-    * use switch-based check
-    * parameters supplied by user
-    * accepts program arguments
-    * prints chromosomes to stdout
+
+* Create a Chromosomes application that:
+    ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
+    ** use switch-based check
+    ** parameters supplied by user
+    ** prints chromosomes to stdout (letter by letter) 
+* port the code to use Gender enum instead of any string value
+
+* Votes v0.2 application
+    * introduce enum usage (vote answer yes/no)
+    * implement votes counting then printing to stdout
+    * introduce person multi-dimensional array (Object), then populate:
+        ** first element of each inner person array - EGN
+        ** second element - name
+        ** third - Vote (enum)
 
 15.11:
 
@@ -44,6 +66,3 @@
         * Question 1: Is it snowing today? Yes/No
         * Question 2: Do you want rather to be snowing today? Yes/No
         * 3 votes per each question
-           
-    
- 
