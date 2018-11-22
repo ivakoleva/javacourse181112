@@ -47,7 +47,7 @@ public class LoopExercise {
         int []array = new int[10];
         int i=0;
         for(int i1:array){
-            i1=i;
+            array[i]=i;
             i++;
         }
         for(int i1:array){
