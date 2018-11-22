@@ -78,3 +78,12 @@ daemon programs
 regex (regexp, regular expressions) - java style
 
 loop labels - break; continue
+
+lambda expressions
+syntactic sugar
+streams
+
+backing data structure
+
+EOF (end of file, -1)
+memory leak
