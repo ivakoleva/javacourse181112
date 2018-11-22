@@ -13,10 +13,12 @@ public class LoopExersise {
         int i=0;
         while(i< ar.length){
             ar[i]=i;
+            i++;
         }
         i=0;
         while(i< ar.length){
             System.out.println(ar[i]);
+            i++;
         }
 
     }
