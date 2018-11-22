@@ -1,11 +1,43 @@
 package com.musala.javacourse181112;
 
+import java.util.*;
+
 public class Loops {
     public static void main(final String[] args) {
-        loopForEach();
+       /* loopForEach();
         loopDoWhile();
         loopWhile();
-        loopFor();
+        loopFor();*/
+        lambdaStream();
+        iteratorLooping();
+    }
+
+    public static void iteratorLooping() {
+        final List<Integer> myList = new ArrayList<>();
+        myList.add(0);
+        myList.add(1);
+        myList.add(2);
+        myList.add(3);
+
+
+
+        final Iterator<Integer> iterator = myList.iterator();
+        while (iterator.hasNext()) {
+            final Integer element = iterator.next();
+
+            if (element % 2 == 0) {
+                iterator.remove();
+            }
+
+        }
+        System.out.println(myList);
+
+    }
+
+    public static void lambdaStream() {
+        final int[] intArray = {1, 2, 3};
+        Arrays.stream(intArray).forEach(i -> System.out.println(i));
+
     }
 
     public static void loopForEach() {
