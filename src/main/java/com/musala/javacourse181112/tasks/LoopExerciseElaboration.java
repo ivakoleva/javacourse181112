@@ -11,7 +11,7 @@ public class LoopExerciseElaboration {
         //withDoWhile();
         //withFor();
         withForEach();
-        withLambaForEach()
+        withLambaForEach();
     }
 
     public static void withWhile() {
@@ -73,8 +73,10 @@ public class LoopExerciseElaboration {
         while (iterator.hasNext()) {
             final String element = iterator.next();
             System.out.println(element);
-            if (element.lenght % 2 == 0) {
+            if (element.length() % 2 == 0) {
                 iterator.remove();
             }
         }
+        myList.forEach(System.out::println);
     }
+}
