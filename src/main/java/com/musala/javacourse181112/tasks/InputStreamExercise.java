@@ -25,6 +25,10 @@ public class InputStreamExercise {
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
         }*/
+        while((i=inputStream.read(buffer,0,1027))!=-1)
+        {
+            System.out.println(new String(buffer));
+        }
 
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
