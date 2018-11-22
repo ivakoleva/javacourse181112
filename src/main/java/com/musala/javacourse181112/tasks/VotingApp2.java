@@ -13,6 +13,11 @@ public class VotingApp2 {
         Vote votersAnswer1 = Vote.YES;
         Vote votersAnswer2 = Vote.NO;
 
+        String votersName[] = { "Pesho","Strahil","Stanko" };
+
+        String votersEgn [] = { "6509111723","78200801245","8909102314"};
+
+
 
         //assign votes to array
         votersArr[0][0] = votersAnswer1;
@@ -26,13 +31,14 @@ public class VotingApp2 {
         System.out.println("Did you like football ?  ");
 
         for (int i = 0; i <= votersArr.length ; i++) {
-            System.out.println(" " + votersArr[0][i]);
+            System.out.println(votersName[i] + "\t" + votersEgn[i] + " \t" + votersArr[0][i]);
+
         }
         //question 2
-        System.out.println("Did you play football ? ");
+        System.out.println("\nDid you play football ? ");
 
         for (int i = 0; i <= votersArr.length ; i++) {
-            System.out.println(" " + votersArr[1][i]);
+            System.out.println(votersName[i] + "\t " + votersEgn[i] + " \t" + votersArr[1][i]);
         }
          //implement votes counting
         int countNo= 0;
