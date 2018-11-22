@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
-public class VotingApp {
+public class VotingApp2 {
     public static void main(String[] args) {
 
         // welcome message
@@ -34,7 +34,7 @@ public class VotingApp {
         for (int i = 0; i <= votersArr.length ; i++) {
             System.out.println(" " + votersArr[1][i]);
         }
-
+         //implement votes counting
         int countNo= 0;
         int countYes = 0;
 
@@ -46,7 +46,7 @@ public class VotingApp {
 
             }
         }
-
+        //print count of Yes or No answers
         System.out.println("The Yes answers for first question  are : " + countYes++);
         System.out.println("The No answers are for second question are: " + countNo++);
     }
