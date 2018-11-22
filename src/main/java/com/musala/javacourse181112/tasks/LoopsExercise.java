@@ -5,6 +5,7 @@ public class LoopsExercise {
     public static void main(final String[] args) {
         final String[] arr=new String[strLenght];
         int i=0;
+       //while---------------------------------
         while(i<arr.length){
             if(i%2==0){
                 arr[i]="EVEN";
@@ -17,7 +18,7 @@ public class LoopsExercise {
         printArr(arr);
         i=0;
 
-
+    //do-while---------------------------------
         do{
 
         if(i%2==0){
@@ -31,7 +32,7 @@ public class LoopsExercise {
         while(i<arr.length);
          System.out.println();
           printArr(arr);
-
+        //for---------------------------------
         for(i=0;i<arr.length;i++){
      if(i%2==0){
          arr[i]="EVEN2";
@@ -44,16 +45,13 @@ public class LoopsExercise {
         printArr(arr);
 
       System.out.println();
-
-for(String element:arr){
-System.out.println(element);
+        //for-each---------------------------------
+    for(String element:arr){
+    System.out.println(element);
 }
 
  }
-
-
-
-    public static void printArr(final String[] arr){
+ public static void printArr(final String[] arr){
         for(int i=0;i<arr.length;i++) {
         System.out.println(arr[i]);
 
