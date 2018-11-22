@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.basics;
 
 import com.musala.javacourse181112.basics.Gender;
 

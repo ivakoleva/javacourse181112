@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.basics;
 
 public class FutureAgeCalculator {
     public static void main(final String[] args) {
