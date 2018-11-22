@@ -1,4 +1,5 @@
 package com.musala.javacourse181112.basics;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,28 +88,19 @@ public class LoopsExample {
             System.out.println(element);
             //i++;
         }*/
-         List<String> names = new ArrayList<>();
-        names.add("Christina");
-        names.add("Marina");
-        names.add("Krasena");
+        final List<String> nameList = new ArrayList<>();
+        nameList.add("Christina");
+        nameList.add("Marina");
+        nameList.add("Krasena");
 
-        Iterator <String> it = names.iterator();
-
-        while(it.hasNext()) {
-
-            String obj = (String)it.next();
-            if (obj.length()%2 ==0) {
-              it.remove();
-            } else{
-                System.out.println(obj);
+        final Iterator<String> iterator = nameList.iterator();
+        while (iterator.hasNext()) {
+            final String value = iterator.next();
+            if (value.length() % 2 == 0) {
+                iterator.remove();
+            } else {
+                System.out.println(value);
             }
         }
-
-
-
     }
-
-
-
-
 }
