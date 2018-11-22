@@ -1,12 +1,13 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
+// clean, nice
 public class LoopExerciseElaboration {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         //withWhile();
         //withDoWhile();
         //withFor();
@@ -15,7 +16,7 @@ public class LoopExerciseElaboration {
     }
 
     public static void withWhile() {
-        int[] array = new int[10];
+        final int[] array = new int[10];
         int i = 0;
         while (i < array.length
         ) {
@@ -30,7 +31,7 @@ public class LoopExerciseElaboration {
     }
 
     public static void withDoWhile() {
-        int[] array = new int[10];
+        final int[] array = new int[10];
         int i = 0;
         do {
             array[i] = i;
@@ -44,7 +45,7 @@ public class LoopExerciseElaboration {
     }
 
     public static void withFor() {
-        int[] array = new int[10];
+        final int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }
@@ -54,16 +55,16 @@ public class LoopExerciseElaboration {
     }
 
     public static void withForEach() {
-        int[] array = new int[10];
+        final int[] array = new int[10];
         int i = 0;
         for (int i1 : array) {
             array[i] = i;
             i++;
         }
         Arrays.stream(array).forEach(System.out::println);
-
     }
 
+    // method names would be verbs
     public static void withLambaForEach() {
         final List<String> myList = new ArrayList<>();
         myList.add("asd0");
