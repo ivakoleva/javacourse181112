@@ -1,7 +1,11 @@
 package com.musala.javacourse181112;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
+// good
 public class Loops {
     public static void main(final String[] args) {
        /* loopForEach();
@@ -19,25 +23,19 @@ public class Loops {
         myList.add(2);
         myList.add(3);
 
-
-
         final Iterator<Integer> iterator = myList.iterator();
         while (iterator.hasNext()) {
             final Integer element = iterator.next();
-
             if (element % 2 == 0) {
                 iterator.remove();
             }
-
         }
         System.out.println(myList);
-
     }
 
     public static void lambdaStream() {
         final int[] intArray = {1, 2, 3};
-        Arrays.stream(intArray).forEach(i -> System.out.println(i));
-
+        Arrays.stream(intArray).forEach(System.out::println);
     }
 
     public static void loopForEach() {
