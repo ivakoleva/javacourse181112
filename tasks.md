@@ -1,3 +1,9 @@
+22.11:
+
+* Loops exercise elaboration
+    ** add lambda stream.forEach implementation
+    ** add looping and modifying a collection (using iterator)
+
 20.11:
 
 * Future age calculator v0.2
