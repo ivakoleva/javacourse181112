@@ -25,10 +25,12 @@ public class LoopExersise {
         int i=0;
         do{
             ar[i]=i;
+            i++;
         }while(i< ar.length);
         i=0;
         do{
             System.out.println(ar[i]);
+            i++;
         }while(i< ar.length);
     }
     public static void usingFor() {
@@ -43,9 +45,8 @@ public class LoopExersise {
     public static void usingForEach() {
         int []ar = new int[4];
         int i=0;
-        for(int i1:ar){
-            i1=i;
-            i++;
+        for(int i=0;i<ar.length;i++){
+            ar[i]=i;
         }
         for(int i1:ar){
             System.out.println(i1);
