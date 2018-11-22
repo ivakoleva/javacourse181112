@@ -4,15 +4,15 @@ public class FutureAgeCalculator {
     public static void main(final String[] args) {
        System.out.println("Input parameters: " + args[0] + " " + args[1]);
 
-        final int age = Integer.parseInt(args[0]);
-        final int yearToAdd = Integer.parseInt(args[1]);
-        int i=0;
-        int a=0;
-        System.out.println("Future age calculated: " + (age + yearToAdd));
+
+
+        int spinner=0;
+        int age=0;
+
         do {
-            a += Integer.parseInt(args [i++]);
-        } while (i<args.length);
-        System.out.println("The age is: " + (a));
+            age += Integer.parseInt(args [spinner++]);
+        } while (spinner<args.length);
+        System.out.println("The age is: " + (age));
 
         /*System.out.println("Future age calculated: " +
                 (Integer.parseInt(args[0]) +
