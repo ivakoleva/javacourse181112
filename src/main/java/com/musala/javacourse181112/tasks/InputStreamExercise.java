@@ -21,6 +21,8 @@ public class InputStreamExercise {
          * Important note: first 3 bytes are system-reserved, please do not overwrite
          */
         final byte[] buffer = new byte[1027];
+        final int offset = 200;
+        final int lenght = 400;
 
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
@@ -28,6 +30,8 @@ public class InputStreamExercise {
 
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
+        i = inputStream.read(buffer, offset, lenght);
+        System.out.println((char) i);
 
 
         // we are required to close, always do remember pls
