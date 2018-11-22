@@ -24,22 +24,29 @@ public class Loops {
     public static void usingDoWhile(final int[] valueArray) {
         int i = 0;
         do {
-            System.out.println("Printing in Do-while: " + valueArray[i]);
-            i++;
+            System.out.println("Printing in Do-while: " + valueArray[i++]);
+            //i++;
         } while (i < valueArray.length);
     }
 
     public static void usingWhile(final int[] valueArray) {
         int i = 0;
         while (i < valueArray.length) {
-            System.out.println("Printing in While: " + valueArray[i]);
-            i++;
+            System.out.println("Printing in While: " + valueArray[i++]);
+            //i++;
         }
     }
+    public static void usingIterator(){
+        List<String>item=new ArrayList<>();
+        item.add("aj");
+        item.add("b");
+        item.add("c");
+        Iterator<String> iterator=item.iterator();
+        while( iterator.hasNext()){
 
     public static void usingForeach(final int[] valueArray) {
-        for (int element : valueArray) {
-            System.out.println("Printing in Foreach: " + element);
+        for (int limiterForeach : valueArray) {
+            System.out.println("Printing in Foreach: " + limiterForeach);
         }
     }
 
@@ -65,4 +72,3 @@ public class Loops {
         System.out.println(list);
     }
 }
-
