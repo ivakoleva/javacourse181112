@@ -22,7 +22,7 @@ public class LambdaExample {
 
 
         final int[] intArray = {1, 2, 3};
-        Arrays.stream(intArray).forEach(i -> System.out.println(i + 1));
+        Arrays.stream(intArray).forEach(i -> System.out.println(i));
         Arrays.stream(intArray).forEach(System.out::println);
     }
 }
