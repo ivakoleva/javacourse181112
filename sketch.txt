@@ -1,0 +1,86 @@
+Garbage Collector (GC)
+
+implementation
+
+character (char)
+
+throughput
+
+file descriptor (FD)
+
+open
+close
+
+implicit
+explicit
+
+Swing
+AWT
+JavaFX
+
+Compliant
+
+life-cycle
+waterfall
+iterative development
+agile
+scrum
+
+
+Command-Line Interface (CLI)
+
+debugger
+profiler
+
+Java Class Library
+Java API
+
+classes (jar) - library.jar
+sources       - library-src.jar
+
+decompiler (intellij idea - Sunflower)
+
+whitespace
+
+unicode table
+
+statement
+
+Reference types
+
+00000001
+00000100
+
+code refactoring
+
+concatenation
+concat
+append
+prepend
+
+bug
+bugfixing
+debugger
+
+wrapper classes
+number types / primitive types
+
+immutable
+
+compound expression
+ceremonies
+
+marker interface
+serialization
+stateful
+
+daemon programs
+regex (regexp, regular expressions) - java style
+
+loop labels - break; continue
+
+lambda expressions
+syntactic sugar
+streams
+
+backing data structure

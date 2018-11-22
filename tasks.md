@@ -1,3 +1,42 @@
+22.11:
+
+* Loops exercise elaboration
+    ** add lambda stream.forEach implementation
+    ** add looping and modifying a collection of strings (using iterator)
+        *** remove if: element length % 2 == 0
+
+20.11:
+
+* Future age calculator v0.2
+    ** implement multiple program arguments support (unlimited number)
+    ** assume and rely on user input (int values)
+    ** sum all of the parameters, then print to stdout (use while or do-while)
+        *** bonus: do input validation - natural numbers only; exit(1) if otherwise
+        
+* Loops exercise - for each loop type (while; do-while; for; foreach)
+    ** automatically (using loop), initialize an array with values
+    ** print the array to stdout
+    
+* Votes v0.3 application
+    * refactor, using loops
+
+19.11:
+
+* Create a Chromosomes application that:
+    ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
+    ** use switch-based check
+    ** parameters supplied by user
+    ** prints chromosomes to stdout (letter by letter) 
+* port the code to use Gender enum instead of any string value
+
+* Votes v0.2 application
+    * introduce enum usage (vote answer yes/no)
+    * implement votes counting then printing to stdout
+    * introduce person multi-dimensional array (Object), then populate:
+        ** first element of each inner person array - EGN
+        ** second element - name
+        ** third - Vote (enum)
+
 15.11:
 
 * Future age calculator application 

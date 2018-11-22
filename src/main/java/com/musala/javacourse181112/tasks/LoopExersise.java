@@ -1,11 +1,18 @@
 package com.musala.javacourse181112.tasks;
 
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
 public class LoopExersise {
     public static void main(String[] args) {
-        usingWhile();
-        usingDoWhile();
-        usingFor();
-        usingForEach();
+        //usingWhile();
+       // usingDoWhile();
+       // usingFor();
+       // usingForEach();
+        usingLambdaAndIterator();
     }
 
     public static void usingWhile() {
@@ -22,6 +29,7 @@ public class LoopExersise {
         }
 
     }
+    
     public static void usingDoWhile() {
         int []ar = new int[4];
         int i=0;
@@ -45,7 +53,7 @@ public class LoopExersise {
         }
     }
     public static void usingForEach() {
-        int []ar = new int[4];
+        Integer []ar = new Integer[4];
         for(int i=0;i<ar.length;i++){
             ar[i]=i;
         }
@@ -53,4 +61,18 @@ public class LoopExersise {
             System.out.println(i1);
         }
     }
+    public static void usingLambdaAndIterator(){
+        List<Integer> ar=new ArrayList<>();
+        for(int i=0;i<4;i++){
+            ar.add(i);
+        }
+        for(Iterator<Integer> i=ar.iterator();i.hasNext();){
+            int e=i.next();
+            if(e%2==0) {
+                i.remove();
+            }
+        }
+        ar.forEach(System.out::println);
+    }
 }
+    
