@@ -2,12 +2,11 @@ package com.musala.javacourse181112.tasks;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class LoopExersise {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         //usingWhile();
         //usingDoWhile();
         //usingFor();
@@ -65,17 +64,17 @@ public class LoopExersise {
     }
 
     public static void usingLambdaAndIterator() {
-        List<Integer> ar = new ArrayList<>();
+        final List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            ar.add(i);
+            list.add(i);
         }
-        for (Iterator<Integer> i = ar.iterator(); i.hasNext(); ) {
-            int e = i.next();
+        for (Iterator<Integer> iterator = list.iterator(); iterator.hasNext(); ) {
+            int e = iterator.next();
             if (e % 2 == 0) {
-                i.remove();
+                iterator.remove();
             }
         }
-        ar.forEach(System.out::println);
+        list.forEach(System.out::println);
     }
 }
     
