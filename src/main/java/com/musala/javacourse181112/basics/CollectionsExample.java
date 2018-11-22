@@ -30,10 +30,10 @@ public class CollectionsExample {
         /*final Iterator<Integer> iterator = myList.iterator();
         while (iterator.hasNext()) {
             final Integer element = iterator.next();
-            System.out.println(element);
+
+            }  System.out.println(element);
             if (element % 2 == 0) {
                 iterator.remove();
-            }
         }
         System.out.println(myList);*/
 
