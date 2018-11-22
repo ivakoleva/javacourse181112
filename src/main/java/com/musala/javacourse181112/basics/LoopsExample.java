@@ -11,6 +11,7 @@ public class LoopsExample {
             Thread.sleep(1000 * 5); // 1 second == 1000 ms
         }*/
 
+<<<<<<< Updated upstream
 
         /*do {
             System.out.println("starting again...");
@@ -84,5 +85,32 @@ public class LoopsExample {
             System.out.println(element);
             //i++;
         }
+=======
+       /* do {
+            System.out.println("asd");
+            Thread.sleep(1000 * 2);
+        } while (true);
+        // break -breaks the loop
+        //continue - continues to next loop ,checking condition 1st
+       */ //return- exiting the method (and loop respectively)
+        //int i = 0;
+        //while(true)(i++ <= 10){
+        //  System.out.println("i: " + i);
+        //int k =0;
+        //while(k++ <10){
+        //  if(k==5)
+        //break;
+        //}
+        //System.out.println("k: " + k);
+        //}
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+        final int[] intArray = {1,2,3};
+        for(int element: intArray){    //foreach ; implements Iterable interface
+            System.out.println((element));
+        }
+
+>>>>>>> Stashed changes
     }
 }
