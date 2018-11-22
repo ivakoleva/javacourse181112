@@ -39,7 +39,7 @@ public class LoopHW {
 
         //foreach
         inputArrayEach(array,n);
-        outputArrayEach(array, n);
+        outputArrayEach(array);
 
         System.exit(0);
     }
@@ -98,15 +98,18 @@ private static void outputArrayWhile(int [] array, int n){
 private static void inputArrayEach (int [] array, int n) {
     System.out.println("Please enter " + n + " elements");
     Scanner input = new Scanner(System.in);
-    for (int i : array) {
+    int i=0;
+    for (int element : array) {
         array[i] = input.nextInt();
+        i++;
     }
 }
-private static void outputArrayEach (int [] array, int n){
-        int j=1;
-    for(int i: array)
+private static void outputArrayEach (int [] array){
+        int j=1, i=0;
+    for(int element: array)
     {
         System.out.println("Element " +j + " : " +array[i]);
+        i++;
         j++;
     }
 }
