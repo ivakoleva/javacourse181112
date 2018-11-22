@@ -1,5 +1,9 @@
 package com.musala.javacourse181112;
 
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class loops {
     public static void main(String[] args) {
@@ -8,6 +12,8 @@ public class loops {
         usingFor(value);
         usingForeach(value);
         usingDoWhile(value);
+        usingLandaForeach();
+        usingIterator();
 
     }
 
@@ -44,4 +50,29 @@ public class loops {
         for(int limiterForeach:valueForeach) System.out.println("Printing in Foreach: " + limiterForeach);
 
     }
+    public static void usingLandaForeach(){
+        List<Integer>item=new ArrayList<>();
+        item.add(5);
+        item.add(4);
+        item.add(3);
+        item.forEach( System.out::println);
+    }
+    public static void usingIterator(){
+        List<String>item=new ArrayList<>();
+        item.add("aj");
+        item.add("b");
+        item.add("c");
+        Iterator<String> iterator=item.iterator();
+        while( iterator.hasNext()){
+
+
+
+            if((iterator.next().length()%2==0)){
+                iterator.remove();
+            }
+
+        }
+        System.out.println(item);
+     }
 }
+
