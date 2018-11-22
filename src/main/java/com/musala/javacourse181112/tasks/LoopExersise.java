@@ -44,7 +44,6 @@ public class LoopExersise {
     }
     public static void usingForEach() {
         int []ar = new int[4];
-        int i=0;
         for(int i=0;i<ar.length;i++){
             ar[i]=i;
         }
