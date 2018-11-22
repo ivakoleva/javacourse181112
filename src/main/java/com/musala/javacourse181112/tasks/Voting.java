@@ -26,23 +26,27 @@ public class Voting {
 
         // TODO: use loops
         int qIndex = 0;
-        int pIndex = 0;
+
         // populate data
         final String q0 = "Do You like snow?";
-        VOTES[qIndex][0] = getVoteFromPersonArrayByIndex(pIndex);
-        VOTES[qIndex][1] = getVoteFromPersonArrayByIndex(++pIndex);
-        VOTES[qIndex][2] = getVoteFromPersonArrayByIndex(++pIndex);
+        for(int i=0;i<VOTES[qIndex].length;i++) {
+            VOTES[qIndex][i] = getVoteFromPersonArrayByIndex(i);
 
+        }
         // print data
         printQuestion(qIndex, q0);
         printVotes(qIndex);
 
         // populate data
         final String q1 = "Do you want it to snow today?";
-        VOTES[++qIndex][0] = Vote.YES;
-        VOTES[qIndex][1] = Vote.NO;
-        VOTES[qIndex][2] = Vote.YES;
+        for(int i=0;i<VOTES[++qIndex].length;i++) {
+            if(i%2==0){
+                VOTES[qIndex][i] = Vote.YES;
+            }
+            else
+                VOTES[qIndex][i] = Vote.NO;
 
+        }
         // print data
         printQuestion(qIndex, q1);
         printVotes(qIndex);
@@ -56,9 +60,10 @@ public class Voting {
 
     public static void printVotes(final int questionIndex) {
         // TODO: use loops
-        System.out.println("Vote 1: " + VOTES[questionIndex][0]);
-        System.out.println("Vote 2: " + VOTES[questionIndex][1]);
-        System.out.println("Vote 3: " + VOTES[questionIndex][2]);
+        for(int i=0;i<VOTES[0].length;i++){
+        System.out.println("Vote "+i+": " + VOTES[questionIndex][i]);
+
+        }
     }
 
     // TODO: implement
