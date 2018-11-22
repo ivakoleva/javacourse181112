@@ -8,6 +8,8 @@ import java.io.InputStream;
  * Created by Iva Koleva on 22.11.2018
  */
 public class InputStreamExercise {
+    private static final int SYSTEM_RESERVED_SYMBOLS = 3;
+
     public static void main(final String[] args) throws IOException {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
@@ -25,15 +27,14 @@ public class InputStreamExercise {
         buffer[1] = (byte) 'b';
         buffer[2] = (byte) 'c';
 
-        /*while ((i = inputStream.read(buffer)) != -1) {
-            System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
-        }*/
+        System.out.println(buffer+"\n");
 
-        // TODO: implement inputStream.read(buffer, offset, length)
-        // TODO: have in mind the Important note above
-
+        while ((i = inputStream.read(buffer,SYSTEM_RESERVED_SYMBOLS,buffer.length-SYSTEM_RESERVED_SYMBOLS)) != -1) {
+            System.out.print(new String(buffer, SYSTEM_RESERVED_SYMBOLS, i-SYSTEM_RESERVED_SYMBOLS));
+        }
 
         // proof
+        System.out.println();
         System.out.println((char) buffer[0]);
         System.out.println((char) buffer[1]);
         System.out.println((char) buffer[2]);
