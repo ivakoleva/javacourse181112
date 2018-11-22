@@ -9,10 +9,11 @@ import java.util.ListIterator;
  */
 public class CollectionsExample {
     public static void main(final String[] args) {
-        final List<Integer> myList = new ArrayList<>();
+        final List<Integer> myList = new ArrayList<>(); // java >= 7 diamonds
         myList.add(0);
         myList.add(1);
         myList.add(2);
+        //myList.add("asd");
 
         //System.out.println(myList.get(0));
 
