@@ -4,6 +4,9 @@
     ** add lambda stream.forEach implementation (Arrays.stream)
     ** add looping and modifying a collection of strings (using iterator)
         *** remove if: element length % 2 == 0
+        
+* InputStream exercise
+    ** implement inputStream.read(buffer, offset, length)
 
 20.11:
 
