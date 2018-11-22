@@ -3,59 +3,57 @@ package com.musala.javacourse181112.tasks;
 import java.util.Scanner;
 
 public class PopulateArraysWithLoops {
-
-    public static Scanner SC = new Scanner(System.in);
-    public static final int INDEX = SC.nextInt();
-    public static int i = 0;
-    public static int[] intArr = new int[INDEX];
-
-
-    public static void main(final String[] args) {
+    static {
         System.out.println("elements: ");
-        whileArray(INDEX);
-//        doWhileArray(INDEX);
-//        forArray(INDEX);
-//        forEachArray(INDEX); // Doesn't work
     }
 
-    // Fill with while
-    public static int[] whileArray(int s) {
-        while (i < s) {
+    public static final Scanner SCANNER = new Scanner(System.in);
+    public static int[] intArr = new int[SCANNER.nextInt()];
+
+    public static void main(final String[] args) {
+        //whileArray();
+//        doWhileArray();
+//        forArray();
+        forEachArray(); // Doesn't work
+    }
+
+    // fill using while
+    public static void whileArray() {
+        int i = 0;
+        while (i < intArr.length) {
             intArr[i] = i;
             System.out.println(intArr[i]);
             i++;
         }
-        return intArr;
     }
 
-    // Fill with do-while
-    public static int[] doWhileArray(int s) {
+    // fill using do-while
+    public static void doWhileArray() {
+        int i = 0;
         do {
             intArr[i] = i;
             System.out.println(intArr[i]);
             i++;
-
-        } while (i < s);
-        return intArr;
+        } while (i < intArr.length);
     }
 
-    // FIll with for
-    public static int[] forArray(int s) {
-        for (int j = 0; j < s; j++) {
+    // fill using for
+    public static void forArray() {
+        int i = 0;
+        for (int j = 0; j < intArr.length; j++) {
             intArr[j] = j;
             System.out.println(intArr[j]);
         }
-        return intArr;
     }
 
-    public static int[] forEachArray(int s) {
-        for (int i : intArr) {
-            intArr[i] = i;
-            System.out.println(intArr[i]);
-            ++i;
-            System.out.println(i);
+    // fill using for
+    public static void forEachArray() {
+        int k = 0;
+        for (int ignored : intArr) {
+            intArr[k] = k;
+            k++;
+            System.out.println(intArr[k]);
         }
-        return intArr;
     }
 }
 
