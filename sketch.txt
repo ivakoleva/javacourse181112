@@ -78,3 +78,7 @@ daemon programs
 regex (regexp, regular expressions) - java style
 
 loop labels - break; continue
+
+lambda expressions
+syntactic sugar
+streams
