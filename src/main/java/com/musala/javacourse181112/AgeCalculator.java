@@ -12,12 +12,11 @@ import java.util.Scanner;
  * then ask the numbers and print to standars output
  * then exit
  * distribute to end user (push to github)
- * <p>
  * zadacha v2:
  * put into effect multiple program arguments support (unlimited number)
  * assume and rely on user  input (int values)
  * sum all of the parameters, then print to output (use while or do while)
- * ** Bonus - do input input validations - natural numbers only; exit(1) if otherwise
+ * ** todo: Bonus - do input input validations - natural numbers only; exit(1) if otherwise
  */
 // great, using javadoc comment as well
 public class AgeCalculator {

@@ -7,7 +7,9 @@ package com.musala.javacourse181112;
 public class Hi {
     final String CONSTANT_VALUE = "asd";
     String value;
+
     public static void main(String[] args) {
+
         System.out.println("Hola!"); // print f - hardcoded
         System.out.println(args[0]); // runtime
         System.gc();
@@ -15,22 +17,12 @@ public class Hi {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-    public static void defineAndInitializePrimatives(String inputValue){
+    public static void defineAndInitializePrimatives(String inputValue) {
         String value1;
-        String MyVariable= "asd";
+        String MyVariable = "asd";
         MyVariable = "5"; // final ne moje da se promenq stava const
 
-        byte mybytevariable = (byte) (120+1);
+        byte mybytevariable = (byte) (120 + 1);
         short myshortvariable;
         int myintvariable = 1;
         long myLongvariable = 1L;
@@ -57,14 +49,17 @@ public class Hi {
         int i = (k = 0); // k== 0 && i ==0
 
     }
-    public static void defineAndInitializeReferences(String referenceArgument){
+
+    public static void defineAndInitializeReferences(String referenceArgument) {
         String value1; //local variable
-        final String  myvariable = "asd\"\\" + (1 + 1 *1); // final is immutable
+        final String myvariable = "asd\"\\" + (1 + 1 * 1); // final is immutable
         /*
           this is my favoutite comment did you know that i love pizza no you didnt mwahahahah
          */
         // asd"\12 asd \3
         System.out.println();
+        boolean[][] booleanArray = new boolean [2][20];// 2 rows, 20 columns
+        //twoDimensionalTable[1][0]; // row 2 column A
     }
-// 20:40 RIP 413 in 5 min
-    }
+
+}
