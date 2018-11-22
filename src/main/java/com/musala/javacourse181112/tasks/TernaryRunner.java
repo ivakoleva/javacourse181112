@@ -1,11 +1,14 @@
 package com.musala.javacourse181112.tasks;
 
+import java.util.Random;
+
 /**
  * Created by Iva Koleva on 19.11.2018
  */
 public class TernaryRunner {
     public static void main(final String[] args) {
-        String value = "yes";
+
+        final String value = "yes";
 
         int yesCounter = 0;
         int noCounter = 0;
@@ -33,6 +36,18 @@ public class TernaryRunner {
 
         yesCounter += "yes".equals(value) ? 1 : 0;
         noCounter += "no".equals(value) ? 1 : 0;
+
+
+        String input;
+
+        Random b = new Random();
+        boolean bool = b.nextBoolean();
+        input = (bool)?"Yes":"No";
+
+        int result = (input.equals(value))?yesCounter++:noCounter++;
+        //yesCounter+=input.equals(value)?1:0;
+        //noCounter +=input.equals(value)?1:0;
+        System.out.println(yesCounter+" "+ noCounter);
 
     }
 }
