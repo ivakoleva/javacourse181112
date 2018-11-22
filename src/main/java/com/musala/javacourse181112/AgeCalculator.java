@@ -1,6 +1,5 @@
 package com.musala.javacourse181112;
 
-import java.awt.*;
 import java.util.Scanner;
 
 /**
@@ -20,25 +19,27 @@ import java.util.Scanner;
  * sum all of the parameters, then print to output (use while or do while)
  * ** Bonus - do input input validations - natural numbers only; exit(1) if otherwise
  */
+// great, using javadoc comment as well
 public class AgeCalculator {
 
-    public static void main(String[] args)
-            throws InterruptedException {
-        int age, addedYears = 0 , br = 0, n, years=0;
-        Scanner input = new Scanner(System.in);
+    public static void main(final String[] args) throws InterruptedException {
+        int age, br = 0, n, years = 0;
+
+        final Scanner input = new Scanner(System.in);
+
         System.out.println("Enter your age:");
         age = input.nextInt();
         System.out.println("How many times do you want to add years?");
         n = input.nextInt();
+
         while (br < n) {
             System.out.println("Enter how many years you want to add");
-            addedYears = input.nextInt();
-            years += addedYears;
+            years += input.nextInt();
             br++;
-            Thread.sleep(100);
+            //Thread.sleep(100);
         }
-        System.out.println(" In " + years+ " years you will be " + (age + years) + " old ");
 
+        System.out.println("In " + years + " years you will be " + (age + years) + " old");
         System.exit(0);
     }
 }
