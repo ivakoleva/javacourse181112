@@ -7,7 +7,7 @@ public class VotingApp {
         System.out.println("Please vote now ,answer the following questions ");
 
         // 2 questions,3 voters
-        final Vote[][] votersArr = new Vote[2][3];
+        final Vote[][] votersArr = new Vote[2][30];
 
         // hardcode  person votes (voted yes/no) for the 2 questions
         Vote votersAnswer1 = Vote.YES;
@@ -34,6 +34,21 @@ public class VotingApp {
         for (int i = 0; i <= votersArr.length ; i++) {
             System.out.println(" " + votersArr[1][i]);
         }
+
+        int countNo= 0;
+        int countYes = 0;
+
+        for (int i=0; i <= votersArr.length ; i++ ){
+            if (votersArr[0][i]==Vote.YES){
+                countYes++;
+            }else {
+                countNo++;
+
+            }
+        }
+
+        System.out.println("The Yes answers for first question  are : " + countYes++);
+        System.out.println("The No answers are for second question are: " + countNo++);
     }
 }
 
