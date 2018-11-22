@@ -1,31 +1,44 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Scanner;
+import java.util.*;
 
 // clean
 public class LoopsExercise {
     public static void main(final String[] args) {
         final Scanner scanner = new Scanner(System.in);
+        final List<String> myList = new ArrayList<>();
+        myList.add("apple");
+        myList.add("orange");
+        myList.add("banana");
 
-        System.out.print("Enter length for the array: ");
+        System.out.println("The list is ");
+        printList(myList);
+        removeElementFromList(myList);
+        System.out.println("\nThe list after processing ");
+        printList(myList);
+
+
+        System.out.print("\nEnter length for the array: ");
         final int n = scanner.nextInt();
         final int[] array = new int[n];
 
         System.out.println("Using for: ");
-        //populateUsingFor(array);
-        printArray(array);
+        populateUsingFor(array);
+        printArrayWithLambda(array);
+        //printArray(array);
 
-        System.out.println("\nUsing for each:");
+        /*System.out.println("\nUsing for each:");
         //populateUsingForeach(array);
-        printArray(array);
+        //printArray(array);
 
         System.out.println("\nUsing while:");
         //populateUsingWhile(array);
-        printArray(array);
+        //printArray(array);
 
         System.out.println("\nUsing do while:");
-        populateUsingDoWhile(array);
-        printArray(array);
+        populateUsingDoWhile(array);*/
+
+        //printArray(array);
     }
 
 
@@ -81,6 +94,31 @@ public class LoopsExercise {
         for (int element : array) {
             System.out.print(element + " ");
         }
+    }
+
+    public static void printArrayWithLambda(int [] array){
+
+        Arrays.stream(array).forEach(i ->{
+            System.out.print(i + " ");
+        });
+
+    }
+
+    public static void removeElementFromList(List myList){
+
+        final Iterator <String> iterator = myList.iterator();
+        while (iterator.hasNext()){
+            if (iterator.next().length() % 2 == 0){
+                iterator.remove();
+            }
+        }
+    }
+
+    public static void printList(List myList){
+        for (Object element : myList){
+            System.out.print(element + " ");
+        }
+
     }
 }
 
