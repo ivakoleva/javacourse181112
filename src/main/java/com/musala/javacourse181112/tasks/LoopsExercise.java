@@ -20,6 +20,7 @@ public class LoopsExercise {
         usingForEach();
         clearTheArray();
         usingLambdaStreamForEach();
+        usingIterator();
     }
 
     public static void usingWhile() {
@@ -64,24 +65,34 @@ public class LoopsExercise {
 
     public static void usingLambdaStreamForEach() {
         final List<String> myList = new ArrayList<>();
+
         myList.add("smile");
         myList.add("snow");
         myList.add("sunny");
         myList.add("sad");
         myList.add("happy");
 
-        System.out.println("Current ARRAY list is: " + myList);
+        System.out.print("Printing array list using Lambda expression: ");
+        myList.forEach(System.out::println);
+    }
 
-        final Iterator<String> iterator = myList.iterator();
-//        myList.forEach(i -> myList.remove(i));
-        for (int i = 0; i < myList.size(); i++) {
-            if (i % 2 == 0) {
-                myList.remove(i);
+    public static void usingIterator() {
+        final List<String> list = new ArrayList<>();
+
+        list.add("summer");
+        list.add("sunny");
+        list.add("winter");
+        list.add("snow");
+        list.add("spring");
+
+        Iterator<String> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            if ((iterator.next().length() % 2 == 0)) {
+                iterator.remove();
             }
         }
-
-        System.out.println("Array list after changes: " + myList);
-
+        System.out.println(list);
     }
 
     public static void clearTheArray() {
