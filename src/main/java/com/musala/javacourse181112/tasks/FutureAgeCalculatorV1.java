@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
-public class FutureAgeCalculator {
+public class FutureAgeCalculatorV1 {
     public static void main(final String[] args) {
         System.out.println("Input parameters: " + args[0] + " " + args[1]);
 

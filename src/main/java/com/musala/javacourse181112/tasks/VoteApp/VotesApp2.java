@@ -13,7 +13,7 @@ public class VotesApp2 {
     public static void main(final String[] args) {
         final Vote[][] votes = new Vote [QUESTIONS_COUNT][VOTES_COUNT];
         final String[] questions = new String[QUESTIONS_COUNT];
-        final String[][] people = new String[PEOPLE_COUNT][PEOPLE_PROPERTIES_COUNT];
+        final Object[][] people = new String[PEOPLE_COUNT][PEOPLE_PROPERTIES_COUNT];
 
         questions[0] = "Do You like snow?";
         questions[1] = "Do you want it to snow today?";
@@ -35,15 +35,15 @@ public class VotesApp2 {
 
         people[0][0] = "9010234590";
         people[0][1] = "Penka";
-        people[0][2] = YES;
+        people[0][2] = Vote.YES;
 
         people[1][0] = "6605127856";
         people[1][1] = "Toni";
-        people[1][2] = NO;
+        people[1][2] = Vote.NO;
 
         people[2][0] = "9912315625";
         people[2][1] = "Kiro";
-        people[2][2] = NO;
+        people[2][2] = Vote.NO;
     }
 
     public static void printQuestion(final int index, final String content) {
@@ -51,9 +51,7 @@ public class VotesApp2 {
     }
 
     public static void printVotes(final Vote[][] votes, final int questionIndex) {
-        // TODO: use loops
-
-        for(int qIndex = 0; qIndex < VOTES_COUNT; qIndex++) {
+            for(int qIndex = 0; qIndex < VOTES_COUNT; qIndex++) {
             if (votes [questionIndex][qIndex] != null){
             System.out.println("Vote " + qIndex + ": " + votes[questionIndex][qIndex]);
             }
