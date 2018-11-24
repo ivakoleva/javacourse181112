@@ -1,51 +1,66 @@
 package com.musala.javacourse181112.tasks;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class LoopsExercise {
     public static final int ARRAY_LENGTH = 5;
+    public static final int[] ARRAY = new int[ARRAY_LENGTH];
 
     public static void main(final String[] args) {
+        usingWhile();
+        clearTheArray();
+        usingDoWhile();
+        clearTheArray();
+        usingFor();
+        clearTheArray();
+        usingForEach();
+        clearTheArray();
         usingLambdaStreamForEach();
-
-
     }
 
     public static void usingWhile() {
-        int[] array = new int[ARRAY_LENGTH];
         int i = 0;
-        while (i <= ARRAY_LENGTH) {
-            array[i] = i;
+        while (i < ARRAY_LENGTH) {
+            ARRAY[i] = i;
             i++;
         }
-        System.out.println(array);
+
+        System.out.println("Printing array using while " + Arrays.toString(ARRAY));
     }
 
     public static void usingDoWhile() {
-        int[] array = new int[ARRAY_LENGTH];
         int i = 0;
+
         do {
-            array[i] = i;
+            ARRAY[i] = i;
             i++;
         }
-        while (i <= ARRAY_LENGTH);
+        while (i < ARRAY_LENGTH);
+
+        System.out.println("Printing array using do - while " + Arrays.toString(ARRAY));
     }
 
     public static void usingFor() {
-        int[] array = new int[ARRAY_LENGTH];
-        for (int i = 0; i <= ARRAY_LENGTH; i++) {
-            array[i] = i;
+        for (int i = 0; i < ARRAY_LENGTH; i++) {
+            ARRAY[i] = i;
         }
 
+        System.out.println("Printing array using for " + Arrays.toString(ARRAY));
     }
 
-//    public static void usingForEach() {
-//        int[] array = new int[ARRAY_LENGTH];
-//        int k = 0;
-//        for (int i : array[k]);
-//    }
+    public static void usingForEach() {
+        int k = 0;
+        for (int ignored : ARRAY) {
+            ARRAY[k] = k;
+            k++;
+        }
+
+        System.out.println("Printing array using foreach " + Arrays.toString(ARRAY));
+    }
 
     public static void usingLambdaStreamForEach() {
         final List<String> myList = new ArrayList<>();
@@ -55,7 +70,7 @@ public class LoopsExercise {
         myList.add("sad");
         myList.add("happy");
 
-        System.out.println("Current array list is: " + myList);
+        System.out.println("Current ARRAY list is: " + myList);
 
         final Iterator<String> iterator = myList.iterator();
 //        myList.forEach(i -> myList.remove(i));
@@ -67,6 +82,9 @@ public class LoopsExercise {
 
         System.out.println("Array list after changes: " + myList);
 
+    }
 
+    public static void clearTheArray() {
+        Arrays.fill(ARRAY, 0);
     }
 }
