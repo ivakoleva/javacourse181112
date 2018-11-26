@@ -37,5 +37,6 @@ public class InputOutputStreamExercise {
         System.out.println("\n"+(char)buffer[0]+" "+(char)buffer[1]+" "+(char)buffer[2]);
         // we are required to close, always do remember pls
         inputStream.close();
+        outputStream.close();
     }
 }
