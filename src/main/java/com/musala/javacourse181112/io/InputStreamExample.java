@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 public class InputStreamExample {
     public static void main(final String[] args) throws IOException {
-        // TODO: try-catch later. ! It is really important, to do try-catch.
+
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         int i;
