@@ -1,3 +1,12 @@
+26.11:
+
+* Important: tomorrow (27.11.) will do exercises only - on-side or remotely
+* Please send email to iva.koleva@clearcode.bg (will create a mailing list)
+    ** javacourse-181112@clearcode.bg mailing list available
+
+* InputStream exercise v0.2
+    ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
+
 22.11:
 
 * Loops exercise elaboration
