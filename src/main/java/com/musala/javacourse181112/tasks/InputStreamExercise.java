@@ -26,6 +26,7 @@ public class InputStreamExercise {
         }*/
         while((i=inputStream.read(buffer,0,1027))!=-1)
         {
+             outputStream.write(buffer,0,1027);
             System.out.println(new String(buffer));
         }
 
@@ -35,5 +36,6 @@ public class InputStreamExercise {
 
         // we are required to close, always do remember pls
         inputStream.close();
+        outputStream.close();
     }
 }
