@@ -11,7 +11,6 @@ public class InputStreamExercise {
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         final OutputStream outputStream = new FileOutputStream("tasks_copy.md");
-
         /**
          * Important note: first 3 bytes are system-reserved, please do not overwrite
          */
