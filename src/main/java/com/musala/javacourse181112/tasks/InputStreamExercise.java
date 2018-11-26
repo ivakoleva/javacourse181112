@@ -22,5 +22,6 @@ public class InputStreamExercise {
             outputStream.write(i);
         }
         inputStream.close();
+        outputStream.close();
     }
 }
