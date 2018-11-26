@@ -24,9 +24,9 @@ public class InputStreamExercise {
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
         }*/
-        while((i=inputStream.read(buffer,0,1027))!=-1)
+        while((i=inputStream.read(buffer,3,buffer.length-3))!=-1)
         {
-             outputStream.write(buffer,0,1027);
+             outputStream.write(buffer);
             System.out.println(new String(buffer));
         }
 
