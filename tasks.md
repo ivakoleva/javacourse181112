@@ -10,6 +10,27 @@
 * Reader exercise
     ** read characters from tasks.md, using FileReader
     ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
+         
+* Homework:
+    ** Write exercise - using Writer, write/append
+        *** read from program parameters
+        *** write each parameter to a new line
+        *** write to a file
+        
+    ** InputStreamWriter exercise
+        *** using FileOutputStream, bridge to Writer then write some content
+        *** content encoding - Windows-1251
+        *** add buffering (Buffered*)
+        
+    ** PushbackReader exercise
+        *** use buffer of 128 length
+        *** print to stdout
+        *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+    
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
 
 22.11:
 
