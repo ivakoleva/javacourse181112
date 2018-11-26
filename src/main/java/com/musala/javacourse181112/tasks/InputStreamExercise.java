@@ -10,7 +10,7 @@ public class InputStreamExercise {
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         final OutputStream outputStream = new FileOutputStream("tasks_copy.txt");
-        int i;
+
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);
         }*/
@@ -23,7 +23,7 @@ public class InputStreamExercise {
         final int lenght = 400;*/
 
         // using for
-        for (; (i = inputStream.read()) != -1; ) {
+        for (int i; (i = inputStream.read()) != -1; ) {
             outputStream.write(i);
         }
         /*while ((i = inputStream.read()) != -1) {
