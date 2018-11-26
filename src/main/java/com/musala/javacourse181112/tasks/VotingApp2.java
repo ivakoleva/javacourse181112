@@ -54,6 +54,7 @@ public class VotingApp2 {
         //print count of Yes or No answers
         System.out.println("The Yes answers for first question  are: " + countYes);
         System.out.println("The No answers are for second question are: " + countNo);
+
     }
 }
 
