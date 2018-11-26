@@ -14,7 +14,7 @@ public class ReaderExercise {
 
         while ((i = reader.read(buffer)) != -1) {
             // test & fix
-            System.out.println(new String(buffer));
+            System.out.print(buffer);
         }
 
         reader.close();
