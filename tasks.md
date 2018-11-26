@@ -6,6 +6,10 @@
 
 * InputStream exercise v0.2
     ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
+    
+* Reader exercise
+    ** read characters from tasks.md, using FileReader
+    ** write to stdout
 
 22.11:
 
