@@ -16,7 +16,7 @@ public class InputStreamExercise {
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         int i;
-        OutputStream outputStream=new FileOutputStream("task_copy.md");
+        OutputStream outputStream = new FileOutputStream("task_copy.md");
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);
         }*/
@@ -30,16 +30,16 @@ public class InputStreamExercise {
         buffer[2] = (byte) 'c';
 
         // buffer length should be lower or equal to the offset
-        while ((i = inputStream.read(buffer, OFFSET, buffer.length-OFFSET)) != END_OF_FILE) {
-            System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
-            outputStream.write(buffer,OFFSET,buffer.length-OFFSET);
-
+        while ((i = inputStream.read(buffer, OFFSET, buffer.length - OFFSET)) != END_OF_FILE) {
+            System.out.print(new String(buffer, OFFSET, i)); // , Charset.defaultCharset()
+            outputStream.write(buffer, OFFSET, buffer.length - OFFSET);
         }
+
         // proof
         System.out.println("\nPROOF: ");
-        System.out.println((char)buffer[0]);
-        System.out.println((char)buffer[1]);
-        System.out.println((char)buffer[2]);
+        System.out.println((char) buffer[0]);
+        System.out.println((char) buffer[1]);
+        System.out.println((char) buffer[2]);
 
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
