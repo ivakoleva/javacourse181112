@@ -1,8 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by Iva Koleva on 22.11.2018
@@ -18,6 +16,7 @@ public class InputStreamExercise {
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         int i;
+        OutputStream outputStream=new FileOutputStream("task_copy.md");
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);
         }*/
@@ -33,6 +32,7 @@ public class InputStreamExercise {
         // buffer length should be lower or equal to the offset
         while ((i = inputStream.read(buffer, OFFSET, buffer.length-OFFSET)) != END_OF_FILE) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
+            outputStream.write(buffer,OFFSET,buffer.length-OFFSET);
 
         }
         // proof
