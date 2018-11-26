@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Loops1 {
+public class Loops {
     public static void main(final String[] args) {
         final int value[] = {1, 2, 3};
         usingWhile(value);
