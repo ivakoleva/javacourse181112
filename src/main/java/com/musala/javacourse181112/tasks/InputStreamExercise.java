@@ -15,6 +15,7 @@ public class InputStreamExercise {
 
         while ((i = inputStream.read()) != -1) {
            outputStream.write(i);
+
         }
 
 
@@ -41,5 +42,6 @@ public class InputStreamExercise {
 
         // we are required to close, always do remember pls
         inputStream.close();
+        outputStream.close();
     }
 }
