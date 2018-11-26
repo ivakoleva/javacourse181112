@@ -2,6 +2,7 @@ package com.musala.javacourse181112.tasks;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.io.Reader;
 
 public class ReaderExercise {
@@ -14,6 +15,8 @@ public class ReaderExercise {
 
 
         }
+
+       reader.close();
 
     }
 }
