@@ -36,13 +36,7 @@ public class Loops1 {
             //i++;
         }
     }
-    public static void usingIterator(){
-        List<String>item=new ArrayList<>();
-        item.add("aj");
-        item.add("b");
-        item.add("c");
-        Iterator<String> iterator=item.iterator();
-        while( iterator.hasNext()){
+
 
     public static void usingForeach(final int[] valueArray) {
         for (int limiterForeach : valueArray) {
