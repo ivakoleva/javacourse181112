@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Created by Iva Koleva on 22.11.2018
@@ -12,6 +13,7 @@ public class InputStreamExercise {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
+        final OutputStream op
         int i;
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);
