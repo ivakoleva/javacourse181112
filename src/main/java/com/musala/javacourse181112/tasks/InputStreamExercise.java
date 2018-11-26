@@ -1,8 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by Iva Koleva on 22.11.2018
@@ -12,6 +10,7 @@ public class InputStreamExercise {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
+        final OutputStream outputStream = new FileOutputStream("tasks_copy.md");
 
         /**
          * Important note: first 3 bytes are system-reserved, please do not overwrite
@@ -28,6 +27,8 @@ public class InputStreamExercise {
 
             // write to file
             // TODO: do write to a previously instantiated fileOutputStream as well
+            outputStream.write(buffer);
+
         }
 
         // proof
