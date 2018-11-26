@@ -20,14 +20,14 @@ public class InputStreamExercise {
          */
         /*final byte[] buffer = new byte[1027];
         final int offset = 200;
-        final int lenght = 400;
+        final int lenght = 400;*/
 
-        while ((i = inputStream.read(buffer)) != -1) {
-            System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
-        }*/
+        while ((i = inputStream.read()) != -1) {
+            outputStream.write(i);
+        }
 
-        i = inputStream.read();
-        outputStream.write(i);
+
+
         // we are required to close, always do remember pls
         inputStream.close();
     }
