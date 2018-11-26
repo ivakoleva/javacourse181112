@@ -12,7 +12,6 @@ public class ReaderExercise {
         while ((i = fileReader.read(buffer)) != -1) {
             System.out.print(new String(buffer));
         }
-
         fileReader.close();
     }
 }

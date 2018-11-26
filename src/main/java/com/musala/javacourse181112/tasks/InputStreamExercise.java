@@ -30,6 +30,9 @@ public class InputStreamExercise {
             // TODO: do write to a previously instantiated fileOutputStream as well
         }
 
+        while ((i = inputStream.read(buffer, 3, buffer.length - 3)) != -1) {
+            System.out.println(new String(buffer, 3, i));
+        }
         // proof
         System.out.println((char) buffer[0]);
         System.out.println((char) buffer[1]);
