@@ -32,10 +32,6 @@ public class InputStreamExercise {
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
 
-        while ((i=inputStream.read(buffer, 3, buffer.length - 3 )) !=1){
-            System.out.println(new String(buffer,3, i-3));
-        }
-        System.out.println((char)buffer[0] + " " + (char)buffer[1] + " " +(char)buffer[2]);
 
         // proof
         System.out.println((char) buffer[0]);
