@@ -28,6 +28,20 @@ public class DataTypesExample {
 
         boolean myBooleanVariable = true; // false
 
+
+        // zadavane na masiv
+        final String [] [] twoDimensionalArray = new String [3] [5];
+        stringtwoDimensionaArray[] [] = "value";
+        stringtwoDimensionalArray [] [] = "value1";
+        stringtwoDimensionalArray
+
+                {}  {}  {}
+
+
+
+        }
+
+
         char myCharVariable = 'a';
         char a = 97;
         char a1 = '\u0061';
