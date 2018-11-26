@@ -9,7 +9,7 @@
     
 * Reader exercise
     ** read characters from tasks.md, using FileReader
-    ** write to stdout
+    ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
 
 22.11:
 
