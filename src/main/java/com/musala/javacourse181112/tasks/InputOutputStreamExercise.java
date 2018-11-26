@@ -9,7 +9,7 @@ public class InputOutputStreamExercise {
     public static void main(final String[] args) throws IOException {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
-        final InputStream inputStream = new FileInputStream("sketch.txt");
+        final InputStream inputStream = new FileInputStream("tasks.md");
         final OutputStream outputStream;
         int i;
         /*while ((i = inputStream.read()) != -1) {
@@ -26,7 +26,7 @@ public class InputOutputStreamExercise {
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
         }*/
-        outputStream=new FileOutputStream("sketch-copy.txt");
+        outputStream=new FileOutputStream("tasks_copy.md");
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
         while ((i = inputStream.read(buffer,3,buffer.length-3)) != -1) {
