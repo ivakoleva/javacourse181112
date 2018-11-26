@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Loops {
+public class Loops1 {
     public static void main(final String[] args) {
         final int value[] = {1, 2, 3};
         usingWhile(value);
@@ -36,13 +36,7 @@ public class Loops {
             //i++;
         }
     }
-    public static void usingIterator(){
-        List<String>item=new ArrayList<>();
-        item.add("aj");
-        item.add("b");
-        item.add("c");
-        Iterator<String> iterator=item.iterator();
-        while( iterator.hasNext()){
+
 
     public static void usingForeach(final int[] valueArray) {
         for (int limiterForeach : valueArray) {
