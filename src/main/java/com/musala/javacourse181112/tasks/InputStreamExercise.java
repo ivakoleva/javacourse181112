@@ -22,9 +22,9 @@ public class InputStreamExercise {
          */
         final byte[] buffer = new byte[1027];
 
-        /*while ((i = inputStream.read(buffer)) != -1) {
+        while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
-        }*/
+        }
 
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
