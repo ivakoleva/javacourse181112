@@ -7,9 +7,20 @@
 * InputStream exercise v0.2
     ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
     
+* InputStreamWriter exercise
+    ** using FileOutputStream, bridge to Writer then write some content
+    ** content encoding - Windows-1251
+    ** add buffering (Buffered*)
+    
 * Reader exercise
     ** read characters from tasks.md, using FileReader
     ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
+    
+* Homework:
+    ** Write exercise - using Writer, write/append
+        *** read from program parameters
+        *** write each parameter to a new line
+        *** write to a file
 
 22.11:
 
