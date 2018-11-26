@@ -10,8 +10,8 @@ public class NewInputExercise {
 
         int i;
         while ((i = fileReader.read(buffer)) != -1) {
-            // test it and fix pls
-            System.out.print(new String(buffer));
+
+            System.out.print(new String(buffer,0,i));
         }
 
         fileReader.close();
