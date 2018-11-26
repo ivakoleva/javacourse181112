@@ -20,7 +20,7 @@ public class InputStreamExercise {
          */
         /*final byte[] buffer = new byte[1027];
         final int offset = 200;
-        final int lenght = 400;*/
+        final int length = 400;*/
 
         // using for
         for (int i; (i = inputStream.read()) != -1; ) {
