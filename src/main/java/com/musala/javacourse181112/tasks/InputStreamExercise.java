@@ -21,13 +21,14 @@ public class InputStreamExercise {
         /*final byte[] buffer = new byte[1027];
         final int offset = 200;
         final int lenght = 400;*/
-        for(i=inputStream.read(); i!= -1;i=inputStream.read()){
+
+        // using for
+        for (; (i = inputStream.read()) != -1; ) {
             outputStream.write(i);
         }
         /*while ((i = inputStream.read()) != -1) {
             outputStream.write(i);
         }*/
-
 
 
         // we are required to close, always do remember pls
