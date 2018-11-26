@@ -21,6 +21,9 @@ public class InputStreamExercise {
          * Important note: first 3 bytes are system-reserved, please do not overwrite
          */
         final byte[] buffer = new byte[1027];
+        buffer[0] = (byte) 'a';
+        buffer[1] = (byte) 'b';
+        buffer[2] = (byte) 'c';
 
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
@@ -33,6 +36,11 @@ public class InputStreamExercise {
             System.out.println(new String(buffer,3, i-3));
         }
         System.out.println((char)buffer[0] + " " + (char)buffer[1] + " " +(char)buffer[2]);
+
+        // proof
+        System.out.println((char) buffer[0]);
+        System.out.println((char) buffer[1]);
+        System.out.println((char) buffer[2]);
 
         // we are required to close, always do remember pls
         inputStream.close();

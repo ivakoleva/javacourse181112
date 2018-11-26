@@ -1,3 +1,8 @@
+26.11:
+
+* Important: tomorrow (27.11.) will do exercises only - on-side or remotely
+* Please send email to iva.koleva@clearcode.bg (will create a mailing list)
+
 22.11:
 
 * Loops exercise elaboration
