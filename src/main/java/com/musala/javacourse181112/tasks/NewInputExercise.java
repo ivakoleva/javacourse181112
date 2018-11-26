@@ -8,8 +8,7 @@ public class NewInputExercise {
         final FileReader fileReader = new FileReader("tasks.md");
         final char[] buffer = new char[1024];
 
-        int i;
-        while ((i = fileReader.read(buffer)) != -1) {
+        while (fileReader.read(buffer) != -1) {
 
             System.out.print(buffer);
         }
