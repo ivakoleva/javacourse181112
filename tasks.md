@@ -10,6 +10,7 @@
 * InputStreamWriter exercise
     ** using FileOutputStream, bridge to Writer then write some content
     ** content encoding - Windows-1251
+    ** add buffering (Buffered*)
     
 * Reader exercise
     ** read characters from tasks.md, using FileReader
