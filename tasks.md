@@ -1,3 +1,21 @@
+26.11:
+
+* Important: tomorrow (27.11.) will do exercises only - on-side or remotely
+* Please send email to iva.koleva@clearcode.bg (will create a mailing list)
+
+* InputStream exercise v0.2
+    ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
+
+22.11:
+
+* Loops exercise elaboration
+    ** add lambda stream.forEach implementation (Arrays.stream)
+    ** add looping and modifying a collection of strings (using iterator)
+        *** remove if: element length % 2 == 0
+        
+* InputStream exercise
+    ** implement inputStream.read(buffer, offset, length)
+
 20.11:
 
 * Future age calculator v0.2
