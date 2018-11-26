@@ -12,7 +12,7 @@ public class FutureAgeCalculator {
         do {
             age += Integer.parseInt(args [spinner++]);
         } while (spinner<args.length);
-        System.out.println("The age is: " + (age));
+        System.out.println("Th e age is: " + (age));
 
         /*System.out.println("Future age calculated: " +
                 (Integer.parseInt(args[0]) +

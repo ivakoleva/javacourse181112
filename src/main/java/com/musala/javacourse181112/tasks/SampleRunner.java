@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks;
 import sun.awt.Symbol;
 
 import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class SampleRunner {
     public static void main(String[] args) {
@@ -172,8 +173,8 @@ public class SampleRunner {
         String fullName = firstName + " " + lastName;
         System.out.println(fullName);*/
 
-        /*int squareRerimeter = 17;
-        double squareSide = squareRerimeter / 4.0;
+        /*int squarePerimeter = 17;
+        double squareSide = squarePerimeter / 4.0;
         double squareArea = squareSide * squareSide;
         System.out.println(squareSide);
         System.out.println(squareArea);*/
@@ -187,6 +188,9 @@ public class SampleRunner {
         System.out.println(a + b);
         System.out.println(14 / a);
         System.out.println(14 % a);*/
+
+
+
 
         /*boolean a = true;
         boolean b = false;
@@ -221,8 +225,97 @@ public class SampleRunner {
         System.out.println("x == y : " + (x == y));
         System.out.println("x != y : " + (x != y));*/
 
+        /*int x = 2;
+        int y = 4;
+        x *= y;
+        System.out.println(x);*/
 
+        /*int x = 6;
+        int y = 4;
+        System.out.println(y *= 2);
+        int z = y = 3;
+        System.out.println(z);
+        System.out.println(x |= 1);
+        System.out.println(x += 3);
+        System.out.println(x /= 2);*/
 
+        /*int a = 6;
+        int b = 4;
+        System.out.println(a < b ? "a>b" : "b <= a");*/
+
+        /*int a = 6;
+        int b = 3;
+        int c = 3;
+        System.out.println((a+b) / 2);
+
+        String s = "Beer";
+        System.out.println(s instanceof String);
+
+        int d = 0;
+        System.out.println(d);
+        System.out.println((a + b) / d);*/
+
+        /*int myInt = 5;
+        System.out.println(myInt);
+
+        long myLong = myInt;
+        System.out.println(myLong);
+
+        System.out.println(myLong + myInt);*/
+
+        /*double myDouble = 5.1d;
+        System.out.println(myDouble);
+
+        long myLong = (long)myDouble;
+        System.out.println(myLong);
+        myDouble = 5e9d;
+        System.out.println(myDouble);
+        int myInt = (int) myDouble;
+        System.out.println(myInt);
+        System.out.println(Integer.MAX_VALUE);*/
+
+        /*Scanner console = new Scanner(System.in);
+        String firstLine = "Input a: ";
+        System.out.print(firstLine);
+        int a = Integer.parseInt(console.nextLine());
+        String secondLine = "Input b: ";
+        System.out.print(secondLine);
+        int b = Integer.parseInt(console.nextLine());
+        String areaOfTriangle = "Area of triangle is: ";
+        System.out.print(areaOfTriangle + (a*b));
+        System.exit(0);*/
+
+        /*Scanner console = new Scanner(System.in);
+        double leva = Double.parseDouble(console.nextLine());
+        double euro = leva / 1.95583;
+        System.out.println(euro);*/
+
+        /*for (int i = 1; i<=20; i++){
+            System.out.println(+i);
+        }*/
+
+        /*Scanner scanner = new Scanner(System.in);
+        System.out.print("a = ");
+        int a = scanner.nextInt();
+        int area = a*a;
+        System.out.print("Square area = ");
+        System.out.println(area);*/
+
+        /*Scanner scanner = new Scanner(System.in);
+        System.out.print("Inches = ");
+        Double inches = scanner.nextDouble();
+        Double centimeters = inches * 2.54;
+        System.out.print("Centimeters is: ");
+        System.out.println(centimeters);*/
+
+        /*int a = 10;
+        int b = 2;
+        boolean c = (a % b) == 1;
+        if (c){
+            System.out.println("odd");
+        }else {
+            System.out.println("even");
+        }*/
 
     }
 

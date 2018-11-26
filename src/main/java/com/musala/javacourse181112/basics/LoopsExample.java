@@ -25,7 +25,7 @@ public class LoopsExample {
 
         //int goto = 1;
 
-       /* while (true) {
+        /*while (true) {
             final long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis % 2 == 0) {
                 *//*System.out.println("exiting...");
