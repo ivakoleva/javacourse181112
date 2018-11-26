@@ -47,5 +47,6 @@ public class InputStreamExercise {
 
         // we are required to close, always do remember pls
         inputStream.close();
+        outputStream.close();
     }
 }
