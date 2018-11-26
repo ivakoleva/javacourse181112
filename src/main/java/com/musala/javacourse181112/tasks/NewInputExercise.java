@@ -11,9 +11,9 @@ public class NewInputExercise {
         int i;
         while ((i = fileReader.read(buffer)) != -1) {
 
-            System.out.print(new String(buffer,0,i));
+            System.out.print(buffer);
         }
-
+        System.out.println();
         fileReader.close();
     }
 }
