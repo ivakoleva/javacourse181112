@@ -1,17 +1,16 @@
 package com.musala.javacourse181112.tasks;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by Iva Koleva on 22.11.2018
  */
-public class InputStreamExercise {
+public class InputOutputStreamExercise {
     public static void main(final String[] args) throws IOException {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
+        final OutputStream outputStream;
         int i;
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);
@@ -27,11 +26,12 @@ public class InputStreamExercise {
         /*while ((i = inputStream.read(buffer)) != -1) {
             System.out.print(new String(buffer, 0, i)); // , Charset.defaultCharset()
         }*/
-
+        outputStream=new FileOutputStream("sketch-copy.txt");
         // TODO: implement inputStream.read(buffer, offset, length)
         // TODO: have in mind the Important note above
         while ((i = inputStream.read(buffer,3,buffer.length-3)) != -1) {
-            System.out.print(new String(buffer, 3, i-3)); // , Charset.defaultCharset()
+            System.out.print(new String(buffer, 3, i)); // , Charset.defaultCharset()
+            outputStream.write(buffer,3,i);
         }
 
         System.out.println("\n"+(char)buffer[0]+" "+(char)buffer[1]+" "+(char)buffer[2]);
