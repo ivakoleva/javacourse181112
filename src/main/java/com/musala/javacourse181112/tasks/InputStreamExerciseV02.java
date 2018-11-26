@@ -17,6 +17,7 @@ public class InputStreamExerciseV02 {
         /**
          * Important note: first 3 bytes are system-reserved, please do not overwrite
          */
+
         final byte[] buffer = new byte[1027];
         buffer[0] = (byte) 'a';
         buffer[1] = (byte) 'b';
