@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.MyStuff;
 
 /**
  * Created by Iva Koleva on 19.11.2018

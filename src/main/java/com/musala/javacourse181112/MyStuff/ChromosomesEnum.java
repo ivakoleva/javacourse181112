@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.MyStuff;
 
 public class ChromosomesEnum {
     public static void main(final String[] args) {

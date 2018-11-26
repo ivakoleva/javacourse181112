@@ -1,4 +1,4 @@
-package com.musala.javacourse181112;
+package com.musala.javacourse181112.MyStuff;
 
 // OKI * 2
 public class homeworkVotes {
