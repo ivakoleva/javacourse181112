@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MyFilterInputStream extends FilterInputStream {
+
+    private int count;
+
     /**
      * Creates a <code>FilterInputStream</code>
      * by assigning the  argument <code>in</code>
@@ -17,15 +20,14 @@ public class MyFilterInputStream extends FilterInputStream {
     protected MyFilterInputStream(InputStream in) {
         super(in);
     }
-    public int count;
 
     public int getCount() {
-        return count;
+        return this.count;
     }
 
     @Override
     public int read() throws IOException {
-        count++;
+        this.count++;
         return super.read();
     }
 }
