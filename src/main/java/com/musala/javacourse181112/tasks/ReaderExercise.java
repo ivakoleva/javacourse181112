@@ -16,7 +16,7 @@ public class ReaderExercise {
 
         }
 
-       reader.close();
+        reader.close();
 
     }
 }
