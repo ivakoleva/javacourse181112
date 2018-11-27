@@ -3,7 +3,7 @@ package com.musala.javacourse181112.tasks;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class InputStreamWriterExercise {
+public class OutputStreamWriterExercise {
     public static void main(final String[] args) {
 
         try(final Writer writer=new BufferedWriter(
