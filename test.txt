@@ -1,4 +1,4 @@
-aawd
-bawd
-cawdawd
-aasdawaa
+a
+b
+c
+a
