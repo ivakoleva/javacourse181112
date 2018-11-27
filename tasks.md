@@ -22,6 +22,11 @@
         *** content encoding - Windows-1251
         *** add buffering (Buffered*)
         
+    ** PushbackReader exercise
+        *** use buffer of 128 length
+        *** print to stdout
+        *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+    
     ** Bonus: subclass FilterInputStream
         *** count all read operations (each time read() is being called from outside)
         *** add a counter class field
