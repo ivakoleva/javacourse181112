@@ -2,9 +2,6 @@ package com.musala.javacourse181112.tasks;
 
 import java.io.*;
 
-/**
- * Created by Iva Koleva on 22.11.2018
- */
 public class InputOutputStreamExercise {
     public static void main(final String[] args) throws IOException {
         // TODO: try-catch later. ! It is really important, to do try-catch.
