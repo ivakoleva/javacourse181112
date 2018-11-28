@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class WriteExercise {
     public static void main(final String[] args) {
-        try (final FileWriter fileWriter = new FileWriter("WritingParameters.txt")){
+        try (final FileWriter fileWriter = new FileWriter("WritingParametersInFile.txt")){
             for (String str : args){
                 fileWriter.write(str+"\n");
             }
