@@ -10,8 +10,7 @@ public class PushbackReaderExercise {
         char[] buff = new char[128];
         try (final PushbackReader pushbackReader =
                      new PushbackReader(new FileReader("tasks.txt"), 3)) {
-//            int data = pushbackReader.read();
-//            pushbackReader.unread(data);
+
             int i;
             while ((i = pushbackReader.read(buff)) != -1) {
                 System.out.print(buff);
