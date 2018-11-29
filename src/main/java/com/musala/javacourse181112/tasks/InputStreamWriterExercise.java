@@ -35,9 +35,7 @@ public class InputStreamWriterExercise {
             }
         }catch (IOException ignored){
         }
-        finally {
-            return text;
-        }
+        return text;
     }
 
     private static String returnIntoString(byte[] buffer){

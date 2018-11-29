@@ -10,12 +10,11 @@ public class PushbackReaderExercise {
     private static final int LIMIT = 3;
 
     public static void main(String[] args) {
-        try(PushbackReader pushbackReader = new PushbackReader(new FileReader(INPUT_FILE_NAME), LIMIT+1);
-        ) {
-            int i,j,repeat = 0;
+        try (PushbackReader pushbackReader = new PushbackReader(new FileReader(INPUT_FILE_NAME), LIMIT + 1)) {
+            int i, j, repeat = 0;
             final char[] buffer = new char[138];
-            while ((i = pushbackReader.read(buffer))!=-1){
-                for (j = 0;( buffer[j]!='\0' || j < i ); j++) {
+            while ((i = pushbackReader.read(buffer)) != -1) {
+                for (j = 0; (buffer[j] != '\0' || j < i); j++) {
                     System.out.print(buffer[j]);
                     char currentChar = buffer[j];
 
@@ -28,12 +27,13 @@ public class PushbackReaderExercise {
                     }
 
                 }
-                if (++repeat > 1){
-                    break ;
+                if (++repeat > 1) {
+                    break;
                 }
             }
         } catch (IOException e) {
-            System.err.println(e.getMessage());;
+            System.err.println(e.getMessage());
+            ;
         }
     }
 }
