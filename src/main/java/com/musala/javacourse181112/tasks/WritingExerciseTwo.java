@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 public class WritingExerciseTwo {
     public static void main(final String[] args) {
         try(final BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("ExerciseTwo.txt")
-                     , Charset.forName("CP437")))) {
+                     , Charset.forName("Windows-1251")))) {
             String[] parameters = new String[] {"dfsfsdfdsf", "23", "2434werf", "3fsd4"};
             String newLIne = "\n";
 
@@ -21,7 +21,27 @@ public class WritingExerciseTwo {
         }
     }
 
+    /**final Console console = System.console();
+        if (console == null) {
+            System.out.println("Console is not supported by OS/JVM");
+            System.exit(1);
+        }
+        Writer writer = console.writer();
+        try {
+            writer = new OutputStreamWriter(new FileOutputStream("inputstreamwrite.md"),
+                    Charset.forName("windows-1251"));
+        } catch (IOException ignored) {
+        } finally {
+            if (writer != null) {
+                try {
+                    System.out.println("File is null");
+                    writer.close();
+                } catch (IOException ignore ) }
 
+                }
+
+            }
+        }*/
 
 
 }
