@@ -11,6 +11,8 @@
         *** add a counter class field
         *** implement getCount() method
 
+
+
 26.11:
 
 * Important: tomorrow (27.11.) will do exercises only - on-side or remotely
