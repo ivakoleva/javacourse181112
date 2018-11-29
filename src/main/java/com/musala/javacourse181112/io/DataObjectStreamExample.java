@@ -19,6 +19,7 @@ public class DataObjectStreamExample {
         final Person person1 = new Person();
         person1.setName("Maria Marinova");
         person1.setAge(40);
+        person1.setEgn("7804111234");
 
         try (final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("objects_serialized"))) {
             objectOutputStream.writeObject(person);
@@ -64,11 +65,13 @@ public class DataObjectStreamExample {
     }
 
     private static class Person implements Serializable {
-        private static final long serialVersionUID = 4398590792879007637L;
+        private static final long serialVersionUID = 5023965202399044512L;
 
         String name;
         int age;
-        transient String egn;
+        transient int yearOfBirth;
+        // TODO: monthOfBirth && dayOfBirth (transient)
+        String egn;
 
         public String getName() {
             return name;
@@ -86,10 +89,19 @@ public class DataObjectStreamExample {
             this.age = age;
         }
 
+        public int getYearOfBirth() {
+            return yearOfBirth;
+        }
+
+        public void setYearOfBirth(int yearOfBirth) {
+            this.yearOfBirth = yearOfBirth;
+        }
+
         public String getEgn() {
             return egn;
         }
 
+        // TODO: validate
         public void setEgn(String egn) {
             this.egn = egn;
         }
@@ -97,6 +109,15 @@ public class DataObjectStreamExample {
         @Override
         public String toString() {
             return "Person name [" + name + "] age [" + age + "]";
+        }
+
+        private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+            objectInputStream.defaultReadObject();
+            // assume egn has already been validated
+            if (getEgn() != null) {
+                setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
+                // TODO: implement for other 2 fields
+            }
         }
     }
 }
