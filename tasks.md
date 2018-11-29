@@ -17,7 +17,7 @@
         *** write each parameter to a new line
         *** write to a file
         
-    ** InputStreamWriter exercise
+    ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content
         *** content encoding - Windows-1251
         *** add buffering (Buffered*)
