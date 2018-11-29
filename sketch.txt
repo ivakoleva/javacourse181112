@@ -93,3 +93,5 @@ try-with-resources
 EOF, EOL (end of file, end of line)
 data/object serialization
 persistent state of the application
+
+URI (Unified Resource Identifier)
