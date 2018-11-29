@@ -14,7 +14,8 @@ public class FileExample {
         System.out.println("exists: " + file.exists());
         System.out.println();
 
-        if((file.exists() && file.isFile()) || file.createNewFile()) {
+        // if file previously existing but empty, or non-existing and could be created
+        if((file.exists() && file.isFile() && file.length() == 0) || file.createNewFile()) {
             try (final Writer writer = new FileWriter(file)) {
                 writer.write("asd");
                 writer.write("asdf");
