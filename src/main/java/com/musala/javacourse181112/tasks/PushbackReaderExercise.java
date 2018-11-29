@@ -47,7 +47,7 @@ public class PushbackReaderExercise {
                 int c;
                 if((c = pushbackReader.read()) == -1) {
                     l=false;
-                    System.out.println(""+buff[i-3]+buff[i-2]+buff[i-1]);
+                    System.out.println(buff[i-3]+""+buff[i-2]+""+buff[i-1]);
                 }
                 else {
                     pushbackReader.unread(c);
