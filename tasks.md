@@ -10,8 +10,28 @@
         *** count all read operations (each time read() is being called from outside)
         *** add a counter class field
         *** implement getCount() method
+        
+* Exercises:
+    ** File exercise
+        *** creation 
+            **** create a file using a non-existing path
+            **** show if file exists
+            **** create as directory
+            **** create two new files into that directory
+        *** delete on exit
+            **** create a new file
+            **** mark for deletion on exit
+            **** list parent directory, containing this filename (to prove existence in runtime)
+            **** exit program, then check manually if file exists
+         
 
-
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** read them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
 
 26.11:
 
