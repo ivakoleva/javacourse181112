@@ -13,43 +13,42 @@ public class OutputStreamWriterExercise {
 
     public static void main(final String[] args) {
 //        usingOutputStreamWriterAndReader();
-        usingBufferedWriterAndReader();
+//        usingBufferedWriterAndReader();
     }
 
-    public static void usingBufferedWriterAndReader() {
-        try (final Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("another_non_default_encoding_file.txt"),
-                "Windows-1251"));
-             final Reader reader = new BufferedReader(new InputStreamReader(
-                     new FileInputStream("another_non_default_encoding_file.txt"),
-                     Charset.forName("Windows-1251"))) {
-            writer.write(SCANNER.nextLine());
-            writer.write("Дали работи по този начин?\n");
-            writer.flush();
-            writer.close();
-
-                 int i;
-            while((i =reader.read())!=-1)
-
-                 {
-                     System.out.print((char) i);
-                 }
-
-            reader.close();
-             }
-    }
-
-    {
-    } catch(
-    UnsupportedEncodingException e)
-
-    {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//    public static void usingBufferedWriterAndReader() {
+//        try (final Writer writer = new BufferedWriter(new OutputStreamWriter(
+//                new FileOutputStream("another_non_default_encoding_file.txt"),
+//                "Windows-1251"));
+//             final Reader reader = new BufferedReader(new InputStreamReader(
+//                     new FileInputStream("another_non_default_encoding_file.txt"),
+//                     Charset.forName("Windows-1251"))) {
+//            writer.write(SCANNER.nextLine());
+//            writer.write("Дали работи по този начин?\n");
+//            writer.flush();
+//
+//                 int i;
+//            while((i =reader.read())!=-1)
+//
+//                 {
+//                     System.out.print((char) i);
+//                 }
+//
+//            reader.close();
+//             }
+//    }
+//
+//    {
+//    } catch(
+//    UnsupportedEncodingException e)
+//
+//    {
+//            e.printStackTrace();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        public static void usingOutputStreamWriterAndReader() {
