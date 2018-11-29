@@ -11,7 +11,13 @@
         *** add a counter class field
         *** implement getCount() method
 
-
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** read them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
 
 26.11:
 
