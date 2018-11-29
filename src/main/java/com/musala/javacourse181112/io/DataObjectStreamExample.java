@@ -64,8 +64,11 @@ public class DataObjectStreamExample {
     }
 
     private static class Person implements Serializable {
+        private static final long serialVersionUID = 4398590792879007637L;
+
         String name;
         int age;
+        transient String egn;
 
         public String getName() {
             return name;
@@ -81,6 +84,14 @@ public class DataObjectStreamExample {
 
         public void setAge(int age) {
             this.age = age;
+        }
+
+        public String getEgn() {
+            return egn;
+        }
+
+        public void setEgn(String egn) {
+            this.egn = egn;
         }
 
         @Override
