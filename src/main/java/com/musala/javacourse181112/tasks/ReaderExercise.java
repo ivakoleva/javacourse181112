@@ -1,16 +1,22 @@
 package com.musala.javacourse181112.tasks;
 
-import java.io.*;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 
 public class ReaderExercise {
-    public static void main(String[] args) throws IOException {
-        FileReader readerExample = new FileReader("tasks.md");
-        final char[] buffer = new char[1027];
+    // read characters from tasks.md, using FileReader
+    //write to stdout, optimize
 
-        int i;
-        while((i = readerExample.read(buffer)) != -1){
-            System.out.println(new String(buffer));
+    public static void main(String[] args) throws IOException {
+        final Reader reader = new FileReader("tasks.md");
+
+        int data = reader.read();
+        while (data != -1){
+            char dataChar = (char) data;
+            data = reader.read();
+            System.out.print(dataChar);
         }
-        readerExample.close();
+        reader.close();
     }
 }
