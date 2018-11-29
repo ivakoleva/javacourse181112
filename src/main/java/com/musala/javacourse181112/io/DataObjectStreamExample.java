@@ -16,6 +16,8 @@ public class DataObjectStreamExample {
         final Person person = new Person();
         person.setName("Ivan Ivanov");
         person.setAge(30);
+
+
         final Person person1 = new Person();
         person1.setName("Maria Marinova");
         person1.setAge(40);
