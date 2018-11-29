@@ -1,3 +1,60 @@
+29.11:
+
+* Recommended for weekend exercises:
+    ** PushbackReader exercise
+            *** use buffer of 128 length
+            *** print to stdout
+            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+        
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
+
+26.11:
+
+* Important: tomorrow (27.11.) will do exercises only - on-side or remotely
+* Please send email to iva.koleva@clearcode.bg (will create a mailing list)
+    ** javacourse-181112@clearcode.bg mailing list available
+
+* InputStream exercise v0.2
+    ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
+    
+* Reader exercise
+    ** read characters from tasks.md, using FileReader
+    ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
+         
+* Homework:
+    ** Write exercise - using Writer, write/append
+        *** read from program parameters
+        *** write each parameter to a new line
+        *** write to a file
+        
+    ** FileOutputStream exercise
+        *** using FileOutputStream, bridge to Writer then write some content
+        *** content encoding - Windows-1251
+        *** add buffering (Buffered*)
+        
+    ** PushbackReader exercise
+        *** use buffer of 128 length
+        *** print to stdout
+        *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+    
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
+
+22.11:
+
+* Loops exercise elaboration
+    ** add lambda stream.forEach implementation (Arrays.stream)
+    ** add looping and modifying a collection of strings (using iterator)
+        *** remove if: element length % 2 == 0
+        
+* InputStream exercise
+    ** implement inputStream.read(buffer, offset, length)
+
 20.11:
 
 * Future age calculator v0.2
