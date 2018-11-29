@@ -9,8 +9,8 @@ public class InputStreamWriterExercise {
     private static final String INPUT_FILE = "in.txt";
 
     public static void main(String[] args) {
-        try (final BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(OUTPUT_FILE), Charset.forName(ENCODING)));
-        final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(INPUT_FILE), Charset.forName(ENCODING)))) {
+        try (final BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(OUTPUT_FILE), ENCODING));
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(INPUT_FILE), ENCODING))) {
             String line;// = reader.readLine();
             while((line = reader.readLine())!=null){
                 System.out.println(line);
