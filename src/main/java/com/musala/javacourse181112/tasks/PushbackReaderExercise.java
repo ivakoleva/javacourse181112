@@ -39,14 +39,14 @@ public class PushbackReaderExercise {
         int i;
         int toBeUnread = 3;
         char[] buff = new char[8];
-        int l=0;
+        boolean l=true;
         try (PushbackReader pushbackReader = new PushbackReader(new FileReader("WritingParameters.txt"), toBeUnread + 1)) {
             while ((i = pushbackReader.read(buff)) != -1) {
                 System.out.print(buff);
                 int j = 0;
                 int c;
                 if((c = pushbackReader.read()) == -1) {
-                    l=1;
+                    l=false;
                     System.out.println(buff[i-3]+""+buff[i-2]+""+buff[i-1]);
                 }
                 else {
@@ -55,7 +55,7 @@ public class PushbackReaderExercise {
                 while (Character.isWhitespace(buff[i - 1 - j])) {
                     j++;
                 }
-                if (buff[i - 1 - j] >= 'a' && buff[i - 1 - j] <= ('a' + 'z') / 2 && l!=1 ) {
+                if (buff[i - 1 - j] >= 'a' && buff[i - 1 - j] <= ('a' + 'z') / 2 && l ) {
                     for (int k = 0; k < toBeUnread + j; k++) {
                         pushbackReader.unread(buff[i - k - 1]);
                     }
