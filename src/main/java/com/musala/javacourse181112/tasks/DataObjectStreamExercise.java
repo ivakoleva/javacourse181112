@@ -1,18 +1,16 @@
-package com.musala.javacourse181112.io;
+package com.musala.javacourse181112.tasks;
 
 import java.io.*;
 
 /**
  * Created by Iva Koleva on 29.11.2018
  */
-public class DataObjectStreamExample {
+public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException {
-        //dataStreamRun();
-        objectStreamRun();
+        dataObjectStreamRun();
     }
 
-    // reference types
-    public static void objectStreamRun() throws IOException {
+    public static void dataObjectStreamRun() throws IOException {
         final Person person = new Person();
         person.setName("Ivan Ivanov");
         person.setAge(30);
@@ -43,25 +41,7 @@ public class DataObjectStreamExample {
         System.out.println();
     }
 
-    // primitive types
-    public static void dataStreamRun() throws IOException {
-        int i = 24;
-        long l = Long.MAX_VALUE;
-        float f = 1.5f;
-
-        try (final DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("data_serialized"))) {
-            dataOutputStream.writeInt(i);
-            dataOutputStream.writeLong(l);
-            dataOutputStream.writeFloat(f);
-        }
-
-        try (final DataInputStream dataInputStream = new DataInputStream(new FileInputStream("data_serialized"))) {
-            i = dataInputStream.readInt();
-            l = dataInputStream.readLong();
-            f = dataInputStream.readFloat();
-        }
-        System.out.println();
-    }
+    // TODO: class Company
 
     private static class Person implements Serializable {
         String name;
