@@ -14,12 +14,25 @@ public class FileExample {
     public static void main(String[] args) {
 
         createSingleFile(PATH,false);
-        createMultipyFiles();
-        listDir(PATH);
-
+        createMultiplyFiles();
+        listDir(PATH+ "/" + NEW_DIR + "/");
+        listRecursiveDir(PATH);
     }
 
     private static void listDir(String path) {
+
+        File[] files = new File(path).listFiles();
+        if(files != null){
+            for (File file : files) {
+                if (file.isFile()) {
+                    System.out.println(file.getName());
+                }
+            }
+        }
+    }
+
+    private static void listRecursiveDir(String path) {
+
         try {
             Files.walk(Paths.get(path))
                     .filter(Files::isRegularFile)
@@ -29,12 +42,12 @@ public class FileExample {
         }
     }
 
-    private static void createMultipyFiles() {
+    private static void createMultiplyFiles() {
         String pathname = PATH + "/" + NEW_DIR;
         File dir = new File(pathname);
         if (dir.mkdir()) {
-            createSingleFile(pathname + "/"+ NEW_FILE1,false);
-            createSingleFile(pathname + "/"+ NEW_FILE2,true);
+            createSingleFile(pathname + "/" + NEW_FILE1,false);
+            createSingleFile(pathname + "/" + NEW_FILE2,true);
         }
     }
 
@@ -50,8 +63,6 @@ public class FileExample {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (file.canExecute())
-        System.out.println(file.exists());
-        System.out.println(file.exists());
+        System.out.println();
     }
 }
