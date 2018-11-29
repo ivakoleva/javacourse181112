@@ -1,5 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PushbackReader;
@@ -9,30 +10,35 @@ public class PushbackReaderExercise {
     private static final int LIMIT = 3;
 
     public static void main(String[] args) {
-        try (PushbackReader pushbackReader = new PushbackReader(new FileReader(INPUT_FILE_NAME), LIMIT + 1)) {
-            int i, j, repeat = 0;
-            final char[] buffer = new char[138];
+        int i;
+        int toBeUnread = 3;
+        char[] buffer = new char[128];
+        boolean l = true;
+        try (PushbackReader pushbackReader = new PushbackReader(new FileReader("WritingParameters.txt"), toBeUnread + 1)) {
             while ((i = pushbackReader.read(buffer)) != -1) {
-                for (j = 0; (buffer[j] != '\0' || j < i); j++) {
-                    System.out.print(buffer[j]);
-                    char currentChar = buffer[j];
-
-                    if (currentChar >= 'a' && currentChar <= 'p') {
-                        pushbackReader.unread(buffer[j]);
-                        pushbackReader.unread(buffer[--j]);
-                        pushbackReader.unread(buffer[--j]);
-                        System.out.println();
-                        break;
-                    }
-
+                System.out.print(buffer);
+                int j = 0;
+                int c;
+                if ((c = pushbackReader.read()) == -1) {
+                    l = false;
+                    System.out.println(buffer[i - 3] + "" + buffer[i - 2] + "" + buffer[i - 1]);
+                } else {
+                    pushbackReader.unread(c);
                 }
-                if (++repeat > 1) {
-                    break;
+                while (Character.isWhitespace(buffer[i - 1 - j])) {
+                    j++;
+                }
+                if (buffer[i - 1 - j] >= 'a' && buffer[i - 1 - j] <= 'p' && l) {
+                    for (int k = 0; k < toBeUnread + j; k++) {
+                        pushbackReader.unread(buffer[i - k - 1]);
+                    }
                 }
             }
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            System.err.println(e.getMessage());
-            ;
+            e.printStackTrace();
         }
     }
 }
