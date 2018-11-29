@@ -1,3 +1,24 @@
+29.11:
+
+* Recommended for weekend exercises:
+    ** PushbackReader exercise
+            *** use buffer of 128 length
+            *** print to stdout
+            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+        
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
+
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** read them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
+
 26.11:
 
 * Important: tomorrow (27.11.) will do exercises only - on-side or remotely
@@ -17,7 +38,7 @@
         *** write each parameter to a new line
         *** write to a file
         
-    ** InputStreamWriter exercise
+    ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content
         *** content encoding - Windows-1251
         *** add buffering (Buffered*)
