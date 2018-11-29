@@ -89,3 +89,7 @@ EOF (end of file, -1)
 memory leak
 
 try-with-resources
+
+EOF, EOL (end of file, end of line)
+data/object serialization
+persistent state of the application
