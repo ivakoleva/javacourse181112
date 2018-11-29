@@ -112,7 +112,7 @@ public class DataObjectStreamExample {
         }
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
-            objectInputStream.defaultReadObject();
+           objectInputStream.defaultReadObject();
             // assume egn has already been validated
             if (getEgn() != null) {
                 setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
