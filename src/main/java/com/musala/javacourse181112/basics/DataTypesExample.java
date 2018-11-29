@@ -19,7 +19,7 @@ public class DataTypesExample {
         int myIntVariable = 1 + 1;
         //int myIntVariable1 = 1;
         System.out.println(myIntVariable);
-        long myLongVariable = 1L;
+        long myLongVariable = 1L;\` `
 
         float myFloatVariable = 1.0f;
         double myDoubleVariable = 1.0; // d
