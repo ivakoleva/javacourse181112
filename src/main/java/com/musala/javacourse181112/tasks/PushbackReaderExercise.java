@@ -15,7 +15,7 @@ public class PushbackReaderExercise {
     private static void PushBackReaderExerciseIdea_brokenVersion() {
         int i;
         int toBeUnread = 3;
-        char[] buff = new char[8];
+        char[] buff = new char[128];
         try (PushbackReader pushbackReader = new PushbackReader(new FileReader("WritingParameters.txt"), toBeUnread + 1)) {
             while ((i = pushbackReader.read(buff)) != -1) {
                 System.out.print(buff);
@@ -38,7 +38,7 @@ public class PushbackReaderExercise {
     private static void PushBackReaderExerciseIdea_unbrokenVersion() {
         int i;
         int toBeUnread = 3;
-        char[] buff = new char[8];
+        char[] buff = new char[128];
         boolean l=true;
         try (PushbackReader pushbackReader = new PushbackReader(new FileReader("WritingParameters.txt"), toBeUnread + 1)) {
             while ((i = pushbackReader.read(buff)) != -1) {
