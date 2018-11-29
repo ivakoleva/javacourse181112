@@ -1,10 +1,10 @@
-package com.musala.javacourse181112.basics;
+package com.musala.javacourse181112.openingDay;
 
 /**
  * Created by Iva Koleva, ClearCode Ltd. on 13.11.2018,
  * a significant bit of leva.bg project.
  */
-public class DataTypesExample {
+public class DataTypes {
     /**
      * This is a constant that is immutable (non-modifiable)
      */

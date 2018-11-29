@@ -6,25 +6,19 @@ package com.musala.javacourse181112.basics;
 public class TernaryRunner {
     public static void main(final String[] args) {
         String value = "yes";
-
+        boolean l=true;
         int yesCounter = 0;
         int noCounter = 0;
+        yesCounter+="yes".equals(value) ? 1 : 0;
 
-        if ("yes".equals(value)) {
+        noCounter+="no".equals(value) ? 1 : 0;
+
+        /*f("yes".equals(value)) {
             yesCounter++;
-        } else if ("no".equals(value)) {
+        } else if("no".equals(value)) {
             noCounter++;
-        } else if ("asd".equals(value)) {
-
-        } else if ("asd1".equals(value)) {
-
-        }
-
+        }*/
+        System.out.println("Yes: "+yesCounter+"\nNo: "+noCounter);
         // TODO: 2-lines implementation, using ternary operator
-        /*yesCounter = "yes".equals(value) ? yesCounter + 1 : yesCounter;
-        noCounter = "no".equals(value) ? noCounter + 1 : noCounter;*/
-
-        yesCounter += "yes".equals(value) ? 1 : 0;
-        noCounter += "no".equals(value) ? 1 : 0;
     }
 }
