@@ -14,11 +14,13 @@ public class FileExample {
         System.out.println("exists: " + file.exists());
         System.out.println();
 
-        if(file.createNewFile()) {
+        if((file.exists() && file.isFile()) || file.createNewFile()) {
             try (final Writer writer = new FileWriter(file)) {
                 writer.write("asd");
                 writer.write("asdf");
             }
+        } else {
+            System.out.println("File cannot be created because it already exists.");
         }
     }
 }
