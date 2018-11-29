@@ -20,3 +20,7 @@ public class ReaderExercise {
         reader.close();
     }
 }
+/* homework:
+        write exercise - using Writer, write/append
+
+ */
