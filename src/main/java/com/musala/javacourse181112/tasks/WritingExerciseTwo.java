@@ -21,27 +21,7 @@ public class WritingExerciseTwo {
         }
     }
 
-    /**final Console console = System.console();
-        if (console == null) {
-            System.out.println("Console is not supported by OS/JVM");
-            System.exit(1);
-        }
-        Writer writer = console.writer();
-        try {
-            writer = new OutputStreamWriter(new FileOutputStream("inputstreamwrite.md"),
-                    Charset.forName("windows-1251"));
-        } catch (IOException ignored) {
-        } finally {
-            if (writer != null) {
-                try {
-                    System.out.println("File is null");
-                    writer.close();
-                } catch (IOException ignore ) }
 
-                }
-
-            }
-        }*/
 
 
 }
