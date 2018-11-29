@@ -5,15 +5,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class WriterExercise {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try (final FileWriter fileWriter = new FileWriter("writer.md");
              final FileReader fileReader = new FileReader("writer.md")
         ) {
-            for (String arg : args) {
+            for (final String arg : args) {
                 //fileWriter.write(args[i] + "\n");
                 fileWriter.append(arg).append("\n");
             }
-            fileWriter.close();
+            fileWriter.flush();
             int i;
             while ((i = fileReader.read()) != -1) {
                 System.out.print((char) i);
