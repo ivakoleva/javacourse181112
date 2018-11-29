@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.SortedMap;
 
@@ -83,24 +84,38 @@ public class Exercises {
         System.out.println("Perimeter is = " + perimeter);
         System.out.println("Area is = " + area);*/
 
+        /*Scanner in = new Scanner(System.in);
+        int x = in.nextInt();
+        if (x < 1 || x > 9) {
+            System.out.println("Invalid score!");
+        } else if (x < 4) {
+            System.out.println(x * 10);
+        } else if (x < 7) {
+            System.out.println(x * 100);
+        } else {
+            System.out.println(x * 1000);
+        }*/
+
+        /*Scanner in = new Scanner(System.in);
+        String cardString = in.nextLine();
+        if(cardString.equals("2")
+                || cardString.equals("3")
+                || cardString.equals("4")
+                || cardString.equals("5")
+                || cardString.equals("6")
+                || cardString.equals("7")
+                || cardString.equals("8")
+                || cardString.equals("9")
+                || cardString.equals("10")
+                || cardString.equals("J")
+                || cardString.equals("Q")
+                || cardString.equals("K")
+                || cardString.equals("A")) {
+            System.out.println("yes " + cardString);
+        } else {
+            System.out.println("no " + cardString);
+        }*/
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
