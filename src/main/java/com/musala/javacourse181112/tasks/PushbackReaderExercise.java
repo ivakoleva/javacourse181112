@@ -25,7 +25,7 @@ public class PushbackReaderExercise {
                 while (Character.isWhitespace(buffer[i - 1 - j])) {
                     j++;
                 }
-                if (buffer[i - 1 - j] >= 'a' && buffer[i - 1 - j] <= ('a' + 'z') / 2 && l) {
+                if (buffer[i - 1 - j] >= 'a' && buffer[i - 1 - j] <= 'p' && l) {
                     for (int k = 0; k < toBeUnread + j; k++) {
                         pushbackReader.unread(buffer[i - k - 1]);
                     }
