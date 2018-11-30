@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 public class WritingExerciseTwo {
     public static void main(final String[] args) {
         try(final BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("ExerciseTwo.txt")
-                     , Charset.forName("Windows-1251")))) {
+                     , Charset.forName("CP437")))) {
             String[] parameters = new String[] {"dfsfsdfdsf", "23", "2434werf", "3fsd4"};
             String newLIne = "\n";
 
