@@ -49,6 +49,8 @@ public class DataObjectStreamExercise {
         String name;
         int age;
         transient int yearOfBirth;
+        transient int monthOfBirth;
+        transient int dayOfBirth;
         // TODO: monthOfBirth && dayOfBirth (transient)
         String egn;
 
@@ -76,6 +78,22 @@ public class DataObjectStreamExercise {
             this.yearOfBirth = yearOfBirth;
         }
 
+        public int getMonthOfBirth() {
+            return monthOfBirth;
+        }
+
+        public void setMonthOfBirth(int monthOfBirth) {
+            this.monthOfBirth = monthOfBirth;
+        }
+
+        public int getDayOfBirth() {
+            return dayOfBirth;
+        }
+
+        public void setDayOfBirth(int dayOfBirth) {
+            this.dayOfBirth = dayOfBirth;
+        }
+
         public String getEgn() {
             return egn;
         }
@@ -83,7 +101,9 @@ public class DataObjectStreamExercise {
         // TODO: validate
         public void setEgn(String egn) {
             this.egn = egn;
-        }
+            if (egn.length() != 10) {
+                System.out.println("Invalid EGN... Please enter a valid EGN" +);
+            }
 
         @Override
         public String toString() {

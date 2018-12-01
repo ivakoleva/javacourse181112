@@ -11,9 +11,9 @@ import java.nio.file.StandardOpenOption;
  */
 public class FileChannelExample {
     public static void main(final String[] args) throws IOException {
-        /*try (final FileChannel fileChannel = FileChannel.open(Paths.get("/tmp/asd"), StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
+        try (final FileChannel fileChannel = FileChannel.open(Paths.get("/tmp/asd"), StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
             fileChannel.write(ByteBuffer.wrap(new byte[]{'a', 'b'}));
-        }*/
+        }
 
         try (final FileChannel fileChannel = FileChannel.open(Paths.get("/tmp/asd"), StandardOpenOption.READ)) {
             final ByteBuffer byteBuffer = ByteBuffer.allocate(1);
