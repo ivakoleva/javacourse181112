@@ -11,6 +11,9 @@
         *** add a counter class field
         *** implement getCount() method
         
+    ** WatchServiceExample questions ?
+    ** FileVisitorWalkTreeExample questions ?
+        
 * Exercises:
     ** File exercise
         *** creation 
@@ -32,6 +35,8 @@
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
         *** loop data structure then print to stdout  
+    ** Code review of WatchServiceExample
+    ** Code review of FileVisitorWalkTreeExample
 
 26.11:
 
