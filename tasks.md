@@ -11,6 +11,9 @@
         *** add a counter class field
         *** implement getCount() method
         
+    ** WatchServiceExample questions ?
+    ** FileVisitorWalkTreeExample questions ?
+        
 * Exercises:
     ** File exercise
         *** creation 
@@ -24,7 +27,6 @@
             **** list parent directory, containing this filename (to prove existence in runtime)
             **** exit program, then check manually if file exists
          
-
 * Homework:
     ** DataObjectStreamExercise 
         *** implement a serializable class Company
@@ -32,6 +34,8 @@
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
         *** loop data structure then print to stdout  
+    ** Code review of WatchServiceExample
+    ** Code review of FileVisitorWalkTreeExample
 
 26.11:
 
