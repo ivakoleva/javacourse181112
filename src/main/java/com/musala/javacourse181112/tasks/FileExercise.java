@@ -34,13 +34,13 @@ public class FileExercise {
         file.createNewFile();
         file.deleteOnExit();
         final String parent = file.getAbsoluteFile().getParent();
-        if(parent == null) {
+        if (parent == null) {
             System.out.println("parent null, exiting");
             System.exit(1);
         }
         final File parentFile = new File(parent);
         final String[] parentFileList = parentFile.list();
-        if(parentFileList == null) {
+        if (parentFileList == null) {
             System.out.println("parent list null, exiting");
             System.exit(1);
         }
