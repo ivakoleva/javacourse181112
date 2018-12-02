@@ -115,7 +115,12 @@ public class Exercises {
         } else {
             System.out.println("no " + cardString);
         }*/
-        
+        /*int number1 = 25;
+        System.out.println(number1 >> 1);*/
 
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        int number = input.nextInt();
+        System.out.println("You entered " + number);
     }
 }
