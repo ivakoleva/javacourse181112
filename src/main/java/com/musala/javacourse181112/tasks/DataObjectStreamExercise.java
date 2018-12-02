@@ -99,24 +99,24 @@ public class DataObjectStreamExercise {
         }
 
         // TODO: validate
-        public void setEgn(String egn) {
-            this.egn = egn;
-            if (egn.length() != 10) {
-                System.out.println("Invalid EGN... Please enter a valid EGN" +);
-            }
+//        public void setEgn(String egn) {
+//            this.egn = egn;
+//            if (egn.length() != 10) {
+//                System.out.println("Invalid EGN... Please enter a valid EGN" +);
+//            }
 
-        @Override
-        public String toString() {
-            return "Person name [" + name + "] age [" + age + "]";
-        }
-
-        private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
-            objectInputStream.defaultReadObject();
-            // assume egn has already been validated
-            if (getEgn() != null) {
-                setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
-                // TODO: implement for other 2 fields
-            }
-        }
+//        @Override
+//        public String toString() {
+//            return "Person name [" + name + "] age [" + age + "]";
+//        }
+//
+//        private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+//            objectInputStream.defaultReadObject();
+//            // assume egn has already been validated
+//            if (getEgn() != null) {
+//                setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
+//                // TODO: implement for other 2 fields
+//            }
+//        }
     }
 }
