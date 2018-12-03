@@ -7,7 +7,7 @@ import java.util.function.Function;
  */
 public class LambdaExercise {
     public static void main(final String[] args) {
-        // TODO: implement
-        final Function<String, StringBuilder> stringToStringBuilder;
+
+        final Function<String, StringBuilder> stringToStringBuilder = (i) -> new StringBuilder(i);
     }
 }
