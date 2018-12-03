@@ -17,9 +17,9 @@ public class ReaderExerciseExample {
     public static void main(String[] args) throws IOException {
         int i;
         final char buffer[]= new char[1024];
-        final Reader reader= new FileReader("tasks.md");
+        final Reader reader= new FileReader("tasks_copy.md");
         while((i = reader.read(buffer))!= -1){
-            System.out.println(new String(buffer));
+            System.out.println(new String(buffer)); //???
         }
         reader.close();
     }
