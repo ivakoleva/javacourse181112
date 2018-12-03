@@ -26,6 +26,7 @@ public class LambdaExample {
         Arrays.stream(intArray).forEach(i -> System.out.println(i + 1));
         Arrays.stream(intArray).forEach(System.out::println);
         final Function<String,StringBuilder> castStringToStringBuilder = (s)->new StringBuilder(s);
+
         }
 }
 
