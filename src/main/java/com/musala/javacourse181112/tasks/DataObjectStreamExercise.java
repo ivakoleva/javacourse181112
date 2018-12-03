@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by Iva Koleva on 29.11.2018
  */
+// good
 public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException, ClassNotFoundException {
         dataObjectStreamRun();
@@ -48,7 +49,7 @@ public class DataObjectStreamExercise {
             e.printStackTrace();
         }
 
-        List<Object> list = new ArrayList<>();
+        final List<Object> list = new ArrayList<>();
         list.add(personDeserialized);
         list.add(personDeserialized1);
         list.add(companyDeserialized);
@@ -63,11 +64,11 @@ public class DataObjectStreamExercise {
         System.out.println();*/
     }
 
-    // TODO: class Company
     private static class Company implements Serializable {
+        private static final long serialVersionUID = -5038334803141053541L;
 
-        String companyName;
-        String companyAddress;
+        private String companyName;
+        private String companyAddress;
 
         public String getCompanyName() {
             return companyName;
@@ -93,13 +94,12 @@ public class DataObjectStreamExercise {
     private static class Person implements Serializable {
         private static final long serialVersionUID = 5023965202399044512L;
 
-        String name;
-        int age;
-        transient int yearOfBirth;
-        // TODO: monthOfBirth && dayOfBirth (transient)
-        transient int monthOfBirth;
-        transient int dayOfBirth;
-        String egn;
+        private String name;
+        private int age;
+        transient private int yearOfBirth;
+        transient private int monthOfBirth;
+        transient private int dayOfBirth;
+        private String egn;
 
         public String getName() {
             return name;
@@ -145,8 +145,7 @@ public class DataObjectStreamExercise {
             return egn;
         }
 
-        // TODO: validate
-        public void checkEgn(String egn) {
+        public void checkEgn(final String egn) {
             if (egn.length() != 10) {
                 System.out.println("Expected length of 10, actual:" + egn.length());
                 System.exit(1);
@@ -157,26 +156,27 @@ public class DataObjectStreamExercise {
                 System.out.println("EGN should contain only numbers!");
                 System.exit(1);
             }
-            int year = Integer.parseInt(egn.substring(0, 2));
+
+            final int year = Integer.parseInt(egn.substring(0, 2));
             if (year < 0 || year > 99) {
                 System.out.println("Expected year between 00..99,  actual:" + year);
                 System.exit(1);
             }
-            int month = Integer.parseInt(egn.substring(2, 4));
+
+            final int month = Integer.parseInt(egn.substring(2, 4));
             if (month < 1 || month > 12) {
                 System.out.println("Month should be between 1..12,  actual:" + month);
                 System.exit(1);
             }
 
-            int day = Integer.parseInt(egn.substring(4, 6));
+            final int day = Integer.parseInt(egn.substring(4, 6));
             if (day < 1 || day > 31) {
                 System.out.println("Invalid day " + day);
-                ;
                 System.exit(1);
             }
         }
 
-        public void setEgn(String egn) {
+        public void setEgn(final String egn) {
             checkEgn(egn);
             this.egn = egn;
         }
@@ -188,17 +188,13 @@ public class DataObjectStreamExercise {
         }
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
-
             objectInputStream.defaultReadObject();
             // assume egn has already been validated
             if (getEgn() != null) {
                 setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
-                // TODO: implement for other 2 fields
                 setMonthOfBirth(Integer.parseInt(getEgn().substring(2, 4)));
                 setDayOfBirth(Integer.parseInt(getEgn().substring(4, 6)));
             }
         }
     }
-
-
 }
