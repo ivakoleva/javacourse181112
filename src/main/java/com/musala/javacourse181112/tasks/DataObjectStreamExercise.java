@@ -56,23 +56,20 @@ public class DataObjectStreamExercise {
                 null);
         System.out.println();*/
 
-        List<Object> arrList = new ArrayList<>();
-        arrList.add(personDeserialized);
-        arrList.add(personDeserialized1);
-        arrList.add(companyDeserialized1);
-        arrList.add(companyDeserialized2);
-        for (Object obj: arrList){
-            System.out.println(obj);
-        }
+        final List<Object> stateEntityList = new ArrayList<>();
+        stateEntityList.add(personDeserialized);
+        stateEntityList.add(personDeserialized1);
+        stateEntityList.add(companyDeserialized1);
+        stateEntityList.add(companyDeserialized2);
+        stateEntityList.forEach(System.out::println);
     }
 
-    // TODO: class Company
     private static class Company implements Serializable {
         private static final long serialVersionUID = -8726727230468530787L;
 
         private int numberOfEmployees;
-        String name;
-        Person[] employees = new Person[numberOfEmployees];
+        private String name;
+        private Person[] employees = new Person[numberOfEmployees];
 
         public int getNumberOfEmployees() {
             return numberOfEmployees;
@@ -99,7 +96,7 @@ public class DataObjectStreamExercise {
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return "Company: " + name + " has " + numberOfEmployees;
         }
     }
@@ -107,30 +104,12 @@ public class DataObjectStreamExercise {
     private static class Person implements Serializable {
         private static final long serialVersionUID = 5023965202399044512L;
 
-        String name;
-        int age;
-        transient int yearOfBirth;
-        // TODO: monthOfBirth && dayOfBirth (transient)
-        String egn;
-        transient  int monthOfBirth;
-
-        public int getMonthOfBirth() {
-            return monthOfBirth;
-        }
-
-        public void setMonthOfBirth(int monthOfBirth) {
-            this.monthOfBirth = monthOfBirth;
-        }
-
-        public int getDayOfBirth() {
-            return dayOfBirth;
-        }
-
-        public void setDayOfBirth(int dayOfBirth) {
-            this.dayOfBirth = dayOfBirth;
-        }
-
-        transient  int dayOfBirth;
+        private String name;
+        private int age;
+        private transient int yearOfBirth;
+        private transient int monthOfBirth;
+        private transient int dayOfBirth;
+        private String egn;
 
         public String getName() {
             return name;
@@ -160,32 +139,54 @@ public class DataObjectStreamExercise {
             return egn;
         }
 
-        // TODO: validate
-        public void setEgn(String egn) {
-            if(egn.length() != 10){
+        public void setEgn(final String egn) {
+            if (egn.length() != 10) {
                 System.out.println("Invalid length of egn.");
             }
             int year = Integer.parseInt(egn.substring(0, 2));
-            if (year < 0 || year > 99){
+            if (year < 0 || year > 99) {
                 System.out.println("Invalid year format, 00-99 expected.");
             }
             int month = Integer.parseInt(egn.substring(2, 4));
-            if(month < 41 || month > 52){
-                if (month <1 || month > 12){
+            if (month < 41 || month > 52) {
+                if (month < 1 || month > 12) {
                     System.out.println("Invalid format, 01-12 / 41-52 expected.");
                 }
             }
             int day = Integer.parseInt(egn.substring(4, 6));
-            if(day < 1 || day > 31){
+            if (day < 1 || day > 31) {
                 System.out.println("Invalid format,  01-31 expected.");
             }
 
             this.egn = egn;
         }
 
+        public int getMonthOfBirth() {
+            return monthOfBirth;
+        }
+
+        public void setMonthOfBirth(int monthOfBirth) {
+            this.monthOfBirth = monthOfBirth;
+        }
+
+        public int getDayOfBirth() {
+            return dayOfBirth;
+        }
+
+        public void setDayOfBirth(int dayOfBirth) {
+            this.dayOfBirth = dayOfBirth;
+        }
+
         @Override
         public String toString() {
-            return "Person name: " + name + ", age: " + age + " EGN: " + egn;
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    ", yearOfBirth=" + yearOfBirth +
+                    ", monthOfBirth=" + monthOfBirth +
+                    ", egn='" + egn + '\'' +
+                    ", dayOfBirth=" + dayOfBirth +
+                    '}';
         }
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
@@ -193,7 +194,6 @@ public class DataObjectStreamExercise {
             // assume egn has already been validated
             if (getEgn() != null) {
                 setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
-                // TODO: implement for other 2 fields
                 setMonthOfBirth(Integer.parseInt(getEgn().substring(2, 4)));
                 setDayOfBirth(Integer.parseInt(getEgn().substring(4, 6)));
             }
