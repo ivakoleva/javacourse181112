@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.basics;
 
 import java.util.Arrays;
+import java.util.function.Function;
 
 /**
  * Created by Iva Koleva on 22.11.2018
@@ -24,6 +25,12 @@ public class LambdaExample {
         final int[] intArray = {1, 2, 3};
         Arrays.stream(intArray).forEach(i -> System.out.println(i + 1));
         Arrays.stream(intArray).forEach(System.out::println);
+
+        final Function<Integer, Long> castIntegerToLong = integer -> (long) integer;
+    }
+
+    long castIntegerToLong (final int i) {
+        return (long) i;
     }
 }
 
