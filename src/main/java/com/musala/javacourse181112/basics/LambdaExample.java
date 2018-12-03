@@ -28,7 +28,8 @@ public class LambdaExample {
 
         final Function<Integer, Long> castIntegerToLong = (i) -> (long) i;
         final long result = castIntegerToLong.apply(1);
-        final Function<String, StringBuilder> stringToStringBuilder =
+        final Function<String, StringBuilder> stringToStringBuilder = (i) -> (lomg) i;
+
 }
 
 // default package-protected scope of visibility
