@@ -3,55 +3,42 @@ package com.musala.javacourse181112.tasks;
 import java.io.*;
 
 public class Company implements Serializable {
-    String person;
-    String company1;
-    String company2;
+    private String person;
+    private String company1;
+    private String company2;
 
-    public Company(String p, String c1, String c2 ) throws IOException {
+    // TODO: figure out why we need this interface surface
+    public Company(final String p, final String c1, final String c2) throws IOException {
         person = p;
         company1 = c1;
         company2 = c2;
 
     }
 
-    public static void main(String[] args) {
-        try {
+    public static void main(final String[] args) {
+        try (final OutputStream outputStream = new FileOutputStream("object.md");
+             final ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
 
-            Company object = new Company("Ivan Dimitrov", "joijoi", "kpo");
-            FileOutputStream file = new FileOutputStream("object.md");
-            ObjectOutputStream out = new ObjectOutputStream(file);
-
-
-            out.writeObject(object);
-
-            out.close();
-            file.close();
+            final Company company = new Company("Ivan Dimitrov", "joijoi", "kpo");
+            objectOutputStream.writeObject(company);
 
             System.out.println("Object has been serialized");
         } catch (IOException ex) {
             System.out.println("IOException is caught");
         }
-        Company object1=null;
-        try
-        {
-            FileInputStream file = new FileInputStream("object.md");
-            ObjectInputStream in = new ObjectInputStream(file);
 
 
-            object1 = (Company) in.readObject();
+        try (final InputStream inputStream = new FileInputStream("object.md");
+             final ObjectInputStream objectInputStream = new ObjectInputStream(inputStream)) {
 
-
-            in.close();
-            file.close();
+            final Company company = (Company) objectInputStream.readObject();
+            objectInputStream.close();
 
             System.out.println("Object has been deserialized ");
-            System.out.println("person = " + object1.person);
-            System.out.println("company 1 = " + object1.company1);
-            System.out.println("company 2 = " + object1.company2);
-        }
-
-        catch(IOException ex)
-        {
+            System.out.println("person = " + company.person);
+            System.out.println("company 1 = " + company.company1);
+            System.out.println("company 2 = " + company.company2);
+        } catch (IOException e) {
             System.out.println("IOException is caught");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
