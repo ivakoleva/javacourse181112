@@ -1,3 +1,13 @@
+03.12:
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Exercises:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** 
+
+
 29.11:
 
 * Recommended for weekend exercises:
