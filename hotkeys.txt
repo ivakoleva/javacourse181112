@@ -1,0 +1,13 @@
+System.gc();-Извиква garbage collectora
+System.exit(status:0)- затваря JVM
+
+Нещо от тип Object наследява свойства на класа об
+
+intellij
+ctrl+g  -Namira redove
+shift+f6 -Redaktira vsichki promenlivi
+ctrl+r tursesh neshto
+ctrl+shift+N -tusrq fail v proekta
+ctrl+shift+"+" ili "-" ]-razguva/sguva metodi
+ctrl+o -optimizaciq na importove
+ctrl+alt+l-opravq rastoqniq

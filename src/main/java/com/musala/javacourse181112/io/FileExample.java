@@ -8,7 +8,7 @@ import java.io.Writer;
 /**
  * Created by Iva Koleva on 29.11.2018
  */
-public class FileExample {
+public class                           FileExample {
     public static void main(final String[] args) throws IOException {
         final File file = new File("src", "test");
         System.out.println("exists: " + file.exists());
@@ -23,5 +23,6 @@ public class FileExample {
         } else {
             System.out.println("File cannot be created because it already exists.");
         }
+
     }
 }
