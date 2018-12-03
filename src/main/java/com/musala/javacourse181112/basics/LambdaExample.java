@@ -21,15 +21,15 @@ public class LambdaExample {
 
         final Runnable myRunnableAnonymousLambda = () -> System.out.println("Run.");
 
-
         final int[] intArray = {1, 2, 3};
         Arrays.stream(intArray).forEach(i -> System.out.println(i + 1));
         Arrays.stream(intArray).forEach(System.out::println);
 
         final Function<Integer, Long> castIntegerToLong = integer -> (long) integer;
+        final long result = castIntegerToLong.apply(1);
     }
 
-    long castIntegerToLong (final int i) {
+    long castIntegerToLong(final int i) {
         return (long) i;
     }
 }
