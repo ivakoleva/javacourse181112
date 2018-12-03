@@ -12,7 +12,6 @@ public class Company implements Serializable {
         person = p;
         company1 = c1;
         company2 = c2;
-
     }
 
     public static void main(final String[] args) {
