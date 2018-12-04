@@ -8,6 +8,7 @@ public class ScannerExample {
         while (scan.hasNextInt()) {
             System.out.print(scan.next());
         }
+        scan.close();
         System.exit(0);
     }
 }
