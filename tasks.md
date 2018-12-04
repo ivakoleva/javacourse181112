@@ -1,3 +1,59 @@
+03.12:
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Homework:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** implement String predicate - if string is length of 10
+    ** File exercise (29.11) - complete if not yet completed
+    ** DataObjectStreamExercise (29.11) - complete if not yet completed
+    ** Primitives and Wrappers exercise
+        *** define and initialize all supported types of primitives and their respective wrappers
+        *** loop and print array to stdout
+        *** stream the array (Arrays util)
+        *** using instanceof, filter by boolean 
+        *** collect to list
+
+29.11:
+
+* Recommended for weekend exercises:
+    ** PushbackReader exercise
+            *** use buffer of 128 length
+            *** print to stdout
+            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+        
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
+        
+    ** WatchServiceExample questions ?
+    ** FileVisitorWalkTreeExample questions ?
+        
+* Exercises:
+    ** File exercise
+        *** creation 
+            **** create a file using a non-existing path
+            **** show if file exists
+            **** create as directory
+            **** create two new files into that directory
+        *** delete on exit
+            **** create a new file
+            **** mark for deletion on exit
+            **** list parent directory, containing this filename (to prove existence in runtime)
+            **** exit program, then check manually if file exists
+         
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** read them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
+    ** Code review of WatchServiceExample
+    ** Code review of FileVisitorWalkTreeExample
+
 26.11:
 
 * Important: tomorrow (27.11.) will do exercises only - on-side or remotely
@@ -6,6 +62,31 @@
 
 * InputStream exercise v0.2
     ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
+    
+* Reader exercise
+    ** read characters from tasks.md, using FileReader
+    ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
+         
+* Homework:
+    ** Write exercise - using Writer, write/append
+        *** read from program parameters
+        *** write each parameter to a new line
+        *** write to a file
+        
+    ** FileOutputStream exercise
+        *** using FileOutputStream, bridge to Writer then write some content
+        *** content encoding - Windows-1251
+        *** add buffering (Buffered*)
+        
+    ** PushbackReader exercise
+        *** use buffer of 128 length
+        *** print to stdout
+        *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+    
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
 
 22.11:
 
