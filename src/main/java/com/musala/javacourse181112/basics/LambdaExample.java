@@ -2,6 +2,7 @@ package com.musala.javacourse181112.basics;
 
 import java.util.Arrays;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * Created by Iva Koleva on 22.11.2018
@@ -25,8 +26,15 @@ public class LambdaExample {
         Arrays.stream(intArray).forEach(i -> System.out.println(i));
         Arrays.stream(intArray).forEach(System.out::println);
 
+
+
         final Function<Integer, Long> castIntegerToLong = integer -> (long) integer;
         final long result = castIntegerToLong.apply(1);
+
+        final Predicate<String> startsWithACaseInsensitivePredicate = s -> s != null && s.toLowerCase().startsWith("a");
+        startsWithACaseInsensitivePredicate.test("asdasd");
+        //startsWithACaseInsensitivePredicate.negate().test();
+        System.out.println();
     }
 
     long castIntegerToLong(final int i) {
