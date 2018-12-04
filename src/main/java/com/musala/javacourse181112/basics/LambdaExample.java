@@ -13,6 +13,7 @@ public class LambdaExample {
         myRunnable.run();
 
         final Runnable myRunnableAnonymous = new Runnable() {
+
             @Override
             public void run() {
                 System.out.println("Run.");
