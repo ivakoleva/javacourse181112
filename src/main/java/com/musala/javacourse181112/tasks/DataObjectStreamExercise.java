@@ -1,13 +1,35 @@
 package com.musala.javacourse181112.tasks;
 
 import java.io.*;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 29.11.2018
  */
 public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException {
-        dataObjectStreamRun();
+        //dataObjectStreamRun();
+        lambdaSamplesRun();
+    }
+
+    public static void lambdaSamplesRun(){
+        final List<Person> personList = IntStream.range(0, 10)
+                .boxed()
+                .map(integer -> {
+                    final Person person =  new Person();
+                    person.setAge(integer * 10 + integer);
+                    person.setName("Name" + integer);
+                    person.setGender(integer % 2 != 0 ? Gender.MALE : Gender.FEMALE );
+                    return person;
+                }).collect(Collectors.toList());
+        System.out.println();
+
+        final List<Person> personSubList = personList.stream()
+                .filter(person -> person.getAge() % 2 != 0)
+                .collect(Collectors.toList());
+        System.out.println();
     }
 
     public static void dataObjectStreamRun() throws IOException {
@@ -46,13 +68,12 @@ public class DataObjectStreamExercise {
     private static class Person implements Serializable {
         private static final long serialVersionUID = 5023965202399044512L;
 
-        String name;
-        int age;
-        transient int yearOfBirth;
-        transient int monthOfBirth;
-        transient int dayOfBirth;
+        private String name;
+        private Gender gender;
+        private int age;
+        private transient int yearOfBirth;
         // TODO: monthOfBirth && dayOfBirth (transient)
-        String egn;
+        private String egn;
 
         public String getName() {
             return name;
@@ -60,6 +81,14 @@ public class DataObjectStreamExercise {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public Gender getGender() {
+            return gender;
+        }
+
+        public void setGender(Gender gender) {
+            this.gender = gender;
         }
 
         public int getAge() {
@@ -78,45 +107,32 @@ public class DataObjectStreamExercise {
             this.yearOfBirth = yearOfBirth;
         }
 
-        public int getMonthOfBirth() {
-            return monthOfBirth;
-        }
-
-        public void setMonthOfBirth(int monthOfBirth) {
-            this.monthOfBirth = monthOfBirth;
-        }
-
-        public int getDayOfBirth() {
-            return dayOfBirth;
-        }
-
-        public void setDayOfBirth(int dayOfBirth) {
-            this.dayOfBirth = dayOfBirth;
-        }
-
         public String getEgn() {
             return egn;
         }
 
         // TODO: validate
-//        public void setEgn(String egn) {
-//            this.egn = egn;
-//            if (egn.length() != 10) {
-//                System.out.println("Invalid EGN... Please enter a valid EGN" +);
-//            }
+        public void setEgn(String egn) {
+            this.egn = egn;
+        }
 
-//        @Override
-//        public String toString() {
-//            return "Person name [" + name + "] age [" + age + "]";
-//        }
-//
-//        private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
-//            objectInputStream.defaultReadObject();
-//            // assume egn has already been validated
-//            if (getEgn() != null) {
-//                setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
-//                // TODO: implement for other 2 fields
-//            }
-//        }
+        @Override
+        public String toString() {
+            return "Person name [" + name + "] age [" + age + "]";
+        }
+
+        private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+            objectInputStream.defaultReadObject();
+            // assume egn has already been validated
+            if (getEgn() != null) {
+                setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
+                // TODO: implement for other 2 fields
+            }
+        }
+    }
+
+    private enum Gender {
+        MALE,
+        FEMALE
     }
 }
