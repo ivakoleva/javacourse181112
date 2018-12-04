@@ -8,15 +8,10 @@ public class FileExerscise {
         final File file = new File("src", "test");
         file.createNewFile();
         System.out.println("File: " + file.exists());
-        if (!file.mkdir()){
+        if (!file.mkdir()) {
             System.out.println("");
         }
-
         final File file1 = new File(file, "file1");
         final File file2 = new File(file, "file2");
-
-
-
-
     }
 }

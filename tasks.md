@@ -71,7 +71,7 @@
     ** Write exercise - using Writer, write/append
         *** read from program parameters
         *** write each parameter to a new line
-        *** write to a file
+                                   *** write to a file
         
     ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content

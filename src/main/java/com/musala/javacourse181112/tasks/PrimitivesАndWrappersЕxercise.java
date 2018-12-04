@@ -1,4 +1,5 @@
 package com.musala.javacourse181112.tasks;
+
 import java.util.List;
 import java.util.ListIterator;
 import java.util.ArrayList;
@@ -7,10 +8,10 @@ import java.util.Arrays;
 public class PrimitivesАndWrappersЕxercise {
     public static void main(String[] args) {
         /* *** define and initialize all supported types of primitives and their respective wrappers
-        *** loop and print array to stdout
-        *** stream the array (Arrays util)
-        *** using instanceof, filter by boolean
-        *** collect to list*/
+         *** loop and print array to stdout
+         *** stream the array (Arrays util)
+         *** using instanceof, filter by boolean
+         *** collect to list*/
         boolean myBoolean = new Boolean(false);
         char myChar = new Character('a');
         byte myByte = new Byte((byte) 8);
@@ -48,6 +49,7 @@ public class PrimitivesАndWrappersЕxercise {
             System.out.println(element + " ");
         }
     }
+
     private static void doFilterByBoolean(Object[] myArray) {
         List<Object> arrayList = new ArrayList<>();
         for (Object element : myArray) {
