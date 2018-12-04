@@ -27,7 +27,6 @@ public class LambdaExample {
         Arrays.stream(intArray).forEach(System.out::println);
 
 
-
         final Function<Integer, Long> castIntegerToLong = integer -> (long) integer;
         final long result = castIntegerToLong.apply(1);
 

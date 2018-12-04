@@ -117,6 +117,7 @@ public class DataObjectStreamExample {
             if (getEgn() != null) {
                 setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
                 // TODO: implement for other 2 fields
+
             }
         }
     }

@@ -8,6 +8,8 @@ import java.util.stream.IntStream;
 /**
  * Created by Iva Koleva on 29.11.2018
  */
+
+
 public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException {
         //dataObjectStreamRun();
@@ -64,6 +66,13 @@ public class DataObjectStreamExercise {
     }
 
     // TODO: class Company
+//        *** write diverse multiple primitives, persons and companies to file
+//        *** read them back from file
+//        *** collect them to data structure (array of objects or collection)
+//        *** loop data structure then print to stdout
+    private static class Company implements Serializable {
+
+    }
 
     private static class Person implements Serializable {
         private static final long serialVersionUID = 5023965202399044512L;
@@ -72,7 +81,8 @@ public class DataObjectStreamExercise {
         private Gender gender;
         private int age;
         private transient int yearOfBirth;
-        // TODO: monthOfBirth && dayOfBirth (transient)
+        private transient int monthOfBirth;
+        private transient int dayOfBirth;
         private String egn;
 
         public String getName() {
@@ -107,13 +117,35 @@ public class DataObjectStreamExercise {
             this.yearOfBirth = yearOfBirth;
         }
 
+        public int getMonthOfBirth() {
+            return monthOfBirth;
+        }
+
+        public void setMonthOfBirth(int monthOfBirth) {
+            this.monthOfBirth = monthOfBirth;
+        }
+
+        public int getDayOfBirth() {
+            return dayOfBirth;
+        }
+
+        public void setDayOfBirth(int dayOfBirth) {
+            this.dayOfBirth = dayOfBirth;
+        }
+
         public String getEgn() {
             return egn;
         }
 
-        // TODO: validate
         public void setEgn(String egn) {
-            this.egn = egn;
+            while (true) {
+                if (egn.length() == 10) {
+                    this.egn = egn;
+                    break;
+                } else {
+                    System.out.println("Please enter a valid egn");
+                }
+            }
         }
 
         @Override
@@ -123,10 +155,10 @@ public class DataObjectStreamExercise {
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
             objectInputStream.defaultReadObject();
-            // assume egn has already been validated
             if (getEgn() != null) {
                 setYearOfBirth(Integer.parseInt(getEgn().substring(0, 2)));
-                // TODO: implement for other 2 fields
+                setMonthOfBirth(Integer.parseInt(getEgn().substring(3, 5)));
+                setDayOfBirth(Integer.parseInt(getEgn().substring(6, 8)));
             }
         }
     }
