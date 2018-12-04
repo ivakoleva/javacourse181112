@@ -1,25 +1,44 @@
-package com.musala.javacourse181112.io;
+package com.musala.javacourse181112.tasks;
 
 import java.io.*;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 29.11.2018
  */
-public class DataObjectStreamExample {
+public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException {
-        //dataStreamRun();
-        objectStreamRun();
+        //dataObjectStreamRun();
+        lambdaSamplesRun();
     }
 
-    // reference types
-    public static void objectStreamRun() throws IOException {
+    public static void lambdaSamplesRun(){
+        final List<Person> personList = IntStream.range(0, 10)
+                .boxed()
+                .map(integer -> {
+                    final Person person =  new Person();
+                    person.setAge(integer * 10 + integer);
+                    person.setName("Name" + integer);
+                    person.setGender(integer % 2 != 0 ? Gender.MALE : Gender.FEMALE );
+                    return person;
+                }).collect(Collectors.toList());
+        System.out.println();
+
+        final List<Person> personSubList = personList.stream()
+                .filter(person -> person.getAge() % 2 != 0)
+                .collect(Collectors.toList());
+        System.out.println();
+    }
+
+    public static void dataObjectStreamRun() throws IOException {
         final Person person = new Person();
         person.setName("Ivan Ivanov");
         person.setAge(30);
         final Person person1 = new Person();
         person1.setName("Maria Marinova");
         person1.setAge(40);
-        person1.setEgn("7804111234");
 
         try (final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("objects_serialized"))) {
             objectOutputStream.writeObject(person);
@@ -44,34 +63,17 @@ public class DataObjectStreamExample {
         System.out.println();
     }
 
-    // primitive types
-    public static void dataStreamRun() throws IOException {
-        int i = 24;
-        long l = Long.MAX_VALUE;
-        float f = 1.5f;
-
-        try (final DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("data_serialized"))) {
-            dataOutputStream.writeInt(i);
-            dataOutputStream.writeLong(l);
-            dataOutputStream.writeFloat(f);
-        }
-
-        try (final DataInputStream dataInputStream = new DataInputStream(new FileInputStream("data_serialized"))) {
-            i = dataInputStream.readInt();
-            l = dataInputStream.readLong();
-            f = dataInputStream.readFloat();
-        }
-        System.out.println();
-    }
+    // TODO: class Company
 
     private static class Person implements Serializable {
         private static final long serialVersionUID = 5023965202399044512L;
 
-        String name;
-        int age;
-        transient int yearOfBirth;
+        private String name;
+        private Gender gender;
+        private int age;
+        private transient int yearOfBirth;
         // TODO: monthOfBirth && dayOfBirth (transient)
-        String egn;
+        private String egn;
 
         public String getName() {
             return name;
@@ -79,6 +81,14 @@ public class DataObjectStreamExample {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public Gender getGender() {
+            return gender;
+        }
+
+        public void setGender(Gender gender) {
+            this.gender = gender;
         }
 
         public int getAge() {
@@ -119,5 +129,10 @@ public class DataObjectStreamExample {
                 // TODO: implement for other 2 fields
             }
         }
+    }
+
+    private enum Gender {
+        MALE,
+        FEMALE
     }
 }

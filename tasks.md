@@ -1,3 +1,20 @@
+03.12:
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Homework:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** implement String predicate - if string is length of 10
+    ** File exercise (29.11) - complete if not yet completed
+    ** DataObjectStreamExercise (29.11) - complete if not yet completed
+    ** Primitives and Wrappers exercise
+        *** define and initialize all supported types of primitives and their respective wrappers
+        *** loop and print array to stdout
+        *** stream the array (Arrays util)
+        *** using instanceof, filter by boolean 
+        *** collect to list
+
 29.11:
 
 * Recommended for weekend exercises:
@@ -10,8 +27,32 @@
         *** count all read operations (each time read() is being called from outside)
         *** add a counter class field
         *** implement getCount() method
-
-
+        
+    ** WatchServiceExample questions ?
+    ** FileVisitorWalkTreeExample questions ?
+        
+* Exercises:
+    ** File exercise
+        *** creation 
+            **** create a file using a non-existing path
+            **** show if file exists
+            **** create as directory
+            **** create two new files into that directory
+        *** delete on exit
+            **** create a new file
+            **** mark for deletion on exit
+            **** list parent directory, containing this filename (to prove existence in runtime)
+            **** exit program, then check manually if file exists
+         
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** read them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
+    ** Code review of WatchServiceExample
+    ** Code review of FileVisitorWalkTreeExample
 
 26.11:
 
