@@ -9,6 +9,12 @@ package com.musala.javacourse181112.MyStuff;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PushbackReader;
+/*
+*   todo: Bonus: subclass FilterInputStream
+ *** count all read operations (each time read() is being called from outside)
+ *** add a counter class field
+ *** implement getCount() method
+* */
 
 public class PushbackReaderExersice {
     public static void main(String[] args) throws IOException {

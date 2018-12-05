@@ -2,9 +2,7 @@
 
 * Recommended for weekend exercises:
     ** PushbackReader exercise
-            *** use buffer of 128 length
-            *** print to stdout
-            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+            *** usebuffer char read is \[a-p\] - unread 3 chars, in order to print them again
         
     ** Bonus: subclass FilterInputStream
         *** count all read operations (each time read() is being called from outside)
@@ -28,12 +26,12 @@
             **** exit program, then check manually if file exists
          
 * Homework:
-    ** DataObjectStreamExercise 
+    ** DataObjectStreamExercise
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout  
+        *** loop data structure then print to stdout
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -48,7 +46,8 @@
     
 * Reader exercise
     ** read characters from tasks.md, using FileReader
-    ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
+    ** write to stdout, optimize (take a look at parameters available for System.out.print(),
+    placing pointer at () then Ctrl+P)
          
 * Homework:
     ** Write exercise - using Writer, write/append
