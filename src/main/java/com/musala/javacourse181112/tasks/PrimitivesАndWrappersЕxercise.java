@@ -41,6 +41,9 @@ public class PrimitivesАndWrappersЕxercise {
 
         System.out.println(System.lineSeparator() + "Filter by Boolean");
         doFilterByBoolean(myArray);
+
+
+        }
     }
 
 

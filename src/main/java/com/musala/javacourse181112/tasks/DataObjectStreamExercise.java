@@ -185,7 +185,7 @@ public class DataObjectStreamExercise {
 
         // TODO: validate
         public void setEgn(String egn) {
-            if (egn.length() < 10) {
+            if (egn.length() > 10) {
                 System.out.println("Error in entering egn for " + getName());
                 System.exit(1);
             } else

@@ -118,9 +118,35 @@ public class Exercises {
         /*int number1 = 25;
         System.out.println(number1 >> 1);*/
 
-        Scanner input = new Scanner(System.in);
+        /*Scanner input = new Scanner(System.in);
         System.out.println("Enter an integer: ");
         int number = input.nextInt();
-        System.out.println("You entered " + number);
+        System.out.println("You entered " + number);*/
+
+
+        /*Scanner in = new Scanner(System.in);
+        System.out.print("Input the first number: ");
+        int num1 = in.nextInt();
+        System.out.print("Input the second number: ");
+        int num2 = in.nextInt();
+        System.out.print("Input the third number: ");
+        int num3 = in.nextInt();
+        System.out.print("Input the fourth number: ");
+        int num4 = in.nextInt();
+        System.out.print("Input the fifth number: ");
+        int num5 = in.nextInt();
+
+        System.out.println("The average of five numbers is: " +
+                (num1 + num2 + num3 + num4 + num5) / 5);*/
+
+        int x = 4;
+        if (x < 0) {
+            System.out.println("Invalid number");
+        } else if (x < 10) {
+            System.out.println(1);
+        } else if (x < 100) {
+            System.out.println(2);
+        }
+
     }
 }
