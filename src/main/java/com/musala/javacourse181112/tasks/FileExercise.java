@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
-/**
- * Created by Iva Koleva on 29.11.2018
- */
+
 public class FileExercise {
     public static void main(final String[] args) throws IOException {
         //doCreation();
