@@ -95,3 +95,6 @@ data/object serialization
 persistent state of the application
 
 URI (Unified Resource Identifier)
+
+
+thread pool
