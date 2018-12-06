@@ -89,14 +89,13 @@ public class DataObjectStreamExercise {
                 null);
         System.out.println();*/
     }
-    // TODO: class Company
 
     private static class Company implements Serializable {
         private static final long serialVersionUID = 5456789064265433214L;
         private String companyName;
         private String companyAddress;
 
-        public String getCompanyName() {
+        public String getCom27panyName() {
             return companyName;
         }
 
