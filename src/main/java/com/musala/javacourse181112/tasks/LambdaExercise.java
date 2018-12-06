@@ -8,14 +8,13 @@ import java.util.function.Predicate;
  */
 
 /* Lambda exercise
-        *** implement String to StringBuilder function
-        *** implement String predicate - if string is length of 10*/
+ *** implement String to StringBuilder function
+ *** implement String predicate - if string is length of 10*/
 
 public class LambdaExercise {
-    private static final Object StringBuilder = new StringBuilder();
     public static void main(final String[] args) {
-
-
+        final Function<String, StringBuilder> stringStringBuilderFunction = (i) -> new StringBuilder(i);
+        final Predicate<String> lengthString = a -> a.length() == 10;
 
 
     }
