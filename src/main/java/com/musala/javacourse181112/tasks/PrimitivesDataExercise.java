@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.tasks;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.util.*;
 import java.lang.*;
 import java.util.stream.Stream;
@@ -44,9 +46,11 @@ public class PrimitivesDataExercise {
 
         try (Stream<Object> streamData = Arrays.stream(arrayPrimitives)) {
             streamData.forEach(varData -> System.out.print(varData + " "));
-        }
+        }catch(Exception e) {}
+
         System.out.println(System.lineSeparator() + "\nBoolean filtered :");
         BooleanFilter(arrayPrimitives);
+
 
     }
 
