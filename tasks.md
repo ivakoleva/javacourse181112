@@ -1,3 +1,20 @@
+06.12:
+
+* Homework:
+    ** Populate an instance per general-purpose collection implementations 
+        *** Set (HashSet, TreeSet, LinkedHashSet)
+        *** List (ArrayList, LinkedList)
+        *** Queue
+        *** Deque (ArrayDeque, LinkedList)
+    ** Populate a Map
+    ** Loop a collection/map and modify (remove an element/entry while looping)
+    ** Apply add/put remove contains size isEmpty etc. 
+    
+    ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
+        *** writing thread running 5 exact times, then closing the stream
+        *** reading thread looping while data available
+    ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
+
 03.12:
 
 * Important: tomorrow (04.12.) will do exercises only - remotely
