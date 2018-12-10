@@ -11,6 +11,7 @@ public class CollectionImplentations {
         linkedList();
         queue();
         deque();
+        map();
     }
 
     public static void hashSet() {
@@ -141,4 +142,26 @@ public class CollectionImplentations {
         deque.clear();
     }
 
+    public static void map() {
+        Map<Integer, String> map = new HashMap();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        map.put(4, "Four");
+        map.put(5, "Five");
+        Set set = map.entrySet();
+        Iterator mapIterator = set.iterator();
+        while (mapIterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) mapIterator.next();
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        while (mapIterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) mapIterator.next();
+            if (((int) entry.getKey()) % 2 == 0) {
+                mapIterator.remove();
+            }
+        }
+
+
+    }
 }
