@@ -8,8 +8,7 @@
         *** Deque (ArrayDeque, LinkedList)
     ** Populate a Map
     ** Loop a collection/map and modify (remove an element/entry while looping)
-    ** Apply add/put remove contains size isEmpty etc. 
-    
+    ** Apply add/put remove contains size isEmpty etc.     
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
