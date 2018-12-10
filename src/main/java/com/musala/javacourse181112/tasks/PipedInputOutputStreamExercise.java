@@ -47,7 +47,7 @@ public class PipedInputOutputStreamExercise {
                 while (!Thread.interrupted() && counter < 5) {
                     final String result = "Hi";
                     writer.write(result + System.lineSeparator());
-                    //writer.flush();
+                    writer.flush();
                     System.out.println(Thread.currentThread().getName() + ": just written - " + result);
 
                     Thread.sleep(1000 * 2);
