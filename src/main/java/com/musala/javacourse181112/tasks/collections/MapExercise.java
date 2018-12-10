@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.collections;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -7,7 +7,9 @@ import java.util.stream.IntStream;
 public class MapExercise {
     public static void main(final String[] args) {
         final Map<Integer, String> employeesMap = IntStream.range(0, 15).boxed()
-                .collect(Collectors.toMap(i -> i + 1, i -> "Employer" + (i + 1)));
+                .collect(Collectors.toMap(
+                        i -> i + 1,
+                        i -> "Employer" + (i + 1)));
         employeesMap.put(16, "Employer16");
         employeesMap.put(17, "Employer17");
 

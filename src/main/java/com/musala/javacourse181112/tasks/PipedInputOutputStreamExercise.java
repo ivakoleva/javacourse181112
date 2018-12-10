@@ -39,6 +39,7 @@ public class PipedInputOutputStreamExercise {
 
     private static BiConsumer<InputStream, OutputStream> inputStreamOutputStreamBiConsumer = ((inputStream, outputStream) -> {
 
+        //final AtomicBoolean isWritingRunnableRunning = new AtomicBoolean(true);
         final Runnable writingRunnable = () -> {
             try {
                 final Writer writer = new OutputStreamWriter(outputStream);
@@ -53,6 +54,7 @@ public class PipedInputOutputStreamExercise {
                     Thread.sleep(1000 * 2);
                     counter++;
                 }
+                //isWritingRunnableRunning.set(false);
                 writer.close();
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
@@ -61,17 +63,13 @@ public class PipedInputOutputStreamExercise {
 
         final Runnable readingRunnable = () -> {
             try {
-                boolean flag = true;
-                final LineNumberReader lineNumberReader = new LineNumberReader(new InputStreamReader(inputStream));
-                while (!Thread.interrupted() && flag) {
 
-                    if (lineNumberReader.readLine() == null) {
-                        flag = false;
-                    } else {
-                        System.out.println(Thread.currentThread().getName() + ": just read - " +
-                                lineNumberReader.readLine());
-                        Thread.sleep(1000 * 2);
-                    }
+                final LineNumberReader lineNumberReader = new LineNumberReader(new InputStreamReader(inputStream));
+                String line;
+                while (!Thread.interrupted() &&
+                        (line = lineNumberReader.readLine()) != null) {
+                    System.out.println(Thread.currentThread().getName() + ": just read - " + line);
+                    Thread.sleep(1000 * 2);
                 }
                 lineNumberReader.close();
             } catch (IOException | InterruptedException e) {

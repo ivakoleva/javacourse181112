@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.collections;
 
 import java.util.Deque;
 import java.util.LinkedList;
