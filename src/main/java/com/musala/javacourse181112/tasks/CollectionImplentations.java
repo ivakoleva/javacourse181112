@@ -94,7 +94,11 @@ public class CollectionImplentations {
         linkedList.add("Three");
         linkedList.add("Four");
         linkedList.add("Five");
-        System.out.print(linkedList);
+        Iterator<String> i = linkedList.iterator();
+        System.out.println("Is the linkedHashSet empty: " + linkedList.isEmpty());
+        while (i.hasNext()) {
+            System.out.println(i.next());
+        }
         System.out.println("Is the linkedList empty: " + linkedList.isEmpty());
         System.out.println("Peek (first element): " + linkedList.peek());
         System.out.println("The element with last index  is: " + linkedList.getLast());
