@@ -1,8 +1,6 @@
 package com.musala.javacourse181112.collections;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 
@@ -14,6 +12,14 @@ public class SyncrhonizedWrappersExample {
     private static final int PRODUCED_STRINGS_MAX_COUNT = 10;
     private static final int INTEGER_LIST_MIN = 10;
     private static final int INTEGER_LIST_MAX = 1000;
+
+    public static void enlistSynchronizedWrappers() {
+        final Collection<?> synchronizedCollection = Collections.synchronizedCollection(new ArrayList<>());
+        final List<?> synchronizedList = Collections.synchronizedList(new ArrayList<>());
+        final Set<?> synchronizedSet = Collections.synchronizedSet(new HashSet<>());
+        final Map<?, ?> synchronizedMap = Collections.synchronizedMap(new HashMap<>());
+        //...
+    }
 
     public static void main(final String[] args) {
         final BiConsumer<String, String> printToStdout = (role, message) ->
