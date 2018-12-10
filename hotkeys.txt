@@ -9,5 +9,5 @@ shift+f6 -Redaktira vsichki promenlivi
 ctrl+r tursesh neshto
 ctrl+shift+N -tusrq fail v proekta
 ctrl+shift+"+" ili "-" ]-razguva/sguva metodi
-ctrl+o -optimizaciq na importove
+ctrl+alt+o -optimizaciq na importove
 ctrl+alt+l-opravq rastoqniq

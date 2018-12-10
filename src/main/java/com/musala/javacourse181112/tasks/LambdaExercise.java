@@ -9,9 +9,9 @@ import java.util.function.Predicate;
 public class LambdaExercise {
     public static void main(final String[] args) {
 
-        final Function<String, StringBuilder> stringToStringBuilderFunction= StringBuilder::new;
-        final Predicate<String> stringTestLenght10=s-> s!=null && s.length()==10;
-       System.out.println( stringTestLenght10.test("0123456789"));
+        final Function<String, StringBuilder> stringToStringBuilderFunction = StringBuilder::new;
+        final Predicate<String> stringTestLenght10 = s -> s != null && s.length() == 10;
+        System.out.println(stringTestLenght10.test("0123456789"));
 
     }
 }

@@ -19,7 +19,7 @@ public class CollectionsExample {
 
         //final int myListSize = myList.size();
 
-        //myList.forEach(System.out::println);
+      //  myList.forEach(System.out::println);
 
         //myList.forEach(i -> myList.remove(i));
         /*for(int i = 0; i < myList.size(); i++) {
