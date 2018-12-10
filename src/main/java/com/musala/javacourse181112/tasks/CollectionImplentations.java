@@ -109,7 +109,7 @@ public class CollectionImplentations {
         queue.add("Three");
         queue.add("Four");
         queue.add("Five");
-        System.out.print(queue);
+        queue.forEach(i->System.out.print(i+ " "));
         System.out.println("Is the queue empty: " + queue.isEmpty());
         System.out.println("Peek (first element): " + queue.peek());
         System.out.println("The size is: " + queue.size());
