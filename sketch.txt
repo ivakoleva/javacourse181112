@@ -103,3 +103,6 @@ method signature
 bounded/unbounded (queue)
 FIFO (first-in-first-out) / LIFO (last-in-last-out)
 Key-Value pairs
+
+JVM param for enabling assertions -ea
+please do set runner config VM options field
