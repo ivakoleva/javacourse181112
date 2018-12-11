@@ -2,7 +2,6 @@ package com.musala.javacourse181112.tasks.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -11,11 +10,11 @@ public class BlockingQueueDrainToExercise {
         final Collection<String> collection = new ArrayList<>();
         final BlockingQueue blockingQueue = new ArrayBlockingQueue(10);
 
-        blockingQueue.offer("sha");
+        blockingQueue.offer("Christmas");
+        blockingQueue.offer("is");
+        blockingQueue.offer("coming");
         blockingQueue.offer("la");
-        blockingQueue.offer("La");
-        blockingQueue.offer("i");
-        blockingQueue.offer("shy");
+        blockingQueue.offer("la");
         blockingQueue.offer("be");
         blockingQueue.offer("happy");
         blockingQueue.offer("or");
@@ -25,7 +24,7 @@ public class BlockingQueueDrainToExercise {
         System.out.println(blockingQueue);
 
         blockingQueue.drainTo(collection, 5);
-        System.out.println("Collection: " + collection);
 
+        System.out.println("Collection: " + collection);
     }
 }
