@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.io;
 
 //   ** PushbackReader exercise
 //           *** use buffer of 128 length

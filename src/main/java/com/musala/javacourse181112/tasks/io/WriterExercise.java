@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.io;
 //    ** Write exercise - using Writer, write/append
 //            *** read from program parameters
 //            *** write each parameter to a new line

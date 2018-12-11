@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.io;
 
 import java.io.FileInputStream;
 import java.io.IOException;

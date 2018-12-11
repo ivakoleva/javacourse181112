@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.io;
 //** OutputStreamWriterExercise exercise
 //        *** using FileOutputStream, bridge to Writer then write some content
 //        *** content encoding - Windows-1251
