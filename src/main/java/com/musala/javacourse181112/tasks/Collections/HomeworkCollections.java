@@ -73,7 +73,7 @@ public class HomeworkCollections {
     }
 
     public static void executeWithArrayList() {
-        ArrayList<String> stringArrayList = new ArrayList();
+        final ArrayList<String> stringArrayList = new ArrayList();
         stringArrayList.add("chair");
         stringArrayList.add("Table");
         stringArrayList.add("Desk");
@@ -88,7 +88,7 @@ public class HomeworkCollections {
     }
 
     public static void executeWithLinkedList() {
-        LinkedList<String> stringLinkedList = new LinkedList();
+        final LinkedList<String> stringLinkedList = new LinkedList();
         stringLinkedList.add("Chair");
         stringLinkedList.add("Table");
         stringLinkedList.add("Desk");
@@ -110,7 +110,7 @@ public class HomeworkCollections {
     }
 
     public static void executeWithQueue() {
-        PriorityQueue<String> stringQueue = new PriorityQueue<>();
+        final PriorityQueue<String> stringQueue = new PriorityQueue<>();
         stringQueue.add("chair");
         stringQueue.add("Table");
         stringQueue.add("Desk");
@@ -125,7 +125,7 @@ public class HomeworkCollections {
     }
 
     public static void executeWithDeque() {
-        ArrayDeque<String> stringDeque = new ArrayDeque<>();
+        final ArrayDeque<String> stringDeque = new ArrayDeque<>();
         stringDeque.add("chair");
         stringDeque.add("Table");
         stringDeque.add("Desk");
@@ -140,7 +140,7 @@ public class HomeworkCollections {
     }
 
     public static void executeWithMap() {
-        Map<Integer, String> map = new HashMap();
+        final Map<Integer, String> map = new HashMap();
         map.put(1, "chair");
         map.put(2, "Table");
         map.put(3, "Desk");
