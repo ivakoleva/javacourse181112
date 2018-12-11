@@ -8,7 +8,7 @@ public class InputStreamExercise {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("tasks.md");
-        final OutputStream outputStream = new FileOutputStream("tasksVersion3.md");
+        final OutputStream outputStream = new FileOutputStream("tasks_copy.md");
         int i;
         /*while ((i = inputStream.read()) != -1) {
             System.out.print((char) i);

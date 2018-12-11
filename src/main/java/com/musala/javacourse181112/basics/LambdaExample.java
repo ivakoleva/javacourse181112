@@ -1,6 +1,8 @@
 package com.musala.javacourse181112.basics;
 
 import java.util.Arrays;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class LambdaExample {
     public static void main(final String[] args) {
@@ -14,6 +16,7 @@ public class LambdaExample {
 
             }
         };
+
         final Runnable myRunnableAnonymous = () -> System.out.println("run");
 
         int[] intArray = {1, 2, 3};
@@ -22,7 +25,18 @@ public class LambdaExample {
 //            System.out.println(i);
 //        });
         Arrays.stream(intArray).forEach(System.out::println);
+        final Function<Integer, Long> castIntegerToLong = (i) -> (long) i;
+        final long result = castIntegerToLong.apply(1);
+
+        final Predicate<String> startsWithACaseIntensitivePredicate = s -> s != null && s.toLowerCase().startsWith("a");
+
+        startsWithACaseIntensitivePredicate.test(" asdasd");
+
+//        startsWithACaseIntensitivePredicate.negate().test();
+
+
     }
+
 }
 
 class MyRunnable implements Runnable {

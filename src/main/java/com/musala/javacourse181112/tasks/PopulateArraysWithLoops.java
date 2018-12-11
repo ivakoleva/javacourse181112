@@ -4,6 +4,9 @@ package com.musala.javacourse181112.tasks;
 //import java.util.Arrays;
 //import java.util.List;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class PopulateArraysWithLoops {
@@ -18,7 +21,8 @@ public class PopulateArraysWithLoops {
         //whileArray();
 //        doWhileArray();
 //        forArray();
-        forEachArray(); // Doesn't work
+//        forEachArray(); // Doesn't work
+        usingLambdaAndIterator();
     }
 
     // fill using while
@@ -57,20 +61,30 @@ public class PopulateArraysWithLoops {
             k++;
             System.out.println(intArr[k]);
         }
+
 //        Arrays.stream(intArr).forEach(i -> {
 //            intArr[i] = i;
 //            System.out.println(intArr[i]);
-//
 //        });
 //    }
 //
-//    public static void usingLambdaAndIterator(){
-//
-//        final List<Integer> myList = new ArrayList<>();
-//    }
+//         TODO Implement Iterator
     }
 
+    public static void usingLambdaAndIterator() {
 
-    //TODO Implement Lambda expression
-    // TODO Implement Iterator
+        Arrays.stream(intArr).forEach(i -> {
+            for (int j = 0; j <intArr.length ; j++) {
+                intArr[j] = j;
+                
+            }
+            System.out.println(intArr[i]);
+        });
+//        System.out.println(intArr[1]);
+
+//            myList.forEach(i -> myList.set(i, i + 1));
+//            Arrays.stream(myList).forEach(System.out::println);
+
+    }
 }
+

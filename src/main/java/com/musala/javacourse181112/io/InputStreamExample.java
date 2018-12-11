@@ -7,6 +7,8 @@ import java.io.InputStream;
 
 public class InputStreamExample {
     public static void main(final String[] args) throws IOException {
+//        Input stream/ output stream  ,
+//        reader/writer
 
 
         final InputStream inputStream = new FileInputStream("sketch.txt");

@@ -1,3 +1,94 @@
+10.12:
+
+* Homework:
+    ** Singleton implementation of Application class
+    ** spawning two threads, sharing a map instance
+        *** Long key - current system millis
+        *** String message
+        *** when adding entries, do runtime type check of elements explicitly
+    ** producer thread populating unlimited values on each 3 seconds
+    ** consumer thread
+        *** reads 10 map entries
+        *** prints them on stdout
+        *** interrupts producer thread
+    ** main thread exits with 0
+    
+    ** review all new example implementations   
+
+06.12:
+
+* Homework:
+    ** Populate an instance per general-purpose collection implementations 
+        *** Set (HashSet, TreeSet, LinkedHashSet)
+        *** List (ArrayList, LinkedList)
+        *** Queue
+        *** Deque (ArrayDeque, LinkedList)
+    ** Populate a Map
+    ** Loop a collection/map and modify (remove an element/entry while looping)
+    ** Apply add/put remove contains size isEmpty etc. 
+    
+    ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
+        *** writing thread running 5 exact times, then closing the stream
+        *** reading thread looping while data available
+    ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
+
+03.12:
+
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Homework:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** implement String predicate - if string is length of 10
+    ** File exercise (29.11) - complete if not yet completed
+    ** DataObjectStreamExercise (29.11) - complete if not yet completed
+    ** Primitives and Wrappers exercise
+        *** define and initialize all supported types of primitives and their respective wrappers
+        *** loop and print array to stdout
+        *** stream the array (Arrays util)
+        *** using instanceof, filter by boolean 
+        *** collect to list
+
+29.11:
+
+* Recommended for weekend exercises:
+    ** PushbackReader exercise
+            *** use buffer of 128 length
+            *** print to stdout
+            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
+        
+    ** Bonus: subclass FilterInputStream
+        *** count all read operations (each time read() is being called from outside)
+        *** add a counter class field
+        *** implement getCount() method
+        
+    ** WatchServiceExample questions ?
+    ** FileVisitorWalkTreeExample questions ?
+        
+* Exercises:
+    ** File exercise
+        *** creation 
+            **** create a file using a non-existing path
+            **** show if file exists
+            **** create as directory
+            **** create two new files into that directory
+        *** delete on exit
+            **** create a new file
+            **** mark for deletion on exit
+            **** list parent directory, containing this filename (to prove existence in runtime)
+            **** exit program, then check manually if file exists
+         
+* Homework:
+    ** DataObjectStreamExercise 
+        *** implement a serializable class Company
+        *** write diverse multiple primitives, persons and companies to file
+        *** r``ead them back from file
+        *** collect them to data structure (array of objects or collection)
+        *** loop data structure then print to stdout  
+    ** Code review of WatchServiceExample
+    ** Code review of FileVisitorWalkTreeExample
+
 26.11:
 
 * Important: tomorrow (27.11.) will do exercises only - on-side or remotely
@@ -17,7 +108,7 @@
         *** write each parameter to a new line
         *** write to a file
         
-    ** InputStreamWriter exercise
+    ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content
         *** content encoding - Windows-1251
         *** add buffering (Buffered*)
