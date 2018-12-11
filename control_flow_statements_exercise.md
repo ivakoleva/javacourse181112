@@ -36,7 +36,7 @@ public class Test{
     }else{
      System.out.println("second string");
      }
+    }
   System.out.println("third string");`
-  }
  }
 }
