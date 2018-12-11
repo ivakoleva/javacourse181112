@@ -13,6 +13,11 @@ public class BlockingQueueExercise {
        for (int i=0;i<10;i++){
            blockingQueue.offer(i);
        }
+       System.out.println("Before drain:");
+       blockingQueue.forEach(i -> System.out.print(i + " "));
        blockingQueue.drainTo(queue,5);
+       System.out.println("After drain:");
+       queue.forEach(i -> System.out.print(i + " "));
+       blockingQueue.forEach(i -> System.out.print(i + " "));
     }
 }
