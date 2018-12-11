@@ -1,128 +1,146 @@
 package com.musala.javacourse181112.tasks.collections;
-import java.sql.SQLOutput;
+
 import java.util.*;
 
+// ok
 public class HomeworkCollections {
-    public static void main(String[] args) {
-        hashset();
-        Treeset();
-        LinkedHashSet();
-        ArrayList();
-        PriorityQueue();
-        map();
-
-
+    public static void main(final String[] args) {
+        executeWithHashSet();
+        executeWithTreeSet();
+        executeWithLinkedHashSet();
+        executeWithArrayList();
+        executeWithPriorityQueue();
+        executeWithHashMap();
     }
-    public static void hashset() {
-        HashSet<String> hset = new HashSet<>();
-        hset.add("One");
-        hset.add("Two");
-        hset.add("Three");
-        hset.add("Four");
-        Iterator<String> i = hset.iterator();
-        while (i.hasNext()) {
-            System.out.println(i.next());
+
+    public static void executeWithHashSet() {
+        final Set<String> stringSet = new HashSet<>();
+        stringSet.add("One");
+        stringSet.add("Two");
+        stringSet.add("Three");
+        stringSet.add("Four");
+        final Iterator<String> iterator = stringSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
-    public static void Treeset(){
-        TreeSet<String> al=new TreeSet<String>();
-        al.add("Andrey");
-        al.add("Mario");
-        al.add("Ivan");
-        al.add("Georgi");
+
+    public static void executeWithTreeSet() {
+        final Set<String> stringSet = new TreeSet<>();
+        stringSet.add("Andrey");
+        stringSet.add("Mario");
+        stringSet.add("Ivan");
+        stringSet.add("Georgi");
         //Traversing elements
-        Iterator<String> itr=al.iterator();
-        while(itr.hasNext()){
-            System.out.println(itr.next());
+        final Iterator<String> iterator = stringSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
-    public static void LinkedHashSet(){
-        LinkedHashSet<String> set=new LinkedHashSet();
-        set.add("One");
-        set.add("Two");
-        set.add("Three");
-        set.add("Four");
-        set.add("Five");
-        Iterator<String> i=set.iterator();
-        while(i.hasNext())
-        {
-            System.out.println(i.next());
-        }
-    }
-    public static void ArrayList(){
-        ArrayList<String> arrlist=new ArrayList<String>();
-        arrlist.add("Milen");
-        arrlist.add("Marin");
-        arrlist.add("Rafail");
-        arrlist.add("Genadi");
 
-        System.out.println(arrlist);
-    }
-    public static void LinkedList() {
-        LinkedList<String> al = new LinkedList<String>();
-        al.add("Andrei");
-        al.add("Zahari");
-        al.add("Evlogi");
-        al.add("Mitko");
-
-        Iterator<String> itr = al.iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
+    public static void executeWithLinkedHashSet() {
+        final Set<String> stringSet = new LinkedHashSet<>();
+        stringSet.add("One");
+        stringSet.add("Two");
+        stringSet.add("Three");
+        stringSet.add("Four");
+        stringSet.add("Five");
+        final Iterator<String> iterator = stringSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
-    public static void PriorityQueue(){
-        PriorityQueue<String> queue=new PriorityQueue<String>();
-        queue.add("Ivan");
-        queue.add("Joro");
-        queue.add("Gosho");
-        queue.add("Valeri");
-        queue.add("Milen");
-        System.out.println("head:"+queue.element());
-        System.out.println("head:"+queue.poll());
+
+    public static void executeWithArrayList() {
+        final List<String> stringList = new ArrayList<>();
+        stringList.add("Milen");
+        stringList.add("Marin");
+        stringList.add("Rafail");
+        stringList.add("Genadi");
+        System.out.println(stringList);
+    }
+
+    public static void executeWithLinkedList() {
+        final List<String> stringList = new LinkedList<>();
+        stringList.add("Andrei");
+        stringList.add("Zahari");
+        stringList.add("Evlogi");
+        stringList.add("Mitko");
+
+        final Iterator<String> iterator = stringList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
+    public static void executeWithPriorityQueue() {
+        final Queue<String> stringQueue = new PriorityQueue<>();
+        stringQueue.add("Ivan");
+        stringQueue.add("Joro");
+        stringQueue.add("Gosho");
+        stringQueue.add("Valeri");
+        stringQueue.add("Milen");
+        System.out.println("head:" + stringQueue.element());
+        System.out.println("head:" + stringQueue.poll());
         System.out.println("iterating the queue elements:");
-        Iterator itr=queue.iterator();
-        while(itr.hasNext()){
-            System.out.println(itr.next());
+        // TODO: generics
+        final Iterator iterator = stringQueue.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
-        queue.remove();
-        queue.poll();
-        System.out.println("after removing two elements:");
-        Iterator<String> itr2=queue.iterator();
-        while(itr2.hasNext()){
-            System.out.println(itr2.next());
-        }
-    }
-    public static void arrayDeque(){
-        Deque deque = new ArrayDeque();
-        deque.add("One");
-        deque.add("Anelia");
-        deque.add("Kamila");
 
-        Iterator iterator = deque.iterator();
-        while(iterator.hasNext()){
-            String stringIterator = (String) iterator.next();
+        // TODO: maybe output values
+        stringQueue.remove();
+        stringQueue.poll();
+
+        System.out.println("after removing two elements:");
+        // TODO: maybe extract in a separate method
+        final Iterator<String> iterator1 = stringQueue.iterator();
+        while (iterator1.hasNext()) {
+            System.out.println(iterator1.next());
         }
     }
-    public static void map(){
-        final Map<String, String> maping = new HashMap<String, String>() {{
-            put("RC", "T1");
-            put("ACasas", "T1");
-        }};
-        Iterator mapIterator = maping.entrySet().iterator();
-        while(mapIterator.hasNext()){
-            Map.Entry entry = (Map.Entry) mapIterator.next();
+
+    public static void executeWithArrayDeque() {
+        final Deque<String> stringDeque = new ArrayDeque<>();
+        stringDeque.add("One");
+        stringDeque.add("Anelia");
+        stringDeque.add("Kamila");
+
+        // TODO: generics
+        final Iterator iterator = stringDeque.iterator();
+        while (iterator.hasNext()) {
+            final String value = (String) iterator.next(); // TODO: usage
+        }
+    }
+
+    public static void executeWithHashMap() {
+        final Map<String, String> map = new HashMap<>();
+        map.put("RC", "T1");
+        map.put("ACasas", "T1");
+
+        final Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            final Map.Entry<String, String> entry = iterator.next();
             System.out.println(entry.getKey() + "" + entry.getValue());
         }
-        while(mapIterator.hasNext()){
-            Map.Entry<String,String> entry = (Map.Entry) mapIterator.next();
-          if (entry.getValue().length()%2==0 ){
-              mapIterator.remove();
-          }
-        }
 
+        final Iterator<Map.Entry<String, String>> iterator1 = map.entrySet().iterator();
+        while (iterator1.hasNext()) {
+            if (iterator1.next().getValue().length() % 2 == 0) {
+                iterator1.remove();
+            }
+        }
     }
 }
 
+// explanation of anonymous class implementation above
+/*class CustomHashMap extends HashMap<String, String> {
+    {
+        put("RC", "T1");
+        put("ACasas", "T1");
+    }
+}*/
 
 
 
