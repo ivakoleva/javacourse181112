@@ -6,6 +6,10 @@
         *** populate a List of values, some of which duplicated
         *** deduplicate (result of unique values only, equals() & hashCode())
             **** 2 implementations - with and without Lambda
+    ** BlockingQueue drainTo Exercise
+        *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
+        *** populate with 10 elements
+        *** instantiate a collection, then transfer 5 queue elements to that collection
 
 10.12:
 
