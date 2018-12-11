@@ -39,6 +39,7 @@
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
+        
     ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
 
 03.12:
