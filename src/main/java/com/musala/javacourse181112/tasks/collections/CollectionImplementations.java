@@ -1,19 +1,19 @@
 package com.musala.javacourse181112.tasks.collections;
 
-//    ** Populate an instance per general-purpose collection implementations
-//            *** Set (HashSet, TreeSet, LinkedHashSet)
-//            *** List (ArrayList, LinkedList)
-//            *** Queue
-//            *** Deque (ArrayDeque, LinkedList)
-//    ** Populate a Map
-//    ** Loop a collection/map and modify (remove an element/entry while looping)
-//    ** Apply add/put remove contains size isEmpty etc.
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
+/**
+ * * Populate an instance per general-purpose collection implementations
+ * ** Set (HashSet, TreeSet, LinkedHashSet)
+ * ** List (ArrayList, LinkedList)
+ * ** Queue
+ * ** Deque (ArrayDeque, LinkedList)
+ * * Populate a Map
+ * * Loop a collection/map and modify (remove an element/entry while looping)
+ * * Apply add/put remove contains size isEmpty etc.
+ */
 public class CollectionImplementations {
     public static void main(final String[] args) {
         hashSetImplementation();
@@ -22,11 +22,14 @@ public class CollectionImplementations {
     }
 
     public static void hashSetImplementation() {
-        final Set<Integer> integerHashSet = new HashSet<>(IntStream
+        final Set<Integer> integerHashSet = IntStream
                 .range(0, 3)
                 .boxed()
                 .map(i -> i + 1)
-                .collect(Collectors.toSet()));
+                // Supplier<R> supplier <- supplier of collection (implementation-specific) instance
+                // BiConsumer<R, ? super T> accumulator <- what happens if accumulate one value to set
+                // BiConsumer<R, R> combiner <- what happens if combine two sets of values
+                .collect(HashSet::new, HashSet::add, AbstractCollection::addAll);
 
         System.out.println("Printing integerHashSet: " + integerHashSet);
         System.out.println("it has " + integerHashSet.size() + " elements.");
@@ -44,7 +47,8 @@ public class CollectionImplementations {
     }
 
     public static void treeSetImplementation() {
-        final Set<Integer> integerTreeSet = new TreeSet<>(IntStream
+        // TODO
+        final TreeSet<Integer> integerTreeSet = new TreeSet<>(IntStream
                 .range(0, 7)
                 .boxed()
                 .map(i -> i + 1)
@@ -61,8 +65,8 @@ public class CollectionImplementations {
             System.out.print(iterator.next() + " ");
         }
 
-        System.out.println("\nFirst element is: " + ((TreeSet<Integer>) integerTreeSet).first());
-        System.out.println("First element is pooled.. " + ((TreeSet<Integer>) integerTreeSet).pollFirst());
+        System.out.println("\nFirst element is: " + integerTreeSet.first());
+        System.out.println("First element is pooled.. " + integerTreeSet.pollFirst());
         System.out.println("Now it looks this way: " + integerTreeSet);
 
         integerTreeSet.clear();
@@ -72,6 +76,7 @@ public class CollectionImplementations {
     }
 
     public static void linkedHashSetImplementation() {
+        // TODO
         final Set<Integer> integerTreeSet = new TreeSet<>(IntStream
                 .range(0, 7)
                 .boxed()
