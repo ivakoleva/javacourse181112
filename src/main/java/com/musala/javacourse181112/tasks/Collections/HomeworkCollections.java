@@ -6,18 +6,17 @@ import java.util.stream.IntStream;
 
 public class HomeworkCollections {
     public static void main(String[] args) {
-        hashSet();
-        treeSet();
-        linkedHashSet();
-        arrayList();
-        linkedList();
-        queue();
-        deque();
-        map();
+        executeWithHashSet();
+        executeWithTreeSet();
+        executeWithLinkedHashSet();
+        executeWithArrayList();
+        executeWithLinkedList();
+        executeWithQueue();
+        executeWithDeque();
+        executeWithMap();
     }
 
-    // *** Set (HashSet, TreeSet, LinkedHashSet)
-    public static void hashSet() {
+    public static void executeWithHashSet() {
 
         final Set<String> stringSet = new HashSet<>();
         stringSet.add("chair");
@@ -36,7 +35,7 @@ public class HomeworkCollections {
         stringSet.clear();
     }
 
-    public static void treeSet() {
+    public static void executeWithTreeSet() {
         final Set<String> stringTreeSet = new TreeSet<>();
         stringTreeSet.add("chair");
         stringTreeSet.add("table");
@@ -54,7 +53,7 @@ public class HomeworkCollections {
         stringTreeSet.clear();
     }
 
-    public static void linkedHashSet() {
+    public static void executeWithLinkedHashSet() {
 
         final Set<String> stringLinkedHashSet = new LinkedHashSet<>();
         stringLinkedHashSet.add("chair");
@@ -73,9 +72,7 @@ public class HomeworkCollections {
         stringLinkedHashSet.clear();
     }
 
-    //*** List (ArrayList, LinkedList)
-
-    public static void arrayList() {
+    public static void executeWithArrayList() {
         ArrayList<String> stringArrayList = new ArrayList();
         stringArrayList.add("chair");
         stringArrayList.add("Table");
@@ -90,7 +87,7 @@ public class HomeworkCollections {
         stringArrayList.clear();
     }
 
-    public static void linkedList() {
+    public static void executeWithLinkedList() {
         LinkedList<String> stringLinkedList = new LinkedList();
         stringLinkedList.add("Chair");
         stringLinkedList.add("Table");
@@ -112,8 +109,7 @@ public class HomeworkCollections {
 
     }
 
-    //*** Queue
-    public static void queue() {
+    public static void executeWithQueue() {
         PriorityQueue<String> stringQueue = new PriorityQueue<>();
         stringQueue.add("chair");
         stringQueue.add("Table");
@@ -127,9 +123,8 @@ public class HomeworkCollections {
         System.out.println("The size is: " + stringQueue.size());
         stringQueue.clear();
     }
-    //*** Deque (ArrayDeque, LinkedList)
 
-    public static void deque() {
+    public static void executeWithDeque() {
         ArrayDeque<String> stringDeque = new ArrayDeque<>();
         stringDeque.add("chair");
         stringDeque.add("Table");
@@ -144,7 +139,7 @@ public class HomeworkCollections {
         stringDeque.clear();
     }
 
-    public static void map() {
+    public static void executeWithMap() {
         Map<Integer, String> map = new HashMap();
         map.put(1, "chair");
         map.put(2, "Table");
