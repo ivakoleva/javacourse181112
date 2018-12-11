@@ -1,3 +1,37 @@
+06.12:
+
+* Homework:
+    ** Populate an instance per general-purpose collection implementations 
+        *** Set (HashSet, TreeSet, LinkedHashSet)
+        *** List (ArrayList, LinkedList)
+        *** Queue
+        *** Deque (ArrayDeque, LinkedList)
+    ** Populate a Map
+    ** Loop a collection/map and modify (remove an element/entry while looping)
+    ** Apply add/put remove contains size isEmpty etc. 
+    
+    ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
+        *** writing thread running 5 exact times, then closing the stream
+        *** reading thread looping while data available
+    ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
+
+03.12:
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Homework:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** implement String predicate - if string is length of 10
+    ** File exercise (29.11) - complete if not yet completed
+    ** DataObjectStreamExercise (29.11) - complete if not yet completed
+    ** Primitives and Wrappers exercise
+        *** define and initialize all supported types of primitives and their respective wrappers
+        *** loop and print array to stdout
+        *** stream the array (Arrays util)
+        *** using instanceof, filter by boolean 
+        *** collect to list
+
 29.11:
 
 * Recommended for weekend exercises:
