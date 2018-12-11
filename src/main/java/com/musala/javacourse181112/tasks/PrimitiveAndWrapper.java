@@ -10,7 +10,7 @@ public class PrimitiveAndWrapper {
         List<Object> list = new ArrayList<>();
 
         boolean boolPrim = false;
-        Boolean boolWrapper = new Boolean(boolPrim);
+        Boolean boolWrapper = new Boolean (boolPrim);
         list.add(boolPrim);
         list.add(boolWrapper);
 
@@ -54,6 +54,5 @@ public class PrimitiveAndWrapper {
 
         Predicate<Object> predicate  = (obj)-> obj instanceof Number;
         list.forEach(curObj -> System.out.println(predicate.test(curObj) + " "+ curObj.toString()));
-
     }
 }
