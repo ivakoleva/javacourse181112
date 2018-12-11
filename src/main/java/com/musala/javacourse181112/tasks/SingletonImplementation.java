@@ -4,27 +4,26 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class SingletonImplementation extends Application {
-    public static void main(String[] args) {
-        final SingletonImplementation singletonImplementation = SingletonImplementation.getInstance();
-        final SingletonImplementation singletonImplementation1 = SingletonImplementation.getInstance();
-        assert singletonImplementation == singletonImplementation1;
-
-
-    }
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.show();
-    }
-    private static SingletonImplementation INSTANCE;
+    private static SingletonImplementation instance;
 
     private SingletonImplementation() {
     }
 
-    private static synchronized SingletonImplementation getInstance() {
-        if(INSTANCE == null) {
-            INSTANCE = new SingletonImplementation();
-        }
-        return INSTANCE;
+    @Override
+    public void start(final Stage primaryStage) {
+        primaryStage.show();
     }
 
+    public static void main(final String[] args) {
+        final SingletonImplementation singletonImplementation = SingletonImplementation.getInstance();
+        final SingletonImplementation singletonImplementation1 = SingletonImplementation.getInstance();
+        assert singletonImplementation == singletonImplementation1;
+    }
+
+    private static synchronized SingletonImplementation getInstance() {
+        if (instance == null) {
+            instance = new SingletonImplementation();
+        }
+        return instance;
+    }
 }
