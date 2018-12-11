@@ -1,6 +1,19 @@
 10.12:
 
-
+* Homework:
+    ** Singleton implementation of Application class
+    ** spawning two threads, sharing a map instance
+        *** Long key - current system millis
+        *** String message
+        *** when adding entries, do runtime type check of elements explicitly
+    ** producer thread populating unlimited values on each 3 seconds
+    ** consumer thread
+        *** reads 10 map entries
+        *** prints them on stdout
+        *** interrupts producer thread
+    ** main thread exits with 0
+    
+    ** review all new example implementations   
 
 06.12:
 
