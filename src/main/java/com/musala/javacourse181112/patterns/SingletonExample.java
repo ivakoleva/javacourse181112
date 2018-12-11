@@ -23,7 +23,7 @@ class SingletonClass {
     }
 
     public static SingletonClass getInstance() {
-        return INSTANCE;
+            return INSTANCE;
     }
 }
 
