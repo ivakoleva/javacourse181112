@@ -93,6 +93,4 @@ public class CollectionImplementations {
         System.out.println("\nDeleting all elements.. " + integerTreeSet);
         System.out.println("Is the treeSet empty? " + integerTreeSet.isEmpty());
     }
-
-
 }
