@@ -2,6 +2,10 @@
 
 * Exercise:
     ** Oracle Java Docs, Language Basics, questions & exercises (control_flow_statements_exercise.md)
+    ** Deduplication Exercise
+        *** populate a List of values, some of which duplicated
+        *** deduplicate (result of unique values only, equals() & hashCode())
+            **** 2 implementations - with and without Lambda
 
 10.12:
 
