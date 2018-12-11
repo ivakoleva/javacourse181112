@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class ThreadsExercise {
     private static Map<Long, String> longStringMap = Collections.synchronizedMap(new HashMap<>());
+    private static final int MAX_READS_ENTRIES = 10;
 
     public static void main(final String[] args) {
         longStringMap = Collections.checkedMap(new HashMap<>(), Long.class, String.class);
@@ -37,7 +38,7 @@ public class ThreadsExercise {
             int counter = 0;
             final Iterator<Map.Entry<Long, String>> iterator = longStringMap.entrySet().iterator();
 
-            while (!Thread.interrupted() && counter++ < 10 && iterator.hasNext()) {
+            while (!Thread.interrupted() && counter++ < MAX_READS_ENTRIES && iterator.hasNext()) {
                 Map.Entry<Long, String> entry = iterator.next();
                 System.out.println("Key: " + entry.getKey() + " : " + entry.getValue());
             }
