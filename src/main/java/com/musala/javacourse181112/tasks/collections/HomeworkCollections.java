@@ -9,6 +9,7 @@ public class HomeworkCollections {
         LinkedHashSet();
         ArrayList();
         PriorityQueue();
+        map();
 
 
     }
