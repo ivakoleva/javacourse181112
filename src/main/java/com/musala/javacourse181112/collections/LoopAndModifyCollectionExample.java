@@ -5,16 +5,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Created by Iva Koleva on 10.12.2018
+ */
 public class LoopAndModifyCollectionExample {
     public static void main(final String[] args) {
         final List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toList());
-        /*for (Integer i : integerList) {
-            if (i==2) {
+        // ConcurrentModificationException expected, modifying while looping
+        /*for(Integer i : integerList) {
+            if(i == 2) {
                 integerList.remove(i);
             }
-        }
-        integerList.forEach(System.out::print);
-        */
+        }*/
         final Iterator<Integer> iterator = integerList.iterator();
         while (iterator.hasNext()) {
             final Integer element = iterator.next();
@@ -22,9 +24,6 @@ public class LoopAndModifyCollectionExample {
                 iterator.remove();
             }
         }
-
-//        for (Iterator<Integer> iterator1 = integerList.iterator(); iterator1.hasNext(); ) {
-//            final Integer element = iterator1.hasNext(); )
+        integerList.forEach(System.out::println);
     }
 }
-//}
