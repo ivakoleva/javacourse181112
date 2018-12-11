@@ -7,7 +7,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class BlockingQueueExercise {
-    private final static List<String> ENTRY_ELEMENTS = Arrays.asList("apple", "orange", "grapes", "cherry", "strawberry");
+    private final static List<String> ENTRY_ELEMENTS = Arrays.asList("apple", "orange", "grapes", "cherry", "strawberry",
+            "watermelon", "fruit1", "fruit2", "fruit3", "fruit4");
     public static void main(String[] args) {
         testBlockingQueue();
     }
@@ -23,7 +24,7 @@ public class BlockingQueueExercise {
             // it will throw InterruptedException if the current thread is interrupted.
         }
         System.out.println("ArrayBlockingQueue: " + arrayBlockingQueue);
-        arrayBlockingQueue.drainTo(stringList);
+        arrayBlockingQueue.drainTo(stringList, 5);
         System.out.println("Drained elements to list : " + stringList);
     }
 }
