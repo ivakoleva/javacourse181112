@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks.collections;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * * Populate an instance per general-purpose collection implementations
@@ -16,9 +17,11 @@ import java.util.stream.IntStream;
  */
 public class CollectionImplementations {
     public static void main(final String[] args) {
-        hashSetImplementation();
-        System.out.println();
-        treeSetImplementation();
+//        hashSetImplementation();
+//        System.out.println();
+//        treeSetImplementation();
+//        System.out.println();
+        arrayList();
     }
 
     public static void hashSetImplementation() {
@@ -47,12 +50,12 @@ public class CollectionImplementations {
     }
 
     public static void treeSetImplementation() {
-        // TODO
-        final TreeSet<Integer> integerTreeSet = new TreeSet<>(IntStream
+        final Set<Integer> integerTreeSet = IntStream
                 .range(0, 7)
                 .boxed()
                 .map(i -> i + 1)
-                .collect(Collectors.toSet()));
+                .collect(TreeSet::new, TreeSet::add, AbstractCollection::addAll);
+
         integerTreeSet.add(14);
 
         System.out.println("Printing integerTreeSet: " + integerTreeSet);
@@ -65,8 +68,8 @@ public class CollectionImplementations {
             System.out.print(iterator.next() + " ");
         }
 
-        System.out.println("\nFirst element is: " + integerTreeSet.first());
-        System.out.println("First element is pooled.. " + integerTreeSet.pollFirst());
+        System.out.println("\nFirst element is: " + ((TreeSet<Integer>) integerTreeSet).first());
+        System.out.println("First element is pooled.. " + ((TreeSet<Integer>) integerTreeSet).pollFirst());
         System.out.println("Now it looks this way: " + integerTreeSet);
 
         integerTreeSet.clear();
@@ -77,25 +80,15 @@ public class CollectionImplementations {
 
     public static void linkedHashSetImplementation() {
         // TODO
-        final Set<Integer> integerTreeSet = new TreeSet<>(IntStream
-                .range(0, 7)
-                .boxed()
-                .map(i -> i + 1)
-                .collect(Collectors.toSet()));
+    }
 
-        System.out.println("Printing integerTreeSet: " + integerTreeSet);
-        System.out.println("It has " + integerTreeSet.size() + " elements.");
-        integerTreeSet.remove(1);
-        integerTreeSet.remove(5);
-        System.out.print("Elements 1 and 5 were removed.. new integerTreeSet looks like this: ");
+    public static void arrayList() {
+        final List<String> stringList = new ArrayList<>();
+        stringList.add(2, "two");
+        stringList.add(3, "three");
+        stringList.add(9, "nine");
 
-        final Iterator iterator = integerTreeSet.iterator();
-        while (iterator.hasNext()) {
-            System.out.print(iterator.next() + " ");
-        }
-
-        integerTreeSet.clear();
-        System.out.println("\nDeleting all elements.. " + integerTreeSet);
-        System.out.println("Is the treeSet empty? " + integerTreeSet.isEmpty());
+        stringList.forEach(System.out::print);
+        System.out.println("Element number 1 is: " + stringList.get(1));
     }
 }
