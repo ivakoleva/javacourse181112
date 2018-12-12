@@ -1,3 +1,16 @@
+11.12:
+
+* Exercise:
+    ** Oracle Java Docs, Language Basics, questions & exercises (control_flow_statements_exercise.md)
+    ** Deduplication Exercise
+        *** populate a List of values, some of which duplicated
+        *** deduplicate (result of unique values only, equals() & hashCode())
+            **** 2 implementations - with and without Lambda
+    ** BlockingQueue drainTo Exercise
+        *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
+        *** populate with 10 elements
+        *** instantiate a collection, then transfer 5 queue elements to that collection
+
 10.12:
 
 * Homework:
@@ -30,6 +43,7 @@
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
+        
     ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
 
 03.12:
