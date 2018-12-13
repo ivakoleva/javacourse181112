@@ -19,9 +19,12 @@ public class CollectionImplementations {
     public static void main(final String[] args) {
 //        hashSetImplementation();
 //        System.out.println();
-//        treeSetImplementation();
+        treeSetImplementation();
 //        System.out.println();
-        arrayList();
+//        arrayList();
+//        System.out.println();
+//        linkedHashSetImplementation();
+//        arrayList();
     }
 
     public static void hashSetImplementation() {
@@ -57,6 +60,9 @@ public class CollectionImplementations {
                 .collect(TreeSet::new, TreeSet::add, AbstractCollection::addAll);
 
         integerTreeSet.add(14);
+        integerTreeSet.add(10);
+        integerTreeSet.add(56);
+        integerTreeSet.add(9);
 
         System.out.println("Printing integerTreeSet: " + integerTreeSet);
         System.out.println("It has " + integerTreeSet.size() + " elements.");
@@ -79,16 +85,37 @@ public class CollectionImplementations {
     }
 
     public static void linkedHashSetImplementation() {
-        // TODO
+        Scanner scanner = new Scanner(System.in);
+        final LinkedHashSet<String> linkedHashSet = new LinkedHashSet(8);
+        for (int i = 0; i < linkedHashSet.size(); i++) {
+            linkedHashSet.add(scanner.next());
+            linkedHashSet.stream()
+                    .map(element -> scanner.next())
+                    .collect(Collectors.toSet());
+//        linkedHashSet.add(scanner.next())
+//        linkedHashSet.add("know");
+//        linkedHashSet.add("how");
+//        linkedHashSet.add("to");
+//        linkedHashSet.add("populate");
+//        linkedHashSet.add("using");
+//        linkedHashSet.add("the");
+//        linkedHashSet.add("keyboardInput");
+
+//        System.out.println("Printing LinkedHashSet... " + linkedHashSet);
+//        System.out.println("LinkedHashSet size is " + linkedHashSet.size());
+//        Iterator iterator = linkedHashSet.iterator();
+//            System.out.println("Remove elements " + linkedHashSet.remove("to"));
+
+
+        }
     }
 
-    public static void arrayList() {
-        final List<String> stringList = new ArrayList<>();
-        stringList.add(2, "two");
-        stringList.add(3, "three");
-        stringList.add(9, "nine");
 
-        stringList.forEach(System.out::print);
-        System.out.println("Element number 1 is: " + stringList.get(1));
+    public static void arrayList() {
+        final List<Integer> integerList = new ArrayList<>(105);
+        IntStream.range(0, 100).forEach(i -> integerList.add(null));
+//            integerList.add(50,100);
+        System.out.println(integerList.size());
+        System.out.println(integerList);
     }
 }

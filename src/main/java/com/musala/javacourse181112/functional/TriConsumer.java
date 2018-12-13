@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.functional;
 
 import java.util.Objects;
 
