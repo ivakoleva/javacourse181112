@@ -27,7 +27,7 @@
                 ***** reads file, deserializes file data, removes file
                 ***** puts to queue
                 
-        *** Bonus: program parameter - for cycles count (cycle of take-then-put back to queue)
+        *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
             **** prooof could be file naming convention (cycle count number)
 
 11.12:
