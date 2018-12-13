@@ -20,12 +20,6 @@ public class PriorityBlockingQueueExercise {
 
     private static final int SLEEP_MILLIS = 2000; // 2 seconds
 
-    private static List<Thread> populateThreads(final Runnable runnable, final String namePrefix, final int count) {
-        return IntStream.range(0, count).boxed()
-                .map(i -> new Thread(runnable, namePrefix + " " + i))
-                .collect(Collectors.toList());
-    }
-
     public static void main(final String[] args) {
         final List<Thread> threadList = Stream.concat(
                 populateThreads(() -> {
@@ -65,5 +59,10 @@ public class PriorityBlockingQueueExercise {
                 e.printStackTrace();
             }
         }
+    }
+    private static List<Thread> populateThreads(final Runnable runnable, final String namePrefix, final int count) {
+        return IntStream.range(0, count).boxed()
+                .map(i -> new Thread(runnable, namePrefix + " " + i))
+                .collect(Collectors.toList());
     }
 }
