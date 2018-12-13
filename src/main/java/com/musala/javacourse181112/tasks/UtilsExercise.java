@@ -26,7 +26,5 @@ public class UtilsExercise {
         List<Integer> integerList2 = Collections.nCopies(100,1 );
         Stream.concat(integerList.stream(),integerList2.stream())
                 .collect(Collectors.toList()).forEach(i -> System.out.print(i + " "));
-
-
     }
 }
