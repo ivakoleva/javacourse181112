@@ -13,6 +13,22 @@
         *** populate a second List
         *** add same element 100 times to second List
         *** concatenate both lists, in order to print to stdout
+        
+* Homework:
+    ** Threads, serializing/deserializing data and put/take to queue
+        *** first, populate a queue with 10 lists of integers 0-20
+        *** create a specific directory on FS (file system), dedicated to store serialized data
+        *** then spawn two threads
+            **** consumer thread, while not interrupted:
+                ***** takes a list from queue
+                ***** for each list, serializes to one file 
+            **** producer thread:
+                ***** watches the directory for a new file
+                ***** deserializes the file data
+                ***** puts to queue
+                
+        *** Bonus: program parameter - for cycles count (cycle of take-then-put back to queue)
+            **** prooof could be file naming convention (cycle count number)
 
 11.12:
 
