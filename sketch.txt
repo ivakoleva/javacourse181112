@@ -89,3 +89,20 @@ EOF (end of file, -1)
 memory leak
 
 try-with-resources
+
+EOF, EOL (end of file, end of line)
+data/object serialization
+persistent state of the application
+
+URI (Unified Resource Identifier)
+
+
+thread pool
+method signature
+
+bounded/unbounded (queue)
+FIFO (first-in-first-out) / LIFO (last-in-last-out)
+Key-Value pairs
+
+JVM param for enabling assertions -ea
+please do set runner config VM options field
