@@ -10,6 +10,13 @@
         *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
         *** populate with 10 elements
         *** instantiate a collection, then transfer 5 queue elements to that collection
+        
+* Homework:
+    ** PriorityBlockingQueue<Integer> Producer-Consumer Exercise
+        *** two producer threads, subclassing class Thread (random int between [1, 100000])
+        *** two consumer thread, subclassing class Thread
+        *** threads populate and consume, each while(true) with Thread.sleep of 2 seconds
+        *** application executes until explicitly stopped
 
 10.12:
 
