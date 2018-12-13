@@ -12,32 +12,32 @@ public class ListUtilsExercise {
             integerList.add(i);
         }
 
-        // Print list
+        // print list
         integerList.forEach(System.out::println);
         System.out.println();
 
-        // Shuffle list
+        // shuffle list
         Collections.shuffle(integerList);
         integerList.forEach(System.out::println);
         System.out.println();
 
-        // Sort list
+        // sort list
         Collections.sort(integerList);
         integerList.forEach(System.out::println);
         System.out.println();
 
-        //reverse list
+        // reverse list
         Collections.reverse(integerList);
         integerList.forEach(System.out::println);
         System.out.println();
 
-        //populate a second list
+        // populate a second list
         final List<Integer> integerList2 = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             integerList2.add(100);
         }
 
-        //concatenate lists
+        // concatenate lists
         final List<Integer> integerList3 = new ArrayList<>(integerList);
         integerList3.addAll(integerList2);
         integerList3.forEach(System.out::println);
