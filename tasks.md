@@ -22,9 +22,9 @@
             **** consumer thread, while not interrupted:
                 ***** takes a list from queue
                 ***** for each list, serializes to one file 
-            **** producer thread:
+            **** producer thread, while not interrupted:
                 ***** watches the directory for a new file
-                ***** deserializes the file data
+                ***** reads file, deserializes file data, removes file
                 ***** puts to queue
                 
         *** Bonus: program parameter - for cycles count (cycle of take-then-put back to queue)
