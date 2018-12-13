@@ -4,8 +4,6 @@ import com.sun.jmx.remote.internal.ArrayQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-//** BlockingQueue drainTo Exercise
-//        *** instantiate a collection, then populate with 5 of 10 queue elements
 public class BlockingQueueExercise {
     public static void main(String[] args) {
         final BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<>(10);
