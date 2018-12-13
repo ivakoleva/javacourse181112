@@ -2,6 +2,7 @@ package com.musala.javacourse181112.tasks.collections;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -9,7 +10,7 @@ public class DeduplicationExercise {
     public static void main(final String[] args) {
         final List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toCollection(ArrayList::new));
         integerList.add(1);
-        integerList.add(2);
+        integerList.add(1);
         integerList.add(1);
         integerList.add(1);
         integerList.add(3);
@@ -20,21 +21,25 @@ public class DeduplicationExercise {
         integerList.add(1);
         integerList.add(1);
 
+        final List<Integer> integerListWithoutDuplicates = integerList.stream().distinct().
+                collect(Collectors.toCollection(ArrayList::new));
+
         System.out.println("The list before processing:");
         System.out.println(integerList);
 
-        System.out.println("The list after processing");
-        System.out.println(deduplicate(integerList));
-        //System.out.println(doDeduplicateWithHashCode(integerList));
+        System.out.println("The list after processing:");
+        System.out.println(integerListWithoutDuplicates);
+        System.out.println(doDeduplicate(integerList));
     }
 
-    // TODO: modify while loop - using iterator
-    // TODO: using functional interface
-    private static List deduplicate(final List<Integer> integerList) {
-        for (int i = 0; i < integerList.size(); i++) {
-            for (int j = i + 1; j < integerList.size(); j++) {
-                if (integerList.get(i).equals(integerList.get(j))) {
-                    integerList.remove(j);
+    private static List doDeduplicate(final List<Integer> integerList) {
+        final ListIterator<Integer> listIterator = integerList.listIterator();
+        while (listIterator.hasNext()) {
+            final int nextIndex = listIterator.nextIndex();
+            final Integer currentItem = listIterator.next();
+            for (int i = 0; i < nextIndex; i++) {
+                if (currentItem.equals(integerList.get(i))) {
+                    listIterator.remove();
                 }
             }
         }
