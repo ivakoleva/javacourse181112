@@ -1,3 +1,19 @@
+13.12:
+
+* Exercise:
+    ** Map exercise - populate and traverse over Map:
+        *** keys
+        *** values
+        *** entries
+    ** Utils exercise 
+        *** populate an ordinal List of 10 integers
+        *** shuffle list
+        *** sort list
+        *** reverse order
+        *** populate a second List
+        *** add same element 100 times to second List
+        *** concatenate both lists, in order to print to stdout
+
 11.12:
 
 * Exercise:
@@ -10,6 +26,13 @@
         *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
         *** populate with 10 elements
         *** instantiate a collection, then transfer 5 queue elements to that collection
+        
+* Homework:
+    ** PriorityBlockingQueue<Integer> Producer-Consumer Exercise
+        *** two producer threads, subclassing class Thread (random int between [1, 100000])
+        *** two consumer thread, subclassing class Thread
+        *** threads populate and consume, each while(true) with Thread.sleep of 2 seconds
+        *** application executes until explicitly stopped
 
 10.12:
 
