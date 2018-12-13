@@ -3,13 +3,11 @@ package com.musala.javacourse181112.tasks;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
+// nice
 public class ListUtilsExercise {
-
-    public static void main(String[] args) {
-        List<Integer> integerList = new ArrayList<>();
+    public static void main(final String[] args) {
+        final List<Integer> integerList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             integerList.add(i);
         }
@@ -34,19 +32,14 @@ public class ListUtilsExercise {
         System.out.println();
 
         //populate a second list
-        List<Integer> integerList2 = new ArrayList<>();
-
+        final List<Integer> integerList2 = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             integerList2.add(100);
         }
 
         //concatenate lists
-
-        List<Integer> integerlist3 = new ArrayList<>();
-        integerlist3.addAll(integerList);
-        integerlist3.addAll(integerList2);
-        integerlist3.forEach(System.out::println);
-
-
+        final List<Integer> integerList3 = new ArrayList<>(integerList);
+        integerList3.addAll(integerList2);
+        integerList3.forEach(System.out::println);
     }
 }
