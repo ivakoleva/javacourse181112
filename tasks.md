@@ -1,7 +1,7 @@
 13.12:
 
 * Exercise:
-    ** Map exercise - populate and traverse over Map:
+   // ** Map exercise - populate and traverse over Map:
         *** keys
         *** values
         *** entries
