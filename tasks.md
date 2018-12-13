@@ -29,6 +29,8 @@
                 
         *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
             **** proof could be file naming convention (cycle count number)
+            
+    ** Read Oracle Java docs regarding Collections
 
 11.12:
 
