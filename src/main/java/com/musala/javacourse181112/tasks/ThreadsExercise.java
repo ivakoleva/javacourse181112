@@ -15,13 +15,12 @@ public class ThreadsExercise {
         final Thread producerThread = new Thread(() -> {
             //producer thread populating unlimited values on each 3 seconds
             while (!Thread.interrupted()) {
-                /*try {
-                    longStringMap.put(System.currentTimeMillis(),"message");
+                try {
+                   longStringMap.put(System.currentTimeMillis(), "message");
                    Thread.sleep(1000 * 3);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }*/
-                longStringMap.put(System.currentTimeMillis(), "message");
+                } catch (InterruptedException ignored) {
+                    System.out.println("Producer thread interrupted Exception");
+                }
             }
         });
 
@@ -30,17 +29,12 @@ public class ThreadsExercise {
              *** reads 10 map entries
              *** prints them on stdout
              *** interrupts producer thread*/
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             int counter = 0;
-            final Iterator<Map.Entry<Long, String>> iterator = longStringMap.entrySet().iterator();
+            while (!Thread.interrupted() && counter++ < MAX_READS_ENTRIES ) {
 
-            while (!Thread.interrupted() && counter++ < MAX_READS_ENTRIES && iterator.hasNext()) {
-                Map.Entry<Long, String> entry = iterator.next();
-                System.out.println("Key: " + entry.getKey() + " : " + entry.getValue());
+                for (Map.Entry<Long,String> entry : longStringMap.entrySet()){
+                    System.out.println("Key: " + entry.getKey() + " : " + entry.getValue());
+                }
             }
             producerThread.interrupt();
         });
