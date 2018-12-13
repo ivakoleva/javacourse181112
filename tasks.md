@@ -1,3 +1,91 @@
+13.12:
+
+* Exercise:
+    ** Map exercise - populate and traverse over Map:
+        *** keys
+        *** values
+        *** entries
+    ** Utils exercise 
+        *** populate an ordinal List of 10 integers
+        *** shuffle list
+        *** sort list
+        *** reverse order
+        *** populate a second List
+        *** add same element 100 times to second List
+        *** concatenate both lists, in order to print to stdout
+
+11.12:
+
+* Exercise:
+    ** Oracle Java Docs, Language Basics, questions & exercises (control_flow_statements_exercise.md)
+    ** Deduplication Exercise
+        *** populate a List of values, some of which duplicated
+        *** deduplicate (result of unique values only, equals() & hashCode())
+            **** 2 implementations - with and without Lambda
+    ** BlockingQueue drainTo Exercise
+        *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
+        *** populate with 10 elements
+        *** instantiate a collection, then transfer 5 queue elements to that collection
+        
+* Homework:
+    ** PriorityBlockingQueue<Integer> Producer-Consumer Exercise
+        *** two producer threads, subclassing class Thread (random int between [1, 100000])
+        *** two consumer thread, subclassing class Thread
+        *** threads populate and consume, each while(true) with Thread.sleep of 2 seconds
+        *** application executes until explicitly stopped
+
+10.12:
+
+* Homework:
+    ** Singleton implementation of Application class
+    ** spawning two threads, sharing a map instance
+        *** Long key - current system millis
+        *** String message
+        *** when adding entries, do runtime type check of elements explicitly
+    ** producer thread populating unlimited values on each 3 seconds
+    ** consumer thread
+        *** reads 10 map entries
+        *** prints them on stdout
+        *** interrupts producer thread
+    ** main thread exits with 0
+    
+    ** review all new example implementations   
+
+06.12:
+
+* Homework:
+    ** Populate an instance per general-purpose collection implementations 
+        *** Set (HashSet, TreeSet, LinkedHashSet)
+        *** List (ArrayList, LinkedList)
+        *** Queue
+        *** Deque (ArrayDeque, LinkedList)
+    ** Populate a Map
+    ** Loop a collection/map and modify (remove an element/entry while looping)
+    ** Apply add/put remove contains size isEmpty etc. 
+    
+    ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
+        *** writing thread running 5 exact times, then closing the stream
+        *** reading thread looping while data available
+        
+    ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
+
+03.12:
+
+* Important: tomorrow (04.12.) will do exercises only - remotely
+
+* Homework:
+    ** Lambda exercise
+        *** implement String to StringBuilder function
+        *** implement String predicate - if string is length of 10
+    ** File exercise (29.11) - complete if not yet completed
+    ** DataObjectStreamExercise (29.11) - complete if not yet completed
+    ** Primitives and Wrappers exercise
+        *** define and initialize all supported types of primitives and their respective wrappers
+        *** loop and print array to stdout
+        *** stream the array (Arrays util)
+        *** using instanceof, filter by boolean 
+        *** collect to list
+
 29.11:
 
 * Recommended for weekend exercises:
