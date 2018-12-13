@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Collections;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class UtilExercise {
     public static void main(String[] args) {
@@ -37,7 +39,9 @@ public class UtilExercise {
 
         integerList.forEach(i-> System.out.println(i));
 
-      final List<Integer> integerList1 =Collections.nCopies(100,1);
+      final List<Integer> integerList1 = Collections.nCopies(100,1);
+        Stream.concat(integerList.stream(),integerList1.stream())
+                .collect(Collectors.toList()).forEach(i-> System.out.println(i));
 
 
 
