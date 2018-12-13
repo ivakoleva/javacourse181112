@@ -13,14 +13,23 @@ public class MapExercise {
         employeesMap.put(16, "Employer16");
         employeesMap.put(17, "Employer17");
 
-        System.out.println("Is the map is empty: " + employeesMap.isEmpty());
+        //System.out.println("Is the map is empty: " + employeesMap.isEmpty());
 
         System.out.println("The map is: ");
         for (Map.Entry<Integer, String> entry : employeesMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 
-        System.out.println("The size of the map is: " + employeesMap.size());
+        System.out.println("key");
+        for (Integer key : employeesMap.keySet()){
+            System.out.println(key);
+        }
+
+        System.out.println("values");
+        for (String value : employeesMap.values()){
+            System.out.println(value);
+        }
+        /*System.out.println("The size of the map is: " + employeesMap.size());
 
         System.out.println("Does the map contain key = 3: " + employeesMap.containsKey(3));
 
@@ -33,6 +42,6 @@ public class MapExercise {
         System.out.println("Map after processing:");
         for (Map.Entry<Integer, String> entry : employeesMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
-        }
+        }*/
     }
 }
