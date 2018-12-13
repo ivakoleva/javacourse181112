@@ -28,7 +28,7 @@
                 ***** puts to queue
                 
         *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
-            **** prooof could be file naming convention (cycle count number)
+            **** proof could be file naming convention (cycle count number)
 
 11.12:
 
