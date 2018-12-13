@@ -5,19 +5,19 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class BlockingQueueExample {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         //LinkedBlockingQueue<Integer> blockingQueue = new LinkedBlockingQueue<>(IntStream.range(0,10).boxed().map(i-> i*i).collect(Collectors.toCollection(LinkedBlockingQueue::new)));
-        LinkedBlockingQueue<Integer> blockingQueue = new LinkedBlockingQueue<>();
-        for (int i=0; i<10;i++){
-            if (!blockingQueue.offer(i*i)){
+        final LinkedBlockingQueue<Integer> blockingQueue = new LinkedBlockingQueue<>();
+        for (int i = 0; i < 10; i++) {
+            if (!blockingQueue.offer(i * i)) {
                 System.out.println("no space is currently available.");
             }
         }
 
         blockingQueue.forEach(System.out::println);
 
-        List<Integer> newList = new ArrayList<>();
-        blockingQueue.drainTo(newList,7);
+        final List<Integer> newList = new ArrayList<>();
+        blockingQueue.drainTo(newList, 7);
 
 
         System.out.println("------------");
