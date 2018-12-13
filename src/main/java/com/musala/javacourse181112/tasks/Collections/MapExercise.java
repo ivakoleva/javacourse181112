@@ -23,11 +23,11 @@ public class MapExercise {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
         Iterator keyIterator = map.keySet().iterator();
-        while (keyIterator.hasNext()){
+        while (keyIterator.hasNext()) {
             System.out.println(keyIterator.next());
         }
         Iterator valueMapIterator = map.values().iterator();
-        while (valueMapIterator.hasNext()){
+        while (valueMapIterator.hasNext()) {
             System.out.println(valueMapIterator.next());
         }
     }
