@@ -15,29 +15,38 @@ import java.util.stream.Stream;
  ** Loop a collection/map and modify (remove an element/entry while looping)
  ** Apply add/put remove contains size isEmpty etc.
  */
+// nice
 public class ListExercise {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // arrayListExercise();
         //linkedListExercise();
         utilExercise();
     }
 
     public static void utilExercise() {
-        List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+        final List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toList());
         print(integerList);
+
         Collections.shuffle(integerList);
         print(integerList);
+
         Collections.sort(integerList);
         print(integerList);
+
         Collections.reverse(integerList);
         print(integerList);
-        List<Integer> secondIntegerList = Collections.nCopies(100, 1);
-        Stream.concat(integerList.stream(), secondIntegerList.stream()).collect(Collectors.toList()).forEach(i -> System.out.print(i + " "));
+
+        final List<Integer> secondIntegerList = Collections.nCopies(100, 1);
+        Stream.concat(integerList.stream(), secondIntegerList.stream())
+                .collect(Collectors.toList())
+                .forEach(i -> System.out.print(i + " "));
     }
-    public static void print(List<Integer> integerList){
+
+    public static void print(List<Integer> integerList) {
         integerList.forEach(i -> System.out.print(i + " "));
         System.out.println();
     }
+
     public static void arrayListExercise() {
         List<Integer> integerArrayList = new ArrayList<>();
         for (int i = 0; i <= 10; i++) {
