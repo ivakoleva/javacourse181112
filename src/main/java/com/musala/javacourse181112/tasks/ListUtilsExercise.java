@@ -1,0 +1,52 @@
+package com.musala.javacourse181112.tasks;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class ListUtilsExercise {
+
+    public static void main(String[] args) {
+        List<Integer> integerList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            integerList.add(i);
+        }
+
+        // Print list
+        integerList.forEach(System.out::println);
+        System.out.println();
+
+        // Shuffle list
+        Collections.shuffle(integerList);
+        integerList.forEach(System.out::println);
+        System.out.println();
+
+        // Sort list
+        Collections.sort(integerList);
+        integerList.forEach(System.out::println);
+        System.out.println();
+
+        //reverse list
+        Collections.reverse(integerList);
+        integerList.forEach(System.out::println);
+        System.out.println();
+
+        //populate a second list
+        List<Integer> integerList2 = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            integerList2.add(100);
+        }
+
+        //concatenate lists
+
+        List<Integer> integerlist3 = new ArrayList<>();
+        integerlist3.addAll(integerList);
+        integerlist3.addAll(integerList2);
+        integerlist3.forEach(System.out::println);
+
+
+    }
+}
