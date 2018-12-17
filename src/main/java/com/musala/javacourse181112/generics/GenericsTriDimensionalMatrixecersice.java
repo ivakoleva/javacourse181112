@@ -16,7 +16,7 @@ public class GenericsTriDimensionalMatrixecersice {
 
 
     }
-   final  List<List<List<Integer>>> integerList = new ArrayList<List<List<Integer>>>();
+   final  List<List<List<Integer>>> triDimensionalList = new ArrayList<List<List<Integer>>>();
 
 
 }
