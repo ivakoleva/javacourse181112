@@ -18,19 +18,20 @@ public class GenericsTriDimensionalMatrixExercise {
                 };
 
         // TODO: using List, applying generics
-        List<Object> triDemenIntegerArray=listMaker(3,3);
+        List<Object> triDemenIntegerArray = multidimentionalListMaker(3, 3);
     }
-    public static List<Object> listMaker(int n,int n_n){
-        if(n==1){
-            List<Object> l=new ArrayList<>();
-            for(int i=0;i<n_n;i++){
+
+    public static List<Object> multidimentionalListMaker(int n, int n_n) {
+        if (n == 1) {
+            List<Object> l = new ArrayList<>();
+            for (int i = 0; i < n_n; i++) {
                 l.add(i);
             }
             return l;
         }
-        List<Object> l=new ArrayList<>();
-        for(int i=0;i<n_n;i++){
-            l.add(listMaker(n-1,n_n));
+        List<Object> l = new ArrayList<>();
+        for (int i = 0; i < n_n; i++) {
+            l.add(listMaker(n - 1, n_n));
         }
         return l;
     }
