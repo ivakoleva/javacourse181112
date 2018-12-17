@@ -1,7 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
 import java.io.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +16,7 @@ public class ThreadsAndQueueExercise implements Serializable {
             true,
             Collections.nCopies(10, IntStream.range(0, 20)
                     .boxed()
-                    .collect(Collectors.toCollection(ArrayList::new))));
+                    .collect(Collectors.toList())));
     private final static File firstFile = new File("C:\\Users\\Public\\Documents");
     private final static File secondFile = new File(firstFile, "serialize.txt");
     private final static List<Integer> LIST_OF_INTEGER = new ArrayList<>(Objects.requireNonNull(QUEUE_OF_LIST.poll()));
