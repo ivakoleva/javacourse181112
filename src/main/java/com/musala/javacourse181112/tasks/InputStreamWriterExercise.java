@@ -7,7 +7,7 @@ import java.util.List;
 
 public class InputStreamWriterExercise {
     public static void main(final String[] args) {
-        try(InputStream reader=new BufferedInputStream(new FileInputStream("sketch.txt"),128);
+   /*    try(InputStream reader=new BufferedInputStream(new FileInputStream("sketch.txt"),128);
             Writer writer= new OutputStreamWriter(new FileOutputStream("BufferedOutputStreamExercise.txt"),
                     Charset.forName("Windows-1251"))) {
             List textList= read(reader);
@@ -44,6 +44,6 @@ public class InputStreamWriterExercise {
             str+=((char)i);
         }
         return str;
-    }
+    }*/
 }
 }

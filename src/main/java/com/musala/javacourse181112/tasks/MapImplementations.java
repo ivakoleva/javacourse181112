@@ -1,7 +1,5 @@
 package com.musala.javacourse181112.tasks;
 
-import com.sun.org.apache.xalan.internal.xsltc.dom.KeyIndex;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

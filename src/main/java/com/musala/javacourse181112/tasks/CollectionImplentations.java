@@ -149,16 +149,19 @@ public class CollectionImplentations {
         map.put(3, "Three");
         map.put(4, "Four");
         map.put(5, "Five");
-        Set set = map.entrySet();
-        Iterator mapIterator = set.iterator();
+        Iterator mapIterator = map.entrySet().iterator();
         while (mapIterator.hasNext()) {
             Map.Entry entry = (Map.Entry) mapIterator.next();
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
         while (mapIterator.hasNext()) {
-            Map.Entry entry = (Map.Entry) mapIterator.next();
+            Map.Entry<Integer,String> entry = (Map.Entry) mapIterator.next();
             if (((int) entry.getKey()) % 2 == 0) {
                 mapIterator.remove();
+                continue;
+            }
+                if ( entry.getValue().length()%2==0) {
+                    mapIterator.remove();
             }
         }
 

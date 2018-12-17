@@ -1,10 +1,7 @@
 package com.musala.javacourse181112.tasks;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.function.Supplier;
