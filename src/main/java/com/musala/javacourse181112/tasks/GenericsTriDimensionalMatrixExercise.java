@@ -1,8 +1,5 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Iva Koleva on 17.12.2018
  */
@@ -17,6 +14,6 @@ public class GenericsTriDimensionalMatrixExercise {
                 };
 
         // TODO: using List, applying generics
-        final List<List<List<Integer>>> triDimensionalList = new ArrayList<List<List<Integer>>>();
+        // List, containing elements of List, each element is List of Integers
     }
 }
