@@ -1,9 +1,9 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
  ** spawning two threads, sharing a map instance
@@ -18,66 +18,75 @@ import java.util.concurrent.ConcurrentHashMap;
  ** main thread exits with 0
  */
 public class ThreadExercise {
-    public static void main(final String[] args) {
-        final WrappedMap wrappedMap = new WrappedMap(new ConcurrentHashMap<>());
-
-        final Thread producerThread = new Thread(() -> {
-            while (!Thread.interrupted()) {
-                final long time = System.currentTimeMillis();
-                wrappedMap.getMap().put(time, "Current time:" + time);
-                //System.out.println(2);
-            }
-            System.out.println("Producer thread exited.");
-        });
-        final Thread consumerThread = new Thread(() -> {
-            for (int i = 0; i < 10; ) {
-                final Map.Entry<Long, String> element = wrappedMap.poll();
-                if (element != null) {
-                    System.out.println(element.getKey() + "->" + element.getValue());
-                    i++;
+    public static void main(String[] args) {
+        WrappedMap myMap = new WrappedMap();
+        Thread producerThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (!Thread.interrupted()) {
+                    long time = System.currentTimeMillis();
+                    myMap.concurrentMap.put(time, "Current time:" + time);
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException ignore) {
+                    }
+                    //System.out.println(2);
                 }
-                //System.out.println(1);
+                System.out.println("Producer thread exited.");
             }
-            System.out.println("Consumer thread exited.");
-            producerThread.interrupt();
         });
+        Thread consumerThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 10; ) {
+                    Map.Entry<Long, String> element = myMap.poll();
+                    if (element != null) {
+                        System.out.println(element.getKey() + "->" + element.getValue());
+                        i++;
+                    }
+                    //System.out.println(1);
+                }
+                while(producerThread.getState()!= Thread.State.TIMED_WAITING&&!producerThread.isInterrupted())
+                {
+                    producerThread.interrupt();
+                }
+                System.out.println("Consumer thread exited.");
 
+            }
+        });
         producerThread.start();
         consumerThread.start();
-
         try {
             producerThread.join();
             consumerThread.join();
         } catch (InterruptedException ignore) {
         }
     }
+
 }
 
 @Deprecated
 class SingletonMapEntry {
+
     public Map<Integer, Integer> getInstance() {
         return Collections.singletonMap(1, 1);
     }
 }
 
 class WrappedMap {
-    private final Map<Long, String> map;
+    public ConcurrentMap<Long, String> concurrentMap = new ConcurrentHashMap<>();
 
-    public Map<Long, String> getMap() {
-        return map;
+    public WrappedMap() {
     }
 
-    public WrappedMap(final Map<Long, String> map) {
-        this.map = map;
-    }
-
-    public synchronized Map.Entry<Long, String> poll() {
-        final Iterator<Map.Entry<Long, String>> iterator = map.entrySet().iterator();
-        if (iterator.hasNext()) {
-            final Map.Entry<Long, String> entry = iterator.next();
-            iterator.remove();
+    public Map.Entry<Long, String> poll() {
+        Iterator<Map.Entry<Long, String>> mapIterator = concurrentMap.entrySet().iterator();
+        if (mapIterator.hasNext()) {
+            Map.Entry<Long, String> entry = mapIterator.next();
+            mapIterator.remove();
             return entry;
         }
         return null;
     }
+
 }
