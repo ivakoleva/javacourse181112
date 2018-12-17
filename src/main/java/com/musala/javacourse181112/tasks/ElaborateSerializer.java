@@ -2,9 +2,11 @@ package com.musala.javacourse181112.tasks;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -14,74 +16,69 @@ The task isn't finished. It compiles so far, but doesn't execute how it is suppo
 Missing code: producer doesn't put to queue and the the bonus part
  */
 
+// OOK
 public class ElaborateSerializer implements Serializable {
     private final static long serialVersionUID = 8451123469653627934L;
-    private final static List<Integer> INTEGER_LIST = IntStream.range(0, 21)
-            .boxed()
-            .collect(Collectors.toCollection(ArrayList::new));
 
-    private final static BlockingQueue<List<Integer>> INTEGER_QUEUE = new ArrayBlockingQueue<List<Integer>>(200,
+    private final static List<Integer> INTEGER_LIST = IntStream.range(0, 21).boxed().collect(Collectors.toList());
+    private final static BlockingQueue<List<Integer>> INTEGER_QUEUE = new ArrayBlockingQueue<>(
+            200,
             true,
-            Collections.nCopies(10, INTEGER_LIST));
+            Collections.nCopies(10, INTEGER_LIST)); // TODO: rather function than reusing same collection reference
 
-    private final static String PATH_NAME = "D:\\course\\test";
-    //private final static Path path = Paths.get(PATH_NAME);
-    //private final static File file = path.toFile();
-    private final static File file = new File(PATH_NAME);
-    private final static Path path = file.toPath();
-    private final static File file1 = new File(file, "serialized_objects.txt");
-    private final static List<Integer> ONE_INTEGER_LIST = INTEGER_QUEUE.poll().stream().collect(Collectors.toList());
+    private final static String PATH_NAME = "test";
+    //private final static Path FILE_PATH = Paths.get(PATH_NAME);
+    //private final static File FILE = FILE_PATH.toFile();
+    private final static File FILE = new File(PATH_NAME); // TODO: business-oriented naming
+    private final static Path FILE_PATH = FILE.toPath();
+    private final static File FILE1 = new File(FILE, "serialized_objects.txt");
 
-    public static void main(String[] args) throws IOException {
+    private static final Supplier<List<Integer>> POLL_INTEGER_LIST_FROM_QUEUE = INTEGER_QUEUE::poll;
 
+    public static void main(final String[] args) throws IOException {
         System.out.println(INTEGER_QUEUE);
         spawnThreads();
     }
 
-    private static void spawnThreads() throws IOException {
-
+    private static void spawnThreads() {
         final Thread consumerThread = new Thread(() -> {
             while (!Thread.interrupted()) {
-                try {
-                    final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file1));
-                    objectOutputStream.writeObject(ONE_INTEGER_LIST);
-                    objectOutputStream.close();
+                try (final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE1))) {
+                    objectOutputStream.writeObject(POLL_INTEGER_LIST_FROM_QUEUE.get());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
 
-
         final Thread producerThread = new Thread(() -> {
-            List<Integer> oneIntegerList = null;
-            while (!Thread.interrupted()) {
-                try {
-                    WatchService service = FileSystems.getDefault().newWatchService();
-                    while (true) {
-                        //WatchKey key =  path.register(service, StandardWatchEventKinds.ENTRY_CREATE);
-                        WatchKey key = service.take();
-                        for (WatchEvent<?> event : key.pollEvents()) {
-                            WatchEvent.Kind<?> kind = event.kind();
-                            if (kind == StandardWatchEventKinds.OVERFLOW) {
-                                continue;
+            try {
+                final WatchService service = FileSystems.getDefault().newWatchService();
+                while (!Thread.interrupted()) {
+                    //WatchKey key =  FILE_PATH.register(service, StandardWatchEventKinds.ENTRY_CREATE);
+                    final WatchKey key = service.take();
+                    for (WatchEvent<?> event : key.pollEvents()) {
+                        final WatchEvent.Kind<?> kind = event.kind();
+
+                        if (StandardWatchEventKinds.ENTRY_CREATE.equals(kind)) {
+                            //System.out.println("Creating " + event.context().toString());
+                            System.out.println("Watched [eventType=" + kind + ", FILE_PATH=" + event.context() + "]");
+
+                            List<Integer> oneIntegerList = null;
+                            try (final ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE1))) {
+                                oneIntegerList = (List<Integer>) objectInputStream.readObject();
                             }
-                            //WatchEvent<Path> watchEvent = (WatchEvent<Path>) event;
-                            //Path path = watchEvent.context();
-                            System.out.println("[eventType=" + kind
-                                    + ", path=" + path.getFileName() + "]");
-                            final ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file1));
-                            oneIntegerList = (List<Integer>) objectInputStream.readObject();
-                            objectInputStream.close();
-                            Files.delete(path);
-                            if (!key.reset()) {
-                                break;
-                            }
+                            // TODO: put to queue
+
+                            Files.delete(FILE_PATH);
+                        }
+                        if (!key.reset()) {
+                            break;
                         }
                     }
-                } catch (IOException | InterruptedException | ClassNotFoundException e) {
-                    e.printStackTrace();
                 }
+            } catch (IOException | InterruptedException | ClassNotFoundException e) {
+                e.printStackTrace();
             }
         });
 
