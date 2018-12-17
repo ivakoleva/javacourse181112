@@ -1,5 +1,6 @@
 package com.musala.javacourse181112.generics;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class GenericsTriDimensionalMatrixecersice {
 
 
     }
-    List<Integer> integerList = new LinkedList<>();
+   final  List<List<List<Integer>>> integerList = new ArrayList<List<List<Integer>>>();
 
 
 }
