@@ -1,8 +1,10 @@
 package com.musala.javacourse181112.tasks;
 
-import java.io.ObjectInput;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 17.12.2018
@@ -18,21 +20,40 @@ public class GenericsTriDimensionalMatrixExercise {
                 };
 
         // TODO: using List, applying generics
-        List<Object> triDemenIntegerArray = multidimentionalListMaker(3, 3);
+        List<Object> triDimensionalIntegerArray = multidimensionalListMaker(3);
+        System.out.println();
+
+        // TODO: type elaboration ?
+        final List<Object> triDimensionalIntegerList = generateListRecursive(3);
+        System.out.println();
     }
 
-    public static List<Object> multidimentionalListMaker(int n, int n_n) {
+    private final static int ELEMENTS_COUNT = 3;
+
+    public static List<Object> multidimensionalListMaker(final int n) {
         if (n == 1) {
-            List<Object> l = new ArrayList<>();
-            for (int i = 0; i < n_n; i++) {
-                l.add(i);
+            final List<Object> objectList = new ArrayList<>();
+            for (int i = 0; i < ELEMENTS_COUNT; i++) {
+                objectList.add(i);
             }
-            return l;
+            return objectList;
         }
-        List<Object> l = new ArrayList<>();
-        for (int i = 0; i < n_n; i++) {
-            l.add(listMaker(n - 1, n_n));
+        final List<Object> objectList = new ArrayList<>();
+        for (int i = 0; i < ELEMENTS_COUNT; i++) {
+            objectList.add(multidimensionalListMaker(n - 1));
         }
-        return l;
+        return objectList;
+    }
+
+    // alternative
+    public static List<Object> generateListRecursive(final int depth) {
+        switch (depth) {
+            case 0:
+                return Collections.emptyList();
+            case 1:
+                return IntStream.range(0, ELEMENTS_COUNT).boxed().collect(Collectors.toList());
+        }
+        return IntStream.range(0, ELEMENTS_COUNT).boxed()
+                .map(i -> generateListRecursive(depth - 1)).collect(Collectors.toList());
     }
 }
