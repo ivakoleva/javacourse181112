@@ -14,5 +14,6 @@ public class GenericsTriDimensionalMatrixExercise {
                 };
 
         // TODO: using List, applying generics
+        // List, containing elements of List, each element is List of Integers
     }
 }
