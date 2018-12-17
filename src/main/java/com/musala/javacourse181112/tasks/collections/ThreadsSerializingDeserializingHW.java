@@ -15,10 +15,10 @@ public class ThreadsSerializingDeserializingHW {
 
         LinkedList<Integer> intList = new LinkedList<>();
 
-        for (int i = 0; i <= 20; i++){
+        for (int i = 0; i <20; i++){
             intList.add(i);
         }
-        for(int i=0 ; i<=10; i++){
+        for(int i=0 ; i<10; i++){
             integerQueue.offer(intList);
         }
 
