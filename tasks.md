@@ -1,3 +1,11 @@
+17.12:
+
+* Exercise:
+    * GenericsTriDimensionalMatrixExercise - show-case of multi-dimensional array; define tri-dimensional List of Integers
+
+* Homework:
+    * Recursion - populate a n-level dimensional List of int recursively
+
 13.12:
 
 * Exercise:
