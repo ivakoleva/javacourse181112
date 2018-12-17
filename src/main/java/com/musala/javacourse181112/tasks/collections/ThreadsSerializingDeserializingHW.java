@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.tasks.collections;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,15 +11,22 @@ import java.io.ObjectOutputStream;
 public class ThreadsSerializingDeserializingHW {
 
     public static void main(String[] args) {
-        Queue<Integer> integerQueue = new LinkedList<>();
+        Queue<LinkedList<Integer>> integerQueue = new LinkedList<>();
 
-        for (int i = 0; i <= 20; i++) ((LinkedList<Integer>) integerQueue).add(i);
+        LinkedList<Integer> intList = new LinkedList<>();
+
+        for (int i = 0; i <= 20; i++){
+            intList.add(i);
+        }
+        for(int i=0 ; i<=10; i++){
+            integerQueue.offer(intList);
+        }
 
         File directory = getSerializedDirectory();
         writeObjects(directory, integerQueue);
     }
 
-    public static void writeObjects(File directory, Object object)
+    public static void writeObjects(File directory,Queue<LinkedList<Integer>> integerQueue)
     {
         try
         {
@@ -26,7 +34,9 @@ public class ThreadsSerializingDeserializingHW {
                     new FileOutputStream(directory+"//serializedData");
             ObjectOutputStream out =
                     new ObjectOutputStream(fileOut);
-            out.writeObject(object);
+            for(LinkedList i:integerQueue){
+                out.writeObject(i);
+            }
             out.close();
             fileOut.close();
         }catch(IOException i)
