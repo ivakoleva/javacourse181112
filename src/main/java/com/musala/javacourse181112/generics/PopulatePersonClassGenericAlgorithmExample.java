@@ -33,8 +33,8 @@ public class PopulatePersonClassGenericAlgorithmExample {
     public static <T extends Entity> T populateEntity(
             final String filename,
             Class<T> entityClass) {
-
-
+        //TODO
+        return null;
     }
 
     /*public static <T extends Entity> Collection<T> populateEntities(final Class<T> entityClass, final String... filenames) {
