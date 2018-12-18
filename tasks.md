@@ -1,3 +1,20 @@
+17.12:
+
+* Exercise:
+    * GenericsTriDimensionalMatrixExercise - show-case of multi-dimensional array; define tri-dimensional List of Integers
+    * Recursion - populate a n-level dimensional List of int recursively
+
+* Homework:
+    * Wildcard bridge
+        ** create a List of unknowns
+        ** pass argument to bridge method
+        ** implement workaround so we could add an object to List
+        ** should be able to compile then run, and print to stdout
+   
+    * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
+    
+    * Read Java Oracle docs regarding Generics (by email)
+
 13.12:
 
 * Exercise:
