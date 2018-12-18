@@ -1,5 +1,4 @@
 package com.musala.javacourse181112.tasks.Generics;
-
 /* * Wildcard bridge
         ** create a List of unknowns
         ** pass argument to bridge method
