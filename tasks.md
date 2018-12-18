@@ -1,3 +1,20 @@
+17.12:
+
+* Exercise:
+    * GenericsTriDimensionalMatrixExercise - show-case of multi-dimensional array; define tri-dimensional List of Integers
+    * Recursion - populate a n-level dimensional List of int recursively
+
+* Homework:
+    * Wildcard bridge
+        ** create a List of unknowns
+        ** pass argument to bridge method
+        ** implement workaround so we could add an object to List
+        ** should be able to compile then run, and print to stdout
+   
+    * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
+    
+    * Read Java Oracle docs regarding Generics (by email)
+
 13.12:
 
 * Exercise:
@@ -13,6 +30,24 @@
         *** populate a second List
         *** add same element 100 times to second List
         *** concatenate both lists, in order to print to stdout
+        
+* Homework:
+    ** Threads, serializing/deserializing data and put/take to queue
+        *** first, populate a queue with 10 lists of integers 0-20
+        *** create a specific directory on FS (file system), dedicated to store serialized data
+        *** then spawn two threads
+            **** consumer thread, while not interrupted:
+                ***** takes a list from queue
+                ***** for each list, serializes to one file 
+            **** producer thread, while not interrupted:
+                ***** watches the directory for a new file
+                ***** reads file, deserializes file data, removes file
+                ***** puts to queue
+                
+        *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
+            **** proof could be file naming convention (cycle count number)
+            
+    ** Read Oracle Java docs regarding Collections
 
 11.12:
 
