@@ -9,6 +9,9 @@
         *** loop over fields
             **** filter non-null values
             **** then write each field name=value format to file
+                  
+        *** Bonus 1: handle case of deserialization when whitespaces only present after =
+        *** Bonus 2: add support to parseValueFromString() of additional class types
 
 17.12:
 
