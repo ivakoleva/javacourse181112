@@ -28,15 +28,15 @@ public class WildcardExample<T extends Number & Serializable> {
         return collection.size();
     }
 
-    private void test(final Class<? super Person> unknownClass) {
+    private void test(final Class<? super Person1> unknownClass) {
         System.out.println(unknownClass.getSimpleName());
     }
 }
 
-class Entity {
+class Entity1 {
 
 }
 
-class Person extends Entity {
+class Person1 extends Entity1 {
 
 }
