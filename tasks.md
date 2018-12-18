@@ -1,3 +1,15 @@
+18.12:
+
+* Exercise:
+    ** PopulatePersonClassGenericAlgorithmExample - deserialize & populate a generic instance from file
+    
+* Homework:
+    ** PopulatePersonClassGenericAlgorithmExample - add generic serialization
+        *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
+        *** loop over fields
+            **** filter non-null values
+            **** then write each field name=value format to file
+
 17.12:
 
 * Exercise:
