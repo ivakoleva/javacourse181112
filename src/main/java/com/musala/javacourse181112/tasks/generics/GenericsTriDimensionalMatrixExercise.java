@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.generics;
 
 import java.util.ArrayList;
 import java.util.List;
