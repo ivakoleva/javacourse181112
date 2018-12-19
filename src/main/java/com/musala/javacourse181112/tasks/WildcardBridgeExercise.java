@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class WildcardBridgeExercise {
+
     public static void main(String[] args) {
         List<?> wildList = new ArrayList<>();
         addAndPrintObject((List<Integer>) wildList);
