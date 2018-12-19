@@ -1,10 +1,7 @@
 package com.musala.javacourse181112.generics;
 
-import javax.annotation.Resource;
-import javax.annotation.Resources;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -12,15 +9,13 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-import static javax.swing.UIManager.get;
 
-/**
- * Created by Iva Koleva on 18.12.2018
- */
 public class PopulatePersonClassGenericAlgorithmExample {
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
         final Person person = new Person();
