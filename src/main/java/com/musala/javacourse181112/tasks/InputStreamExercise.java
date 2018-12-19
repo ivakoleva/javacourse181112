@@ -8,10 +8,16 @@ import java.io.InputStream;
  * Created by Iva Koleva on 22.11.2018
  */
 public class InputStreamExercise {
+    private static final int SYSTEM_RESERVED_SYMBOLS = 3;
+
     public static void main(final String[] args) throws IOException {
         // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
+        int i;
+        /*while ((i = inputStream.read()) != -1) {
+            System.out.print((char) i);
+        }*/
 
         /**
          * Important note: first 3 bytes are system-reserved, please do not overwrite
@@ -21,16 +27,14 @@ public class InputStreamExercise {
         buffer[1] = (byte) 'b';
         buffer[2] = (byte) 'c';
 
-        int i;
-        while ((i = inputStream.read(buffer, 3, buffer.length - 3)) != -1) {
-            // print to stdout
-            System.out.print(new String(buffer, 3, i)); // , Charset.defaultCharset()
+        System.out.println(buffer+"\n");
 
-            // write to file
-            // TODO: do write to a previously instantiated fileOutputStream as well
+        while ((i = inputStream.read(buffer,SYSTEM_RESERVED_SYMBOLS,buffer.length-SYSTEM_RESERVED_SYMBOLS)) != -1) {
+            System.out.print(new String(buffer, SYSTEM_RESERVED_SYMBOLS, i-SYSTEM_RESERVED_SYMBOLS));
         }
 
         // proof
+        System.out.println();
         System.out.println((char) buffer[0]);
         System.out.println((char) buffer[1]);
         System.out.println((char) buffer[2]);

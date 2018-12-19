@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-/**
- * Created by Iva Koleva on 29.11.2018
+/*** Created by Iva Koleva on 29.11.2018
  */
 public class DataObjectStreamExercise {
     public static void main(final String[] args) throws IOException {
@@ -31,6 +30,7 @@ public class DataObjectStreamExercise {
                 .collect(Collectors.toList());
         System.out.println();
     }
+
 
     public static void dataObjectStreamRun() throws IOException {
         final Person person = new Person();
