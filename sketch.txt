@@ -118,4 +118,4 @@ threads, synchronization
 NIO (file system, creating directories, etc)
 generic algorithms
 explain and apply exceptions
-homeworks review
+* homeworks review
