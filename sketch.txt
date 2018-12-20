@@ -115,7 +115,7 @@ asd
 
 // TODO today
 threads, synchronization
-NIO (file system, creating directories, etc)
+* NIO (file system, creating directories, etc)
 generic algorithms
 explain and apply exceptions
 * homeworks review
