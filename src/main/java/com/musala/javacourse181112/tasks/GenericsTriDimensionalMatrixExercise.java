@@ -15,6 +15,9 @@ public class GenericsTriDimensionalMatrixExercise {
                                 {1, 2, 3}
                         }
                 };
-        final List<List<List<Integer>>> threeDimensionalMatrix = new ArrayList<>();
+
+        // TODO: using List, applying generics
+        // List, containing elements of List, each element is List of Integers
+        final List<List<List<Integer>>> triDimensionalList = new ArrayList<List<List<Integer>>>();
     }
 }
