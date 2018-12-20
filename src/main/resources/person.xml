@@ -1,0 +1,8 @@
+<person company="12" id="1">
+    <name>Ivan Ivanov</name>
+    <egn>123123</egn>
+    <company>
+        <name>MusalaSoft</name>
+        <eik></eik>
+    </company>
+</person>
