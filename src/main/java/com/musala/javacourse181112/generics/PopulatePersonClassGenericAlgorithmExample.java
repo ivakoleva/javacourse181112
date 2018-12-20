@@ -9,15 +9,15 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
 public class PopulatePersonClassGenericAlgorithmExample {
-    public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
+
+    private static Set<Object> setEntities;
+
+    public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException, ClassNotFoundException {
         final Person person = new Person();
         person.setName("Ivan Ivan");
         person.setEgn("9012121234");
@@ -26,28 +26,42 @@ public class PopulatePersonClassGenericAlgorithmExample {
         company.setName("MusalaSoft");
         company.setEik("123456789");
 
-/*        final Set<Person> personSet = new HashSet<>();
+        final Set<Person> personSet = new HashSet<>();
         personSet.add(person);
         company.setEmployeeSet(personSet);
 
-        person.setCompany(company);*/
+        person.setCompany(company);
 
         final Person personFromFile = populateEntity(
                 Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        saveEntity(Person.class, personFromFile);
-        saveEntity(Person.class, person);
-        saveEntity(Company.class, company);
+        entitySaver(Person.class, personFromFile);
+        entitySaver(Person.class, person);
+        entitySaver(Company.class, company);
         System.out.println();
 
-        /*\final Collection<Company> companiesFromFile =
+        /*final Collection<Company> companiesFromFile =
                 populateEntities(Company.class, "company_musalasoft.txt", "");*/
     }
 
-    public static <T extends Entity> void saveEntity(Class<T> entityClass, final T object) throws IOException {
+    public static <T extends Entity> void entitySaver(Class<T> entityClass, final T object) throws IOException, ClassNotFoundException {
+        setEntities = new HashSet<>();
+        saveEntity(entityClass, object);
+        for (Object setEntity : setEntities) {
+            System.out.print(setEntity + " ");
+        }
+        System.out.println();
+    }
+
+
+    public static <T extends Entity> void saveEntity(Class<T> entityClass, final T object) throws IOException, ClassNotFoundException {
         assert object != null;
         assert entityClass != null;
-
+        boolean isNewItem = true;
+        if (!setEntities.contains(object)) {
+            setEntities.add(object);
+            isNewItem = false;
+        }
         final Field[] fields = entityClass.getDeclaredFields();
         final Map<String, Object> map = Arrays.stream(fields)
                 .peek(field -> field.setAccessible(true))
@@ -81,10 +95,32 @@ public class PopulatePersonClassGenericAlgorithmExample {
         Iterator<Map.Entry<String, Object>> mapEntryIterator = map.entrySet().iterator();
         for (; mapEntryIterator.hasNext(); ) {
             Map.Entry<String, Object> entry = mapEntryIterator.next();
-            printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
+            if (!isPrimitive(entry.getValue().getClass()) && entry.getValue() instanceof Entity && isNewItem) {
+                saveEntity(((Entity) entry.getValue()).getThisClass(), (Entity) entry.getValue());
+            } else {
+                //TODO: Collection handling
+                printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
+            }
             printWriter.flush();
         }
         printWriter.close();
+    }
+
+
+    public static <T> boolean isPrimitive(Class<T> clazz) {
+        if (clazz == Integer.class || clazz == Long.class) {
+            return true;
+        }
+        if (clazz == Short.class || clazz == Byte.class) {
+            return true;
+        }
+        if (clazz == Double.class || clazz == Float.class) {
+            return true;
+        }
+        if (clazz == Character.class || clazz == Boolean.class) {
+            return true;
+        }
+        return false;
     }
 
     public static <T extends Entity> T populateEntity(final Path path, Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -134,7 +170,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
 }
 
 interface Entity {
-
+    Class getThisClass();
 }
 
 class Person implements Entity {
@@ -169,6 +205,10 @@ class Person implements Entity {
     @Override
     public String toString() {
         return this.name + "_" + this.egn;
+    }
+
+    public Class getThisClass() {
+        return Person.class;
     }
 }
 
@@ -211,5 +251,9 @@ class Company implements Entity {
     @Override
     public String toString() {
         return this.name + "_" + this.eik;
+    }
+
+    public Class getThisClass() {
+        return Company.class;
     }
 }
