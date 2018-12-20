@@ -10,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -20,13 +19,15 @@ import java.util.stream.Collectors;
  */
 public class PopulatePersonClassGenericAlgorithmExample {
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
-        final Person person = new Person();
-        person.setName("Ivan Ivan");
-        person.setEgn("9012121234");
 
         final Company company = new Company();
         company.setName("MusalaSoft");
         company.setEik("123456789");
+
+        final Person person = new Person();
+        person.setName("Ivan Ivan");
+        person.setEgn("9012121234");
+        person.setCompany(company);
 
  /*        final Set<Person> personSet = new HashSet<>();
          personSet.add(person);
@@ -46,7 +47,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
                  populateEntities(Company.class, "company_musalasoft.txt", "");*/
     }
 
-    public static <T extends Entity> void serializeEntity(Class<T> entityClass, final T object) throws IOException {
+    public static <T extends Entity> void serializeEntity(final Class<T> entityClass, final T object) throws IOException {
         assert object != null;
         assert entityClass != null;
 
@@ -72,22 +73,24 @@ public class PopulatePersonClassGenericAlgorithmExample {
                                 }
                         )
                 );
+
         Path path = Paths.get("src" , "main" , "resources");
         path.toFile().mkdirs();
         path = Paths.get(path.toString()
                 + File.separator
                 + object.getClass().getSimpleName()
-                + "_" + object.toString().replaceAll(" ","") + ".txt");
+                + "_" + object.toString().replaceAll(" ","").replaceAll("_null","")
+                + ".txt");
         path.toFile().createNewFile();
-        PrintWriter printWriter = new PrintWriter(path.toFile());
-        Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<String, Object> entry = iterator.next();
-            printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
-            printWriter.flush();
+
+        try(PrintWriter printWriter = new PrintWriter(path.toFile())){
+            map.forEach((key, value) -> {
+                        printWriter.write(key + "=" + value.toString() + System.lineSeparator());
+                        printWriter.flush();
+            });
         }
-        printWriter.close();
     }
+
 
     public static <T extends Entity> T populateEntity(final Path path, Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         assert path != null;
@@ -170,7 +173,7 @@ class Person implements Entity {
 
     @Override
     public String toString() {
-        return this.name + "_" + this.egn;
+        return this.name + "_" + this.egn+"_"+this.company;
     }
 }
 
