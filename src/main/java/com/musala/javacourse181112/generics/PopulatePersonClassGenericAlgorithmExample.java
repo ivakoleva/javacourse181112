@@ -9,10 +9,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PopulatePersonClassGenericAlgorithmExample {
@@ -58,17 +55,27 @@ public class PopulatePersonClassGenericAlgorithmExample {
         saveEntity(new PrintWriter(path.toFile()), entity, "");
 
         for (Entity setEntity : ENTITY_SET) {
-            System.out.print(setEntity + " ");
+            //System.out.print(setEntity + " ");
             setEntity.setPersisted(false);
         }
         System.out.println();
         ENTITY_SET.clear();
     }
 
+    public static <T extends Entity> void entitiesSaver(final PrintWriter printWriter, final Iterable<T> entities, final String off) throws IOException {
+        Iterator<T> collectionIterator = entities.iterator();
+        while (collectionIterator.hasNext()) {
+            Entity entity = collectionIterator.next();
+
+            saveEntity(printWriter, entity, off);
+
+        }
+    }
     public static <T extends Entity> void saveEntity(final PrintWriter printWriter, final T entity, final String off) throws IOException {
         assert entity != null;
         assert printWriter != null;
 
+        System.out.println(entity);
         if (!ENTITY_SET.contains(entity) || ENTITY_SET.isEmpty()) {
             ENTITY_SET.add(entity);
             entity.setPersisted(true);
@@ -98,30 +105,25 @@ public class PopulatePersonClassGenericAlgorithmExample {
         System.out.println();
         try {
             for (final Map.Entry<String, Object> fieldNameValueEntry : fieldNameValueMap.entrySet()) {
-                if (isEntity(fieldNameValueEntry.getValue().getClass())) {
-
-                    continue;
+                if (!isEntity(fieldNameValueEntry.getValue().getClass())) {
+                    if (isIterable(fieldNameValueEntry.getValue().getClass())) {
+                        printWriter.write(off + fieldNameValueEntry.getKey() + "=" + System.lineSeparator());
+                        entitiesSaver(printWriter, (Iterable) fieldNameValueEntry.getValue(), off + " ");
+                    } else {
+                        printWriter.write(off + fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
+                    }
                 } else {
-                    //TODO: Collection handling
-
-                    printWriter.write(off + fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
-
-                }
-                printWriter.flush();
-            }
-            for (final Map.Entry<String, Object> fieldNameValueEntry : fieldNameValueMap.entrySet()) {
-                if (isEntity(fieldNameValueEntry.getValue().getClass())) {
                     final Entity e = (Entity) fieldNameValueEntry.getValue();
+                    System.out.println(e + System.lineSeparator());
                     if (!e.isPersisted()) {
                         printWriter.write(off + fieldNameValueEntry.getKey() + "=" + System.lineSeparator());
                         saveEntity(printWriter, e, off + " ");
                     } else {
                         printWriter.write(off + fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
                     }
-
                 }
-                printWriter.flush();
             }
+
         } finally {
             printWriter.close();
         }
@@ -132,6 +134,9 @@ public class PopulatePersonClassGenericAlgorithmExample {
         return Entity.class.isAssignableFrom(clazz);
     }
 
+    public static <T> boolean isIterable(final Class<T> clazz) {
+        return Iterable.class.isAssignableFrom(clazz);
+    }
     public static <T extends Entity> T populateEntity(final Path path, final Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         assert path != null;
         assert entityClass != null;
