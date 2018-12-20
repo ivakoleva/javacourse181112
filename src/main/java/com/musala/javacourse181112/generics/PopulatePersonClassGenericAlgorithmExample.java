@@ -99,6 +99,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
                 saveEntity(((Entity) entry.getValue()).getThisClass(), (Entity) entry.getValue());
             } else {
                 //TODO: Collection handling
+
                 printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
             }
             printWriter.flush();
