@@ -63,7 +63,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
                 })
                 .collect(
                         Collectors.toMap(
-                                field -> field.getName(),
+                                Field::getName,
                                 field -> {
                                     try {
                                         return field.get(object);
@@ -79,7 +79,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
         path = Paths.get(path.toString()
                 + File.separator
                 + object.getClass().getSimpleName()
-                + "_" + object.toString().replaceAll(" ","").replaceAll("_null","")
+                + "_" + object.toString().replaceAll(" ","").replaceAll("null","")
                 + ".txt");
         path.toFile().createNewFile();
 
