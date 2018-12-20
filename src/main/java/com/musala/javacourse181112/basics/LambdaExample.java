@@ -32,7 +32,7 @@ public class LambdaExample {
         final long result = castIntegerToLong.apply(1);
 
         final Predicate<String> startsWithACaseInsensitivePredicate = s -> s != null && s.toLowerCase().startsWith("a");
-        startsWithACaseInsensitivePredicate.test("asdasd");
+        startsWithACaseInsensitivePredicate.test("PopulateAndDepopulateClassGenerics");
         //startsWithACaseInsensitivePredicate.negate().test();
         System.out.println();
     }
