@@ -80,9 +80,9 @@ public class PopulatePersonClassGenericAlgorithmExample {
                 + "_" + object.toString().replaceAll(" ","") + ".txt");
         path.toFile().createNewFile();
         PrintWriter printWriter = new PrintWriter(path.toFile());
-        Iterator<Map.Entry<String, Object>> mapEntryIterator = map.entrySet().iterator();
-        while (mapEntryIterator.hasNext()) {
-            Map.Entry<String, Object> entry = mapEntryIterator.next();
+        Iterator<Map.Entry<String, Object>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Object> entry = iterator.next();
             printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
             printWriter.flush();
         }
