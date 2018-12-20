@@ -36,9 +36,9 @@ public class PopulatePersonClassGenericAlgorithmExample {
         final Person personFromFile = populateEntity(
                 Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        entitySaver(personFromFile);
+        //entitySaver(personFromFile);
         entitySaver(person);
-        entitySaver(company);
+        // entitySaver(company);
         System.out.println();
 
         /*final Collection<Company> companiesFromFile =
@@ -48,18 +48,28 @@ public class PopulatePersonClassGenericAlgorithmExample {
     // TODO: move to class EntitySaver
     public static <T extends Entity> void entitySaver(final T entity) throws IOException {
         ENTITY_SET.clear();
-        saveEntity(entity);
+        Path path = Paths.get("src" + File.separator + "main" + File.separator + "resources");
+        path.toFile().mkdirs();
 
-        for (Object setEntity : ENTITY_SET) {
+        path = Paths.get(path.toString() +
+                File.separator + entity.getClass().getSimpleName() +
+                "_" + entity.toString() + ".txt");
+
+        saveEntity(new PrintWriter(path.toFile()), entity, "");
+
+        for (Entity setEntity : ENTITY_SET) {
             System.out.print(setEntity + " ");
+            setEntity.setPersisted(false);
         }
         System.out.println();
+        ENTITY_SET.clear();
     }
 
-    public static <T extends Entity> void saveEntity(final T entity) throws IOException {
+    public static <T extends Entity> void saveEntity(final PrintWriter printWriter, final T entity, final String off) throws IOException {
         assert entity != null;
+        assert printWriter != null;
 
-        if (!ENTITY_SET.contains(entity)) {
+        if (!ENTITY_SET.contains(entity) || ENTITY_SET.isEmpty()) {
             ENTITY_SET.add(entity);
             entity.setPersisted(true);
         }
@@ -69,7 +79,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
                 .peek(field -> field.setAccessible(true))
                 .filter(field -> {
                     try {
-                        return field.get(entity) != null;
+                        return field.get(entity) != null && !field.getName().equals("persisted");
                     } catch (IllegalAccessException | NullPointerException ignore) {
                         return false;
                     }
@@ -84,30 +94,36 @@ public class PopulatePersonClassGenericAlgorithmExample {
                             }
                         })
                 );
-        Path path = Paths.get("src" + File.separator + "main" + File.separator + "resources");
-        path.toFile().mkdirs();
+        fieldNameValueMap.forEach((k, v) -> System.out.println(k + "=" + v));
+        System.out.println();
+        try {
+            for (final Map.Entry<String, Object> fieldNameValueEntry : fieldNameValueMap.entrySet()) {
+                if (isEntity(fieldNameValueEntry.getValue().getClass())) {
 
-        path = Paths.get(path.toString() +
-                File.separator + entity.getClass().getSimpleName() +
-                "_" + entity.toString() + ".txt");
-        //path.toFile().createNewFile();
+                    continue;
+                } else {
+                    //TODO: Collection handling
 
-        try (final PrintWriter printWriter = new PrintWriter(path.toFile())) {
+                    printWriter.write(off + fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
+
+                }
+                printWriter.flush();
+            }
             for (final Map.Entry<String, Object> fieldNameValueEntry : fieldNameValueMap.entrySet()) {
                 if (isEntity(fieldNameValueEntry.getValue().getClass())) {
                     final Entity e = (Entity) fieldNameValueEntry.getValue();
                     if (!e.isPersisted()) {
-                        saveEntity(e);
+                        printWriter.write(off + fieldNameValueEntry.getKey() + "=" + System.lineSeparator());
+                        saveEntity(printWriter, e, off + " ");
                     } else {
-                        System.out.println(e + " already persisted!");
+                        printWriter.write(off + fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
                     }
-                } else {
-                    //TODO: Collection handling
 
-                    printWriter.write(fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
                 }
                 printWriter.flush();
             }
+        } finally {
+            printWriter.close();
         }
     }
 
