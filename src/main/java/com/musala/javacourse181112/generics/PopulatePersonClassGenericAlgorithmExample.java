@@ -9,13 +9,14 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-
 public class PopulatePersonClassGenericAlgorithmExample {
-
-    private static Set<Object> setEntities;
+    private static final Set<Entity> ENTITY_SET = new HashSet<>();
 
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException, ClassNotFoundException {
         final Person person = new Person();
@@ -35,96 +36,87 @@ public class PopulatePersonClassGenericAlgorithmExample {
         final Person personFromFile = populateEntity(
                 Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        entitySaver(Person.class, personFromFile);
-        entitySaver(Person.class, person);
-        entitySaver(Company.class, company);
+        entitySaver(personFromFile);
+        entitySaver(person);
+        entitySaver(company);
         System.out.println();
 
         /*final Collection<Company> companiesFromFile =
                 populateEntities(Company.class, "company_musalasoft.txt", "");*/
     }
 
-    public static <T extends Entity> void entitySaver(Class<T> entityClass, final T object) throws IOException, ClassNotFoundException {
-        setEntities = new HashSet<>();
-        saveEntity(entityClass, object);
-        for (Object setEntity : setEntities) {
+    // TODO: move to class EntitySaver
+    public static <T extends Entity> void entitySaver(final T entity) throws IOException {
+        ENTITY_SET.clear();
+        saveEntity(entity);
+
+        for (Object setEntity : ENTITY_SET) {
             System.out.print(setEntity + " ");
         }
         System.out.println();
     }
 
+    public static <T extends Entity> void saveEntity(final T entity) throws IOException {
+        assert entity != null;
 
-    public static <T extends Entity> void saveEntity(Class<T> entityClass, final T object) throws IOException, ClassNotFoundException {
-        assert object != null;
-        assert entityClass != null;
-        boolean isNewItem = true;
-        if (!setEntities.contains(object)) {
-            setEntities.add(object);
-            isNewItem = false;
+        if (!ENTITY_SET.contains(entity)) {
+            ENTITY_SET.add(entity);
+            entity.setPersisted(true);
         }
-        final Field[] fields = entityClass.getDeclaredFields();
-        final Map<String, Object> map = Arrays.stream(fields)
+
+        final Field[] fields = entity.getClass().getDeclaredFields();
+        final Map<String, Object> fieldNameValueMap = Arrays.stream(fields)
                 .peek(field -> field.setAccessible(true))
                 .filter(field -> {
                     try {
-                        return field.get(object) != null;
+                        return field.get(entity) != null;
                     } catch (IllegalAccessException | NullPointerException ignore) {
                         return false;
                     }
-                })
-                .collect(
-                        Collectors.toMap(
-                                field -> field.getName(),
-                                field -> {
-                                    try {
-                                        return field.get(object);
-                                    } catch (IllegalAccessException ignore) {
-                                        return null;
-                                    }
-                                }
-                        )
+                }).collect(Collectors.toMap(
+                        Field::getName,
+                        field -> {
+                            try {
+                                return field.get(entity);
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
+                                return null;
+                            }
+                        })
                 );
         Path path = Paths.get("src" + File.separator + "main" + File.separator + "resources");
         path.toFile().mkdirs();
+
         path = Paths.get(path.toString() +
-                File.separator + object.getClass().getName().substring(object.getClass().getName().lastIndexOf(".") + 1) +
-                "_" +
-                object.toString() + ".txt");
-        path.toFile().createNewFile();
-        PrintWriter printWriter = new PrintWriter(path.toFile());
-        Iterator<Map.Entry<String, Object>> mapEntryIterator = map.entrySet().iterator();
-        for (; mapEntryIterator.hasNext(); ) {
-            Map.Entry<String, Object> entry = mapEntryIterator.next();
-            if (!isPrimitive(entry.getValue().getClass()) && entry.getValue() instanceof Entity && isNewItem) {
-                saveEntity(((Entity) entry.getValue()).getThisClass(), (Entity) entry.getValue());
-            } else {
-                //TODO: Collection handling
+                File.separator + entity.getClass().getSimpleName() +
+                "_" + entity.toString() + ".txt");
+        //path.toFile().createNewFile();
 
-                printWriter.write(entry.getKey() + "=" + entry.getValue().toString() + System.lineSeparator());
+        try (final PrintWriter printWriter = new PrintWriter(path.toFile())) {
+            for (final Map.Entry<String, Object> fieldNameValueEntry : fieldNameValueMap.entrySet()) {
+                if (isEntity(fieldNameValueEntry.getValue().getClass())) {
+                    final Entity e = (Entity) fieldNameValueEntry.getValue();
+                    if (!e.isPersisted()) {
+                        saveEntity(e);
+                    } else {
+                        System.out.println(e + " already persisted!");
+                    }
+                } else {
+                    //TODO: Collection handling
+
+                    printWriter.write(fieldNameValueEntry.getKey() + "=" + fieldNameValueEntry.getValue().toString() + System.lineSeparator());
+                }
+                printWriter.flush();
             }
-            printWriter.flush();
         }
-        printWriter.close();
     }
 
-
-    public static <T> boolean isPrimitive(Class<T> clazz) {
-        if (clazz == Integer.class || clazz == Long.class) {
-            return true;
-        }
-        if (clazz == Short.class || clazz == Byte.class) {
-            return true;
-        }
-        if (clazz == Double.class || clazz == Float.class) {
-            return true;
-        }
-        if (clazz == Character.class || clazz == Boolean.class) {
-            return true;
-        }
-        return false;
+    public static <T> boolean isEntity(final Class<T> clazz) { // T instance
+        //return instance instanceof Entity;
+        return Entity.class.isAssignableFrom(clazz);
     }
 
-    public static <T extends Entity> T populateEntity(final Path path, Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public static <T extends Entity> T populateEntity(final Path path, final Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         assert path != null;
         assert entityClass != null;
 
@@ -171,13 +163,16 @@ public class PopulatePersonClassGenericAlgorithmExample {
 }
 
 interface Entity {
-    Class getThisClass();
+    boolean isPersisted();
+
+    void setPersisted(boolean persisted);
 }
 
 class Person implements Entity {
     private String name;
     private String egn;
     private Company company;
+    private boolean persisted;
 
     public String getName() {
         return name;
@@ -211,12 +206,22 @@ class Person implements Entity {
     public Class getThisClass() {
         return Person.class;
     }
+
+    @Override
+    public boolean isPersisted() {
+        return persisted;
+    }
+
+    public void setPersisted(boolean persisted) {
+        this.persisted = persisted;
+    }
 }
 
 class Company implements Entity {
     private String name;
     private String eik;
     private Set<Person> employeeSet;
+    private boolean persisted;
 
     public Company(String name) {
         this.name = name;
@@ -256,5 +261,13 @@ class Company implements Entity {
 
     public Class getThisClass() {
         return Company.class;
+    }
+
+    public boolean isPersisted() {
+        return persisted;
+    }
+
+    public void setPersisted(boolean persisted) {
+        this.persisted = persisted;
     }
 }
