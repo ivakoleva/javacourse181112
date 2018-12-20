@@ -108,3 +108,7 @@ JVM param for enabling assertions -ea
 please do set runner config VM options field
 
 Reifiable / Non-reifiable types
+
+CSV (comma-separated values)
+asd,"asdasd,\"asd"
+asd
