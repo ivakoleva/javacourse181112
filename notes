@@ -1,0 +1,2 @@
+final Function<Integer, Long> castIntegertoLong = integer -> (long) integer;
+final long result
