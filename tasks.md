@@ -1,3 +1,79 @@
+20.12:
+
+* Exercise:
+    ** create a concept of a validatable entity & validator
+    ** if non-valid - throw a custom checked ValidationException
+    
+    ** implement EGN validator
+    ** implement custom EGN validation exception
+    ** apply validator, using a sample EGN to test
+
+18.12:
+
+* Exercise:
+    ** PopulatePersonClassGenericAlgorithmExample - deserialize & populate a generic instance from file
+    
+* Homework:
+    ** PopulatePersonClassGenericAlgorithmExample - add generic serialization
+        *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
+        *** loop over fields
+            **** filter non-null values
+            **** then write each field name=value format to file
+                  
+        *** Bonus 1: handle case of deserialization when whitespaces only present after =
+        *** Bonus 2: add support to parseValueFromString() of additional class types
+
+17.12:
+
+* Exercise:
+    * GenericsTriDimensionalMatrixExercise - show-case of multi-dimensional array; define tri-dimensional List of Integers
+    * Recursion - populate a n-level dimensional List of int recursively
+
+* Homework:
+    * Wildcard bridge
+        ** create a List of unknowns
+        ** pass argument to bridge method
+        ** implement workaround so we could add an object to List
+        ** should be able to compile then run, and print to stdout
+   
+    * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
+    
+    * Read Java Oracle docs regarding Generics (by email)
+
+13.12:
+
+* Exercise:
+    ** Map exercise - populate and traverse over Map:
+        *** keys
+        *** values
+        *** entries
+    ** Utils exercise 
+        *** populate an ordinal List of 10 integers
+        *** shuffle list
+        *** sort list
+        *** reverse order
+        *** populate a second List
+        *** add same element 100 times to second List
+        *** concatenate both lists, in order to print to stdout
+        
+* Homework:
+    ** Threads, serializing/deserializing data and put/take to queue
+        *** first, populate a queue with 10 lists of integers 0-20
+        *** create a specific directory on FS (file system), dedicated to store serialized data
+        *** then spawn two threads
+            **** consumer thread, while not interrupted:
+                ***** takes a list from queue
+                ***** for each list, serializes to one file 
+            **** producer thread, while not interrupted:
+                ***** watches the directory for a new file
+                ***** reads file, deserializes file data, removes file
+                ***** puts to queue
+                
+        *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
+            **** proof could be file naming convention (cycle count number)
+            
+    ** Read Oracle Java docs regarding Collections
+
 11.12:
 
 * Exercise:
@@ -7,7 +83,16 @@
         *** deduplicate (result of unique values only, equals() & hashCode())
             **** 2 implementations - with and without Lambda
     ** BlockingQueue drainTo Exercise
-        *** instantiate a collection, then populate with 5 of 10 queue elements
+        *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
+        *** populate with 10 elements
+        *** instantiate a collection, then transfer 5 queue elements to that collection
+        
+* Homework:
+    ** PriorityBlockingQueue<Integer> Producer-Consumer Exercise
+        *** two producer threads, subclassing class Thread (random int between [1, 100000])
+        *** two consumer thread, subclassing class Thread
+        *** threads populate and consume, each while(true) with Thread.sleep of 2 seconds
+        *** application executes until explicitly stopped
 
 10.12:
 
