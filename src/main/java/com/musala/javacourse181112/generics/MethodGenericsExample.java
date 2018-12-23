@@ -15,6 +15,7 @@ public class MethodGenericsExample<T> {
 
     // this T is not related to T above
     private <T> List<T> getSingletonList(final T value) {
+
         return Collections.singletonList(value);
     }
 
