@@ -1,3 +1,10 @@
+02.01:
+    
+* Exercise:
+    ** find & review java.util.stream.Stream class, Java class library
+    ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
+    
+
 20.12:
 
 * Exercise:

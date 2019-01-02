@@ -112,3 +112,8 @@ Reifiable / Non-reifiable types
 CSV (comma-separated values)
 asd,"asdasd,\"asd"
 asd
+
+access modifiers:
+public, package-protected (default), protected, private scopes
+
+callback
