@@ -3,11 +3,9 @@ package com.musala.javacourse181112.tasks;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -28,6 +26,8 @@ public class StandardUtilsSampleExercise {
 
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
+        final String[] values = {"asd", "sdf"};
+        LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values);
     }
 
     // standard method callback
@@ -55,10 +55,10 @@ final class LambdaUtilsSample {
 
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
 
-    static final Function<String[],String> capitalizeFirstLettersThenConcat = (String... strings)->
-          Arrays.stream(strings)
-            .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1)
-    ).collect(Collectors.joining());
+    static final Function<String[], String> capitalizeFirstLettersThenConcat = strings ->
+            Arrays.stream(strings)
+                    .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1))
+                    .collect(Collectors.joining());
 }
 
 // classical utils class
@@ -71,10 +71,10 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        String returnString = null;
-        for(String str :strings ){
-            returnString += str.substring(0, 1).toUpperCase() + str.substring(1);
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (String string : strings) {
+            stringBuilder.append(string.substring(0, 1).toUpperCase()).append(string.substring(1));
         }
-        return returnString;
+        return stringBuilder.toString();
     }
 }
