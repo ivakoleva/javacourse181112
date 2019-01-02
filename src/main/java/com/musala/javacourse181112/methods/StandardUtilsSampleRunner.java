@@ -17,7 +17,7 @@ public class StandardUtilsSampleRunner {
 
         // utils class callback workaround
         try {
-            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
+            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
