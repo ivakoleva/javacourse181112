@@ -49,6 +49,7 @@ public class StandardUtilsSampleExercise {
     }
 }
 
+// lambda utils class
 final class LambdaUtilsSample {
     private LambdaUtilsSample() {
     }
