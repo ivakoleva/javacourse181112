@@ -55,12 +55,10 @@ final class LambdaUtilsSample {
 
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
 
-    // TODO: implement capitalizeFirstLettersThenConcat function
-   // static final Function<String[],String> capitalizeFirstLettersThenConcat = (String... strings)->
-            //Arrays.stream(strings).
-                //    map((String... strings) ->{
-                 //       strings.charAt(0).toUpperCase;
-                 //   }).collect(Collectors.joining());
+    static final Function<String[],String> capitalizeFirstLettersThenConcat = (String... strings)->
+          Arrays.stream(strings)
+            .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1)
+    ).collect(Collectors.joining());
 }
 
 // classical utils class
@@ -75,9 +73,7 @@ final class StandardUtilsSample { // Utils
     static String capitalizeFirstLettersThenConcat(final String... strings) {
         String returnString = null;
         for(String str :strings ){
-            String firstLetter = str.substring(0, 1).toUpperCase();
-            String nameCapitalized = firstLetter + str.substring(1);
-            returnString += nameCapitalized;
+            returnString += str.substring(0, 1).toUpperCase() + str.substring(1);
         }
         return returnString;
     }
