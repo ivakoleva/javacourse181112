@@ -3,6 +3,7 @@ package com.musala.javacourse181112.methods;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -51,6 +52,8 @@ final class LambdaUtilsSample {
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
 
     // TODO: implement capitalizeFirstLettersThenConcat function
+   // static final Function<String[], String> capitalizeFirstLettersThenConcat = (String... string)->
+
 }
 
 // classical utils class
@@ -63,7 +66,12 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        // TODO: implement
-        return null;
+                 String returnString = null;
+                 for (String str :strings) {
+                     String firstLetter = str.substring(0, 1).toUpperCase();
+                     String nameCapitalized = firstLetter + str.substring(1);
+                     returnString += nameCapitalized;
+                 }
+        return returnString;
     }
 }
