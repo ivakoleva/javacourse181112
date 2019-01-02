@@ -64,13 +64,7 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        StringBuilder concat= new StringBuilder();
-        for(String element:strings){
-            element=element.substring(0,1).toUpperCase()+element.substring(1).toLowerCase();
-            concat.append(element).append(", ");
-        }
-        System.out.println(concat.toString());
+        return null;
 
-        return concat.toString();
     }
 }
