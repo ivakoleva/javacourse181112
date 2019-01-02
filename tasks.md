@@ -1,3 +1,22 @@
+02.01:
+    
+* Exercise:
+    ** find & review java.util.stream.Stream class, Java class library
+    ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
+    ** implement StandardUtilSampleExercise TODOs:
+        *** StandardUtilsSample, capitalizeFirstLettersThenConcat method
+        *** LambdaUtilsSample, capitalizeFirstLettersThenConcat function
+
+20.12:
+
+* Exercise:
+    ** create a concept of a validatable entity & validator
+    ** if non-valid - throw a custom checked ValidationException
+    
+    ** implement EGN validator
+    ** implement custom EGN validation exception
+    ** apply validator, using a sample EGN to test
+
 18.12:
 
 * Exercise:
