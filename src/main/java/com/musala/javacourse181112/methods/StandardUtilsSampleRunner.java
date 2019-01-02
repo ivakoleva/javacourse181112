@@ -2,6 +2,7 @@ package com.musala.javacourse181112.methods;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.function.BinaryOperator;
 
 /**
@@ -14,12 +15,12 @@ public class StandardUtilsSampleRunner {
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
         // utils class callback workaround
-        try {
+     /*   try {
             final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
@@ -63,7 +64,13 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        // TODO: implement
-        return null;
+        StringBuilder concat= new StringBuilder();
+        for(String element:strings){
+            element=element.substring(0,1).toUpperCase()+element.substring(1).toLowerCase();
+            concat.append(element).append(", ");
+        }
+        System.out.println(concat.toString());
+
+        return concat.toString();
     }
 }

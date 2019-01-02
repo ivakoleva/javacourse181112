@@ -1,9 +1,6 @@
 package com.musala.javacourse181112.tasks.CollectionExercise;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -15,7 +12,7 @@ public class CollectionImplementation {
 
         implementUsingHashSet();
         implementUsingTreeSet();
-
+        implementUsingLinkedHashSet();
 
 
     }
@@ -36,5 +33,10 @@ public class CollectionImplementation {
         System.out.println(treeSet);
     }
 
-
+  private static void implementUsingLinkedHashSet(){
+      System.out.println("LinkedHashSet Implementation");
+        final Set<String> linkedHashSet=new LinkedHashSet<>(ENTRY_ELEMENTS);
+        linkedHashSet.add("Cow");
+      System.out.println(linkedHashSet);
+    }
 }
