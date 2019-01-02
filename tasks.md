@@ -1,3 +1,35 @@
+02.01:
+    
+* Exercise:
+    ** find & review java.util.stream.Stream class, Java class library
+    ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
+    
+
+20.12:
+
+* Exercise:
+    ** create a concept of a validatable entity & validator
+    ** if non-valid - throw a custom checked ValidationException
+    
+    ** implement EGN validator
+    ** implement custom EGN validation exception
+    ** apply validator, using a sample EGN to test
+
+18.12:
+
+* Exercise:
+    ** PopulatePersonClassGenericAlgorithmExample - deserialize & populate a generic instance from file
+    
+* Homework:
+    ** PopulatePersonClassGenericAlgorithmExample - add generic serialization
+        *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
+        *** loop over fields
+            **** filter non-null values
+            **** then write each field name=value format to file
+                  
+        *** Bonus 1: handle case of deserialization when whitespaces only present after =
+        *** Bonus 2: add support to parseValueFromString() of additional class types
+
 17.12:
 
 * Exercise:
