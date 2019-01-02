@@ -13,6 +13,8 @@ public class StandardUtilsSampleExercise {
         final long sum = StandardUtilsSample.computeSum(1, 2);
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
+
+
         // utils class callback workaround
         try {
             final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
@@ -21,7 +23,9 @@ public class StandardUtilsSampleExercise {
             e.printStackTrace();
         }
 
+
         // lambda usage
+
         LambdaUtilsSample.computeSum.apply(1L, 2L);
     }
 
@@ -45,10 +49,13 @@ public class StandardUtilsSampleExercise {
 }
 
 final class LambdaUtilsSample {
+
     private LambdaUtilsSample() {
     }
 
+
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
+
 
     // TODO: implement capitalizeFirstLettersThenConcat function
 }
@@ -57,6 +64,7 @@ final class LambdaUtilsSample {
 final class StandardUtilsSample { // Utils
     private StandardUtilsSample() {
     }
+
 
     static long computeSum(final long i1, final long i2) {
         return i1 + i2;

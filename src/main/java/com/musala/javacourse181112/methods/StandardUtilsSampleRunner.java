@@ -16,13 +16,13 @@ public class StandardUtilsSampleRunner {
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
         // utils class callback workaround
-        try {
+       /** try {
             final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-
+*/
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
     }
@@ -53,6 +53,7 @@ final class LambdaUtilsSample {
 
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
 
+
     // TODO: implement capitalizeFirstLettersThenConcat function
 }
 
@@ -68,7 +69,7 @@ final class StandardUtilsSample { // Utils
     static String capitalizeFirstLettersThenConcat(final String... strings) {
         return Arrays.stream(strings)
                 .map(string -> {
-                    // TODO: modify
+                    string= string.substring(0,1).toUpperCase() + string.substring(1);
                     return string;
                 }).collect(Collectors.joining());
     }
