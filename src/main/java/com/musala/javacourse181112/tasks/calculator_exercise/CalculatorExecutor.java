@@ -8,11 +8,12 @@ import java.util.List;
 public class CalculatorExecutor {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
-        char[] charset = {'a', 'b', 'c', 'r', 't', 'q'};
+        String charset = "asdsdgshjtkuykilrilrurlieymshnnanaga";
+        RandomPersonNameGenerator randomPersonNameGenerator = new RandomPersonNameGenerator(charset, 5, 10);
         for (int i = 0; i < 10; i++) {
-            people.add(new Person(RandomPersonNameGenerator.generateName(charset, 5, 10, i + 10));
+            people.add(new Person(randomPersonNameGenerator.generateName(), i + 10));
         }
-        Calculator calculator = new Calculator();
+        Calculator<Person> calculator = new Calculator<>();
         for (Person person : people) {
             calculator.setPerson(person);
             calculator.setYearsToAdd(10);
