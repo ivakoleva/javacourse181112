@@ -1,3 +1,4 @@
+
 package com.musala.javacourse181112.tasks;
 
 import java.lang.reflect.InvocationTargetException;
@@ -79,3 +80,4 @@ final class StandardUtilsSample { // Utils
         return stringBuilder.toString();
     }
 }
+
