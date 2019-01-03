@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -15,12 +16,12 @@ public class StandardUtilsSampleRunner {
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
         // utils class callback workaround
-     /*   try {
+        try {
             final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }*/
+        }
 
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
@@ -64,7 +65,11 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        return null;
+        return Arrays.stream(strings)
+                .map(string -> {
+                    // TODO: modify
+                    return string;
+                }).collect(Collectors.joining());
 
     }
 }
