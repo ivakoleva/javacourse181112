@@ -36,8 +36,7 @@ public class Executer {
         int nameLength = (int) (Math.random() * 7 + 3);
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < nameLength; i++) {
-            int charLength = (int) (Math.random() * 26 + 97);
-            builder.append((char) charLength);
+            builder.append((char) (int) (Math.random() * 26 + 97));
         }
         return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
