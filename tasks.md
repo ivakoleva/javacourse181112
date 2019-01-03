@@ -1,3 +1,43 @@
+02.01:
+    
+* Exercise:
+    ** find & review java.util.stream.Stream class, Java class library
+    ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
+    ** implement StandardUtilSampleExercise TODOs:
+        *** StandardUtilsSample, capitalizeFirstLettersThenConcat method
+        *** LambdaUtilsSample, capitalizeFirstLettersThenConcat function
+
+* Homework:
+    ** StaticNonstaticMethodsExercise - use static and non-static methods
+        *** create a task unique package (subpackage of com.musala.javacourse181112.tasks, think about naming)
+        *** add a Person class (entity)
+        *** add a class PersonService, implementing:
+            **** static method
+                ***** name printPersonNamesToStdout
+                ***** use appropriate access modifier (scope of visibility)
+                ***** print arguments to stdout, using space discriminator then new line
+            **** non-static methods
+                ***** addPerson, accepting and storing Person object to queue
+                ***** handlePerson, polling one from queue then printing it to stdout (hint: method composition), then returning the person polled
+                ***** think of multi-threading, always in mind
+        *** add StaticNonstaticMethodsExercise class, and implement main method:
+            **** instantiate 10 Person instances (loop) and add to collection
+            **** instantiate 2 PersonService objects
+            **** call service static and non-static methods, using populated persons
+            **** use service static method and print directly a new person instance with assigned properties
+            
+        *** Bonus: implement non-static finalize method, reseting the PersonService instances state at the end of usage
+
+20.12:
+
+* Exercise:
+    ** create a concept of a validatable entity & validator
+    ** if non-valid - throw a custom checked ValidationException
+    
+    ** implement EGN validator
+    ** implement custom EGN validation exception
+    ** apply validator, using a sample EGN to test
+
 18.12:
 
 * Exercise:

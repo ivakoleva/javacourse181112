@@ -113,9 +113,7 @@ CSV (comma-separated values)
 asd,"asdasd,\"asd"
 asd
 
-// TODO today
-threads, synchronization
-NIO (file system, creating directories, etc)
-generic algorithms
-explain and apply exceptions
-homeworks review
+access modifiers:
+public, package-protected (default), protected, private scopes
+
+callback
