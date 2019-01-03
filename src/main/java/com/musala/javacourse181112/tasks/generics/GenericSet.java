@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.Generics;
+package com.musala.javacourse181112.tasks.generics;
 
 import java.util.HashSet;
 import java.util.Set;

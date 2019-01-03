@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.MethodsExercises;
+package com.musala.javacourse181112.tasks.methods_exercises;
 
 /**
  * *** static method
@@ -13,7 +13,7 @@ package com.musala.javacourse181112.tasks.MethodsExercises;
  */
 public class PersonService {
     static void printPersonNameToStdout(final Person person) {
-        System.out.println(person.getPersonName());
+        System.out.println(person.getFirstName());
     }
 
 }
