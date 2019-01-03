@@ -2,8 +2,23 @@ package com.musala.javacourse181112.tasks.Generics;
 
 public class Person {
     private String name;
+    private int age;
     private String egn;
     private Company company;
+
+    public Person(){}
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getName() {
         return name;

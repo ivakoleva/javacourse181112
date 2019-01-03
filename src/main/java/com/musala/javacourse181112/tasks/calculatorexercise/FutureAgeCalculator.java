@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.calculatorexercise;
 
 public class FutureAgeCalculator {
     public static void main(final String[] args) {
@@ -12,6 +12,6 @@ public class FutureAgeCalculator {
         /*System.out.println("Future age calculated: " +
                 (Integer.parseInt(args[0]) +
                         Integer.parseInt(args[1])));*/
-        System.exit(0);
+
     }
 }
