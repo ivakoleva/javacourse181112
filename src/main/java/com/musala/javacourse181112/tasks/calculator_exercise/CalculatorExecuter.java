@@ -9,7 +9,7 @@ public class CalculatorExecuter {
         for (int i = 0; i < 10; i++) {
             people.add(new Person("" + i + " " + i, i + 10));
         }
-        Calculator calculator = new Calculator();
+        Calculator<Person> calculator = new Calculator<>();
         for (Person person : people) {
             calculator.setPerson(person);
             calculator.setYearsToAdd(10);

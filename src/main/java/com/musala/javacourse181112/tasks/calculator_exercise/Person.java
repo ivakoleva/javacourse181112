@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks.calculator_exercise;
 
-public class Person {
+public class Person implements Calculatable {
     private String firstName;
     private String familyName;
     private int age;

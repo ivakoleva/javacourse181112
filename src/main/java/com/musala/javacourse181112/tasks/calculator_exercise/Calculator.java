@@ -1,11 +1,11 @@
 package com.musala.javacourse181112.tasks.calculator_exercise;
 
-public class Calculator {
-    private Person person;
+public class Calculator<T extends Calculatable> {
+    private T calculatable;
     private int yearsToAdd;
 
-    public Calculator(Person person, int addAge) {
-        this.person = person;
+    public Calculator(T calculatable, int addAge) {
+        this.calculatable = calculatable;
         this.yearsToAdd = addAge;
     }
 
@@ -13,11 +13,11 @@ public class Calculator {
     }
 
     public int getFutureAge() {
-        return person.getAge() + yearsToAdd;
+        return calculatable.getAge() + yearsToAdd;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson(T calculatable) {
+        this.calculatable = calculatable;
     }
 
     public void setYearsToAdd(int yearsToAdd) {
