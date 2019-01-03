@@ -3,7 +3,7 @@ package com.musala.javacourse181112.tasks.calculatorexercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorExecuter {
+public class ClaclulatorExercise {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
