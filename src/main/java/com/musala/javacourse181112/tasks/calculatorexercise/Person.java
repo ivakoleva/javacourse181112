@@ -1,8 +1,8 @@
 package com.musala.javacourse181112.tasks.calculatorexercise;
 
 public class Person {
-    private int age;
     private int name;
+    private int age;
     private int ageToAdd;
 
     public int getAgeToAdd() {
