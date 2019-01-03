@@ -4,7 +4,7 @@ package com.musala.javacourse181112.tasks.FutureAgeCalcApp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorExecuter {
+class CalculatorExecuter {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
         String charset = "asdfghjklpoiuytrewq";
