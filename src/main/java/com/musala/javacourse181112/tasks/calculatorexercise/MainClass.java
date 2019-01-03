@@ -14,7 +14,11 @@ public class MainClass {
         final Person person9 = new Person(29);
 
         final Calculator calculator = new Calculator(10);
-        calculator.calculate(new Calculator(10),person);
-        calculator.calculate(new Calculator(15),person1);
+        final Calculator calculator1 = new Calculator(20);
+        calculator.calculate(person);
+        calculator.calculate(person1);
+
+        calculator1.calculate(person3);
+        calculator1.calculate(person4);
     }
 }

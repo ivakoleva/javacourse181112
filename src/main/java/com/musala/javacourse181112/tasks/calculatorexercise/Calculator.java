@@ -14,7 +14,7 @@ public class Calculator {
           this.years = years;
      }
 
-     public void calculate(final Calculator calculator, final Person person){
-          System.out.println(calculator.getYears() + person.getAge());
+     public void calculate( final Person person){
+          System.out.println(getYears() + person.getAge());
      }
 }
