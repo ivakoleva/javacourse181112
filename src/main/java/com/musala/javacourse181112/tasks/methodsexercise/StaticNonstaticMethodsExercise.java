@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.methodsExercise;
+package com.musala.javacourse181112.tasks.methodsexercise;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -8,13 +8,12 @@ public class StaticNonstaticMethodsExercise {
     private static final int MAX_LIST_SIZE = 10;
 
     public static void main(final String[] args) {
-
-        for (int i = 0; i < SIZE_OF_ARRAYLIST; i++) {
-            personList.add(new Person());
+        for (int i = 0; i < MAX_LIST_SIZE; i++) {
+            PERSON_LIST.add(new Person());
         }
 
         final AtomicInteger index = new AtomicInteger(0);
-        personList.forEach((element) -> element.setPersonName("Ivan" + index.getAndIncrement()));
+        PERSON_LIST.forEach(element -> element.setName("Ivan" + index.getAndIncrement()));
 
         final PersonService personService = new PersonService();
         final PersonService personService1 = new PersonService();
@@ -25,11 +24,11 @@ public class StaticNonstaticMethodsExercise {
         }
 
         //add elements to queue
-        for (Person element : personList) {
-            personService.addPersonToQueue(element);
+        for (Person element : PERSON_LIST) {
+            personService.addPerson(element);
         }
 
         System.out.println("Poll element and add to queue");
-        personService.pollAndAddElementToQueueWithThreads();
+        personService.handlePerson();
     }
 }
