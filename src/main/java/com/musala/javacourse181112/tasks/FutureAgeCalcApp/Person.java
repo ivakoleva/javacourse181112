@@ -11,7 +11,7 @@ public class Person {
 
     }
     public String getName(){
-        return familyName+ "" + familyName;
+        return firstName+ " " + familyName;
     }
 
     public int getAge(){
