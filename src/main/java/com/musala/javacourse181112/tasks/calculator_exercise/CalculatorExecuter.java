@@ -6,8 +6,9 @@ import java.util.List;
 public class CalculatorExecuter {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
+        char[] charset = {'a', 'b', 'c', 'r', 't', 'q'};
         for (int i = 0; i < 10; i++) {
-            people.add(new Person("" + i + " " + i, i + 10));
+            people.add(new Person(RandomNameGen.generateName(charset, 5, 10), i + 10));
         }
         Calculator<Person> calculator = new Calculator<>();
         for (Person person : people) {
