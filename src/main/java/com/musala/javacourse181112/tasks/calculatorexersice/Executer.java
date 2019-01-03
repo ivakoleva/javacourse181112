@@ -24,12 +24,12 @@ public class Executer {
 
     }
 
-    public static String randomFullName(int numberOfNames){
+    public static String randomFullName(int numberOfNames) {
         String fullName = new String();
-        for(int i = 0; i<numberOfNames;i++){
-            fullName+=randomName()+" ";
+        for (int i = 0; i < numberOfNames; i++) {
+            fullName += randomName() + " ";
         }
-        return  fullName;
+        return fullName;
     }
 
     public static String randomName() {
@@ -39,6 +39,6 @@ public class Executer {
             int charLength = (int) (Math.random() * 26 + 97);
             builder.append((char) charLength);
         }
-        return builder.toString().substring(0, 1).toUpperCase()+builder.toString().substring(1);
+        return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
 }
