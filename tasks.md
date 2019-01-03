@@ -1,3 +1,29 @@
+03.01:
+
+* Exercise:
+    * Future age calculator application v0.2
+        ** create tasks.calculatorexercise sub-package 
+        ** Calculator class implementation
+        ** Calculator accepts parameters of:
+            ** Person objects (age field)
+            ** years to add to age of each person
+        ** Program flow:
+            ** When starting the program, populate 10 Person objects
+            ** Instantiate Calculator
+            ** Execute additions, and print to standard output
+            ** Then exit
+        ** Distribute to end user (push to github)
+        
+    * Random person names generator
+        ** configure charset (symbols allowed)
+        ** configure min/max length per word
+        ** random generator component implementation should be dedicated to be reused
+        ** when producing a name - first letter always upper case, other letters lower case
+        ** words joined using a space
+        ** sample runner, for POC purposes
+        
+        ** Bonus: names count
+
 02.01:
     
 * Exercise:
