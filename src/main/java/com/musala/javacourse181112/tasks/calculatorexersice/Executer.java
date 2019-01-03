@@ -8,7 +8,6 @@ public class Executer {
         List<Person> people = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            int numberOfTheChar = 65 + i;
             people.add(new Person(randomFullName(2),
                     i + (int) (Math.random() * 50)));
         }
@@ -27,7 +26,7 @@ public class Executer {
     public static String randomFullName(int numberOfNames) {
         String fullName = new String();
         for (int i = 0; i < numberOfNames; i++) {
-            fullName += randomName() + " ";
+            fullName += randomName() + (i != numberOfNames ? " " : "");
         }
         return fullName;
     }
