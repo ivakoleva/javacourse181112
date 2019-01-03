@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -17,12 +18,12 @@ public class StandardUtilsSampleExercise {
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
         // utils class callback workaround
-        try {
+       /* try {
             final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
@@ -72,10 +73,17 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        final StringBuilder stringBuilder = new StringBuilder();
-        for (String string : strings) {
-            stringBuilder.append(string.substring(0, 1).toUpperCase()).append(string.substring(1));
+        /*
+         StringBuilder result = new StringBuilder();
+        for (String element : strings){
+            result.append(element.toUpperCase().charAt(0));
         }
-        return stringBuilder.toString();
+        return result.toString();*/
+
+        return Arrays.stream(strings)
+                .map(string -> {
+                    string = string.substring(0,1).toUpperCase() + string.substring(1);
+                    return string;
+                }).collect(Collectors.joining());
     }
 }
