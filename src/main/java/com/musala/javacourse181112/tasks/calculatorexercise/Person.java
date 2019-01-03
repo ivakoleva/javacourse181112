@@ -1,7 +1,7 @@
 package com.musala.javacourse181112.tasks.calculatorexercise;
 
 public class Person {
-    private int name;
+
     private int age;
     private int ageToAdd;
 
@@ -21,11 +21,4 @@ public class Person {
         this.age = age;
     }
 
-    public int getName() {
-        return name;
-    }
-
-    public void setName(int name) {
-        this.name = name;
-    }
 }
