@@ -1,3 +1,19 @@
+03.01:
+
+* Exercise:
+    * Future age calculator application v0.2
+        ** create tasks.calculatorexercise sub-package 
+        ** Calculator class implementation
+        ** Calculator accepts parameters of:
+            ** Person objects (age field)
+            ** years to add to age of each person
+        ** Program flow:
+            ** When starting the program, populate 10 Person objects
+            ** Instantiate Calculator
+            ** Execute additions, and print to standard output
+            ** Then exit
+        ** Distribute to end user (push to github)   
+
 02.01:
     
 * Exercise:
