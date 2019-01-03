@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.methods;
+package com.musala.javacourse181112.tasks;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Iva Koleva on 02.01.2019
  */
-public class StandardUtilsSampleRunner {
+public class StandardUtilsSampleExercise {
     public static void main(final String[] args) {
         // utils class usage
         final long sum = StandardUtilsSample.computeSum(1, 2);
