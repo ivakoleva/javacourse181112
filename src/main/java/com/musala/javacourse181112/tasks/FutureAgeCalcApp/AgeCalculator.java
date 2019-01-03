@@ -2,29 +2,28 @@ package com.musala.javacourse181112.tasks.FutureAgeCalcApp;
 
 
 
-public class AgeCalculator {
-    private Person person;
-    private int yearsToadd;
+public class AgeCalculator<T extends Calculatable> {
+    private T calculatable;
+    private int yearsToAdd;
 
-    public  AgeCalculator(Person person, int addAge){
-        this.person = person;
-        this.yearsToadd = addAge;
+    public AgeCalculator(T calculatable, int addAge) {
+        this.calculatable = calculatable;
+        this.yearsToAdd = addAge;
     }
 
-    public AgeCalculator(){
-
-    }
-    public int getFutureAge(){
-        return person.getAge() + yearsToadd;
-
-
+    public AgeCalculator() {
     }
 
-    public void setPerson(Person person){
-        this.person = person;
+    public int getFutureAge() {
+        return calculatable.getAge() + yearsToAdd;
     }
 
-    public void setYearsToadd(int yearsToadd){
-        this.yearsToadd = yearsToadd;
+    public void setPerson(T calculatable) {
+        this.calculatable = calculatable;
     }
+
+    public void setYearsToAdd(int yearsToAdd) {
+        this.yearsToAdd = yearsToAdd;
+    }
+
 }
