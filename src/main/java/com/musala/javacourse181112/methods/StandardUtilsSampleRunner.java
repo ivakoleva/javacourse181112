@@ -18,7 +18,7 @@ public class StandardUtilsSampleRunner {
 
         // utils class callback workaround
         try {
-            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat",String[].class);
+            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -27,7 +27,7 @@ public class StandardUtilsSampleRunner {
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
         final String[] values = {"asd", "sdf"};
-
+        LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values);
     }
 
     // standard method callback
@@ -72,11 +72,10 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        return Arrays.stream(strings)
-                .map(string -> {
-                    string.substring(0,1).toUpperCase();
-                    string.concat(string.substring(1));
-                    return string;
-                }).collect(Collectors.joining());
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (String string : strings) {
+            stringBuilder.append(string.substring(0, 1).toUpperCase()).append(string.substring(1));
+        }
+        return stringBuilder.toString();
     }
 }
