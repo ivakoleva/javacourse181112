@@ -1,0 +1,4 @@
+name=Ivan Ivanov
+egn=9012121234
+company:
+a=

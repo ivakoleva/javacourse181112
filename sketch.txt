@@ -106,3 +106,14 @@ Key-Value pairs
 
 JVM param for enabling assertions -ea
 please do set runner config VM options field
+
+Reifiable / Non-reifiable types
+
+CSV (comma-separated values)
+asd,"asdasd,\"asd"
+asd
+
+access modifiers:
+public, package-protected (default), protected, private scopes
+
+callback
