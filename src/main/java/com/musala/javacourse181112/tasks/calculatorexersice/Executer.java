@@ -14,6 +14,7 @@ public class Executer {
         }
 
         Calculator calculator = new Calculator();
+
         for (Person person : people) {
             calculator.setPerson(person);
             calculator.setYearsToAdd(10);

@@ -23,5 +23,4 @@ public class Calculator {
     public void setYearsToAdd(int yearsToAdd) {
         this.yearsToAdd = yearsToAdd;
     }
-
 }
