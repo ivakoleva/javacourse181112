@@ -2,7 +2,9 @@ package com.musala.javacourse181112.methods;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -15,7 +17,7 @@ public class StandardUtilsSampleRunner {
 
         // utils class callback workaround
         try {
-            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
+            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -44,6 +46,7 @@ public class StandardUtilsSampleRunner {
     }
 }
 
+// lambda utils class
 final class LambdaUtilsSample {
     private LambdaUtilsSample() {
     }
@@ -63,7 +66,10 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        // TODO: implement
-        return null;
+        return Arrays.stream(strings)
+                .map(string -> {
+                    // TODO: modify
+                    return string;
+                }).collect(Collectors.joining());
     }
 }
