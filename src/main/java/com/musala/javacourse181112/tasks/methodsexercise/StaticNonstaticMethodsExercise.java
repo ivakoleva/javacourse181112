@@ -4,8 +4,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class StaticNonstaticMethodsExercise {
-    private static final List<Person> personList = new ArrayList<>();
-    private static final int SIZE_OF_ARRAYLIST = 10;
+    private static final List<Person> PERSON_LIST = new ArrayList<>();
+    private static final int MAX_LIST_SIZE = 10;
 
     public static void main(final String[] args) {
 
@@ -20,7 +20,7 @@ public class StaticNonstaticMethodsExercise {
         final PersonService personService1 = new PersonService();
 
         System.out.println("Print person list");
-        for (Person element : personList) {
+        for (Person element : PERSON_LIST) {
             PersonService.printPersonName(element);
         }
 
