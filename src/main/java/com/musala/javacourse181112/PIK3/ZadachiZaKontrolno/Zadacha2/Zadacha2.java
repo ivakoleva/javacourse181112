@@ -22,8 +22,10 @@ public class Zadacha2 {
         q = scanner.nextInt();
         System.out.print("P=");
         p = scanner.nextInt();
+
         final Monitor monitor = new Monitor(n);
         AtomicInteger counter = new AtomicInteger(0);
+
         Runnable producerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -34,6 +36,7 @@ public class Zadacha2 {
                 System.out.println("Producer off" + " " + Thread.currentThread().getName());
             }
         };
+
         Runnable consumerRunnable = new Runnable() {
             @Override
             public void run() {
@@ -42,8 +45,10 @@ public class Zadacha2 {
                 //System.out.println("Counter=" + counter.get());
             }
         };
+
         List<Thread> producerThreadList = IntStream.range(0, p).boxed().map(i -> new Thread(producerRunnable)).collect(Collectors.toList());
         List<Thread> consumerThreadList = IntStream.range(0, q).boxed().map(i -> new Thread(consumerRunnable)).collect(Collectors.toList());
+
         Thread controllingThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -80,9 +85,17 @@ public class Zadacha2 {
                 System.out.println("Thread " + thread.getName() + " already stopped");
             }
         }
+
+        while (!monitor.getThreadInterrupted()) {
+        }
+        for (Thread thread : producerThreadList) {
+            if (!thread.isInterrupted()) {
+                thread.interrupt();
+            }
+        }
+
+
         System.out.println("Exit");
-
-
     }
 }
 
@@ -105,7 +118,7 @@ class Monitor {
         lock.lock();
         try {
             while (!threadInterrupted.get() && meals == n) {
-                notFull.awaitNanos(1L);
+                notFull.await();
                 //System.out.println("In while");
             }
             if (!threadInterrupted.get()) {
@@ -125,7 +138,7 @@ class Monitor {
         lock.lock();
         try {
             while (meals == 0 && !threadInterrupted.get()) {
-                notEmpty.awaitNanos(1L);
+                notEmpty.await();
             }
             if (!threadInterrupted.get()) {
                 meals--;
