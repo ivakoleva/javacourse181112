@@ -1,5 +1,8 @@
 package com.musala.javacourse181112.generics;
 
+import com.musala.javacourse181112.tasks.GenericAlgorithm.Entity;
+import com.musala.javacourse181112.tasks.GenericAlgorithm.EntitySaver;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,12 +33,16 @@ public class PopulatePersonClassGenericAlgorithmExample {
 
         person.setCompany(company);
 
+        EntitySaver entitySaver = new EntitySaver();
+
+        entitySaver.entitySaver(person);
+
         final Person personFromFile = populateEntity(
                 Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        //entitySaver(personFromFile);
-        entitySaver(person);
-        // entitySaver(company);
+        entitySaver.entitySaver(personFromFile);
+        //entitySaver(person);
+        entitySaver.entitySaver(company);
         System.out.println();
 
         /*final Collection<Company> companiesFromFile =
@@ -71,6 +78,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
 
         }
     }
+
     public static <T extends Entity> void saveEntity(final PrintWriter printWriter, final T entity, final String off) throws IOException {
         assert entity != null;
         assert printWriter != null;
@@ -137,6 +145,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
     public static <T> boolean isIterable(final Class<T> clazz) {
         return Iterable.class.isAssignableFrom(clazz);
     }
+
     public static <T extends Entity> T populateEntity(final Path path, final Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         assert path != null;
         assert entityClass != null;
@@ -183,17 +192,13 @@ public class PopulatePersonClassGenericAlgorithmExample {
     }*/
 }
 
-interface Entity {
-    boolean isPersisted();
-
-    void setPersisted(boolean persisted);
-}
 
 class Person implements Entity {
     private String name;
     private String egn;
     private Company company;
     private boolean persisted;
+    private String ID;
 
     public String getName() {
         return name;
@@ -203,12 +208,14 @@ class Person implements Entity {
         this.name = name;
     }
 
+
     public String getEgn() {
         return egn;
     }
 
     public void setEgn(String egn) {
-        this.egn = egn;
+        this.ID = (this.egn = egn);
+
     }
 
     public Company getCompany() {
@@ -229,6 +236,11 @@ class Person implements Entity {
     }
 
     @Override
+    public String getID() {
+        return ID;
+    }
+
+    @Override
     public boolean isPersisted() {
         return persisted;
     }
@@ -236,6 +248,7 @@ class Person implements Entity {
     public void setPersisted(boolean persisted) {
         this.persisted = persisted;
     }
+
 }
 
 class Company implements Entity {
@@ -243,12 +256,15 @@ class Company implements Entity {
     private String eik;
     private Set<Person> employeeSet;
     private boolean persisted;
+    private String ID;
 
     public Company(String name) {
         this.name = name;
     }
 
     public Company() {
+
+
     }
 
     public String getName() {
@@ -264,7 +280,8 @@ class Company implements Entity {
     }
 
     public void setEik(String eik) {
-        this.eik = eik;
+        this.ID = (this.eik = eik);
+
     }
 
     public Set<Person> getEmployeeSet() {
@@ -280,8 +297,9 @@ class Company implements Entity {
         return this.name + "_" + this.eik;
     }
 
-    public Class getThisClass() {
-        return Company.class;
+    @Override
+    public String getID() {
+        return ID;
     }
 
     public boolean isPersisted() {
