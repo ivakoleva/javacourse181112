@@ -57,7 +57,7 @@ public class Voter extends Vote{
     }
 
     private static String randomEGNGenerator() {
-        String result = " ";
+        String result = "";
         int[] egnArray = new int[10];
         for (int i = 0; i < egnArray.length; i++) {
             egnArray[i] = (int) (Math.random() * (10));
