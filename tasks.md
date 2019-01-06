@@ -1,5 +1,11 @@
 03.01:
 
+* Homework:
+    ** Votes v0.4 - introduce OOP concepts
+        *** subpackage, data model 
+        *** entry point class, with main method
+        *** etc.
+
 * Exercise:
     * Future age calculator application v0.2
         ** create tasks.calculatorexercise sub-package 
@@ -74,7 +80,7 @@
         *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
         *** loop over fields
             **** filter non-null values
-            **** then write each field name=value format to file
+            **** then write each field name=required1 format to file
                   
         *** Bonus 1: handle case of deserialization when whitespaces only present after =
         *** Bonus 2: add support to parseValueFromString() of additional class types
@@ -307,7 +313,7 @@
     ** use switch-based check
     ** parameters supplied by user
     ** prints chromosomes to stdout (letter by letter) 
-* port the code to use Gender enum instead of any string value
+* port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
     * introduce enum usage (vote answer yes/no)
