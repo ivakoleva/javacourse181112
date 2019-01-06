@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.tasks;
 
+import com.musala.javacourse181112.tasks.votesexercise.Vote;
+
 // OKI * 2
 public class Voting {
     public static final int QUESTIONS_COUNT = 2;
@@ -24,7 +26,7 @@ public class Voting {
         PERSONS[2][1] = "radost";
         PERSONS[2][2] = Vote.YES;
 
-        // TODO: use loops
+
         int qIndex = 0;
 
         // populate data
@@ -59,14 +61,14 @@ public class Voting {
     }
 
     public static void printVotes(final int questionIndex) {
-        // TODO: use loops
+
         for(int i=0;i<VOTES[0].length;i++){
         System.out.println("Vote "+i+": " + VOTES[questionIndex][i]);
 
         }
     }
 
-    // TODO: implement
+
     public static void countVotes() {
         int voteYes = 0;
         int voteNo = 0;

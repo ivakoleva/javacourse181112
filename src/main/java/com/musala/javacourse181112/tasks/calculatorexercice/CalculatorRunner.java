@@ -3,7 +3,7 @@ package com.musala.javacourse181112.tasks.calculatorexercice;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorRunnable {
+public class CalculatorRunner {
     private static final int NUMBER_OF_PEOPLE =10;
     public static void main(final String[] args) {
        // Person person1=new Person();
