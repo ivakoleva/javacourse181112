@@ -6,7 +6,7 @@ import java.util.List;
 public class CalculatorRunnable {
     private static final int NUMBER_OF_PEOPLE =10;
     public static void main(final String[] args) {
-        Person person1=new Person();
+       // Person person1=new Person();
 
 
         List<Person> people=new ArrayList<>();
