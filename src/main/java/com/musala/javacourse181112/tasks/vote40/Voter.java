@@ -51,7 +51,7 @@ public class Voter extends Vote{
     }
 
     private static String randomNameGenerator() {
-        String result = "";
+        String result;
         result = (nameGenerator() + " " + nameGenerator());
         return result;
     }
