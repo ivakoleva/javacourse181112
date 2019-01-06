@@ -34,8 +34,8 @@ public class Voter extends Vote{
         this.randomEGN = randomEGNGenerator();
     }
 
-    private static String firstNameGenerator() {
-        String result = " ";
+    private static String nameGenerator() {
+        String result = "";
         char[] arrayChar = new char[7];
 
         arrayChar[0] = (char) ((Math.random() * ((90 - 65) + 1)) + 65);
@@ -51,19 +51,9 @@ public class Voter extends Vote{
     }
 
     private static String randomNameGenerator() {
-        String result = " ";
-        char[] arrayChar = new char[7];
-
-        arrayChar[0] = (char) ((Math.random() * ((90 - 65) + 1)) + 65);
-
-        for (int i = 1; i < arrayChar.length; i++) {
-            arrayChar[i] = (char) ((Math.random() * ((122 - 97) + 1)) + 97);
-        }
-
-        for (int i = 0; i < arrayChar.length; i++) {
-            result += arrayChar[i];
-        }
-        return result + firstNameGenerator();
+        String result = "";
+        result = (nameGenerator() + " " + nameGenerator());
+        return result;
     }
 
     private static String randomEGNGenerator() {
