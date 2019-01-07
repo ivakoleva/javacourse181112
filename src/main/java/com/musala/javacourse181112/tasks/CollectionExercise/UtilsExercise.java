@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.CollectionExercise;
+package com.musala.javacourse181112.tasks.collectionexercise;
 
 import java.util.ArrayList;
 import java.util.Collections;

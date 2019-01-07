@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.CollectionExercise;
+package com.musala.javacourse181112.tasks.collectionexercise;
 
 import java.util.Map;
 import java.util.TreeMap;
