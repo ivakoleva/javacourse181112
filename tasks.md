@@ -12,7 +12,17 @@
             ** Instantiate Calculator
             ** Execute additions, and print to standard output
             ** Then exit
-        ** Distribute to end user (push to github)   
+        ** Distribute to end user (push to github)
+        
+    * Random person names generator
+        ** configure charset (symbols allowed)
+        ** configure min/max length per word
+        ** random generator component implementation should be dedicated to be reused
+        ** when producing a name - first letter always upper case, other letters lower case
+        ** words joined using a space
+        ** sample runner, for POC purposes
+        
+        ** Bonus: names count
 
 02.01:
     
