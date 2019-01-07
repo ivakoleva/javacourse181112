@@ -121,3 +121,7 @@ callback
 shadowing
 
 POC (proof-of-concept)
+
+method overloading
+
+relation/mapping
