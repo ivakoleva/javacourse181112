@@ -1,52 +1,68 @@
 package com.musala.javacourse181112.tasks.vote40;
 
-public class Voter extends Vote {
-    String Name;
-    String EGN;
+// TODO: use composition in favor of inheritance in that case
+public class Voter { // extends Vote {
+    private String name;
+    private String egn;
+    //private Vote vote;
 
-    public Voter(boolean answer, int questionNumber, String Name, String EGN) {
-        super(answer, questionNumber);
-        this.Name = Name;
-        this.EGN = EGN;
+    public String getName() {
+        return name;
     }
 
-    public Voter(int questionNumber, String Name, String EGN) {
+    public void setName(String Name) {
+        this.name = Name;
+    }
+
+    public String getEgn() {
+        return egn;
+    }
+
+    public void setEgn(String egn) {
+        this.egn = egn;
+    }
+
+    /*public Vote getVote() {
+        return vote;
+    }
+
+    public void setVote(Vote vote) {
+        this.vote = vote;
+    }*/
+
+    // default constructor, anemic data model
+    /*public Voter(boolean answer, int questionNumber, String name, String egn) {
+        super(answer, questionNumber);
+        this.name = name;
+        this.egn = egn;
+    }
+
+    public Voter(int questionNumber, String name, String egn) {
         super(questionNumber);
-        this.Name = Name;
-        this.EGN = EGN;
+        this.name = name;
+        this.egn = egn;
     }
 
     public Voter(int questionNumber) {
         super(questionNumber);
-        
-        this.Name = randomNameGenerator();
-        this.EGN = randomEGNGenerator();
-    }
 
-    public String getName() {
-        return Name;
-    }
+        this.name = randomNameGenerator();
+        this.egn = randomEGNGenerator();
+    }*/
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getEGN() {
-        return EGN;
-    }
-
-    public void setEGN(String EGN) {
-        this.EGN = EGN;
-    }
-
+    // TODO: move to Controller
     public void randomName() {
-        this.Name = (randomNameGenerator());
+        this.name = (randomNameGenerator());
     }
 
     public void randomEGN() {
-        this.EGN = randomEGNGenerator();
+        this.egn = randomEGNGenerator();
     }
 
+    // TODO: extract into Generator class component
+    // TODO: create a final Utils class (private constructor);
+        // construct an opinionated NameGenerator & EgnGenerator,
+        // then delegate generateName() & generateEgn() using constant generator instances
     private static String nameGenerator() {
         String result = "";
         char[] arrayChar = new char[7];
@@ -75,7 +91,7 @@ public class Voter extends Vote {
         for (int i = 0; i < egnArray.length; i++) {
             egnArray[i] = (int) (Math.random() * (10));
         }
-        
+
 
         for (int i = 0; i < egnArray.length; i++) {
             result = result + egnArray[i];
