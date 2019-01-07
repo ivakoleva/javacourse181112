@@ -117,3 +117,7 @@ access modifiers:
 public, package-protected (default), protected, private scopes
 
 callback
+
+shadowing
+
+POC (proof-of-concept)

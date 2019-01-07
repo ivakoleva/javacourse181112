@@ -1,3 +1,35 @@
+03.01:
+
+* Homework:
+    ** Votes v0.4 - introduce OOP concepts
+        *** subpackage, data model 
+        *** entry point class, with main method
+        *** etc.
+
+* Exercise:
+    * Future age calculator application v0.2
+        ** create tasks.calculatorexercise sub-package 
+        ** Calculator class implementation
+        ** Calculator accepts parameters of:
+            ** Person objects (age field)
+            ** years to add to age of each person
+        ** Program flow:
+            ** When starting the program, populate 10 Person objects
+            ** Instantiate Calculator
+            ** Execute additions, and print to standard output
+            ** Then exit
+        ** Distribute to end user (push to github)
+        
+    * Random person names generator
+        ** configure charset (symbols allowed)
+        ** configure min/max length per word
+        ** random generator component implementation should be dedicated to be reused
+        ** when producing a name - first letter always upper case, other letters lower case
+        ** words joined using a space
+        ** sample runner, for POC purposes
+        
+        ** Bonus: names count
+
 02.01:
     
 * Exercise:
@@ -6,6 +38,27 @@
     ** implement StandardUtilSampleExercise TODOs:
         *** StandardUtilsSample, capitalizeFirstLettersThenConcat method
         *** LambdaUtilsSample, capitalizeFirstLettersThenConcat function
+
+* Homework:
+    ** StaticNonstaticMethodsExercise - use static and non-static methods
+        *** create a task unique package (subpackage of com.musala.javacourse181112.tasks, think about naming)
+        *** add a Person class (entity)
+        *** add a class PersonService, implementing:
+            **** static method
+                ***** name printPersonNamesToStdout
+                ***** use appropriate access modifier (scope of visibility)
+                ***** print arguments to stdout, using space discriminator then new line
+            **** non-static methods
+                ***** addPerson, accepting and storing Person object to queue
+                ***** handlePerson, polling one from queue then printing it to stdout (hint: method composition), then returning the person polled
+                ***** think of multi-threading, always in mind
+        *** add StaticNonstaticMethodsExercise class, and implement main method:
+            **** instantiate 10 Person instances (loop) and add to collection
+            **** instantiate 2 PersonService objects
+            **** call service static and non-static methods, using populated persons
+            **** use service static method and print directly a new person instance with assigned properties
+            
+        *** Bonus: implement non-static finalize method, reseting the PersonService instances state at the end of usage
 
 20.12:
 
@@ -27,7 +80,7 @@
         *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
         *** loop over fields
             **** filter non-null values
-            **** then write each field name=value format to file
+            **** then write each field name=required1 format to file
                   
         *** Bonus 1: handle case of deserialization when whitespaces only present after =
         *** Bonus 2: add support to parseValueFromString() of additional class types
@@ -259,7 +312,7 @@
     ** use switch-based check
     ** parameters supplied by user
     ** prints chromosomes to stdout (letter by letter) 
-* port the code to use Gender enum instead of any string value
+* port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
     * introduce enum usage (vote answer yes/no)
