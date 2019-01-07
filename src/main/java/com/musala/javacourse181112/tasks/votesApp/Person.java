@@ -1,10 +1,10 @@
 package com.musala.javacourse181112.tasks.votesApp;
 
-public class Voter extends Vote {
+public class Person extends Vote {
     private String randomName;
     private String randomEGN;
 
-    public Voter(int questionNumber) {
+    public Person(int questionNumber) {
         super(questionNumber);
         this.randomName = randomFullNameGenerator();
         this.randomEGN = randomEGNGenerator();

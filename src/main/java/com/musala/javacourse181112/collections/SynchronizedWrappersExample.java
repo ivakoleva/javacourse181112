@@ -17,7 +17,7 @@ public class SynchronizedWrappersExample {
 //        });
 //        final Thread consumerThread = new Thread();
 //
-//        // starting the empty run methods of the Threads
+//        // starting the empty run oop of the Threads
 //        producerThread.start();
 //        consumerThread.start();
 //
