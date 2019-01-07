@@ -3,12 +3,12 @@ package com.musala.javacourse181112.tasks.votesApp;
 import java.util.Random;
 
 public class Vote {
-    protected boolean answer;
-    int questionNumber;
+    private boolean answer;
+    private int questionNumber;
 
     public Vote(int questionNumber) {
-        this.answer = randomAnswer();
-        this.questionNumber = questionNumber;
+        this.setAnswer(randomAnswer());
+        this.setQuestionNumber(questionNumber);
     }
 
     public boolean isAnswer() {
