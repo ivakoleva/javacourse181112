@@ -2,7 +2,9 @@ package com.musala.javacourse181112.tasks;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -64,6 +66,18 @@ final class StandardUtilsSample { // Utils
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
         // TODO: implement algorithm
-        return null;
+        /*StringBuilder concat = new StringBuilder();
+        for(String element:strings)
+        {
+            element.substring(0,1).toUpperCase();
+            concat.append(element).append(", ");
+            System.out.println(element);
+        }
+        return null;*/
+       /* return Arrays.stream(strings)
+                .map->{
+            return string;
+        }).collect(Collectors.joining());*/
+       return null;// temporary
     }
 }

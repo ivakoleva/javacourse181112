@@ -3,7 +3,8 @@ package com.musala.javacourse181112.basics;
 /**
  * Created by Iva Koleva on 19.11.2018
  */
-public class EnumsExample { // implicitly extends java.lang.Enum
+public class
+EnumsExample { // implicitly extends java.lang.Enum
     public static void main(final String[] args) {
         Gender gender = Gender.FEMALE;
         gender = Gender.MALE;
