@@ -10,15 +10,14 @@ public class VotesRunner {
     };
     private static final int PEOPLE = 3;
 
+    // TODO: data model abstraction (Election, Question, Answer elaborated)
     public static void main(final String[] args) {
-        List<Person> personList = new ArrayList<>();
+        final List<Person> personList = new ArrayList<>();
         for (int i = 0; i < PEOPLE; i++) {
-            personList.add(new Person("Person" + i));
+            final Person person = new Person();
+            person.setName("Person" + i);
+            personList.add(person);
         }
-
-        VoteUtills.printQuestionsAndCountVotes(QUESTIONS, personList);
-
-
-
+        VoteUtils.printQuestionsAndCountVotes(QUESTIONS, personList);
     }
 }

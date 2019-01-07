@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Scanner;
 
 
-final class VoteUtills {
-    private VoteUtills() {
+final class VoteUtils {
+    private VoteUtils() {
     }
 
     private static final String QUESTION_PREFIX = "Question:";
@@ -35,7 +35,7 @@ final class VoteUtills {
             }
             System.out.println(QUESTION_PREFIX + i +
                     System.lineSeparator() + VOTE_COUNT_YES_PREFIX + yesCount +
-                    System.lineSeparator() + VOTE_COUNT_NO_PREFIX + noCount+
+                    System.lineSeparator() + VOTE_COUNT_NO_PREFIX + noCount +
                     System.lineSeparator());
             yesCount = 0;
             noCount = 0;

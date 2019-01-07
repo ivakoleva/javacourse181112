@@ -4,16 +4,6 @@ class Person {
     private String name;
     private Vote vote;
 
-
-    public Person(){}
-    public Person(String name){
-        this.name=name;
-    }
-    public Person(String name,Vote vote){
-        this.name=name;
-        this.vote=vote;
-    }
-
     public String getName() {
         return name;
     }
@@ -30,8 +20,17 @@ class Person {
         this.vote = vote;
     }
 
+    /*public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(String name, Vote vote) {
+        this.name = name;
+        this.vote = vote;
+    }*/
+
     @Override
     public String toString() {
-        return ""+ name + "Vote=" + vote;
+        return "" + name + "Vote=" + vote;
     }
 }
