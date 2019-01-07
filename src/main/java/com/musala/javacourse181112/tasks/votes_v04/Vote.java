@@ -1,12 +1,14 @@
 package com.musala.javacourse181112.tasks.votes_v04;
 
-public class Vote {
-private boolean answer;
-private int question;
+import java.util.Random;
 
-    public Vote(boolean answer, int question) {
-        this.answer = answer;
-        this.question = question;
+public class Vote {
+    private boolean answer;
+    private int questionNum;
+
+    public Vote(int questionNum) {
+        this.answer = randomAnswer();
+        this.questionNum = questionNum;
     }
 
     public boolean isAnswer() {
@@ -17,11 +19,16 @@ private int question;
         this.answer = answer;
     }
 
-    public int getQuestion() {
-        return question;
+    public int getQuestionNum() {
+        return questionNum;
     }
 
-    public void setQuestion(int question) {
-        this.question = question;
+    public void setQuestionNum(int questionNum) {
+        this.questionNum = questionNum;
+    }
+
+    protected boolean randomAnswer() {
+        Random randomBooleanAnswer = new Random();
+        return randomBooleanAnswer.nextBoolean();
     }
 }
