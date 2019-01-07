@@ -2,7 +2,10 @@ package com.musala.javacourse181112.tasks;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -12,7 +15,6 @@ public class StandardUtilsSampleExercise {
         // utils class usage
         final long sum = StandardUtilsSample.computeSum(1, 2);
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
-
 
 
         // utils class callback workaround
@@ -27,6 +29,10 @@ public class StandardUtilsSampleExercise {
         // lambda usage
 
         LambdaUtilsSample.computeSum.apply(1L, 2L);
+        // lambda usage
+        LambdaUtilsSample.computeSum.apply(1L, 2L);
+        final String[] values = {"asd", "sdf"};
+        LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values);
     }
 
     // standard method callback
@@ -48,12 +54,17 @@ public class StandardUtilsSampleExercise {
     }
 }
 
+// lambda utils class
 final class LambdaUtilsSample {
     private LambdaUtilsSample() {
     }
 
     static final BinaryOperator<Long> computeSum = (i1, i2) -> i1 + i2;
 
+    static final Function<String[], String> capitalizeFirstLettersThenConcat = strings ->
+            Arrays.stream(strings)
+                    .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1))
+                    .collect(Collectors.joining());
     // TODO: implement capitalizeFirstLettersThenConcat function
 }
 
@@ -67,7 +78,10 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        // TODO: implement algorithm
-        return null;
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (String string : strings) {
+            stringBuilder.append(string.substring(0, 1).toUpperCase()).append(string.substring(1));
+        }
+        return stringBuilder.toString();
     }
 }
