@@ -1,0 +1,127 @@
+Garbage Collector (GC)
+
+implementation
+
+character (char)
+
+throughput
+
+file descriptor (FD)
+
+open
+close
+
+implicit
+explicit
+
+Swing
+AWT
+JavaFX
+
+Compliant
+
+life-cycle
+waterfall
+iterative development
+agile
+scrum
+
+
+Command-Line Interface (CLI)
+
+debugger
+profiler
+
+Java Class Library
+Java API
+
+classes (jar) - library.jar
+sources       - library-src.jar
+
+decompiler (intellij idea - Sunflower)
+
+whitespace
+
+unicode table
+
+statement
+
+Reference types
+
+00000001
+00000100
+
+code refactoring
+
+concatenation
+concat
+append
+prepend
+
+bug
+bugfixing
+debugger
+
+wrapper classes
+number types / primitive types
+
+immutable
+
+compound expression
+ceremonies
+
+marker interface
+serialization
+stateful
+
+daemon programs
+regex (regexp, regular expressions) - java style
+
+loop labels - break; continue
+
+lambda expressions
+syntactic sugar
+streams
+
+backing data structure
+
+EOF (end of file, -1)
+memory leak
+
+try-with-resources
+
+EOF, EOL (end of file, end of line)
+data/object serialization
+persistent state of the application
+
+URI (Unified Resource Identifier)
+
+
+thread pool
+method signature
+
+bounded/unbounded (queue)
+FIFO (first-in-first-out) / LIFO (last-in-last-out)
+Key-Value pairs
+
+JVM param for enabling assertions -ea
+please do set runner config VM options field
+
+Reifiable / Non-reifiable types
+
+CSV (comma-separated values)
+asd,"asdasd,\"asd"
+asd
+
+access modifiers:
+public, package-protected (default), protected, private scopes
+
+callback
+
+shadowing
+
+POC (proof-of-concept)
+
+method overloading
+
+relation/mapping
