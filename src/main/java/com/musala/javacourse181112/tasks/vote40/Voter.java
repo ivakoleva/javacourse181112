@@ -1,37 +1,50 @@
 package com.musala.javacourse181112.tasks.vote40;
 
-public class Voter extends Vote{
-    String randomName;
-    String randomEGN;
+public class Voter extends Vote {
+    String Name;
+    String EGN;
+
+    public Voter(boolean answer, int questionNumber, String Name, String EGN) {
+        super(answer, questionNumber);
+        this.Name = Name;
+        this.EGN = EGN;
+    }
+
+    public Voter(int questionNumber, String Name, String EGN) {
+        super(questionNumber);
+        this.Name = Name;
+        this.EGN = EGN;
+    }
 
     public Voter(int questionNumber) {
         super(questionNumber);
-        this.randomName = randomNameGenerator();
-        this.randomEGN = randomEGNGenerator();
+        
+        this.Name = randomNameGenerator();
+        this.EGN = randomEGNGenerator();
     }
 
-    public String getRandomName() {
-        return randomName;
+    public String getName() {
+        return Name;
     }
 
-    public void setRandomName(String randomName) {
-        this.randomName = randomName;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public String getRandomEGN() {
-        return randomEGN;
+    public String getEGN() {
+        return EGN;
     }
 
-    public void setRandomEGN(String randomEGN) {
-        this.randomEGN = randomEGN;
+    public void setEGN(String EGN) {
+        this.EGN = EGN;
     }
 
     public void randomName() {
-        this.randomName = (randomNameGenerator());
+        this.Name = (randomNameGenerator());
     }
 
     public void randomEGN() {
-        this.randomEGN = randomEGNGenerator();
+        this.EGN = randomEGNGenerator();
     }
 
     private static String nameGenerator() {
@@ -62,6 +75,7 @@ public class Voter extends Vote{
         for (int i = 0; i < egnArray.length; i++) {
             egnArray[i] = (int) (Math.random() * (10));
         }
+        
 
         for (int i = 0; i < egnArray.length; i++) {
             result = result + egnArray[i];

@@ -6,6 +6,11 @@ public class Vote {
     protected boolean answer;
     int questionNumber;
 
+    public Vote(boolean answer, int questionNumber) {
+        this.answer = answer;
+        this.questionNumber = questionNumber;
+    }
+
     public Vote(int questionNumber) {
         this.answer = randomAnswer();
         this.questionNumber = questionNumber;
