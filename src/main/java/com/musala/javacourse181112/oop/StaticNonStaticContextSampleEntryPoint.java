@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.methods;
+package com.musala.javacourse181112.oop;
 
 /**
  * Created by Iva Koleva on 02.01.2019
