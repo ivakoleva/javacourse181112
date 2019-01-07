@@ -5,16 +5,17 @@ import com.musala.javacourse181112.votePackage.Votes;
 import java.util.Random;
 
 public class NameGenerator implements Votable {
+    private static final Random RANDOM = new Random();
     private final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     String generate() {
-        StringBuilder stringBuilder = new StringBuilder(); // OutOfMemoryError: Java heap space
-        Random random = new Random();
-        int length = random.nextInt();
-
-        int charInt = random.nextInt(LETTERS.length());
+        final StringBuilder stringBuilder = new StringBuilder();
+        // would suggest some bounds for a feasible name length
+        final int length = RANDOM.nextInt();
         for (int i = 0; i < length; i++) {
-            stringBuilder.append(LETTERS.charAt(charInt)); /* I guess the problems stems from the use of random
+            stringBuilder.append(
+                    LETTERS.charAt(
+                            RANDOM.nextInt(LETTERS.length()))); /* I guess the problems stems from the use of RANDOM
                                                         and it generates a bigger number than my string length (the charset)
                                                         still not comfortable using breakpoint, tho */
         }
