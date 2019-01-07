@@ -11,4 +11,3 @@ public class VoteMain {
                 voter2.getRandomEgn() + "\nAnswered: " + voter2.randomAnswer() + "\n");
     }
 }
-
