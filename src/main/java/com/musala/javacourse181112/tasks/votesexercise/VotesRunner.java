@@ -10,7 +10,7 @@ public class VotesRunner {
     };
     private static final int PEOPLE = 3;
 
-    // TODO: data model abstraction (Election, Question, Answer elaborated)
+    // TODO: data model abstraction (Poll, Question, Answer elaborated)
     public static void main(final String[] args) {
         final List<Person> personList = new ArrayList<>();
         for (int i = 0; i < PEOPLE; i++) {
