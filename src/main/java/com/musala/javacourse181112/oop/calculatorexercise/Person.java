@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.methods.calculatorexercise;
+package com.musala.javacourse181112.oop.calculatorexercise;
 
 import java.time.LocalDate;
 
