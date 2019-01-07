@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.methods;
+package com.musala.javacourse181112.oop;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

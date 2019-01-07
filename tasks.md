@@ -1,3 +1,26 @@
+07.01:
+
+* Exercise:
+    ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
+        *** Poll: Coffee poll
+            **** Question1: Do you like coffee?
+            **** Answers:
+                ***** Yes
+                ***** No
+            **** Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+            **** Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+            **** Persons participating: 2
+        
+
 03.01:
 
 * Homework:
