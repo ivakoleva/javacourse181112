@@ -1,20 +1,10 @@
 package com.musala.javacourse181112.methods.votespackage;
 
-import com.musala.javacourse181112.basics.Gender;
-import com.musala.javacourse181112.votePackage.Votes;
-
 public class Person {
+    private static final NameGenerator NAME_GENERATOR = new NameGenerator();
 
-    String name = new Generator().generateName();
-    Vote vote;
-
-    public Person() {
-    }
-
-    public Person(String name) {
-        this.name = name;
-    }
-
+    private String name = NAME_GENERATOR.generate();
+    private Vote vote;
 
     public String getName() {
         return name;
@@ -32,5 +22,9 @@ public class Person {
         this.vote = vote;
     }
 
-
+    // in favor of anemic data model
+    /*@Deprecated
+    public Person(String name) {
+        this.name = name;
+    }*/
 }

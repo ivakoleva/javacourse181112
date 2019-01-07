@@ -5,20 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Application {
-    protected final static List<String> questions = new ArrayList<>();
-    protected final static List<Person> people = new ArrayList<>();
-    protected final static List<String> votes = Arrays.asList("yes", "no", "no", "no", "yes");
-    public static void main(final String[] args) {
-        Generator generator = new Generator();
+    // TODO: elaborate object model
+    protected final static List<String> QUESTIONS = new ArrayList<>();
+    protected final static List<Person> PEOPLE = new ArrayList<>();
+    protected final static List<String> VOTES = Arrays.asList("yes", "no", "no", "no", "yes");
 
-        questions.add("Are you happy?");
-        questions.add("Are you a morning person?");
+    public static void main(final String[] args) {
+        final NameGenerator nameGenerator = new NameGenerator();
+
+        QUESTIONS.add("Are you happy?");
+        QUESTIONS.add("Are you a morning person?");
 
         for (int i = 0; i < 5; i++){
-            people.add(new Person());
+            PEOPLE.add(new Person());
         }
-        System.out.println(people);
-        generator.getValue();
-
+        System.out.println(PEOPLE);
+        nameGenerator.getValue();
     }
 }

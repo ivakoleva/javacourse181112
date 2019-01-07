@@ -30,7 +30,7 @@ public class VotesApplication {
         countAndPrintVotes(questions, votes);
     }
 
-    //todo: design method for future votes counter implementation
+    //todo: design method for future VOTES counter implementation
     public static void voteCounter() {
         int column = 2;
         int row = 30;
@@ -48,9 +48,9 @@ public class VotesApplication {
     public static void countAndPrintVotes(final String[] questions, String[][] votes) {
         int votesYesCount = 0;
         int votesNoCount = 0;
-        /*for (int i = 0; i < votes.length; i++) {
-            System.out.println(questions[i]);
-            for (int k = 0; k < votes[i].length; k++) {*/
+        /*for (int i = 0; i < VOTES.length; i++) {
+            System.out.println(QUESTIONS[i]);
+            for (int k = 0; k < VOTES[i].length; k++) {*/
                // introduce person multi-dimensional array (object), then populate:
                 // - first element of each inner person array - egn
                 // - second element - name
@@ -75,12 +75,12 @@ public class VotesApplication {
 
 
         /* alternative implementation:
-        for (int i = 0; i < votes.length; i++) {
-            System.out.println(questions[i]);
-            for (int k = 0; k < votes[i].length; k++) {
-                if (votes[i][k].equalsIgnoreCase(Votes.YES.name())) {
+        for (int i = 0; i < VOTES.length; i++) {
+            System.out.println(QUESTIONS[i]);
+            for (int k = 0; k < VOTES[i].length; k++) {
+                if (VOTES[i][k].equalsIgnoreCase(Votes.YES.name())) {
                     votesYesCount++;
-                } else if (votes[i][k].equalsIgnoreCase(Votes.NO.name())) {
+                } else if (VOTES[i][k].equalsIgnoreCase(Votes.NO.name())) {
                     votesNoCount++;
                 }else {
                     // TODO: handle
@@ -89,10 +89,10 @@ public class VotesApplication {
 
 
                 /*old implementation:
-                if ("yes".equals(votes[i][k])) {
+                if ("yes".equals(VOTES[i][k])) {
                 votesYesCount++;
                 }
-                else if ("no".equals(votes[i][k])) {
+                else if ("no".equals(VOTES[i][k])) {
                     votesNoCount++;
                 } */
 
@@ -108,7 +108,7 @@ public class VotesApplication {
             System.out.println();
         //}
         System.out.println();
-        //System.out.println(Arrays.deepToString(votes));
+        //System.out.println(Arrays.deepToString(VOTES));
 
     }
 }

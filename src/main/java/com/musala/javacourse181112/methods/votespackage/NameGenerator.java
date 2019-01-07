@@ -4,15 +4,16 @@ import com.musala.javacourse181112.votePackage.Votes;
 
 import java.util.Random;
 
-public class Generator implements Votable {
+public class NameGenerator implements Votable {
     private final String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    protected String generateName(){
+
+    String generate() {
         StringBuilder stringBuilder = new StringBuilder(); // OutOfMemoryError: Java heap space
         Random random = new Random();
         int length = random.nextInt();
 
         int charInt = random.nextInt(LETTERS.length());
-        for (int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             stringBuilder.append(LETTERS.charAt(charInt)); /* I guess the problems stems from the use of random
                                                         and it generates a bigger number than my string length (the charset)
                                                         still not comfortable using breakpoint, tho */
@@ -26,10 +27,10 @@ public class Generator implements Votable {
         int votesYesCount = 0;
         int votesNoCount = 0;
 
-        for (String question : Application.questions) {
+        for (String question : Application.QUESTIONS) {
             System.out.println(question);
 
-            for (String value : Application.votes) {
+            for (String value : Application.VOTES) {
                 if (value.equalsIgnoreCase(Votes.YES.name())) {
                     votesYesCount++;
                 } else if (value.equalsIgnoreCase(Votes.NO.name())) {
@@ -46,6 +47,4 @@ public class Generator implements Votable {
         System.out.println("No: " + votesNoCount);
         return null;
     }
-
-
 }
