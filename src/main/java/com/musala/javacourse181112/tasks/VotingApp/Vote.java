@@ -1,11 +1,13 @@
 package com.musala.javacourse181112.tasks.VotingApp;
 
+import java.util.Random;
+
 public class Vote {
     private  boolean answer ;
     private int questionNumber;
 
-    public Vote(boolean answer, int questionNumber) {
-        this.answer = answer;
+    public Vote( int questionNumber) {
+        this.answer = randomAnswer();
         this.questionNumber = questionNumber;
     }
 
@@ -23,5 +25,9 @@ public class Vote {
 
     public void setQuestionNumber(int questionNumber) {
         this.questionNumber = questionNumber;
+    }
+    protected boolean randomAnswer() {
+        Random randomBooleanAnswer = new Random();
+        return randomBooleanAnswer.nextBoolean();
     }
 }

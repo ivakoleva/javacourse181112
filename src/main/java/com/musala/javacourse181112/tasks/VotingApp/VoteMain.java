@@ -2,53 +2,25 @@ package com.musala.javacourse181112.tasks.VotingApp;
 
 public class VoteMain {
     public static void main(String[] args) {
-        Voters variables1 = new Voters(true,15,randomGenerator(),randomEgnGenerator());
-        String[] stringName = new String[5];
-        String[] egn = new String[10];
 
-        for (int i = 0; i < stringName.length; i++) {
-            stringName[i] = (randomGenerator() + randomGenerator());
-            egn[i] = randomEgnGenerator();
-            System.out.println(stringName[i] + "\n" + egn[i]);
-        }
+        Voters voter1 = new Voters(1);
+        Voters voter2 = new Voters(1);
+        Voters voter3 = new Voters(1);
 
+        System.out.println("\nDid you play football ?");
+        System.out.println("Name:" + voter1.getVoterName() + "\nEGN: " +
+                voter1.getVoterEgn() + "\nanswered: " + voter1.randomAnswer());
 
+        System.out.println("\nDid you like basketball ?");
+        System.out.println("Name:" + voter2.getVoterName() + "\nEGN: " +
+                voter2.getVoterEgn() + "\nanswered: " + voter2.randomAnswer());
 
-
-    }
-
-    private static String randomGenerator() {
-        String resultName = " ";
-        char[] arrayChar = new char[7];
-
-
-        arrayChar[0] = (char) ((Math.random() * ((90 - 65) + 1)) + 65);
-
-        for (int i = 1; i < arrayChar.length; i++) {
-            arrayChar[i] = (char) ((Math.random() * ((122 - 97) + 1)) + 97);
-        }
-
-        for (int i = 0; i < arrayChar.length; i++) {
-            resultName = (resultName + arrayChar[i]);
-        }
-
-        return resultName;
-    }
-
-    private static String randomEgnGenerator() {
-        String resultEgn = " ";
-        int[] charEgn = new int[10];
-
-        for (int i = 0; i < charEgn.length; i++) {
-            charEgn[i] = (int) (Math.random() * (10));
-            resultEgn +=  charEgn[i];
-
-
-        }
-        return resultEgn;
-
+        System.out.println("\nDid you like formula 1 ?");
+        System.out.println("Name:" + voter3.getVoterName() + "\nEGN: " +
+                voter2.getVoterEgn() + "\nanswered: " + voter3.randomAnswer());
     }
 }
+
 
 
 
