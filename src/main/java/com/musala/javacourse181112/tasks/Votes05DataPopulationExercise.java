@@ -116,9 +116,9 @@ public class Votes05DataPopulationExercise {
         answerListQuestion3.add(answer3ToQuestion3);
         answerListQuestion3.add(answer4ToQuestion3);
 
-        question1.getAnswerList();
-        question2.getAnswerList();
-        question3.getAnswerList();
+//        question1.getAnswerList();
+//        question2.getAnswerList();
+//        question3.getAnswerList();
 
     }
 }

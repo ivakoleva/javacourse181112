@@ -5,71 +5,89 @@ package com.musala.javacourse181112.tasks;
  */
 public class CompositionAndInheritanceExercise {
     public static void main(final String[] args) {
-        final Human human1 = new Human() {
-            @Override
-            Mammal giveBirth(int birthsGiven) {
-                return null;
-            }
-        };
+//        final Human human1 = new Human();
         //TODO: set alive
         //TODO: final Human human2 = human1.giveBirth();
     }
-}
 
-interface Being {
-    boolean isAlive(); //boolean getter
-}
-
-abstract class Mammal implements Being {
-    private String kind;
-    private int birthsGiven;
-
-    public String getName() {
-        return kind;
+    interface Being {
+        boolean isAlive(); //boolean getter
     }
 
-    public void setName(String name) {
-        this.kind = name;
-    }
+    abstract class Mammal implements Being {
+        private String kind;
+        protected int birthsCount;
 
-    @Override
-    public boolean isAlive() {
-        return true;
-    }
+        public String getName() {
+            return kind;
+        }
 
-    abstract Mammal giveBirth(int birthsGiven);
-}
+        public void setName(String name) {
+            this.kind = name;
+        }
 
-// TODO: implement
-class Human extends Mammal {
-    private String name;
-    private String sex;
+        @Override
+        public boolean isAlive() {
+            return true;
+        }
 
-    @Override
-    public String getName() {
-        return name;
-    }
+        Mammal giveBirth() {
+            return new Mammal() {
+                @Override
+                public String getName() {
+                    return super.getName();
+                }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+                @Override
+                public void setName(String name) {
+                    super.setName(name);
+                }
 
-    public String getSex() {
-        return sex;
-    }
+                @Override
+                public boolean isAlive() {
+                    return super.isAlive();
+                }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+                @Override
+                Mammal giveBirth() {
+                    return super.giveBirth();
+                }
+            };
 
-    @Override
-    public boolean isAlive() {
-        return true;
-    }
 
-    @Override
-    Mammal giveBirth(int birthsGiven) {
-        return new Human();
+        }
+
+        // TODO: implement
+        class Human extends Mammal {
+            private String name;
+            private String sex;
+
+            @Override
+            public String getName() {
+                return name;
+            }
+
+            @Override
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getSex() {
+                return sex;
+            }
+
+            public void setSex(String sex) {
+                this.sex = sex;
+            }
+
+            @Override
+            public boolean isAlive() {
+                return true;
+            }
+
+            Mammal giveBirth(int birthsGiven) {
+                return new Human();
+            }
+        }
     }
 }
