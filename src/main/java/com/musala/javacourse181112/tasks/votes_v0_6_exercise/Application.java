@@ -1,8 +1,8 @@
-package com.musala.javacourse181112.oop.votesexercise;
+package com.musala.javacourse181112.tasks.votes_v0_6_exercise;
 
-import com.musala.javacourse181112.oop.votesexercise.model.Person;
-import com.musala.javacourse181112.oop.votesexercise.model.Poll;
-import com.musala.javacourse181112.oop.votesexercise.service.PollService;
+import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Person;
+import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Poll;
+import com.musala.javacourse181112.tasks.votes_v0_6_exercise.service.PollService;
 
 import java.time.LocalDate;
 import java.time.Month;
