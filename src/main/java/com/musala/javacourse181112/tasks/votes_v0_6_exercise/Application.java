@@ -20,10 +20,10 @@ public class Application {
         final PollService pollService = new PollService();
         final PersonService personService = new PersonService();
 
-        final Person person1 = new Person();
-        person1.setName("Ivan");
-        person1.setFamily("Ivanov");
-        person1.setDateOfBirth(LocalDate.of(1990, Month.JANUARY, 1));
+        final Person person1 = personService.generatePerson(
+                "Ivan",
+                "Ivanov",
+                LocalDate.of(1990, Month.JANUARY, 1));
 
         final Person petarPetrov = personService.generatePerson(
                 "Petar", "Petrov", LocalDate.of(1999, Month.JANUARY, 31));
