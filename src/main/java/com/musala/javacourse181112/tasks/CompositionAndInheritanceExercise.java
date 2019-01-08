@@ -41,7 +41,7 @@ abstract class Mammal implements Being {
 }
 
 // TODO: implement
-abstract class Human extends Mammal {
+class Human extends Mammal {
     private String name;
     private String sex;
 
@@ -68,7 +68,8 @@ abstract class Human extends Mammal {
         return true;
     }
 
-    Mammal giveBirth() {
-        return;
+    @Override
+    Mammal giveBirth(int birthsGiven) {
+        return new Human();
     }
 }
