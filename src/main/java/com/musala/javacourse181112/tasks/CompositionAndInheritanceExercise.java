@@ -35,6 +35,6 @@ class Human extends Mammal {
 
     @Override
     Mammal giveBirth() {
-        return null;
+        return new Human();
     }
 }
