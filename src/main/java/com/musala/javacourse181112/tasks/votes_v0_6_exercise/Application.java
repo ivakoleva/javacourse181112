@@ -34,8 +34,14 @@ public class Application {
                         () -> pollService.generateAnswer("Sugar"),
                         () -> pollService.generateAnswer("Milk & sugar"),
                         () -> pollService.generateAnswer("Black"),
-                        () -> pollService.generateAnswer("None of the above"))
-                // TODO: implement the rest of the questions & answers
+                        () -> pollService.generateAnswer("None of the above")),
+                () -> pollService.generateQuestion(
+                        "How many coffees do you have a day?",
+                        () -> pollService.generateAnswer("Less or equal of 2"),
+                        () -> pollService.generateAnswer("More than 2 but less than 5"),
+                        () -> pollService.generateAnswer("More or equal of 5"),
+                        () -> pollService.generateAnswer("None"))
+
         );
         coffeePoll.setCreatedBy(person1);
 
