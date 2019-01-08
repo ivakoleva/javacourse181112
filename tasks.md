@@ -1,3 +1,10 @@
+08.01:
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
 
 07.01:
 
@@ -29,19 +36,19 @@
                 ***** More or equal of 5
                 ***** None
             **** Persons participating: 2
-
+        
 
 03.01:
 
 * Homework:
     ** Votes v0.4 - introduce OOP concepts
-        *** subpackage, data model
+        *** subpackage, data model 
         *** entry point class, with main method
         *** etc.
 
 * Exercise:
     * Future age calculator application v0.2
-        ** create tasks.calculatorexercise sub-package
+        ** create tasks.calculatorexercise sub-package 
         ** Calculator class implementation
         ** Calculator accepts parameters of:
             ** Person objects (age field)
@@ -52,7 +59,7 @@
             ** Execute additions, and print to standard output
             ** Then exit
         ** Distribute to end user (push to github)
-
+        
     * Random person names generator
         ** configure charset (symbols allowed)
         ** configure min/max length per word
@@ -60,11 +67,11 @@
         ** when producing a name - first letter always upper case, other letters lower case
         ** words joined using a space
         ** sample runner, for POC purposes
-
+        
         ** Bonus: names count
 
 02.01:
-
+    
 * Exercise:
     ** find & review java.util.stream.Stream class, Java class library
     ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
@@ -90,7 +97,7 @@
             **** instantiate 2 PersonService objects
             **** call service static and non-static methods, using populated persons
             **** use service static method and print directly a new person instance with assigned properties
-
+            
         *** Bonus: implement non-static finalize method, reseting the PersonService instances state at the end of usage
 
 20.12:
@@ -98,7 +105,7 @@
 * Exercise:
     ** create a concept of a validatable entity & validator
     ** if non-valid - throw a custom checked ValidationException
-
+    
     ** implement EGN validator
     ** implement custom EGN validation exception
     ** apply validator, using a sample EGN to test
@@ -107,14 +114,14 @@
 
 * Exercise:
     ** PopulatePersonClassGenericAlgorithmExample - deserialize & populate a generic instance from file
-
+    
 * Homework:
     ** PopulatePersonClassGenericAlgorithmExample - add generic serialization
         *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
         *** loop over fields
             **** filter non-null values
             **** then write each field name=required1 format to file
-
+                  
         *** Bonus 1: handle case of deserialization when whitespaces only present after =
         *** Bonus 2: add support to parseValueFromString() of additional class types
 
@@ -130,9 +137,9 @@
         ** pass argument to bridge method
         ** implement workaround so we could add an object to List
         ** should be able to compile then run, and print to stdout
-
+   
     * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
-
+    
     * Read Java Oracle docs regarding Generics (by email)
 
 13.12:
@@ -142,7 +149,7 @@
         *** keys
         *** values
         *** entries
-    ** Utils exercise
+    ** Utils exercise 
         *** populate an ordinal List of 10 integers
         *** shuffle list
         *** sort list
@@ -150,7 +157,7 @@
         *** populate a second List
         *** add same element 100 times to second List
         *** concatenate both lists, in order to print to stdout
-
+        
 * Homework:
     ** Threads, serializing/deserializing data and put/take to queue
         *** first, populate a queue with 10 lists of integers 0-20
@@ -158,15 +165,15 @@
         *** then spawn two threads
             **** consumer thread, while not interrupted:
                 ***** takes a list from queue
-                ***** for each list, serializes to one file
+                ***** for each list, serializes to one file 
             **** producer thread, while not interrupted:
                 ***** watches the directory for a new file
                 ***** reads file, deserializes file data, removes file
                 ***** puts to queue
-
+                
         *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
             **** proof could be file naming convention (cycle count number)
-
+            
     ** Read Oracle Java docs regarding Collections
 
 11.12:
@@ -181,7 +188,7 @@
         *** instantiate a blocking queue (LinkedBlockingQueue, ArrayBlockingQueue)
         *** populate with 10 elements
         *** instantiate a collection, then transfer 5 queue elements to that collection
-
+        
 * Homework:
     ** PriorityBlockingQueue<Integer> Producer-Consumer Exercise
         *** two producer threads, subclassing class Thread (random int between [1, 100000])
@@ -203,25 +210,25 @@
         *** prints them on stdout
         *** interrupts producer thread
     ** main thread exits with 0
-
-    ** review all new example implementations
+    
+    ** review all new example implementations   
 
 06.12:
 
 * Homework:
-    ** Populate an instance per general-purpose collection implementations
+    ** Populate an instance per general-purpose collection implementations 
         *** Set (HashSet, TreeSet, LinkedHashSet)
         *** List (ArrayList, LinkedList)
         *** Queue
         *** Deque (ArrayDeque, LinkedList)
     ** Populate a Map
     ** Loop a collection/map and modify (remove an element/entry while looping)
-    ** Apply add/put remove contains size isEmpty etc.
-
+    ** Apply add/put remove contains size isEmpty etc. 
+    
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
-
+        
     ** Bonus: implement TriConsumer (for reference, java.util.function.BiConsumer)
 
 03.12:
@@ -238,7 +245,7 @@
         *** define and initialize all supported types of primitives and their respective wrappers
         *** loop and print array to stdout
         *** stream the array (Arrays util)
-        *** using instanceof, filter by boolean
+        *** using instanceof, filter by boolean 
         *** collect to list
 
 29.11:
@@ -248,18 +255,18 @@
             *** use buffer of 128 length
             *** print to stdout
             *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
-
+        
     ** Bonus: subclass FilterInputStream
         *** count all read operations (each time read() is being called from outside)
         *** add a counter class field
         *** implement getCount() method
-
+        
     ** WatchServiceExample questions ?
     ** FileVisitorWalkTreeExample questions ?
-
+        
 * Exercises:
     ** File exercise
-        *** creation
+        *** creation 
             **** create a file using a non-existing path
             **** show if file exists
             **** create as directory
@@ -288,27 +295,27 @@
 
 * InputStream exercise v0.2
     ** after reading the file, do store file content to tasks_copy.md (to a new file, using FileOutputStream)
-
+    
 * Reader exercise
     ** read characters from tasks.md, using FileReader
     ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
-
+         
 * Homework:
     ** Write exercise - using Writer, write/append
         *** read from program parameters
         *** write each parameter to a new line
         *** write to a file
-
+        
     ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content
         *** content encoding - Windows-1251
         *** add buffering (Buffered*)
-
+        
     ** PushbackReader exercise
         *** use buffer of 128 length
         *** print to stdout
         *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
-
+    
     ** Bonus: subclass FilterInputStream
         *** count all read operations (each time read() is being called from outside)
         *** add a counter class field
@@ -320,7 +327,7 @@
     ** add lambda stream.forEach implementation (Arrays.stream)
     ** add looping and modifying a collection of strings (using iterator)
         *** remove if: element length % 2 == 0
-
+        
 * InputStream exercise
     ** implement inputStream.read(buffer, offset, length)
 
