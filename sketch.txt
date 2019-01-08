@@ -122,6 +122,8 @@ shadowing
 
 POC (proof-of-concept)
 
-method overloading
+method overloading/overriding
 
 relation/mapping
+
+static inner(non-static) class == nested(static) class
