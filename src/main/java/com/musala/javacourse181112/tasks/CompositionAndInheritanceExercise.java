@@ -5,30 +5,70 @@ package com.musala.javacourse181112.tasks;
  */
 public class CompositionAndInheritanceExercise {
     public static void main(final String[] args) {
-        final Human human1 = new Human();
-        // TODO: set alive
+        final Human human1 = new Human() {
+            @Override
+            Mammal giveBirth(int birthsGiven) {
+                return null;
+            }
+        };
+        //TODO: set alive
         //TODO: final Human human2 = human1.giveBirth();
     }
 }
 
 interface Being {
-    boolean isAlive();
+    boolean isAlive(); //boolean getter
 }
 
 abstract class Mammal implements Being {
-    abstract Mammal giveBirth();
-}
+    private String kind;
+    private int birthsGiven;
 
-// TODO: implement
-class Human extends Mammal {
+    public String getName() {
+        return kind;
+    }
 
-    @Override
-    public boolean isAlive() {
-        return false;
+    public void setName(String name) {
+        this.kind = name;
     }
 
     @Override
+    public boolean isAlive() {
+        return true;
+    }
+
+    abstract Mammal giveBirth(int birthsGiven);
+}
+
+// TODO: implement
+abstract class Human extends Mammal {
+    private String name;
+    private String sex;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public boolean isAlive() {
+        return true;
+    }
+
     Mammal giveBirth() {
-        return null;
+        return;
     }
 }
