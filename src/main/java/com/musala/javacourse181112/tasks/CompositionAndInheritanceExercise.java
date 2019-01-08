@@ -7,6 +7,7 @@ public class CompositionAndInheritanceExercise {
     public static void main(final String[] args) {
         final Human human1 = new Human();
         // TODO: set alive
+        human1.setAlive(true);
         //TODO: final Human human2 = human1.giveBirth();
     }
 }
@@ -21,6 +22,11 @@ abstract class Mammal implements Being {
 
 // TODO: implement
 class Human extends Mammal {
+    private boolean isAlive;
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
 
     @Override
     public boolean isAlive() {
@@ -28,7 +34,7 @@ class Human extends Mammal {
     }
 
     @Override
-    Mammal giveBirth() {
-        return null;
+    Human giveBirth() {
+        return new Human();
     }
 }
