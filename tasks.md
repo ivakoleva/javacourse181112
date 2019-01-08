@@ -25,9 +25,9 @@
 
 * Homework:
     ** Votes v0.4 - introduce OOP concepts
-        *** subpackage, data model 
-        *** entry point class, with main method
-        *** etc.
+                        *** subpackage, data model 
+                        *** entry point class, with main method
+                        *** etc.
 
 * Exercise:
     * Future age calculator application v0.2
