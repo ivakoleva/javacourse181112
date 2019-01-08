@@ -1,3 +1,10 @@
+08.01:
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
 07.01:
 
 * Homework:
