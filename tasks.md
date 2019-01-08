@@ -1,5 +1,14 @@
 07.01:
 
+* Homework:
+    ** Votes v0.6 - package tasks.votes_v0_6_exercise
+        *** Complete data population regarding requirements
+        *** Implement PersonService, then refactor current Person instantiation
+        *** Elaborate Poll with anonymous setting (true/false) 
+        
+    ** Bonus: create data model for
+        *** AnswerGiven per Poll per Question (Person mapping optional (based on anon instance setting above)) 
+
 * Exercise:
     ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
         *** Poll: Coffee poll
