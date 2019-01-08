@@ -7,7 +7,9 @@ import java.util.List;
  */
 public class Question {
     private String name;
-    private List<Answer> answerList;
+    private List<Answer> answerAvailableList;
+    private List<AnswerGiven> answerGivenList;
+    private List<Person> personVotedList;
 
     public String getName() {
         return name;
@@ -17,11 +19,27 @@ public class Question {
         this.name = name;
     }
 
-    public List<Answer> getAnswerList() {
-        return answerList;
+    public List<Answer> getAnswerAvailableList() {
+        return answerAvailableList;
     }
 
-    public void setAnswerList(List<Answer> answerList) {
-        this.answerList = answerList;
+    public void setAnswerAvailableList(List<Answer> answerAvailableList) {
+        this.answerAvailableList = answerAvailableList;
+    }
+
+    public List<AnswerGiven> getAnswerGivenList() {
+        return answerGivenList;
+    }
+
+    public void setAnswerGivenList(List<AnswerGiven> answerGivenList) {
+        this.answerGivenList = answerGivenList;
+    }
+
+    public List<Person> getPersonVotedList() {
+        return personVotedList;
+    }
+
+    public void setPersonVotedList(List<Person> personVotedList) {
+        this.personVotedList = personVotedList;
     }
 }
