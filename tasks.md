@@ -1,4 +1,49 @@
+08.01:
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
+07.01:
+
+* Homework:
+    ** Votes v0.6 - package tasks.votes_v0_6_exercise
+        *** Complete data population regarding requirements
+        *** Implement PersonService, then refactor current Person instantiation
+        *** Elaborate Poll with anonymous setting (true/false) 
+        
+    ** Bonus: create data model for
+        *** AnswerGiven per Poll per Question (Person mapping optional (based on anon instance setting above)) 
+
+* Exercise:
+    ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
+        *** Poll: Coffee poll
+            **** Question1: Do you like coffee?
+            **** Answers:
+                ***** Yes
+                ***** No
+            **** Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+            **** Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+            **** Persons participating: 2
+        
+
 03.01:
+
+* Homework:
+    ** Votes v0.4 - introduce OOP concepts
+        *** subpackage, data model 
+        *** entry point class, with main method
+        *** etc.
 
 * Exercise:
     * Future age calculator application v0.2
@@ -12,7 +57,17 @@
             ** Instantiate Calculator
             ** Execute additions, and print to standard output
             ** Then exit
-        ** Distribute to end user (push to github)   
+        ** Distribute to end user (push to github)
+        
+    * Random person names generator
+        ** configure charset (symbols allowed)
+        ** configure min/max length per word
+        ** random generator component implementation should be dedicated to be reused
+        ** when producing a name - first letter always upper case, other letters lower case
+        ** words joined using a space
+        ** sample runner, for POC purposes
+        
+        ** Bonus: names count
 
 02.01:
     
@@ -64,7 +119,7 @@
         *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
         *** loop over fields
             **** filter non-null values
-            **** then write each field name=value format to file
+            **** then write each field name=required1 format to file
                   
         *** Bonus 1: handle case of deserialization when whitespaces only present after =
         *** Bonus 2: add support to parseValueFromString() of additional class types
@@ -297,7 +352,7 @@
     ** use switch-based check
     ** parameters supplied by user
     ** prints chromosomes to stdout (letter by letter) 
-* port the code to use Gender enum instead of any string value
+* port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
     * introduce enum usage (vote answer yes/no)

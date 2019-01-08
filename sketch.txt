@@ -117,3 +117,13 @@ access modifiers:
 public, package-protected (default), protected, private scopes
 
 callback
+
+shadowing
+
+POC (proof-of-concept)
+
+method overloading/overriding
+
+relation/mapping
+
+static inner(non-static) class == nested(static) class
