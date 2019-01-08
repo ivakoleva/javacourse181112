@@ -2,6 +2,7 @@ package com.musala.javacourse181112.tasks.votes_v0_6_exercise;
 
 import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Person;
 import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Poll;
+import com.musala.javacourse181112.tasks.votes_v0_6_exercise.service.PersonService;
 import com.musala.javacourse181112.tasks.votes_v0_6_exercise.service.PollService;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class Application {
 
     public static void main(final String[] args) {
         final PollService pollService = new PollService();
-
+        //final PersonService personService = new PersonService();
         // TODO: implement PersonService, and generatePerson() method
         final Person person1 = new Person();
         person1.setName("Ivan");
@@ -34,8 +35,13 @@ public class Application {
                         () -> pollService.generateAnswer("Sugar"),
                         () -> pollService.generateAnswer("Milk & sugar"),
                         () -> pollService.generateAnswer("Black"),
-                        () -> pollService.generateAnswer("None of the above"))
-                // TODO: implement the rest of the questions & answers
+                        () -> pollService.generateAnswer("None of the above")),
+                () -> pollService.generateQuestion(
+                        "How many coffees do you have a day?",
+                        () -> pollService.generateAnswer("Less or equal of 2"),
+                        () -> pollService.generateAnswer("More than 2 but less than 5"),
+                        () -> pollService.generateAnswer("More or equal of 5"),
+                        () -> pollService.generateAnswer("None"))
         );
         coffeePoll.setCreatedBy(person1);
 
