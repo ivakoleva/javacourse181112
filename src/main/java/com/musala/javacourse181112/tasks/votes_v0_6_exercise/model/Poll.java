@@ -9,7 +9,7 @@ import java.util.List;
 public class Poll {
     private String name;
     private List<Question> questionList;
-    // TODO: add personList
+    private List<Person> personList;
 
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
@@ -54,5 +54,13 @@ public class Poll {
 
     public void setCreatedBy(Person createdBy) {
         this.createdBy = createdBy;
+    }
+
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
     }
 }

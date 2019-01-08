@@ -5,6 +5,7 @@ import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Person;
 import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Poll;
 import com.musala.javacourse181112.tasks.votes_v0_6_exercise.model.Question;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
@@ -32,6 +33,20 @@ public class PollService {
                 .collect(Collectors.toList()));
         return question;
     }
+
+    //TODO: Elaborate Poll with anonymous setting (true/false)
+    public Poll generatePoll(boolean isAnonymous, final Supplier<Question>... questionSuppliers) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        return generatePoll(
+                "Anonymous",
+                Arrays.stream(questionSuppliers)
+                        .map(Supplier::get)
+                        .collect(Collectors.toList()),
+                localDateTime,
+                localDateTime.plus(3, ChronoUnit.MONTHS),
+                null);
+    }
+
 
     public Poll generatePoll(final String name, final Supplier<Question>... questionSuppliers) {
         final LocalDateTime startDateTime = LocalDateTime.now();
