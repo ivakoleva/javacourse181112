@@ -6,8 +6,8 @@ package com.musala.javacourse181112.tasks;
 public class CompositionAndInheritanceExercise {
     public static void main(final String[] args) {
         final Human human1 = new Human();
-        // TODO: set alive
-        //TODO: final Human human2 = human1.giveBirth();
+        human1.setAlive(false);
+        //final Human human2 = (Human) human1.giveBirth();
     }
 }
 
@@ -21,14 +21,20 @@ abstract class Mammal implements Being {
 
 // TODO: implement
 class Human extends Mammal {
+    boolean alive;
+
+    public void setAlive(boolean alive){
+        this.alive = alive;
+    }
 
     @Override
     public boolean isAlive() {
+
         return false;
     }
 
     @Override
-    Mammal giveBirth() {
-        return null;
+    Human giveBirth() {
+          return new Human();
     }
 }
