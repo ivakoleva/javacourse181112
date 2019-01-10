@@ -19,7 +19,7 @@
                 ***** newspapers
             **** keeping history of items rented per person
             **** monthly subscription
-            
+          
 
 08.01:
 
