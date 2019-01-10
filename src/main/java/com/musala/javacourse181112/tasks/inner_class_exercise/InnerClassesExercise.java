@@ -1,7 +1,5 @@
 package com.musala.javacourse181112.tasks.inner_class_exercise;
 
-import java.lang.annotation.Annotation;
-
 /**
  * * package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
  * ** Inner class (non-static)
@@ -21,6 +19,7 @@ public class InnerClassesExercise {
     }
 
     public static void main(String[] args) {
+
         Plus<String> stringPlus = new Plus<String>() {
 
             @Override
@@ -29,12 +28,28 @@ public class InnerClassesExercise {
             }
 
         };
+
+        class LocalClass {
+            String word1 = "I am a ", word2 = " class to ";
+            String location;
+            InnerClassesExercise.StaticInnerInterface.StaticInnerEnum innerEnum = InnerClassesExercise.StaticInnerInterface.StaticInnerEnum.LOCAL;
+
+            public LocalClass(String mainClass, Plus<String> stringPlus) {
+                location = stringPlus.plus(word1, innerEnum.toString());
+                location = stringPlus.plus(location, word2);
+                location = stringPlus.plus(location, mainClass);
+            }
+        }
+
         String word1 = "I am ";
         InnerClassesExercise innerClassesExercise = new InnerClassesExercise(stringPlus);
         System.out.println(word1 + innerClassesExercise.name);
+
         System.out.println(innerClassesExercise.innerClass.location);
+
         LocalClass localClass = new LocalClass(innerClassesExercise.name, stringPlus);
         System.out.println(localClass.location);
+
         StaticInnerClass innerClass = new StaticInnerClass(innerClassesExercise.name, stringPlus);
         System.out.println(innerClass.location);
 
@@ -77,24 +92,7 @@ public class InnerClassesExercise {
 
 }
 
-class LocalClass {
-    static String word1 = "I am a ", word2 = " class to ";
-    String location;
-    InnerClassesExercise.StaticInnerInterface.StaticInnerEnum innerEnum = InnerClassesExercise.StaticInnerInterface.StaticInnerEnum.LOCAL;
-
-    public LocalClass(String mainClass, Plus<String> stringPlus) {
-        location = stringPlus.plus(word1, innerEnum.toString());
-        location = stringPlus.plus(location, word2);
-        location = stringPlus.plus(location, mainClass);
-    }
-}
-
 @FunctionalInterface
-interface Plus<T> extends FunctionalInterface {
+interface Plus<T> {
     T plus(T first, T second);
-
-    @Override
-    default Class<? extends Annotation> annotationType() {
-        return FunctionalInterface.class;
-    }
 }
