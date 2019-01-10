@@ -9,58 +9,69 @@ public class ClassesExercise {
         final ClassesExercise.InnerClass innerClass =
                 innerClassSample.new InnerClass();
         innerClass.printValueToStdout();
+        innerClass.printStatusToStdout();
 
         final ClassesExercise.StaticNestedClass staticNestedClass =
                 new ClassesExercise.StaticNestedClass();
         staticNestedClass.printValueToStdout();
+        staticNestedClass.printStatusToStdout();
 
-        class LocalClass implements InnerInterface{
-            ClassesExercise.InnerEnum status = InnerEnum.LOCAL_CLASS;
+        class LocalClass implements InnerInterface {
+
+            private ClassesExercise.InnerEnum status = InnerEnum.LOCAL_CLASS;
             private String value = "asd1";
 
             public void printValueToStdout() {
                 System.out.println(value);
             }
-            public void printStatusToStdout(){
+
+            public void printStatusToStdout() {
                 System.out.println(status);
             }
         }
 
         final LocalClass localClass = new LocalClass();
         localClass.printValueToStdout();
+        localClass.printStatusToStdout();
 
         final Runnable anonymousRunnable = () -> System.out.println("asd");
     }
+
     private static class StaticNestedClass implements InnerInterface {
+
         ClassesExercise.InnerEnum status = InnerEnum.NESTED_CLASS;
         private static String staticValue = "Asd1";
 
         public void printValueToStdout() {
             System.out.println(staticValue);
         }
-        public void printStatusToStdout(){
+
+        public void printStatusToStdout() {
             System.out.println(status);
         }
     }
 
     public class InnerClass implements InnerInterface {
+
         ClassesExercise.InnerEnum status = InnerEnum.INNER_CLASS;
         private String value = "asd1";
 
         public void printValueToStdout() {
             System.out.println(value);
         }
-        public void printStatusToStdout(){
+
+        public void printStatusToStdout() {
             System.out.println(status);
         }
 
     }
 
-
     public interface InnerInterface {
         void printValueToStdout();
+
         void printStatusToStdout();
     }
+
     public enum InnerEnum {
         INNER_CLASS,
         NESTED_CLASS,
