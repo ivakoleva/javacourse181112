@@ -10,15 +10,21 @@
                 ***** employees
                 ***** clients
                 ***** items inventory
-            **** keeping personal records, roles
+            **** roles (enum Role)
                 ***** clients
                 ***** employees
+            **** keeping personal records of all people
             **** inventory of
                 ***** books
                 ***** magazines
                 ***** newspapers
+            **** each inventory item includes
+                ***** ISPN (String)
+                ***** name
+                ***** unique id (identifier, Long)
             **** keeping history of items rented per person
             **** monthly subscription
+                ***** 30 days, starting right away from date of payment
             
 
 08.01:
