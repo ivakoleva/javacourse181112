@@ -6,8 +6,8 @@ public class Library {
 
     public String name;
 
-    ArrayList<Person> personArrayList = new ArrayList<>();
-    ArrayList<Item> itemArrayList = new ArrayList<>();
+    ArrayList<Person> personArrayList;
+    ArrayList<Item> itemArrayList;
 
 
     public String getName() {
