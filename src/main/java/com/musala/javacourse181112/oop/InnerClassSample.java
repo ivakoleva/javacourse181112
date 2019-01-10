@@ -16,8 +16,7 @@ public class InnerClassSample {
     public static void main(final String[] args) {
         final InnerClassSample innerClassSample = new InnerClassSample();
 
-        final InnerClassSample.InnerClass innerClass =
-                innerClassSample.new InnerClass();
+        final InnerClassSample.InnerClass innerClass = innerClassSample.new InnerClass();
         innerClass.printValuesToStdout();
         //new InnerClassSample().new InnerClass();
 
@@ -41,6 +40,7 @@ public class InnerClassSample {
 
     // inner interface & enum are always static
     // static keyword marked as redundant
+
     public static interface InnerInterface {
     }
     public static enum InnerEnum {

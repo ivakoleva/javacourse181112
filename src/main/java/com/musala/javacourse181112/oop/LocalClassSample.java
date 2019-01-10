@@ -20,3 +20,4 @@ public class LocalClassSample {
         localClass.printValuesToStdout();
     }
 }
+
