@@ -1,3 +1,8 @@
+10.01:
+
+* Exercise: 
+    * Complete innerexercise homework
+
 08.01:
 
 * Homework:
