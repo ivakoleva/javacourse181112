@@ -1,4 +1,30 @@
+08.01:
+
+* Homework:
+    ** package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
+        *** Inner class (non-static) 
+        *** Static nested
+            **** class
+            **** interface
+            **** enum 
+        *** Local class
+        *** Anonymous class (using a functional interface)
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
 07.01:
+
+* Homework:
+    ** Votes v0.6 - package tasks.votes_v0_6_exercise
+        *** Complete data population regarding requirements
+        *** Implement PersonService, then refactor current Person instantiation
+        *** Elaborate Poll with anonymous setting (true/false) 
+        
+    ** Bonus: create data model for
+        *** AnswerGiven per Poll per Question (Person mapping optional (based on anon instance setting above)) 
 
 * Exercise:
     ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
