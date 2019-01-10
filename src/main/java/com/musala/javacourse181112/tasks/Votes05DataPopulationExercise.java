@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Iva Koleva on 07.01.2019
  */
-public class Votes05DataPopulationExercise {
+/*public class Votes05DataPopulationExercise {
     public static void main(final String[] args) {
         final Person ivanIvanov = new Person();
         ivanIvanov.setName("Ivan");
@@ -71,4 +71,4 @@ public class Votes05DataPopulationExercise {
 
         // TODO: populate 3 questions, consult tasks.md
     }
-}
+}*/
