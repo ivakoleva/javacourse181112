@@ -22,15 +22,12 @@ public class InnerClassesExercise {
 
     public static void main(String[] args) {
         Plus<String> stringPlus = new Plus<String>() {
+
             @Override
             public String plus(String first, String second) {
                 return first + second;
             }
 
-            @Override
-            public Class<? extends Annotation> annotationType() {
-                return null;
-            }
         };
         String word1 = "I am ";
         InnerClassesExercise innerClassesExercise = new InnerClassesExercise(stringPlus);
@@ -92,6 +89,12 @@ class LocalClass {
     }
 }
 
+@FunctionalInterface
 interface Plus<T> extends FunctionalInterface {
     T plus(T first, T second);
+
+    @Override
+    default Class<? extends Annotation> annotationType() {
+        return FunctionalInterface.class;
+    }
 }
