@@ -10,9 +10,10 @@
                 ***** employees
                 ***** clients
                 ***** items inventory
-            **** keeping personal records, roles
+            **** roles (enum Role)
                 ***** clients
                 ***** employees
+            **** keeping personal records of all people
             **** inventory of
                 ***** books
                 ***** magazines
