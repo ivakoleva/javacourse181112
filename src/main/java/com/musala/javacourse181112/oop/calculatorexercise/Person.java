@@ -20,4 +20,6 @@ public class Person implements Calculatable {
     public int getValue() {
         return Utils.calculateYearsFrom(dateOfBirth);
     }
+
 }
+

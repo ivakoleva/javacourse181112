@@ -31,9 +31,16 @@ public class Votes05DataPopulationExercise {
 
         final Question question1 = new Question();
         question1.setName("Do you like coffee?");
-        //question1.setAnswerList();
+
+        final Question question2 = new Question();
+        question2.setName("How do you enjoy your coffee?");
+
+        final Question question3 = new Question();
+        question3.setName("How many coffees do you have a day?");
 
         questionList.add(question1);
+        questionList.add(question2);
+        questionList.add(question3);
 
         // TODO: populate 3 questions, consult tasks.md
     }

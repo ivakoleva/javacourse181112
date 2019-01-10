@@ -17,7 +17,7 @@ public class VoteMain {
 
         System.out.println("\nDid you like formula 1 ?");
         System.out.println("Name:" + voter3.getVoterName() + "\nEGN: " +
-                voter2.getVoterEgn() + "\nanswered: " + voter3.randomAnswer());
+                voter3.getVoterEgn() + "\nanswered: " + voter3.randomAnswer());
     }
 }
 
