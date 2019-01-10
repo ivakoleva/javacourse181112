@@ -52,6 +52,6 @@ public class BigClass {
 
     }
 
-    enum SampleEnum {
+    enum StaticNestedEnum {
     }
 }
