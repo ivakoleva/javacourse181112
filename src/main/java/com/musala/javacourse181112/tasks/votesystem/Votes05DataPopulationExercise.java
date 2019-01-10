@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.votesystem;
 
 import com.musala.javacourse181112.oop.votesexercise.model.Answer;
 import com.musala.javacourse181112.oop.votesexercise.model.Person;

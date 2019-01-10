@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.votes_v0_6_exercise.model;
+package com.musala.javacourse181112.tasks.votesystem.votes_v0_6_exercise.model;
 
 import java.time.LocalDateTime;
 import java.util.List;

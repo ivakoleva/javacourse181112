@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.votesystem;
 // Version V2
 // clean
 public class VoteSystem {

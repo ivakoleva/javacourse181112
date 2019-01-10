@@ -7,12 +7,12 @@
         *** create domain model, purposed for:
             **** library organization itself
                 ***** name
-                ***** employees
+                ***** userList
                 ***** clients
                 ***** items inventory
             **** keeping personal records, roles
                 ***** clients
-                ***** employees
+                ***** userList
             **** inventory of
                 ***** books
                 ***** magazines

@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.tasks.votesystem;
 
 public class VoteSystemV1 {
     public static void main(String[] args) {
