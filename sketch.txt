@@ -127,3 +127,5 @@ method overloading/overriding
 relation/mapping
 
 static inner(non-static) class == nested(static) class
+
+StringBuilder / StringBuffer (thread-safe)
