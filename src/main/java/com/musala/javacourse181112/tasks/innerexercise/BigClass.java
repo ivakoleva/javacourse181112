@@ -21,6 +21,11 @@ public class BigClass {
                 new BigClass.StaticNestedClass();
         staticNestedClass.printValues();
 
+
+        class LocalClass {
+
+        }
+        LocalClass localClass = new LocalClass();
     }
 
     public class InnerClass {
@@ -45,5 +50,8 @@ public class BigClass {
 
         String value = "InterfaceValue";
 
+    }
+
+    enum SampleEnum {
     }
 }
