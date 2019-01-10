@@ -48,5 +48,5 @@ public class InnerClassSample {
 }
 
 // inner class needs to be static nested in order to be extended outside outer class
-/*class Test extends InnerClassSample.InnerClass {
+/*class Main extends InnerClassSample.InnerClass {
 }*/

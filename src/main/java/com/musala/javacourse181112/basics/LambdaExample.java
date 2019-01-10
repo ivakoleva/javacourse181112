@@ -44,7 +44,7 @@ public class LambdaExample {
 // default package-protected scope of visibility
 class MyRunnable implements Runnable {
     /*public void test() {
-        System.out.println("Test.");
+        System.out.println("Main.");
     }*/
 
     @Override
