@@ -1,7 +1,25 @@
 10.01:
 
 * Exercise: 
-    * Complete innerexercise homework
+    ** Complete innerexercise homework
+    ** Library management software v0.1 
+        *** tasks.libraryexercise_v0_1 package; model subpackage
+        *** create domain model, purposed for:
+            **** library organization itself
+                ***** name
+                ***** employees
+                ***** clients
+                ***** items inventory
+            **** keeping personal records, roles
+                ***** clients
+                ***** employees
+            **** inventory of
+                ***** books
+                ***** magazines
+                ***** newspapers
+            **** keeping history of items rented per person
+            **** monthly subscription
+            
 
 08.01:
 
