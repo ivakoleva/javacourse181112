@@ -18,8 +18,13 @@
                 ***** books
                 ***** magazines
                 ***** newspapers
+            **** each inventory item includes
+                ***** ISPN (String)
+                ***** name
+                ***** unique id (identifier, Long)
             **** keeping history of items rented per person
             **** monthly subscription
+                ***** 30 days, starting right away from date of payment
             
 
 08.01:
