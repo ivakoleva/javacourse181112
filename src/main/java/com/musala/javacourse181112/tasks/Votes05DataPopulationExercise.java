@@ -1,9 +1,10 @@
 package com.musala.javacourse181112.tasks;
 
-import com.musala.javacourse181112.oop.votesexercise.model.Answer;
-import com.musala.javacourse181112.oop.votesexercise.model.Person;
-import com.musala.javacourse181112.oop.votesexercise.model.Poll;
-import com.musala.javacourse181112.oop.votesexercise.model.Question;
+
+import com.musala.javacourse181112.tasks.votingexercise.Answer;
+import com.musala.javacourse181112.tasks.votingexercise.Person;
+import com.musala.javacourse181112.tasks.votingexercise.Poll;
+import com.musala.javacourse181112.tasks.votingexercise.Question;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
