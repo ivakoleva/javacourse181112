@@ -1,3 +1,32 @@
+10.01:
+
+* Exercise: 
+    ** Complete innerexercise homework
+    ** Library management software v0.1 
+        *** tasks.libraryexercise_v0_1 package; model subpackage
+        *** create domain model, purposed for:
+            **** library organization itself
+                ***** name
+                ***** employees
+                ***** clients
+                ***** items inventory
+            **** roles (enum Role)
+                ***** clients
+                ***** employees
+            **** keeping personal records of all people
+            **** inventory of
+                ***** books
+                ***** magazines
+                ***** newspapers
+            **** each inventory item includes
+                ***** ISPN (String)
+                ***** name
+                ***** unique id (identifier, Long)
+            **** keeping history of items rented per person
+            **** monthly subscription
+                ***** 30 days, starting right away from date of payment
+            
+
 08.01:
 
 * Homework:
