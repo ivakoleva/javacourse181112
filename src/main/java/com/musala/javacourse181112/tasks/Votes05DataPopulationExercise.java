@@ -46,7 +46,7 @@ public class Votes05DataPopulationExercise {
         answer2OfQuestion1.setName("No");
         answerList.add(answer2OfQuestion1);
 
-        question1.setAnswerList(answerList);
+        //question1.setAnswerList(answerList);
 
 
         final Question question2 = new Question();
@@ -67,7 +67,7 @@ public class Votes05DataPopulationExercise {
         answer3OfQuestion2.setName("Milk & Sugar");
         answerListQuestion2.add(answer3OfQuestion2);
 
-        question2.setAnswerList(answerListQuestion2);
+       // question2.setAnswerList(answerListQuestion2);
 
 
 
@@ -86,7 +86,7 @@ public class Votes05DataPopulationExercise {
         answer2OfQuestion3.setName("More than 2 but less than 5");
         answerListQuestion3.add(answer2OfQuestion3);
 
-        question3.setAnswerList(answerListQuestion3);
+       // question3.setAnswerList(answerListQuestion3);
 
 
     }
