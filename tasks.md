@@ -1,7 +1,8 @@
 08.01:
 
 * Homework:
-    ** package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
+    ** package task.innerexercise - define and instantiate one instance per each listed bellow;
+     narrow scope of visibility outside outer context (minimum visibility using access modifiers)
         *** Inner class (non-static) 
         *** Static nested
             **** class

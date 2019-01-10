@@ -39,7 +39,7 @@ public class Votes05DataPopulationExercise {
         question1.setName("Do you like coffee?");
 
         final List<Answer> answerList1 = new ArrayList<>();
-        question1.setAnswerList(answerList1);
+      //  question1.setAnswerList(answerList1);
 
         final Answer answerYes = new Answer();
         answerYes.setName("Yes");
@@ -55,7 +55,7 @@ public class Votes05DataPopulationExercise {
         question2.setName("How do you enjoy your coffee?");
 
         final List<Answer> answerList2 = new ArrayList<>();
-        question2.setAnswerList(answerList2);
+     //   question2.setAnswerList(answerList2);
 
         final Answer answerMilk = new Answer();
         answerMilk.setName("Milk");
@@ -83,7 +83,7 @@ public class Votes05DataPopulationExercise {
         question2.setName("How many coffees do you have a day?");
 
         final List<Answer> answerList3 = new ArrayList<>();
-        question3.setAnswerList(answerList3);
+      //  question3.setAnswerList(answerList3);
 
         final Answer answer1 = new Answer();
         answer1.setName("Less or equal of 2");
