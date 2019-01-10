@@ -3,10 +3,9 @@ package com.musala.javacourse181112.tasks.library_exercise.model;
 import java.util.List;
 
 public class Library {
-    String name;
-    List<Item> items;
-    List<Person> employees;
-    List<Person> clients;
+    private String name;
+    private List<Item> items;
+    private List<Person> people;
 
     public String getName() {
         return name;
@@ -24,19 +23,11 @@ public class Library {
         this.items = items;
     }
 
-    public List<Person> getEmployees() {
-        return employees;
+    public List<Person> getPeople() {
+        return people;
     }
 
-    public void setEmployees(List<Person> employees) {
-        this.employees = employees;
-    }
-
-    public List<Person> getClients() {
-        return clients;
-    }
-
-    public void setClients(List<Person> clients) {
-        this.clients = clients;
+    public void setPeople(List<Person> people) {
+        this.people = people;
     }
 }

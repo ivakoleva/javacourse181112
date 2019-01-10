@@ -1,13 +1,13 @@
 package com.musala.javacourse181112.tasks.library_exercise.model;
 
 public class Book implements Item {
-    String isbn;
-    String name;
+    private String ISBN;
+    private String name;
 
-    public Book(String ispn, String name) {
-        this.isbn = ispn;
+    /*public Book(String ispn, String name) {
+        this.ISBN = ispn;
         this.name = name;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -19,7 +19,10 @@ public class Book implements Item {
 
     @Override
     public String getISBN() {
-        return isbn;
+        return ISBN;
     }
 
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
 }

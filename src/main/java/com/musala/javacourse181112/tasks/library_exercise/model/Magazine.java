@@ -1,18 +1,19 @@
 package com.musala.javacourse181112.tasks.library_exercise.model;
 
 public class Magazine implements Item {
-    String isbn;
-    String name;
+    private String ISBN;
+    private String name;
 
-    public Magazine(String isbn, String name) {
-        this.isbn = isbn;
-        this.name = name;
-    }
 
-    public Magazine(String isbn) {
-        this.isbn = isbn;
-    }
+    /* public Magazine(String ISBN, String name) {
+            this.ISBN = ISBN;
+            this.name = name;
+        }
 
+        public Magazine(String ISBN) {
+            this.ISBN = ISBN;
+        }
+    */
     public String getName() {
         return name;
     }
@@ -23,6 +24,11 @@ public class Magazine implements Item {
 
     @Override
     public String getISBN() {
-        return isbn;
+        return ISBN;
     }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
 }

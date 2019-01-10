@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Person {
-    Role role;
-    String name;
-    String id;
-    List<Item> rentedItems;
-    LocalDate subscribedUntil;
+    private Role role;
+    private String name;
+    private String id;
+    private List<ItemRented> rentedItems;
+    private LocalDate subscribedUntil;
 
-    public Person(Role role) {
+    /*public Person(Role role) {
         this.role = role;
     }
 
@@ -18,7 +18,7 @@ public class Person {
         this.role = role;
         this.name = name;
         this.id = id;
-    }
+    }*/
 
     public Role getRole() {
         return role;
@@ -44,11 +44,11 @@ public class Person {
         this.id = id;
     }
 
-    public List<Item> getRentedItems() {
+    public List<ItemRented> getRentedItems() {
         return rentedItems;
     }
 
-    public void setRentedItems(List<Item> rentedItems) {
+    public void setRentedItems(List<ItemRented> rentedItems) {
         this.rentedItems = rentedItems;
     }
 
@@ -57,6 +57,6 @@ public class Person {
     }
 
     public void subscribe() {
-        subscribedUntil = subscribedUntil.plusMonths(1L);
+        subscribedUntil = LocalDate.now().plusMonths(1L);
     }
 }

@@ -1,18 +1,18 @@
 package com.musala.javacourse181112.tasks.library_exercise.model;
 
 public class Newspaper implements Item {
-    String isbn;
-    String name;
+    private String ISBN;
+    private String name;
 
-    public Newspaper(String isbn, String name) {
-        this.isbn = isbn;
-        this.name = name;
+
+    /* public Newspaper(String ISBN, String name) {
+         this.ISBN = ISBN;
+         this.name = name;
+     }
+    public Newspaper(String ISBN) {
+        this.ISBN = ISBN;
     }
-
-    public Newspaper(String isbn) {
-        this.isbn = isbn;
-    }
-
+    */
     public String getName() {
         return name;
     }
@@ -23,6 +23,10 @@ public class Newspaper implements Item {
 
     @Override
     public String getISBN() {
-        return isbn;
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
     }
 }
