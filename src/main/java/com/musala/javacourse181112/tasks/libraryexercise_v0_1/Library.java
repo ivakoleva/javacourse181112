@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Library {
 
-    public String name;
 
-    ArrayList<Person> personArrayList;
-    ArrayList<Item> itemArrayList;
+    private String name;
+    private ArrayList<Person> personArrayList;
+    private ArrayList<Item> itemArrayList;
 
 
     public String getName() {
