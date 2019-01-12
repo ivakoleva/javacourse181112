@@ -1,5 +1,9 @@
 10.01:
 
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
 * Exercise: 
     ** Complete innerexercise homework
     ** Library management software v0.1 
@@ -10,16 +14,22 @@
                 ***** employees
                 ***** clients
                 ***** items inventory
-            **** keeping personal records, roles
+            **** roles (enum Role)
                 ***** clients
                 ***** employees
+            **** keeping personal records of all people
             **** inventory of
                 ***** books
                 ***** magazines
                 ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
             **** keeping history of items rented per person
             **** monthly subscription
-          
+                ***** 30 days, starting right away from date of payment
+            
 
 08.01:
 
@@ -74,9 +84,9 @@
 
 * Homework:
     ** Votes v0.4 - introduce OOP concepts
-                        *** subpackage, data model 
-                        *** entry point class, with main method
-                        *** etc.
+        *** subpackage, data model 
+        *** entry point class, with main method
+        *** etc.
 
 * Exercise:
     * Future age calculator application v0.2
@@ -336,7 +346,7 @@
     ** Write exercise - using Writer, write/append
         *** read from program parameters
         *** write each parameter to a new line
-                                   *** write to a file
+        *** write to a file
         
     ** FileOutputStream exercise
         *** using FileOutputStream, bridge to Writer then write some content
