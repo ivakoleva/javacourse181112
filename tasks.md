@@ -78,22 +78,22 @@
 * Exercise:
     ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
         *** Poll: Coffee poll
-            **** Question1: Do you like coffee?
-            **** Answers:
-                ***** Yes
-                ***** No
-            **** Question2: How do you enjoy your coffee?
-                ***** Milk
-                ***** Sugar
-                ***** Milk & sugar
-                ***** Black
-                ***** None of the above
-            **** Question3: How many coffees do you have a day?
-                ***** Less or equal of 2
-                ***** More than 2 but less than 5
-                ***** More or equal of 5
-                ***** None
-            **** Persons participating: 2
+                    **** Question1: Do you like coffee?
+                    **** Answers:
+                        ***** Yes
+                        ***** No
+                    **** Question2: How do you enjoy your coffee?
+                        ***** Milk
+                        ***** Sugar
+                        ***** Milk & sugar
+                        ***** Black
+                        ***** None of the above
+                    **** Question3: How many coffees do you have a day?
+                        ***** Less or equal of 2
+                        ***** More than 2 but less than 5
+                        ***** More or equal of 5
+                        ***** None
+                    **** Persons participating: 2
         
 
 03.01:
@@ -197,7 +197,7 @@
         ** should be able to compile then run, and print to stdout
    
     * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
-    
+        
     * Read Java Oracle docs regarding Generics (by email)
 
 13.12:
@@ -281,8 +281,7 @@
         *** Deque (ArrayDeque, LinkedList)
     ** Populate a Map
     ** Loop a collection/map and modify (remove an element/entry while looping)
-    ** Apply add/put remove contains size isEmpty etc. 
-    
+    ** Apply add/put remove contains size isEmpty etc.     
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
@@ -451,6 +450,3 @@
         * Question 1: Is it snowing today? Yes/No
         * Question 2: Do you want rather to be snowing today? Yes/No
         * 3 votes per each question
-           
-        
- 

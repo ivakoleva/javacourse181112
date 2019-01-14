@@ -25,3 +25,7 @@ hs_err_pid*
 # IntelliJ project files
 .idea/**
 javacourse181112.iml
+
+WritingParameters.txt
+Test.java
+com.musala.javacourse181112.PIK3
