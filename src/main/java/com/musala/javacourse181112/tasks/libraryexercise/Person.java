@@ -1,12 +1,13 @@
 package com.musala.javacourse181112.tasks.libraryexercise;
 
-import java.util.ArrayList;
+import java.util.Map;
+
 
 public class Person {
 
     private Role role;
     private String name;
-    private ArrayList<Item> ItemArrayList= new ArrayList<>();
+    private Map<Item,Boolean> ItemMap;
 
     public Person( Role role, String name){
         this.role = role;
@@ -29,11 +30,11 @@ public class Person {
         this.name = name;
     }
 
-    public ArrayList<Item> getItemArrayList() {
-        return ItemArrayList;
+    public Map<Item, Boolean> getItemMap() {
+        return ItemMap;
     }
 
-    public void setItemArrayList(ArrayList<Item> itemArrayList) {
-        ItemArrayList = itemArrayList;
+    public void setItemMap(Map<Item, Boolean> itemMap) {
+        ItemMap = itemMap;
     }
 }
