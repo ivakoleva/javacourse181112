@@ -1,6 +1,26 @@
+14.01:
+
+* Homework:
+    * Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        ** add issue number to each entity (Integer)
+        ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+        
+        
+* Exercise:
+    ** Custom comparator exercise
+        *** Handle local changes; merge master branch to local one
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
+        *** Implement an utility class, that provides static method
+            **** accepts collection of Persons & custom Comparator<Person>
+            **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
+
 10.01:
 
-* Exercise: N
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
+* Exercise: 
     ** Complete innerexercise homework
     ** Library management software v0.1 
         *** tasks.libraryexercise_v0_1 package; model subpackage
@@ -10,23 +30,27 @@
                 ***** employees
                 ***** clients
                 ***** items inventory
-            **** keeping personal records, roles
+            **** roles (enum Role)
                 ***** clients
                 ***** employees
+            **** keeping personal records of all people
             **** inventory of
                 ***** books
                 ***** magazines
                 ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
             **** keeping history of items rented per person
             **** monthly subscription
+                ***** 30 days, starting right away from date of payment
             
 
 08.01:
 
 * Homework:
-    ** package task.innerexercise - define and instantiate one
-    instance per each listed bellow; narrow scope of visibility outside
-    outer context (minimum visibility using access modifiers)
+    ** package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
         *** Inner class (non-static) 
         *** Static nested
             **** class
@@ -286,7 +310,9 @@
 
 * Recommended for weekend exercises:
     ** PushbackReader exercise
-            *** usebuffer char read is \[a-p\] - unread 3 chars, in order to print them again
+            *** use buffer of 128 length
+            *** print to stdout
+            *** if last buffer char read is \[a-p\] - unread 3 chars, in order to print them again
         
     ** Bonus: subclass FilterInputStream
         *** count all read operations (each time read() is being called from outside)
@@ -310,12 +336,12 @@
             **** exit program, then check manually if file exists
          
 * Homework:
-    ** DataObjectStreamExercise
+    ** DataObjectStreamExercise 
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout
+        *** loop data structure then print to stdout  
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -330,8 +356,7 @@
     
 * Reader exercise
     ** read characters from tasks.md, using FileReader
-    ** write to stdout, optimize (take a look at parameters available for System.out.print(),
-    placing pointer at () then Ctrl+P)
+    ** write to stdout, optimize (take a look at parameters available for System.out.print(), placing pointer at () then Ctrl+P)
          
 * Homework:
     ** Write exercise - using Writer, write/append
