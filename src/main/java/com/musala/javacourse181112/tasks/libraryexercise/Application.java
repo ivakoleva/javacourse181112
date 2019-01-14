@@ -1,15 +1,17 @@
 package com.musala.javacourse181112.tasks.libraryexercise;
 
-import com.musala.javacourse181112.tasks.libraryexercise.model.*;
+import com.musala.javacourse181112.tasks.libraryexercise.model.Item;
+import com.musala.javacourse181112.tasks.libraryexercise.model.ItemRent;
+import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
+import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,7 +23,7 @@ public class Application {
 
     public static void main(final String[] args) {
 
-        final Book book = new Book();
+        /*final Book book = new Book();
         book.setId(123L);
         book.setIsbn("978-619-7094-43-5");
         book.setName("Christmas");
@@ -60,8 +62,38 @@ public class Application {
         library.setItemList(itemList);
         library.setItemRentList(itemRentList);
 
-        library.printPersonList();
+        library.printPersonList();*/
 
+        SubscriptionRenewal subscriptionRenewal1 = new SubscriptionRenewal();
+        subscriptionRenewal1.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 12));
+
+        SubscriptionRenewal subscriptionRenewal2 = new SubscriptionRenewal();
+        subscriptionRenewal2.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 13));
+
+        SubscriptionRenewal subscriptionRenewal3 = new SubscriptionRenewal();
+        subscriptionRenewal3.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 14));
+
+        Set<SubscriptionRenewal> subscriptionRenewalSet1 = new LinkedHashSet<>(), subscriptionRenewalSet2 = new LinkedHashSet<>(), subscriptionRenewalSet3 = new LinkedHashSet<>();
+
+        subscriptionRenewalSet1.add(subscriptionRenewal1);
+        Person person1 = new Person();
+        person1.setSubscriptionRenewalSet(subscriptionRenewalSet1);
+
+        Person person2 = new Person();
+        subscriptionRenewalSet2.add(subscriptionRenewal2);
+        person2.setSubscriptionRenewalSet(subscriptionRenewalSet2);
+
+        Person person3 = new Person();
+        subscriptionRenewalSet3.add(subscriptionRenewal3);
+        person3.setSubscriptionRenewalSet(subscriptionRenewalSet3);
+
+        List<Person> people = new ArrayList<>();
+        people.add(person1);
+        people.add(person2);
+        people.add(person3);
+        people = Utils.sortPeopleByDateTimeOfPayment(people);
+
+        people.forEach(System.out::println);
         System.out.println();
 
         final List<Person> personListSorted = Utils.sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(
