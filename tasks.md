@@ -1,3 +1,52 @@
+14.01:
+
+* Homework:
+    * Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        ** add issue number to each entity (Integer)
+        ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+        
+* Exercise:
+    ** Custom comparator exercise
+        *** Handle local changes; merge master branch to local one
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
+        *** Implement an utility class, that provides static method
+            **** accepts collection of Persons
+            **** uses custom Comparator<Person>
+            **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
+
+10.01:
+
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
+* Exercise: 
+    ** Complete innerexercise homework
+    ** Library management software v0.1 
+        *** tasks.libraryexercise_v0_1 package; model subpackage
+        *** create domain model, purposed for:
+            **** library organization itself
+                ***** name
+                ***** employees
+                ***** clients
+                ***** items inventory
+            **** roles (enum Role)
+                ***** clients
+                ***** employees
+            **** keeping personal records of all people
+            **** inventory of
+                ***** books
+                ***** magazines
+                ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
+            **** keeping history of items rented per person
+            **** monthly subscription
+                ***** 30 days, starting right away from date of payment
+            
+
 08.01:
 
 * Homework:
