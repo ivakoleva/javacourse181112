@@ -4,15 +4,16 @@ import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
 import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
 import java.util.*;
+import java.util.function.Function;
 
 public class Utils {
-    public static List<Person> sortPoepleByDateTimeOfPayment(List<Person> people) {
+    public static List<Person> sortPeopleByDateTimeOfPayment(List<Person> people) {
 
         Comparator<Person> comparator = new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = getLastSubscription(o1.getSubscriptionRenewalSet());
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = getLastSubscription(o2.getSubscriptionRenewalSet());
+                SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = getLastSubscription.apply(o1);
+                SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = getLastSubscription.apply(o2);
                 if (lastSubscriptionRenewalOfPerson1 == null && lastSubscriptionRenewalOfPerson2 == null) {
                     return 0;
                 } else if (lastSubscriptionRenewalOfPerson1 == null) {
@@ -25,9 +26,8 @@ public class Utils {
             }
         };
 
-        List<Person> sortedPeople = new ArrayList<>();
+        List<Person> sortedPeople = new ArrayList<>(people);
 
-        Collections.copy(sortedPeople, people);
 
         Collections.sort(sortedPeople, comparator);
 
@@ -35,13 +35,13 @@ public class Utils {
 
     }
 
-    public static SubscriptionRenewal getLastSubscription(Set<SubscriptionRenewal> subscriptionRenewalSet) {
+    public static Function<Person, SubscriptionRenewal> getLastSubscription = person -> {
 
-        if (subscriptionRenewalSet == null || subscriptionRenewalSet.size() == 0) {
+        if (person == null || person.getSubscriptionRenewalSet() == null || person.getSubscriptionRenewalSet().size() == 0) {
             return null;
         }
 
-        Iterator<SubscriptionRenewal> iterator = subscriptionRenewalSet.iterator();
+        Iterator<SubscriptionRenewal> iterator = person.getSubscriptionRenewalSet().iterator();
         SubscriptionRenewal lastSubscriptionRenewal = iterator.next();
 
         for (; iterator.hasNext(); ) {
@@ -52,5 +52,5 @@ public class Utils {
         }
 
         return lastSubscriptionRenewal;
-    }
+    };
 }

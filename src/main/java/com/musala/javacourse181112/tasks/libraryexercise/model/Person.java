@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.tasks.libraryexercise.model;
 
+import com.musala.javacourse181112.tasks.libraryexercise.Utils;
+
 import java.util.Set;
 
 public class Person extends BaseEntity {
@@ -47,5 +49,9 @@ public class Person extends BaseEntity {
 
     public void setSubscriptionRenewalSet(Set<SubscriptionRenewal> subscriptionRenewalSet) {
         this.subscriptionRenewalSet = subscriptionRenewalSet;
+    }
+
+    public String toString() {
+        return Utils.getLastSubscription.apply(this).getDateTimeOfPayment().toString();
     }
 }
