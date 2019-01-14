@@ -44,7 +44,7 @@ public class Votes05DataPopulationExercise {
         answerNo.setName("No");
         answerList.add(answerNo);
 
-        question1.setAnswerList(answerList);
+        //question1.setAnswerList(answerList);
 
         questionList.add(question1);
 
@@ -84,7 +84,7 @@ public class Votes05DataPopulationExercise {
         sugar.setName("None of the above");
         answerListQuestion2.add(noneOfTheAbove);
 
-        question2.setAnswerList(answerListQuestion2);
+        //question2.setAnswerList(answerListQuestion2);
 
         /*
         Question3: How many coffees do you have a day?
@@ -116,7 +116,7 @@ public class Votes05DataPopulationExercise {
         sugar.setName("None");
         answerListQuestion3.add(none);
 
-        question3.setAnswerList(answerListQuestion3);
+        //question3.setAnswerList(answerListQuestion3);
 
         final Person person1 = new Person();
         person1.setName("George");
