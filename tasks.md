@@ -4,6 +4,9 @@
     * Library exercise - Magazine & Newspaper - implement concept of sequential issues
         ** add issue number to each entity (Integer)
         ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+    * Custom comparator exercise - SubscriptionRenewal null support
+        ** test with null Person's SubscriptionRenewal property
+        ** patch if needed
         
 * Exercise:
     ** Custom comparator exercise
