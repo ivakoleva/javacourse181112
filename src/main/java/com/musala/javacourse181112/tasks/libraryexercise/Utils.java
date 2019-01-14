@@ -3,45 +3,54 @@ package com.musala.javacourse181112.tasks.libraryexercise;
 import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
 import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Utils {
-    public static List<Person> sortPoepleByDateTimeOfPayment(List<Person> people) {
+    public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(final Collection<Person> people) {
+        return people.stream()
+                .filter(Objects::nonNull)
+                .sorted((p1, p2) -> Objects.compare(
+                        latestSubscriptionFunction.apply(p1),
+                        latestSubscriptionFunction.apply(p2),
+                        Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment).reversed()))
+                .collect(Collectors.toList());
 
-        Comparator<Person> comparator = new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = getLastSubscription(o1.getSubscriptionRenewalSet());
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = getLastSubscription(o2.getSubscriptionRenewalSet());
-                if (lastSubscriptionRenewalOfPerson1 == null && lastSubscriptionRenewalOfPerson2 == null) {
-                    return 0;
-                } else if (lastSubscriptionRenewalOfPerson1 == null) {
-                    return 1;
-                } else if (lastSubscriptionRenewalOfPerson2 == null) {
-                    return -1;
-                } else {
-                    return lastSubscriptionRenewalOfPerson1.getDateTimeOfPayment().compareTo(lastSubscriptionRenewalOfPerson2.getDateTimeOfPayment());
-                }
+
+        /*final Comparator<Person> comparator = (p1, p2) -> {
+            final SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = latestSubscriptionFunction.apply(p1);
+            final SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = latestSubscriptionFunction.apply(p2);
+            if (lastSubscriptionRenewalOfPerson1 == null && lastSubscriptionRenewalOfPerson2 == null) {
+                return 0;
+            } else if (lastSubscriptionRenewalOfPerson1 == null) {
+                return 1;
+            } else if (lastSubscriptionRenewalOfPerson2 == null) {
+                return -1;
+            } else {
+                return lastSubscriptionRenewalOfPerson1.getDateTimeOfPayment().compareTo(lastSubscriptionRenewalOfPerson2.getDateTimeOfPayment());
             }
         };
 
         List<Person> sortedPeople = new ArrayList<>();
-
         Collections.copy(sortedPeople, people);
-
         Collections.sort(sortedPeople, comparator);
 
-        return sortedPeople;
+        return sortedPeople;*/
 
     }
 
-    public static SubscriptionRenewal getLastSubscription(Set<SubscriptionRenewal> subscriptionRenewalSet) {
-
-        if (subscriptionRenewalSet == null || subscriptionRenewalSet.size() == 0) {
+    public static final Function<Person, SubscriptionRenewal> latestSubscriptionFunction = person -> {
+        if (person == null || person.getSubscriptionRenewalSet() == null || person.getSubscriptionRenewalSet().isEmpty()) {
             return null;
-        }
+    }
+        return person.getSubscriptionRenewalSet().stream()
+                .max(Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment)).get();
 
-        Iterator<SubscriptionRenewal> iterator = subscriptionRenewalSet.iterator();
+        /*final Iterator<SubscriptionRenewal> iterator = person.getSubscriptionRenewalSet().iterator();
         SubscriptionRenewal lastSubscriptionRenewal = iterator.next();
 
         for (; iterator.hasNext(); ) {
@@ -51,6 +60,6 @@ public class Utils {
             }
         }
 
-        return lastSubscriptionRenewal;
-    }
+        return lastSubscriptionRenewal;*/
+    };
 }
