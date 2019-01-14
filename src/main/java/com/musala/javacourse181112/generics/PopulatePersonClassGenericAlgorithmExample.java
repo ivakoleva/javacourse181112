@@ -1,8 +1,6 @@
 package com.musala.javacourse181112.generics;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
@@ -19,78 +17,29 @@ import java.util.stream.Collectors;
  */
 public class PopulatePersonClassGenericAlgorithmExample {
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
+        /*final Person person = new Person();
+        person.setName("Ivan Ivanov");
+        person.setEgn("9012121234");
 
         final Company company = new Company();
         company.setName("MusalaSoft");
         company.setEik("123456789");
 
-        final Person person = new Person();
-        person.setName("Ivan Ivan");
-        person.setEgn("9012121234");
-        person.setCompany(company);
+        final Set<Person> personSet = new HashSet<>();
+        personSet.add(person);
+        company.setEmployeeSet(personSet);
 
- /*        final Set<Person> personSet = new HashSet<>();
-         personSet.add(person);
-         company.setEmployeeSet(personSet);
+        person.setCompany(company);*/
 
-         person.setCompany(company);*/
 
         final Person personFromFile = populateEntity(
                 Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        serializeEntity(Person.class, personFromFile);
-        serializeEntity(Person.class, person);
-        serializeEntity(Company.class, company);
         System.out.println();
 
-         /*\final Collection<Company> companiesFromFile =
-                 populateEntities(Company.class, "company_musalasoft.txt", "");*/
+        /*final Collection<Company> companiesFromFile =
+                populateEntities(Company.class, "company_musalasoft.txt", "");*/
     }
-
-    public static <T extends Entity> void serializeEntity(final Class<T> entityClass, final T object) throws IOException {
-        assert object != null;
-        assert entityClass != null;
-
-        final Field[] fields = entityClass.getDeclaredFields();
-        final Map<String, Object> map = Arrays.stream(fields)
-                .peek(field -> field.setAccessible(true))
-                .filter(field -> {
-                    try {
-                        return field.get(object) != null;
-                    } catch (IllegalAccessException | NullPointerException ignore) {
-                        return false;
-                    }
-                })
-                .collect(
-                        Collectors.toMap(
-                                Field::getName,
-                                field -> {
-                                    try {
-                                        return field.get(object);
-                                    } catch (IllegalAccessException ignore) {
-                                        return null;
-                                    }
-                                }
-                        )
-                );
-
-        Path path = Paths.get("src" , "main" , "resources");
-        path.toFile().mkdirs();
-        path = Paths.get(path.toString()
-                + File.separator
-                + object.getClass().getSimpleName()
-                + "_" + object.toString().replaceAll(" ","").replaceAll("null","")
-                + ".txt");
-        path.toFile().createNewFile();
-
-        try(PrintWriter printWriter = new PrintWriter(path.toFile())){
-            map.forEach((key, value) -> {
-                        printWriter.write(key + "=" + value.toString() + System.lineSeparator());
-                        printWriter.flush();
-            });
-        }
-    }
-
 
     public static <T extends Entity> T populateEntity(final Path path, Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         assert path != null;
@@ -133,13 +82,12 @@ public class PopulatePersonClassGenericAlgorithmExample {
         throw new UnsupportedOperationException();
     }
 
-     /*public static <T extends Entity> Collection<T> populateEntities(final Class<T> entityClass, final String... filenames) {
-         // TODO
-     }*/
+    /*public static <T extends Entity> Collection<T> populateEntities(final Class<T> entityClass, final String... filenames) {
+        // TODO
+    }*/
 }
 
 interface Entity {
-
 }
 
 class Person implements Entity {
@@ -170,11 +118,6 @@ class Person implements Entity {
     public void setCompany(Company company) {
         this.company = company;
     }
-
-    @Override
-    public String toString() {
-        return this.name + "_" + this.egn+"_"+this.company;
-    }
 }
 
 class Company implements Entity {
@@ -184,9 +127,6 @@ class Company implements Entity {
 
     public Company(String name) {
         this.name = name;
-    }
-
-    public Company() {
     }
 
     public String getName() {
@@ -211,10 +151,5 @@ class Company implements Entity {
 
     public void setEmployeeSet(Set<Person> employeeSet) {
         this.employeeSet = employeeSet;
-    }
-
-    @Override
-    public String toString() {
-        return this.name + "_" + this.eik;
     }
 }

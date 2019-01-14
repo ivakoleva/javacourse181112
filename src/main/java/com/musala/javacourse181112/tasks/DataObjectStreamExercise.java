@@ -146,7 +146,7 @@ public class DataObjectStreamExercise {
 
         @Override
         public String toString() {
-            return "Person name [" + name + "] age [" + age + "]";
+            return "PersonMultipleAtt name [" + name + "] age [" + age + "]";
         }
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
