@@ -30,8 +30,8 @@
         *** Inner class (non-static) 
         *** Static nested
             **** class
-            **** interface
-            **** enum 
+            **** TODO: interface
+            **** TODO: enum
         *** Local class
         *** Anonymous class (using a functional interface)
 

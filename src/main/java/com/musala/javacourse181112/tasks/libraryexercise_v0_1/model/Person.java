@@ -2,12 +2,16 @@ package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
     private String name;
     private String family;
     private LocalDate dateOfBirth;
     private Role role;
+    private LocalDate returnItemTo;
+    private List<RentItem> rentItemList = new ArrayList<>();
 
     public String getName() {
         return name;
