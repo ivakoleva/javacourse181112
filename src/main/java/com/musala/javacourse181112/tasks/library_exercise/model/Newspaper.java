@@ -3,7 +3,7 @@ package com.musala.javacourse181112.tasks.library_exercise.model;
 public class Newspaper implements Item {
     private String ISBN;
     private String name;
-
+    private String id;
 
     /* public Newspaper(String ISBN, String name) {
          this.ISBN = ISBN;
@@ -28,5 +28,13 @@ public class Newspaper implements Item {
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks.library_exercise.model;
 public class Book implements Item {
     private String ISBN;
     private String name;
+    private String id;
 
     /*public Book(String ispn, String name) {
         this.ISBN = ispn;
@@ -24,5 +25,13 @@ public class Book implements Item {
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
