@@ -91,15 +91,15 @@ public class Application {
         people.add(person1);
         people.add(person2);
         people.add(person3);
-        people = Utils.sortPeopleByDateTimeOfPayment(people);
+        people = Utils.sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(people);
 
         people.forEach(System.out::println);
         System.out.println();
 
         final List<Person> personListSorted = Utils.sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(
                 IntStream.range(0, 3).boxed().map(i -> {
-                    final Person person1 = new Person();
-                    person1.setSubscriptionRenewalSet(
+                    final Person p = new Person();
+                    p.setSubscriptionRenewalSet(
                             IntStream.range(0, 3).boxed()
                                     .map(j -> LocalDateTime.now()
                                             .minus((i * 10) + j, ChronoUnit.MONTHS)
@@ -110,7 +110,7 @@ public class Application {
                                         return subscriptionRenewal;
                                     })
                                     .collect(Collectors.toSet()));
-                    return person1;
+                    return p;
                 }).collect(Collectors.toList()));
         System.out.println();
     }

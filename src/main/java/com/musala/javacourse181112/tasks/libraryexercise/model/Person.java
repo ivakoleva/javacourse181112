@@ -52,6 +52,6 @@ public class Person extends BaseEntity {
     }
 
     public String toString() {
-        return Utils.getLastSubscription.apply(this).getDateTimeOfPayment().toString();
+        return Utils.latestSubscriptionFunction.apply(this).getDateTimeOfPayment().toString();
     }
 }

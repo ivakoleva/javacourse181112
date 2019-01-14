@@ -8,7 +8,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Utils {
-    public static List<Person> sortPeopleByDateTimeOfPayment(List<Person> people) {
+    public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(List<Person> people) {
         return people.stream()
                 .filter(Objects::nonNull)
                 .sorted((p1, p2) -> Objects.compare(
@@ -19,8 +19,8 @@ public class Utils {
         /*Comparator<Person> comparator = new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = getLastSubscription.apply(o1);
-                SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = getLastSubscription.apply(o2);
+                SubscriptionRenewal lastSubscriptionRenewalOfPerson1 = latestSubscriptionFunction.apply(o1);
+                SubscriptionRenewal lastSubscriptionRenewalOfPerson2 = latestSubscriptionFunction.apply(o2);
                 if (lastSubscriptionRenewalOfPerson1 == null && lastSubscriptionRenewalOfPerson2 == null) {
                     return 0;
                 } else if (lastSubscriptionRenewalOfPerson1 == null) {
@@ -42,7 +42,7 @@ public class Utils {
 
     }
 
-    public static Function<Person, SubscriptionRenewal> getLastSubscription = person -> {
+    public static Function<Person, SubscriptionRenewal> latestSubscriptionFunction = person -> {
 
         if (person == null || person.getSubscriptionRenewalSet() == null || person.getSubscriptionRenewalSet().isEmpty()) {
             return null;
