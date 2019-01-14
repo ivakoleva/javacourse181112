@@ -21,11 +21,6 @@ public class Votes05DataPopulationExercise {
         ivanIvanov.setFamily("Ivanov");
         ivanIvanov.setDateOfBirth(LocalDate.of(1990, Month.JANUARY, 1));
 
-        final Person todorJivkov = new Person();
-        todorJivkov.setName("Todor");
-        todorJivkov.setFamily("Jivkov");
-        todorJivkov.setDateOfBirth(LocalDate.of(1911, Month.SEPTEMBER, 7));
-
         final Poll coffeePoll = new Poll();
         coffeePoll.setName("Coffee poll");
         coffeePoll.setStartDateTime(LocalDateTime.of(2019, Month.JANUARY, 1, 0, 0));
@@ -34,77 +29,103 @@ public class Votes05DataPopulationExercise {
 
         final List<Question> questionList = new ArrayList<>();
         coffeePoll.setQuestionList(questionList);
-        //QUESTION 1
+
         final Question question1 = new Question();
         question1.setName("Do you like coffee?");
 
-        final List<Answer> answerList1 = new ArrayList<>();
-      //  question1.setAnswerList(answerList1);
+
+        final List<Answer> answerList = new ArrayList<>();
 
         final Answer answerYes = new Answer();
         answerYes.setName("Yes");
-        answerList1.add(answerYes);
+        answerList.add(answerYes);
 
         final Answer answerNo = new Answer();
-        answerYes.setName("No");
-        answerList1.add(answerNo);
+        answerNo.setName("No");
+        answerList.add(answerNo);
+
+        //question1.setAnswerList(answerList);
 
         questionList.add(question1);
-        //QUESTION 2
+
+        // TODO: populate 3 questions, consult tasks.md
+        /*
+        Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+         */
         final Question question2 = new Question();
         question2.setName("How do you enjoy your coffee?");
 
-        final List<Answer> answerList2 = new ArrayList<>();
-     //   question2.setAnswerList(answerList2);
-
-        final Answer answerMilk = new Answer();
-        answerMilk.setName("Milk");
-        answerList2.add(answerMilk);
-
-        final Answer answerSugar = new Answer();
-        answerSugar.setName("Sugar");
-        answerList2.add(answerSugar);
-
-        final Answer answerMilkSugar = new Answer();
-        answerMilkSugar.setName("MilkSugar");
-        answerList2.add(answerMilkSugar);
-
-        final Answer answerBlack = new Answer();
-        answerBlack.setName("Black");
-        answerList2.add(answerBlack);
-
-        final Answer answerNone = new Answer();
-        answerNone.setName("None");
-        answerList2.add(answerNone);
+        final List<Answer> answerListQuestion2 = new ArrayList<>();
 
         questionList.add(question2);
-        //QUESTION 3
+
+        final Answer milk = new Answer();
+        milk.setName("Milk");
+        answerListQuestion2.add(milk);
+
+        final Answer sugar = new Answer();
+        sugar.setName("Sugar");
+        answerListQuestion2.add(sugar);
+
+        final Answer milkSugar = new Answer();
+        sugar.setName("Milk and Sugar");
+        answerListQuestion2.add(milkSugar);
+
+        final Answer black = new Answer();
+        sugar.setName("Black");
+        answerListQuestion2.add(black);
+
+        final Answer noneOfTheAbove = new Answer();
+        sugar.setName("None of the above");
+        answerListQuestion2.add(noneOfTheAbove);
+
+        //question2.setAnswerList(answerListQuestion2);
+
+        /*
+        Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+         */
         final Question question3 = new Question();
-        question2.setName("How many coffees do you have a day?");
+        question3.setName("How do you enjoy your coffee?");
 
-        final List<Answer> answerList3 = new ArrayList<>();
-      //  question3.setAnswerList(answerList3);
-
-        final Answer answer1 = new Answer();
-        answer1.setName("Less or equal of 2");
-        answerList3.add(answerMilk);
-
-        final Answer answer2 = new Answer();
-        answer2.setName("More than 2 but less than 5");
-        answerList3.add(answer2);
-
-        final Answer answer3 = new Answer();
-        answer3.setName("More or equal of 5");
-        answerList3.add(answer3);
-
-        final Answer answer4 = new Answer();
-        answer4.setName("None");
-        answerList3.add(answer4);
-
+        final List<Answer> answerListQuestion3 = new ArrayList<>();
 
         questionList.add(question3);
 
+        final Answer lessOrEqualOf2 = new Answer();
+        milk.setName("Less or equal of 2");
+        answerListQuestion3.add(lessOrEqualOf2);
 
-        // TODO: populate 3 questions, consult tasks.md
+        final Answer moreThanTwo = new Answer();
+        sugar.setName("More than 2 but less than 5");
+        answerListQuestion3.add(moreThanTwo);
+
+        final Answer moreOrEqualsOf5 = new Answer();
+        sugar.setName("More or equals of 5");
+        answerListQuestion3.add(moreOrEqualsOf5);
+
+        final Answer none = new Answer();
+        sugar.setName("None");
+        answerListQuestion3.add(none);
+
+        //question3.setAnswerList(answerListQuestion3);
+
+        final Person person1 = new Person();
+        person1.setName("George");
+        person1.setFamily("Gerogiev");
+        person1.setDateOfBirth(LocalDate.of(1980,Month.AUGUST,10));
+
+        final Person person2 = new Person();
+        person2.setName("Petko");
+        person2.setFamily("Petrov");
+        person2.setDateOfBirth(LocalDate.of(1975,Month.JULY,15));
     }
 }
