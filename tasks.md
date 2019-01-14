@@ -1,6 +1,6 @@
 10.01:
 
-* Exercise: 
+* Exercise: N
     ** Complete innerexercise homework
     ** Library management software v0.1 
         *** tasks.libraryexercise_v0_1 package; model subpackage
