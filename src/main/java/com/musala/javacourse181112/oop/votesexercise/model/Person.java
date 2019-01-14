@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.oop.votesexercise.model;
 
+import com.musala.javacourse181112.tasks.libraryexercise_v0_1.model.Role;
+
 import java.time.LocalDate;
 
 /**
@@ -32,5 +34,8 @@ public class Person {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setRole(Role client) {
     }
 }
