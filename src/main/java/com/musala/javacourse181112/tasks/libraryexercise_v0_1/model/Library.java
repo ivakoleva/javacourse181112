@@ -1,40 +1,15 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class Library extends BaseEntity {
+    public final static int MAX_DAYS = 30;
 
     private String name;
     private String address;
-
-    private List<Person> personList = new ArrayList<>();
-    private List<Item> itemsList = new ArrayList<>();
-    private List<ItemRent> itemRentList = new ArrayList<>();
-
-    public List<ItemRent> getItemRentList() {
-        return itemRentList;
-    }
-
-    public void setItemRentList(List<ItemRent> itemRentList) {
-        this.itemRentList = itemRentList;
-    }
-
-    public void setPersonList(List<Person> personList) {
-        this.personList = personList;
-    }
-
-    public void setItemsList(List<Item> itemsList) {
-        this.itemsList = itemsList;
-    }
-
-    public List<Person> getPersonList() {
-        return personList;
-    }
-
-    public List<Item> getItemsList() {
-        return itemsList;
-    }
+    private List<Person> personList;
+    private List<Item> itemList;
+    private List<ItemRent> itemRentList;
 
     public String getName() {
         return name;
@@ -52,15 +27,40 @@ public class Library {
         this.address = address;
     }
 
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
+    }
+
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }
+
+    public List<ItemRent> getItemRentList() {
+        return itemRentList;
+    }
+
+    public void setItemRentList(List<ItemRent> itemRentList) {
+        this.itemRentList = itemRentList;
+    }
+
+    // TODO: extract
     public void printPersonList() {
         for (Person person : personList) {
             System.out.println(
                     "name = '" + person.getName() + '\'' +
                             ", egn = '" + person.getEgn() + '\'' +
-                            ", role = " + person.getRole() +
-                            ", itemRent = " + person.getItemRent().getItem().getName() +
-                            ", date of Hiring = " + person.getItemRent().getDateOfHiring() +
-                            ", return date = " + person.getItemRent().getReturnDate()
+                            ", role = " + person.getRoleSet() //+
+                            //", itemRent = " + person.getItemRentSet().getItem().getName() +
+                            //", date of Hiring = " + person.getItemRentSet().getDateOfRent() +
+                            //", return date = " + person.getItemRentSet().getDateOfReturn()
             );
         }
     }

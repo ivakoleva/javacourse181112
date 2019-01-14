@@ -2,12 +2,10 @@ package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
 import java.time.LocalDate;
 
-public class ItemRent {
-
-    private final static int MAX_DAYS = 30;
+public class ItemRent extends BaseEntity {
     private Item item;
-    private LocalDate dateOfHiring;
-    private LocalDate returnDate;
+    private LocalDate dateOfRent;
+    private LocalDate dateOfReturn;
 
     public Item getItem() {
         return item;
@@ -17,20 +15,42 @@ public class ItemRent {
         this.item = item;
     }
 
-    LocalDate getDateOfHiring() {
-        return dateOfHiring;
+    LocalDate getDateOfRent() {
+        return dateOfRent;
     }
 
-    public void setDateOfHiring(LocalDate dateOfHiring) {
-        this.dateOfHiring = dateOfHiring;
+    public void setDateOfRent(LocalDate dateOfRent) {
+        this.dateOfRent = dateOfRent;
     }
 
-    LocalDate getReturnDate() {
-        return returnDate;
+    LocalDate getDateOfReturn() {
+        return dateOfReturn;
     }
 
-    public void setReturnDate(LocalDate returnDate) {
-        this.returnDate = returnDate;
+    public void setDateOfReturn(LocalDate dateOfReturn) {
+        this.dateOfReturn = dateOfReturn;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ItemRent itemRent = (ItemRent) o;
+
+        if (getId() != null ? !getId().equals(itemRent.getId()) : itemRent.getId() != null) return false;
+        if (item != null ? !item.equals(itemRent.item) : itemRent.item != null) return false;
+        if (dateOfRent != null ? !dateOfRent.equals(itemRent.dateOfRent) : itemRent.dateOfRent != null) return false;
+        return dateOfReturn != null ? dateOfReturn.equals(itemRent.dateOfReturn) : itemRent.dateOfReturn == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId() != null ? getId().hashCode() : 0;
+        result = 31 * result + (item != null ? item.hashCode() : 0);
+        result = 31 * result + (dateOfRent != null ? dateOfRent.hashCode() : 0);
+        result = 31 * result + (dateOfReturn != null ? dateOfReturn.hashCode() : 0);
+        return result;
     }
 
     @Override
@@ -38,12 +58,13 @@ public class ItemRent {
         return "ItemRent{" +
                 "item = " + item.getName() +
                 //", person = " + person.getName() +
-                ", dateOfHiring = " + dateOfHiring +
-                ", returnDate = " + returnDate +
+                ", dateOfRent = " + dateOfRent +
+                ", dateOfReturn = " + dateOfReturn +
                 '}';
     }
 
+    // TODO: extract
     public LocalDate calculateReturnDate() {
-        return this.dateOfHiring.plusDays(MAX_DAYS);
+        return this.dateOfRent.plusDays(Library.MAX_DAYS);
     }
 }

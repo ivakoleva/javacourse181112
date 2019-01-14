@@ -1,23 +1,13 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-public class Person {
-
+public class Person extends BaseEntity {
     private String name;
     private String egn;
-    private Roles role;
-    private ItemRent itemRent;
-
-    ItemRent getItemRent() {
-        return itemRent;
-    }
-
-    public void setItemRent(ItemRent itemRent) {
-        this.itemRent = itemRent;
-    }
+    private Set<Role> roleSet;
+    private Set<ItemRent> itemRentSet;
+    private Set<SubscriptionRenewal> subscriptionRenewalSet;
 
     public String getName() {
         return name;
@@ -35,11 +25,27 @@ public class Person {
         this.egn = egn;
     }
 
-    Roles getRole() {
-        return role;
+    public Set<Role> getRoleSet() {
+        return roleSet;
     }
 
-    public void setRole(Roles role) {
-        this.role = role;
+    public void setRoleSet(Set<Role> roleSet) {
+        this.roleSet = roleSet;
+    }
+
+    public Set<ItemRent> getItemRentSet() {
+        return itemRentSet;
+    }
+
+    public void setItemRentSet(Set<ItemRent> itemRentSet) {
+        this.itemRentSet = itemRentSet;
+    }
+
+    public Set<SubscriptionRenewal> getSubscriptionRenewalSet() {
+        return subscriptionRenewalSet;
+    }
+
+    public void setSubscriptionRenewalSet(Set<SubscriptionRenewal> subscriptionRenewalSet) {
+        this.subscriptionRenewalSet = subscriptionRenewalSet;
     }
 }
