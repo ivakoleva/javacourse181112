@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
-public class Magazine implements Item{
+public class Magazine implements Item {
+
     private String ISBN;
     private String name;
     private long id;
@@ -14,6 +15,7 @@ public class Magazine implements Item{
         return ISBN;
     }
 
+    @Override
     public String getName() {
         return name;
     }

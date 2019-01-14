@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
 public class Newspaper implements Item {
+
     private String ISBN;
     private String name;
     private long id;
@@ -14,6 +15,11 @@ public class Newspaper implements Item {
         return ISBN;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -21,10 +27,6 @@ public class Newspaper implements Item {
     @Override
     public long getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
