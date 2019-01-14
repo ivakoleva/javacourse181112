@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks.innerexercise;
 
-public class AnonymousClassExercise {
+ class AnonymousClassExercise {
     public static void main(String[] args) {
         final Runnable runnable = new Runnable() {
             @Override

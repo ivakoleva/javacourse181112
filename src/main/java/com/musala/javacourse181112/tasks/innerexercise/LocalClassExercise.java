@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks.innerexercise;
 
-public class LocalClassExercise {
+ class LocalClassExercise {
     public static void main(String[] args) {
 
 
