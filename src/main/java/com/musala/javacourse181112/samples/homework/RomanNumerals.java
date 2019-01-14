@@ -2,7 +2,7 @@ package com.musala.javacourse181112.samples.homework;
 
 import java.util.Scanner;
     /**
-     *Main() allows user input and tests 1-3999
+     *ReadOnlyCollection() allows user input and tests 1-3999
      *toRoman() breaks the number down into digits and passes them to romanLogic()
      *romanLogic() converts each digit into a the numerals that represent it.
      */
