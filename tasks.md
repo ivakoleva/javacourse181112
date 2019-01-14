@@ -1,3 +1,205 @@
+14.01:
+
+* Homework:
+    * Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        ** add issue number to each entity (Integer)
+        ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+        
+* Exercise:
+    ** Custom comparator exercise
+        *** Handle local changes; merge master branch to local one
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
+        *** Implement an utility class, that provides static method
+            **** accepts collection of Persons
+            **** uses custom Comparator<Person>
+            **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
+
+10.01:
+
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
+* Exercise: 
+    ** Complete innerexercise homework
+    ** Library management software v0.1 
+        *** tasks.libraryexercise_v0_1 package; model subpackage
+        *** create domain model, purposed for:
+            **** library organization itself
+                ***** name
+                ***** employees
+                ***** clients
+                ***** items inventory
+            **** roles (enum Role)
+                ***** clients
+                ***** employees
+            **** keeping personal records of all people
+            **** inventory of
+                ***** books
+                ***** magazines
+                ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
+            **** keeping history of items rented per person
+            **** monthly subscription
+                ***** 30 days, starting right away from date of payment
+            
+
+08.01:
+
+* Homework:
+    ** package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
+        *** Inner class (non-static) 
+        *** Static nested
+            **** class
+            **** interface
+            **** enum 
+        *** Local class
+        *** Anonymous class (using a functional interface)
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
+07.01:
+
+* Homework:
+    ** Votes v0.6 - package tasks.votes_v0_6_exercise
+        *** Complete data population regarding requirements
+        *** Implement PersonService, then refactor current Person instantiation
+        *** Elaborate Poll with anonymous setting (true/false) 
+        
+    ** Bonus: create data model for
+        *** AnswerGiven per Poll per Question (Person mapping optional (based on anon instance setting above)) 
+
+* Exercise:
+    ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
+        *** Poll: Coffee poll
+            **** Question1: Do you like coffee?
+            **** Answers:
+                ***** Yes
+                ***** No
+            **** Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+            **** Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+            **** Persons participating: 2
+        
+
+03.01:
+
+* Homework:
+    ** Votes v0.4 - introduce OOP concepts
+        *** subpackage, data model 
+        *** entry point class, with main method
+        *** etc.
+
+* Exercise:
+    * Future age calculator application v0.2
+        ** create tasks.calculatorexercise sub-package 
+        ** Calculator class implementation
+        ** Calculator accepts parameters of:
+            ** Person objects (age field)
+            ** years to add to age of each person
+        ** Program flow:
+            ** When starting the program, populate 10 Person objects
+            ** Instantiate Calculator
+            ** Execute additions, and print to standard output
+            ** Then exit
+        ** Distribute to end user (push to github)
+        
+    * Random person names generator
+        ** configure charset (symbols allowed)
+        ** configure min/max length per word
+        ** random generator component implementation should be dedicated to be reused
+        ** when producing a name - first letter always upper case, other letters lower case
+        ** words joined using a space
+        ** sample runner, for POC purposes
+        
+        ** Bonus: names count
+
+02.01:
+    
+* Exercise:
+    ** find & review java.util.stream.Stream class, Java class library
+    ** find in functional package BiFunction - 2 input and 1 output parameters of the same type
+    ** implement StandardUtilSampleExercise TODOs:
+        *** StandardUtilsSample, capitalizeFirstLettersThenConcat method
+        *** LambdaUtilsSample, capitalizeFirstLettersThenConcat function
+
+* Homework:
+    ** StaticNonstaticMethodsExercise - use static and non-static methods
+        *** create a task unique package (subpackage of com.musala.javacourse181112.tasks, think about naming)
+        *** add a Person class (entity)
+        *** add a class PersonService, implementing:
+            **** static method
+                ***** name printPersonNamesToStdout
+                ***** use appropriate access modifier (scope of visibility)
+                ***** print arguments to stdout, using space discriminator then new line
+            **** non-static methods
+                ***** addPerson, accepting and storing Person object to queue
+                ***** handlePerson, polling one from queue then printing it to stdout (hint: method composition), then returning the person polled
+                ***** think of multi-threading, always in mind
+        *** add StaticNonstaticMethodsExercise class, and implement main method:
+            **** instantiate 10 Person instances (loop) and add to collection
+            **** instantiate 2 PersonService objects
+            **** call service static and non-static methods, using populated persons
+            **** use service static method and print directly a new person instance with assigned properties
+            
+        *** Bonus: implement non-static finalize method, reseting the PersonService instances state at the end of usage
+
+20.12:
+
+* Exercise:
+    ** create a concept of a validatable entity & validator
+    ** if non-valid - throw a custom checked ValidationException
+    
+    ** implement EGN validator
+    ** implement custom EGN validation exception
+    ** apply validator, using a sample EGN to test
+
+18.12:
+
+* Exercise:
+    ** PopulatePersonClassGenericAlgorithmExample - deserialize & populate a generic instance from file
+    
+* Homework:
+    ** PopulatePersonClassGenericAlgorithmExample - add generic serialization
+        *** instantiate a Person object, then pass as parameter of a generic method (supporting Entities)
+        *** loop over fields
+            **** filter non-null values
+            **** then write each field name=required1 format to file
+                  
+        *** Bonus 1: handle case of deserialization when whitespaces only present after =
+        *** Bonus 2: add support to parseValueFromString() of additional class types
+
+17.12:
+
+* Exercise:
+    * GenericsTriDimensionalMatrixExercise - show-case of multi-dimensional array; define tri-dimensional List of Integers
+    * Recursion - populate a n-level dimensional List of int recursively
+
+* Homework:
+    * Wildcard bridge
+        ** create a List of unknowns
+        ** pass argument to bridge method
+        ** implement workaround so we could add an object to List
+        ** should be able to compile then run, and print to stdout
+   
+    * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
+    
+    * Read Java Oracle docs regarding Generics (by email)
+
 13.12:
 
 * Exercise:
@@ -13,6 +215,24 @@
         *** populate a second List
         *** add same element 100 times to second List
         *** concatenate both lists, in order to print to stdout
+        
+* Homework:
+    ** Threads, serializing/deserializing data and put/take to queue
+        *** first, populate a queue with 10 lists of integers 0-20
+        *** create a specific directory on FS (file system), dedicated to store serialized data
+        *** then spawn two threads
+            **** consumer thread, while not interrupted:
+                ***** takes a list from queue
+                ***** for each list, serializes to one file 
+            **** producer thread, while not interrupted:
+                ***** watches the directory for a new file
+                ***** reads file, deserializes file data, removes file
+                ***** puts to queue
+                
+        *** Bonus: program parameter - cycles count (per cycle of take-then-put back to queue)
+            **** proof could be file naming convention (cycle count number)
+            
+    ** Read Oracle Java docs regarding Collections
 
 11.12:
 
@@ -191,7 +411,7 @@
     ** use switch-based check
     ** parameters supplied by user
     ** prints chromosomes to stdout (letter by letter) 
-* port the code to use Gender enum instead of any string value
+* port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
     * introduce enum usage (vote answer yes/no)
