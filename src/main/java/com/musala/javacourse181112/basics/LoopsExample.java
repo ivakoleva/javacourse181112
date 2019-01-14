@@ -8,7 +8,7 @@ public class LoopsExample {
 
         /*while(true) {
             System.out.println("Hi");
-            Thread.sleep(1000 * 5); // 1 second == 1000 ms
+            Thread.sleep(1000 * 5); // 1 generics == 1000 ms
         }*/
 
 
