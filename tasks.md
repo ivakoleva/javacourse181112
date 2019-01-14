@@ -1,4 +1,15 @@
+14.01:
+
+* Homework:
+    * Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        ** add issue number to each entity (Integer)
+        ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+
 10.01:
+
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
 
 * Exercise: 
     ** Complete innerexercise homework
@@ -10,15 +21,21 @@
                 ***** employees
                 ***** clients
                 ***** items inventory
-            **** keeping personal records, roles
+            **** roles (enum Role)
                 ***** clients
                 ***** employees
+            **** keeping personal records of all people
             **** inventory of
                 ***** books
                 ***** magazines
                 ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
             **** keeping history of items rented per person
             **** monthly subscription
+                ***** 30 days, starting right away from date of payment
             
 
 08.01:
