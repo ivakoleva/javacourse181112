@@ -20,7 +20,7 @@
             **** keeping personal records of all people
             **** inventory of
                 ***** books
-                ***** magazines
+                ***** magazines  
                 ***** newspapers
             **** each inventory item includes
                 ***** ISBN (String)
