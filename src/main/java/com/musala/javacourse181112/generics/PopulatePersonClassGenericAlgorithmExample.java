@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public class PopulatePersonClassGenericAlgorithmExample {
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
-            /*final Answer person = new Answer();
+        /*final Person person = new Person();
         person.setName("Ivan Ivanov");
         person.setEgn("9012121234");
 
@@ -25,7 +25,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
         company.setName("MusalaSoft");
         company.setEik("123456789");
 
-         final Set<Person> personSet = new HashSet<>();
+        final Set<Person> personSet = new HashSet<>();
         personSet.add(person);
         company.setEmployeeSet(personSet);
 
@@ -90,8 +90,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
 interface Entity {
 }
 
-
- class Person implements Entity {
+class Person implements Entity {
     private String name;
     private String egn;
     private Company company;

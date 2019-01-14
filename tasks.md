@@ -1,5 +1,9 @@
 10.01:
 
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
 * Exercise: 
     ** Complete innerexercise homework
     ** Library management software v0.1 
@@ -19,7 +23,7 @@
                 ***** magazines
                 ***** newspapers
             **** each inventory item includes
-                ***** ISPN (String)
+                ***** ISBN (String)
                 ***** name
                 ***** unique id (identifier, Long)
             **** keeping history of items rented per person
