@@ -8,14 +8,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class EnumerationExercise {
-    public static void main(String[] args) {
-        List<Integer> list = IntStream.range(0, 10).boxed().collect(Collectors.toList());
-        Enumeration<Integer> enumeration = Collections.enumeration(list);
-        List<Integer> list1 = new ArrayList<>();
-        for (; enumeration.hasMoreElements(); ) {
-            Integer curEnum = enumeration.nextElement();
-            list1.add(curEnum);
-            System.out.println(curEnum);
+    public static void main(final String[] args) {
+        final List<Integer> list = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+        final Enumeration<Integer> enumeration = Collections.enumeration(list);
+
+        final List<Integer> list1 = new ArrayList<>();
+        while (enumeration.hasMoreElements()) {
+            final Integer nextElement = enumeration.nextElement();
+            list1.add(nextElement);
+            System.out.println(nextElement);
         }
         System.out.println();
     }
