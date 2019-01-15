@@ -17,11 +17,13 @@ public final class Utils {
     }
 
     public static Function<Person, SubscriptionRenewal> latestSubscriptionFunction = person -> {
-        //if (person == null || person.getSubscriptionRenewalSet() == null || person.getSubscriptionRenewalSet().isEmpty()) {
+        if (person == null || person.getSubscriptionRenewalSet() == null || person.getSubscriptionRenewalSet().isEmpty()) {
             return null;
-        //}
-        /*return person.getSubscriptionRenewalSet().stream()
-                .max(Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment)).get();*/
+        }
+        return person.getSubscriptionRenewalSet().stream()
+                .filter(Objects::nonNull)
+                .filter(subscriptionRenewal -> subscriptionRenewal.getDateTimeOfPayment() != null)
+                .max(Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment)).orElseGet(null);
     };
 
     public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(final List<Person> people) {
