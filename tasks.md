@@ -5,8 +5,10 @@
         *** add issue number to each entity (Integer)
     ** Enumeration-collection bridge exercise
         *** create a collection, transform it to enumeration
-        *** transform enumeration to collection    
-    
+        *** transform enumeration to collection
+        *** loop over an enumeration, then print to stdout
+    ** Resetable enumeration exercise
+   
 14.01:
 
 * Homework:
