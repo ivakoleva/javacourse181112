@@ -1,10 +1,29 @@
 15.01:
 
+* Homework:
+    ** Resetable enumeration exercise - complete tasks.ResetableEnumerationExercise
+    ** ProvincesEnum implementation (https://en.wikipedia.org/wiki/Provinces_of_Bulgaria)
+        *** 3 enum values
+        *** additional meta information per value
+            **** label
+            **** population
+            **** municipalities
+            
+            **** Bonus: planing region
+
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
         *** add issue number to each entity (Integer)
-
-14.01: 
+    ** Enumeration-collection bridge exercise
+        *** create a collection, transform it to enumeration
+        *** transform enumeration to collection
+        *** loop over an enumeration, then print to stdout
+    ** Library exercise - implement static Utils generic generate method
+        *** supporting any extending AbstractItem - Book, Magazine, Newspaper
+        *** class supplied as parameter
+        *** a new instance returned
+   
+14.01:
 
 * Homework:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues
@@ -17,7 +36,7 @@
 * Exercise:
     ** Custom comparator exercise
         *** Handle local changes; merge master branch to local one
-        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment 
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
         *** Implement an utility class, that provides static method
             **** accepts collection of Persons
             **** uses custom Comparator<Person>
@@ -45,7 +64,7 @@
             **** keeping personal records of all people
             **** inventory of
                 ***** books
-                ***** magazines  
+                ***** magazines
                 ***** newspapers
             **** each inventory item includes
                 ***** ISBN (String)
@@ -73,6 +92,7 @@
         *** implement Human class
         *** apply methods supported from main() method
 
+
 07.01:
 
 * Homework:
@@ -87,22 +107,22 @@
 * Exercise:
     ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
         *** Poll: Coffee poll
-                    **** Question1: Do you like coffee?
-                    **** Answers:
-                        ***** Yes
-                        ***** No
-                    **** Question2: How do you enjoy your coffee?
-                        ***** Milk
-                        ***** Sugar
-                        ***** Milk & sugar
-                        ***** Black
-                        ***** None of the above
-                    **** Question3: How many coffees do you have a day?
-                        ***** Less or equal of 2
-                        ***** More than 2 but less than 5
-                        ***** More or equal of 5
-                        ***** None
-                    **** Persons participating: 2
+            **** Question1: Do you like coffee?
+            **** Answers:
+                ***** Yes
+                ***** No
+            **** Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+            **** Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+            **** Persons participating: 2
         
 
 03.01:
@@ -206,7 +226,7 @@
         ** should be able to compile then run, and print to stdout
    
     * Create and populate a generic Set, that supports addition of at least Integer, Long, Short, Double
-        
+    
     * Read Java Oracle docs regarding Generics (by email)
 
 13.12:
@@ -290,7 +310,8 @@
         *** Deque (ArrayDeque, LinkedList)
     ** Populate a Map
     ** Loop a collection/map and modify (remove an element/entry while looping)
-    ** Apply add/put remove contains size isEmpty etc.     
+    ** Apply add/put remove contains size isEmpty etc. 
+    
     ** Piped I/O example spawning threads (for reference, PipedInputOutputStreamExample)
         *** writing thread running 5 exact times, then closing the stream
         *** reading thread looping while data available
@@ -342,14 +363,14 @@
             **** mark for deletion on exit
             **** list parent directory, containing this filename (to prove existence in runtime)
             **** exit program, then check manually if file exists
-         
+
 * Homework:
-    ** DataObjectStreamExercise 
+    ** DataObjectStreamExercise
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout  
+        *** loop data structure then print to stdout
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -404,11 +425,11 @@
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
         *** bonus: do input validation - natural numbers only; exit(1) if otherwise
-        
+
 * Loops exercise - for each loop type (while; do-while; for; foreach)
     ** automatically (using loop), initialize an array with values
     ** print the array to stdout
-    
+
 * Votes v0.3 application
     * refactor, using loops
 
@@ -418,7 +439,7 @@
     ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
     ** use switch-based check
     ** parameters supplied by user
-    ** prints chromosomes to stdout (letter by letter) 
+    ** prints chromosomes to stdout (letter by letter)
 * port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
@@ -459,3 +480,6 @@
         * Question 1: Is it snowing today? Yes/No
         * Question 2: Do you want rather to be snowing today? Yes/No
         * 3 votes per each question
+           
+        
+ 
