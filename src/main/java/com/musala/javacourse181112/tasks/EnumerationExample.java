@@ -19,8 +19,9 @@ public class EnumerationExample {
         Enumeration e = Collections.enumeration(arrayList);
 
         System.out.println("Arraylist to Enumeration");
-        while(e.hasMoreElements())
+        while(e.hasMoreElements()) {
             System.out.println(e.nextElement());
+        }
 
         ArrayList<String> arrayList1 = Collections.list(e);
         System.out.println("List elements: "+ arrayList);
