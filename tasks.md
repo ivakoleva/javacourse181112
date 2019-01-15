@@ -4,14 +4,17 @@
     * Library exercise - Magazine & Newspaper - implement concept of sequential issues
         ** add issue number to each entity (Integer)
         ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
-        
+    * Custom comparator exercise - SubscriptionRenewal null support
+        ** test with null Person's SubscriptionRenewal property
+        ** patch if needed
         
 * Exercise:
     ** Custom comparator exercise
         *** Handle local changes; merge master branch to local one
         *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
         *** Implement an utility class, that provides static method
-            **** accepts collection of Persons & custom Comparator<Person>
+            **** accepts collection of Persons
+            **** uses custom Comparator<Person>
             **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
 
 10.01:
