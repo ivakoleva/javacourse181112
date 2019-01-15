@@ -1,14 +1,13 @@
 package com.musala.javacourse181112.tasks.library_exercise.model;
 
+import java.time.LocalDate;
+
 public class Book implements Item {
     private String ISBN;
     private String name;
     private String id;
-
-    /*public Book(String ispn, String name) {
-        this.ISBN = ispn;
-        this.name = name;
-    }*/
+    private LocalDate dayOfPublishing;
+    private int issue;
 
     public String getName() {
         return name;
@@ -33,5 +32,30 @@ public class Book implements Item {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public LocalDate getDayOfPublishing() {
+        return dayOfPublishing;
+    }
+
+    @Override
+    public void setDayOfPublishing(LocalDate dayOfPublishing) {
+        this.dayOfPublishing = dayOfPublishing;
+    }
+
+    @Override
+    public String getSpecialId() {
+        return name + dayOfPublishing;
+    }
+
+    @Override
+    public int getIssue() {
+        return issue;
+    }
+
+    @Override
+    public void setIssue(int issue) {
+        setIssue(issue);
     }
 }

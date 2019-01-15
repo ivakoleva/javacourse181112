@@ -68,10 +68,10 @@ public class Application {
         subscriptionRenewal1.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 12));
 
         SubscriptionRenewal subscriptionRenewal2 = new SubscriptionRenewal();
-        subscriptionRenewal2.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 13));
+        subscriptionRenewal2.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 11, 12, 12, 13));
 
         SubscriptionRenewal subscriptionRenewal3 = new SubscriptionRenewal();
-        subscriptionRenewal3.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 12, 12, 14));
+        subscriptionRenewal3.setDateTimeOfPayment(LocalDateTime.of(2001, Month.SEPTEMBER, 9, 12, 13, 12, 14));
 
         Set<SubscriptionRenewal> subscriptionRenewalSet1 = new LinkedHashSet<>(), subscriptionRenewalSet2 = new LinkedHashSet<>(), subscriptionRenewalSet3 = new LinkedHashSet<>();
 
