@@ -8,12 +8,17 @@ import java.util.List;
  */
 public class Poll {
     private String name;
+    private boolean anonymous;
+
     private List<Question> questionList;
+    private List<Person> personList;
 
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
 
     private Person createdBy;
+
+    //private Map<Question, >
 
     public String getName() {
         return name;
@@ -23,12 +28,28 @@ public class Poll {
         this.name = name;
     }
 
+    public boolean isAnonymous() {
+        return anonymous;
+    }
+
+    public void setAnonymous(boolean anonymous) {
+        this.anonymous = anonymous;
+    }
+
     public List<Question> getQuestionList() {
         return questionList;
     }
 
     public void setQuestionList(List<Question> questionList) {
         this.questionList = questionList;
+    }
+
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
     }
 
     public LocalDateTime getStartDateTime() {
