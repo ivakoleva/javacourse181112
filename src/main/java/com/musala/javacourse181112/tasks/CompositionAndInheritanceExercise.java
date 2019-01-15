@@ -9,11 +9,14 @@ public class CompositionAndInheritanceExercise {
         // TODO: set alive
         human1.setAlive(true);
         //TODO: final Human human2 = human1.giveBirth();
+
+      final Human human2 = human1.giveBirth();
     }
 }
 
 interface Being {
     boolean isAlive();
+
 }
 
 abstract class Mammal implements Being {

@@ -22,8 +22,8 @@ public final class Utils {
         }
         return person.getSubscriptionRenewalSet().stream()
                 .filter(Objects::nonNull)
-                .filter(SubscriptionRenewal -> SubscriptionRenewal.getDateTimeOfPayment() != null)
-                .max(Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment)).get();
+                .filter(subscriptionRenewal -> subscriptionRenewal.getDateTimeOfPayment() != null)
+                .max(Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment)).orElseGet(null);
     };
 
     public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(final List<Person> people) {

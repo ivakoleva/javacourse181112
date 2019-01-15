@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 02.01.2019
@@ -17,18 +16,24 @@ public class StandardUtilsSampleExercise {
         final long sum = StandardUtilsSample.computeSum(1, 2);
         System.out.println(StandardUtilsSample.capitalizeFirstLettersThenConcat("sample", "file", "name"));
 
+
         // utils class callback workaround
-       /* try {
-            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
+        try {
+            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }*/
+        }
+
 
         // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
         final String[] values = {"asd", "sdf"};
         LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values);
+
+
+        final String[] values1 = {"asd", "sdf"};
+        LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values1);
     }
 
     // standard method callback
@@ -61,6 +66,7 @@ final class LambdaUtilsSample {
             Arrays.stream(strings)
                     .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1))
                     .collect(Collectors.joining());
+    // TODO: implement capitalizeFirstLettersThenConcat function
 }
 
 // classical utils class
@@ -73,17 +79,10 @@ final class StandardUtilsSample { // Utils
     }
 
     static String capitalizeFirstLettersThenConcat(final String... strings) {
-        /*
-         StringBuilder result = new StringBuilder();
-        for (String element : strings){
-            result.append(element.toUpperCase().charAt(0));
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (String string : strings) {
+            stringBuilder.append(string.substring(0, 1).toUpperCase()).append(string.substring(1));
         }
-        return result.toString();*/
-
-        return Arrays.stream(strings)
-                .map(string -> {
-                    string = string.substring(0,1).toUpperCase() + string.substring(1);
-                    return string;
-                }).collect(Collectors.joining());
+        return stringBuilder.toString();
     }
 }

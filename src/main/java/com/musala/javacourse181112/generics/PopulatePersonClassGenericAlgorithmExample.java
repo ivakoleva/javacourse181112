@@ -1,105 +1,44 @@
 package com.musala.javacourse181112.generics;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
  * Created by Iva Koleva on 18.12.2018
  */
 public class PopulatePersonClassGenericAlgorithmExample {
-    public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException, NoSuchFieldException {
-         /*
+    public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
+            /*final Answer person = new Answer();
+        person.setName("Ivan Ivanov");
+        person.setEgn("9012121234");
+
         final Company company = new Company();
         company.setName("MusalaSoft");
         company.setEik("123456789");
 
-        final Set<Person> personSet = new HashSet<>();
+         final Set<Person> personSet = new HashSet<>();
         personSet.add(person);
         company.setEmployeeSet(personSet);
 
         person.setCompany(company);*/
 
-        final Person person = new Person();
-        person.setName("Ivanka Petrova");
-        person.setEgn("9012121234");
-
-        final Person person2 = new Person();
-        person2.setEgn("1234567890");
-        person2.setName("Ivan Ivanov");
-
-        genericSerialization(person, Paths.get("Ivanka_Petrova.txt"));
-        genericSerialization(person2, Paths.get("Ivan_Ivanov.txt"));
 
         final Person personFromFile = populateEntity(
-                Paths.get("Ivanka_Petrova.txt"),
+                Paths.get(PopulatePersonClassGenericAlgorithmExample.class.getClassLoader().getResource("person_ivan_ivanov.txt").toURI()),
                 Person.class);
-        System.out.println(personFromFile.getName() + " " + personFromFile.getEgn());
-
-        final Person personFromFile2 = populateEntity(
-                Paths.get("Ivan_Ivanov.txt"),
-                Person.class);
-        System.out.println(personFromFile2.getName() + " " + personFromFile2.getEgn());
+        System.out.println();
 
         /*final Collection<Company> companiesFromFile =
                 populateEntities(Company.class, "company_musalasoft.txt", "");*/
-    }
-
-    public static <T extends Entity> T genericSerialization(final T entityClass, final Path path) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
-        final Field[] fields = entityClass.getClass().getDeclaredFields();
-        final T entity = (T) entityClass.getClass().getDeclaredConstructor().newInstance();
-
-        try (final PrintWriter writer = new PrintWriter(String.valueOf(path));
-        ) {
-            //with stream()
-            /*Arrays.stream(fields).forEach(field -> {
-                try {
-                    field = entityClass.getClass().getDeclaredField(field.getName());
-                } catch (NoSuchFieldException e) {
-                    e.printStackTrace();
-                }
-                field.setAccessible(true);
-                Object value = null;
-                try {
-                    value = field.get(entityClass);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-
-                if (value != null) {
-                    //System.out.print(field.getName() + " = " + value + System.lineSeparator());
-
-                    try {
-                        field.set(entityClass, value);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
-                    writer.write(field.getName() + "=" + value + System.lineSeparator());
-                }
-            });*/
-
-            for (Field field : fields) {
-                field = entityClass.getClass().getDeclaredField(field.getName());
-                field.setAccessible(true);
-                final Object value = field.get(entityClass);
-
-                if (value != null) {
-                    //System.out.print(field.getName() + " = " + value + System.lineSeparator());
-                    field.set(entityClass, value);
-                    writer.write(field.getName() + "=" + value + System.lineSeparator());
-                }
-            }
-        }
-        return entity;
     }
 
     public static <T extends Entity> T populateEntity(final Path path, Class<T> entityClass) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -110,7 +49,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
         final Map<String, String> map = Files.readAllLines(path).stream()
                 .filter(line -> {
                     final int i = line.indexOf("=") + 1;
-                    return i > 1 && i < line.length() && ((char) i != ' ');
+                    return i > 1 && i < line.length();
                 })
                 .collect(Collectors.toMap(
                         line -> line.substring(0, line.indexOf("=")),

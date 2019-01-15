@@ -1,12 +1,21 @@
+15.01:
+
+* Exercise:
+    ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
+        *** add issue number to each entity (Integer)
+    ** Enumeration-collection bridge exercise
+        *** create a collection, transform it to enumeration
+        *** transform enumeration to collection    
+    
 14.01:
 
 * Homework:
-    * Library exercise - Magazine & Newspaper - implement concept of sequential issues
-        ** add issue number to each entity (Integer)
-        ** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
-    * Custom comparator exercise - SubscriptionRenewal null support
-        ** test with null Person's SubscriptionRenewal property
-        ** patch if needed
+    ** Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        *** add issue number to each entity (Integer)
+        *** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+    ** Custom comparator exercise - SubscriptionRenewal null support
+        *** test with null Person's SubscriptionRenewal property
+        *** patch if needed
         
 * Exercise:
     ** Custom comparator exercise
@@ -66,6 +75,7 @@
     ** CompositionAndInheritanceExercise
         *** implement Human class
         *** apply methods supported from main() method
+
 
 07.01:
 
@@ -337,14 +347,14 @@
             **** mark for deletion on exit
             **** list parent directory, containing this filename (to prove existence in runtime)
             **** exit program, then check manually if file exists
-         
+
 * Homework:
-    ** DataObjectStreamExercise 
+    ** DataObjectStreamExercise
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout  
+        *** loop data structure then print to stdout
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -399,11 +409,11 @@
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
         *** bonus: do input validation - natural numbers only; exit(1) if otherwise
-        
+
 * Loops exercise - for each loop type (while; do-while; for; foreach)
     ** automatically (using loop), initialize an array with values
     ** print the array to stdout
-    
+
 * Votes v0.3 application
     * refactor, using loops
 
@@ -413,7 +423,7 @@
     ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
     ** use switch-based check
     ** parameters supplied by user
-    ** prints chromosomes to stdout (letter by letter) 
+    ** prints chromosomes to stdout (letter by letter)
 * port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
