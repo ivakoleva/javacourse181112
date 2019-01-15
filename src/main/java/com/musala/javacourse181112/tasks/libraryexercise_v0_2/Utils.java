@@ -15,7 +15,7 @@ public final class Utils {
     private Utils(Collection<Person> personCollection, Comparator<Person> personComparator) {
         Collection<Person> sortedByDateOfPayment = new LinkedList<>();
         sortedByDateOfPayment.addAll(personCollection);
-        Collections.sort(sortedByDateOfPayment, Comparator.comparing(o -> o.getSubscriptionRenewalSet().dateOfPayment));
+//        Collections.sort(sortedByDateOfPayment, Comparator.comparing(o -> o.getSubscriptionRenewalSet().dateOfPayment));
     }
 
 
