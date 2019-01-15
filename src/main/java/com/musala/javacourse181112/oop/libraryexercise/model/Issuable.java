@@ -4,3 +4,20 @@ public interface Issuable {
      long getIssue();
      void setIssue();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
