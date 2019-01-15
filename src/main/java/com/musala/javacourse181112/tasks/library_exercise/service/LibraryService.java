@@ -25,7 +25,7 @@ public class LibraryService {
 
         IssueHandler issueHandler = new IssueHandler();
         //issueHandler.checkAndCorrect(items);
-        library.setIssueHandler(issueHandler);
+        library.setItemService(issueHandler);
 
         return library;
     }
@@ -41,7 +41,7 @@ public class LibraryService {
         library.setPeople(people);
 
         //issueHandler.checkAndCorrect(items);
-        library.setIssueHandler(issueHandler);
+        library.setItemService(issueHandler);
 
         return library;
     }
@@ -72,7 +72,7 @@ public class LibraryService {
     }
 
     public void addBook(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getIssueHandler());
+        itemService.setIssueHandler(library.getItemService());
         addBook(library, itemService.generateBook(isbn, name, id, dayOfPublishing));
     }
 
@@ -82,7 +82,7 @@ public class LibraryService {
     }
 
     public void addMagazine(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getIssueHandler());
+        itemService.setIssueHandler(library.getItemService());
         addMagazine(library, itemService.generateMagazine(isbn, name, id, dayOfPublishing));
     }
 
@@ -92,7 +92,7 @@ public class LibraryService {
     }
 
     public void addNewspaper(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getIssueHandler());
+        itemService.setIssueHandler(library.getItemService());
         addNewspaper(library, itemService.generateNewspaper(isbn, name, id, dayOfPublishing));
     }
 }

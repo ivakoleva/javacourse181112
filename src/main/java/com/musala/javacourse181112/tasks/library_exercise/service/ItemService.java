@@ -3,20 +3,17 @@ package com.musala.javacourse181112.tasks.library_exercise.service;
 import com.musala.javacourse181112.tasks.library_exercise.model.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemService {
-    private IssueHandler issueHandler;
+    private List<IssueHandler> issueHandlers = new ArrayList<>();
 
-    public void setIssueHandler(IssueHandler issueHandler) {
-        this.issueHandler = issueHandler;
-    }
-
-    public IssueHandler getIssueHandler() {
-        return issueHandler;
+    public List<IssueHandler> getIssueHandlers() {
+        return issueHandlers;
     }
 
     public Book generateBook(String isbn, String name, String id, LocalDate dayOfPublishing) {
-        assert issueHandler != null;
 
         Book book = new Book();
         setNotIssueableItem(book, isbn, name, id, dayOfPublishing);
@@ -24,22 +21,22 @@ public class ItemService {
     }
 
     public Magazine generateMagazine(String isbn, String name, String id, LocalDate dayOfPublishing) {
-        assert issueHandler != null;
 
         Magazine magazine = new Magazine();
-        setIssueableItem(magazine, isbn, name, id, dayOfPublishing);
+        IssueHandler<Magazine> magazineIssueHandler = new IssueHandler<>();
+        setIssueableItem(magazine, magazineIssueHandler, isbn, name, id, dayOfPublishing);
         return magazine;
     }
 
     public Newspaper generateNewspaper(String isbn, String name, String id, LocalDate dayOfPublishing) {
-        assert issueHandler != null;
 
         Newspaper newspaper = new Newspaper();
-        setIssueableItem(newspaper, isbn, name, id, dayOfPublishing);
+        IssueHandler<Newspaper> newspaperIssueHandler = new IssueHandler<>();
+        setIssueableItem(newspaper, newspaperIssueHandler, isbn, name, id, dayOfPublishing);
         return newspaper;
     }
 
-    private <T extends Issueable> void setIssueableItem(T item, String isbn, String name, String id, LocalDate dayOfPublishing) {
+    private <T extends Issueable> void setIssueableItem(T item, IssueHandler issueHandler, String isbn, String name, String id, LocalDate dayOfPublishing) {
         item.setId(id);
         item.setName(name);
         item.setISBN(isbn);
