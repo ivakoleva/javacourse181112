@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class GenericsUtils {
 
-    public static <T extends AbstractItem> T getInstace(final Class<T> inputClass) {
+    public static <T extends AbstractItem> T getAbstractItemInstace(final Class<T> inputClass) {
         assert inputClass != null;
         try {
 
