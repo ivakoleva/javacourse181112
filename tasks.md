@@ -9,7 +9,7 @@
 * Exercise:
     ** Custom comparator exercise
         *** Handle local changes; merge master branch to local one
-        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment 
         *** Implement an utility class, that provides static method
             **** accepts collection of Persons & custom Comparator<Person>
             **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
