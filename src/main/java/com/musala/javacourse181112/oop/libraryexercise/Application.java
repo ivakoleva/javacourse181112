@@ -33,7 +33,7 @@ public class Application {
         magazine.setName("Story");
         itemList.add(magazine);
 
-        final Newspaper newspaper = new Newspaper();
+        final Person.Newspaper newspaper = new Person.Newspaper();
         newspaper.setId(345L);
         newspaper.setIsbn("123-456-9890-11-2");
         newspaper.setName("24 Hours");

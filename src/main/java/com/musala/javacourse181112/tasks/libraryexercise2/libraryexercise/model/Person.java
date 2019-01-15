@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.oop.libraryexercise.model;
+package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model;
 
 import java.util.Set;
 
@@ -47,20 +47,5 @@ public class Person extends BaseEntity {
 
     public void setSubscriptionRenewalSet(Set<SubscriptionRenewal> subscriptionRenewalSet) {
         this.subscriptionRenewalSet = subscriptionRenewalSet;
-    }
-
-    public static class Newspaper extends AbstractItem implements Issueable {
-        private int issue;
-
-        @Override
-        public int getIssue() {
-            return issue;
-        }
-
-        @Override
-        public void setIssue(int issue) {
-            this.issue = issue;
-        }
-
     }
 }

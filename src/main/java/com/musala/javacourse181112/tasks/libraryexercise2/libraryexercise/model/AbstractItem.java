@@ -1,9 +1,11 @@
-package com.musala.javacourse181112.oop.libraryexercise.model;
+package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model;
 
+/**
+ * Created by Iva Koleva on 14.01.2019
+ */
 public abstract class AbstractItem extends BaseEntity implements Item {
     private String isbn;
     private String name;
-
 
     @Override
     public String getIsbn() {
@@ -24,6 +26,4 @@ public abstract class AbstractItem extends BaseEntity implements Item {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }
