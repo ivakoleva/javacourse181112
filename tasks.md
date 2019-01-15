@@ -2,6 +2,7 @@
 
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
+        *** add issue number to each entity (Integer)
 
 14.01:
 
