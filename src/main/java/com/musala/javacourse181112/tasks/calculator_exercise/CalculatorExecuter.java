@@ -3,10 +3,10 @@ package com.musala.javacourse181112.tasks.calculator_exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorExecuter {
+/*public class CalculatorExecuter {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
-        String charset = "asdfghjklpoiuytrewqÿàîóèøêäïõôıúé";
+        String charset = "asdfghjklpoiuytrewqï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
         RandomNameGenerator randomNameGenerator = new RandomNameGenerator(charset, 5, 10);
         for (int i = 0; i < 10; i++) {
             people.add(new Person(randomNameGenerator.generateName(), i + 10));
@@ -19,4 +19,4 @@ public class CalculatorExecuter {
         }
     }
 
-}
+}*/
