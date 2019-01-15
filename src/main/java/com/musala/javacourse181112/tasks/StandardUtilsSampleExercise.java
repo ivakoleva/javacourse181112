@@ -27,12 +27,13 @@ public class StandardUtilsSampleExercise {
 
 
         // lambda usage
-
-        LambdaUtilsSample.computeSum.apply(1L, 2L);
-        // lambda usage
         LambdaUtilsSample.computeSum.apply(1L, 2L);
         final String[] values = {"asd", "sdf"};
         LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values);
+
+
+        final String[] values1 = {"asd", "sdf"};
+        LambdaUtilsSample.capitalizeFirstLettersThenConcat.apply(values1);
     }
 
     // standard method callback

@@ -108,6 +108,7 @@ public class DataObjectStreamExample {
 
         @Override
         public String toString() {
+           // return "Person name [" + name + "] age [" + age + "]";
             return "Answer name [" + name + "] age [" + age + "]";
         }
 
