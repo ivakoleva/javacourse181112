@@ -1,9 +1,8 @@
 package com.musala.javacourse181112.oop;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import com.sun.corba.se.impl.util.Utility;
+
+import java.util.*;
 
 /**
  * Created by Iva Koleva on 14.01.2019
@@ -32,4 +31,19 @@ class CustomClass1 {
         integerField = field;
         intField = field;
     }
+    class DateTimeOfPayment{
+        private Number date;
+        public void setDate(Number date){this.date=date;}
+
+        public Number getDate() {
+            return date;
+        }
+    }
+final class  Utils {
+
+private Utils(){
+
+}
+
+}
 }
