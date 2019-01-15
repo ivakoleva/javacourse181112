@@ -19,7 +19,7 @@
         *** transform enumeration to collection
         *** loop over an enumeration, then print to stdout
     ** Library exercise - implement static Utils generic generate method
-        *** supporting any extending AbsractItem - Book, Magazine, Newspaper
+        *** supporting any extending AbstractItem - Book, Magazine, Newspaper
         *** class supplied as parameter
         *** a new instance returned
    
