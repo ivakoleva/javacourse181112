@@ -17,13 +17,14 @@ public class EnumerationTask {
 
         enumeration = Collections.enumeration(stringList);
 
+        ArrayList<String> stringList1 = Collections.list(enumeration);
+        stringList1.forEach(System.out::println);
 
-        while (enumeration.hasMoreElements()) {
+        while(enumeration.hasMoreElements()) {
             System.out.println("Enumeration: "+enumeration.nextElement());
         }
 
-        ArrayList<String>stringList1 = Collections.list(enumeration);
-        stringList1.forEach(System.out::println);
+
 
     }
 }
