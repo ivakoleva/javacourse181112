@@ -69,14 +69,16 @@ public class Application {
                     final Person p = new Person();
                     p.setSubscriptionRenewalSet(
                             IntStream.range(0, 3).boxed()
-                                    .map(j -> LocalDateTime.now()
-                                            .minus((i * 10) + j, ChronoUnit.MONTHS)
-                                            .minus((i * 10) + j, ChronoUnit.DAYS))
-                                    .map(localDateTime -> {
-                                        final SubscriptionRenewal subscriptionRenewal = new SubscriptionRenewal();
-                                        subscriptionRenewal.setDateTimeOfPayment(localDateTime);
-                                        return subscriptionRenewal;
-                                    })
+                                    .map(j -> j % 2 == 0 ?
+                                            LocalDateTime.now()
+                                                    .minus((i * 10) + j, ChronoUnit.MONTHS)
+                                                    .minus((i * 10) + j, ChronoUnit.DAYS) :
+                                            null
+                                    ).map(localDateTime -> {
+                                final SubscriptionRenewal subscriptionRenewal = new SubscriptionRenewal();
+                                subscriptionRenewal.setDateTimeOfPayment(localDateTime);
+                                return subscriptionRenewal;
+                            })
                                     .collect(Collectors.toSet()));
                     return p;
                 }).collect(Collectors.toList()));
