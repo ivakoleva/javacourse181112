@@ -14,7 +14,7 @@ public class EnumerationCollectionExercise {
         list.add("four");
         list.add("five");
 
-        final Enumeration enumeration = Collections.enumeration(list);
+        final Enumeration<String> enumeration = Collections.enumeration(list);
 
         while (enumeration.hasMoreElements()) {
             System.out.println(enumeration.nextElement());
