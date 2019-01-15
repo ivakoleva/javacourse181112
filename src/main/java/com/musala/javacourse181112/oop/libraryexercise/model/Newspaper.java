@@ -1,4 +1,13 @@
 package com.musala.javacourse181112.oop.libraryexercise.model;
 
-public class Newspaper extends AbstractItem {
+public class Newspaper extends AbstractItem implements Issuable {
+    public int issue;
+
+    public int getIssue() {
+        return issue;
+    }
+
+    public void setIssue(int issue) {
+        this.issue = issue;
+    }
 }
