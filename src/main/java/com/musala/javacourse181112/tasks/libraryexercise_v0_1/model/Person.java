@@ -1,10 +1,13 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
-public class Person {
+import java.util.Set;
 
+public class Person extends BaseEntity {
     private String name;
-    private String id;
-    private String phoneNumber;
+    private String egn;
+    private Set<Role> roleSet;
+    private Set<ItemRent> itemRentSet;
+    private Set<SubscriptionRenewal> subscriptionRenewalSet;
 
     public String getName() {
         return name;
@@ -14,19 +17,35 @@ public class Person {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getEgn() {
+        return egn;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEgn(String egn) {
+        this.egn = egn;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public Set<Role> getRoleSet() {
+        return roleSet;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setRoleSet(Set<Role> roleSet) {
+        this.roleSet = roleSet;
+    }
+
+    public Set<ItemRent> getItemRentSet() {
+        return itemRentSet;
+    }
+
+    public void setItemRentSet(Set<ItemRent> itemRentSet) {
+        this.itemRentSet = itemRentSet;
+    }
+
+    public Set<SubscriptionRenewal> getSubscriptionRenewalSet() {
+        return subscriptionRenewalSet;
+    }
+
+    public void setSubscriptionRenewalSet(Set<SubscriptionRenewal> subscriptionRenewalSet) {
+        this.subscriptionRenewalSet = subscriptionRenewalSet;
     }
 }
