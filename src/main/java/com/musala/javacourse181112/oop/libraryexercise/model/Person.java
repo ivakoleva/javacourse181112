@@ -8,7 +8,7 @@ public class Person extends BaseEntity {
     private String egn;
     private Set<Role> roleSet;
     private Set<ItemRent> itemRentSet;
-    private LocalDate subscriptionRenewalSet;
+    private LocalDate subscriptionRenewalSet; // TODO: fix
 
     public String getName() {
         return name;

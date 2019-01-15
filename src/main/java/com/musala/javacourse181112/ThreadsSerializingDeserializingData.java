@@ -18,11 +18,11 @@ import java.util.stream.IntStream;
 public class ThreadsSerializingDeserializingData implements java.io.Serializable {
 
     public static void main(final String[] args) throws IOException {
-        private final static List<Integer> integerList = IntStream.range(0, 21)
+        final List<Integer> integerList = IntStream.range(0, 21)
                 .boxed()
                 .collect(Collectors.toCollection(ArrayList::new));
 
-        private final static BlockingQueue<List<Integer>> integerArrayBlockingQueue =
+        final BlockingQueue<List<Integer>> integerArrayBlockingQueue =
                 new ArrayBlockingQueue<>(200, true, Collections.nCopies(10, integerList));
 
         Files.createDirectory(Paths.get("/tmp/Serialized"));
@@ -57,7 +57,6 @@ public class ThreadsSerializingDeserializingData implements java.io.Serializable
         });
 
 
-
         consumerThread.start();
         producerThread.start();
 
@@ -69,6 +68,4 @@ public class ThreadsSerializingDeserializingData implements java.io.Serializable
         }
         System.exit(0);
     }
-    }
-
 }
