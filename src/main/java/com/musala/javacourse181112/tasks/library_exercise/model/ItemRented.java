@@ -7,7 +7,7 @@ public class ItemRented {
     private LocalDateTime rentedSince;
     private LocalDateTime rentedUntil = null;
     private Item item;
-    private Person employeeSurviced;
+    private Person employeeServiced;
 
     public Library getLibrary() {
         return library;
@@ -41,11 +41,11 @@ public class ItemRented {
         this.item = item;
     }
 
-    public Person getEmployeeSurviced() {
-        return employeeSurviced;
+    public Person getEmployeeServiced() {
+        return employeeServiced;
     }
 
-    public void setEmployeeSurviced(Person employeeSurviced) {
-        this.employeeSurviced = employeeSurviced;
+    public void setEmployeeServiced(Person employeeServiced) {
+        this.employeeServiced = employeeServiced;
     }
 }
