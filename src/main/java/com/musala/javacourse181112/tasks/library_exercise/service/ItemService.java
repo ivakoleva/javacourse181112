@@ -7,7 +7,7 @@ import com.musala.javacourse181112.tasks.library_exercise.model.Newspaper;
 
 import java.time.LocalDate;
 
-public class ItemGenerator {
+public class ItemService {
     private IssueHandler issueHandler;
 
     public void setIssueHandler(IssueHandler issueHandler) {

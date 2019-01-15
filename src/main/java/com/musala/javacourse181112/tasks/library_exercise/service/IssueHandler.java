@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// TODO: add model Issueable interface; make algorithm generic
+// seems like Iterator
 public class IssueHandler {
 
     private Map<String, Integer> lastIssue = new HashMap<>();

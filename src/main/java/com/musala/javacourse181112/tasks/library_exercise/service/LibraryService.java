@@ -3,11 +3,14 @@ package com.musala.javacourse181112.tasks.library_exercise.service;
 import com.musala.javacourse181112.tasks.library_exercise.model.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+// TODO: final everywhere; parameters ordering
+// redundant proxy type-strict methods of generic addItem() cleanup
 public class LibraryService {
 
-    private ItemGenerator itemGenerator = new ItemGenerator();
+    private ItemService itemService = new ItemService();
     private PersonService personService = new PersonService();
 
     //generating library
@@ -45,6 +48,9 @@ public class LibraryService {
 
     //adding people
     public void addPerson(Library library, Person person) {
+        if(library.getPeople() == null) {
+            library.setPeople(new ArrayList<>());
+        }
         library.getPeople().add(person);
     }
 
@@ -54,6 +60,9 @@ public class LibraryService {
 
     //adding items
     private <T extends Item> void addItem(Library library, T item) {
+        if(library.getItems() == null) {
+            library.setItems(new ArrayList<>());
+        }
         library.getItems().add(item);
     }
 
@@ -63,8 +72,8 @@ public class LibraryService {
     }
 
     public void addBook(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemGenerator.setIssueHandler(library.getIssueHandler());
-        addBook(library, itemGenerator.generateBook(isbn, name, id, dayOfPublishing));
+        itemService.setIssueHandler(library.getIssueHandler());
+        addBook(library, itemService.generateBook(isbn, name, id, dayOfPublishing));
     }
 
     //adding magazines
@@ -73,8 +82,8 @@ public class LibraryService {
     }
 
     public void addMagazine(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemGenerator.setIssueHandler(library.getIssueHandler());
-        addMagazine(library, itemGenerator.generateMagazine(isbn, name, id, dayOfPublishing));
+        itemService.setIssueHandler(library.getIssueHandler());
+        addMagazine(library, itemService.generateMagazine(isbn, name, id, dayOfPublishing));
     }
 
     //adding newspapers
@@ -83,7 +92,7 @@ public class LibraryService {
     }
 
     public void addNewspaper(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemGenerator.setIssueHandler(library.getIssueHandler());
-        addNewspaper(library, itemGenerator.generateNewspaper(isbn, name, id, dayOfPublishing));
+        itemService.setIssueHandler(library.getIssueHandler());
+        addNewspaper(library, itemService.generateNewspaper(isbn, name, id, dayOfPublishing));
     }
 }
