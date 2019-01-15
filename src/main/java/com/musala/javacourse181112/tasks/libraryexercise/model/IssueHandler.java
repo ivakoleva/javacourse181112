@@ -5,7 +5,6 @@ import java.util.List;
 
 public class IssueHandler {
 
-    // private Map<String, Integer> lastIssue = new HashMap<>();
     private List<Issue> lastIssue = new ArrayList<>();
 
     public int getNextIssue(String specialId) {
@@ -14,6 +13,7 @@ public class IssueHandler {
                 if (issue.getDate().equals(specialId.substring(specialId.indexOf('|') + 1))) {
                     issue.setIssueNumber(issue.getIssueNumber() + 1);
                 }
+
                 return issue.getIssueNumber();
             }
         }
