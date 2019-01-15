@@ -1,14 +1,15 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Enumeration;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
 import java.util.Collections;
 
 public class EnumerationExample {
 
     public static void main(String[] args) {
 
-        final ArrayList arrayList = new ArrayList();
+        final List<String> arrayList = new ArrayList<>();
         arrayList.add("A");
         arrayList.add("B");
         arrayList.add("D");
@@ -23,7 +24,7 @@ public class EnumerationExample {
             System.out.println(e.nextElement());
         }
 
-        final ArrayList<String> arrayList1 = Collections.list(e);
+        final List<String> arrayList1 = Collections.list(e);
         System.out.println("List elements: "+ arrayList);
     }
 }
