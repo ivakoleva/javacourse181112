@@ -3,7 +3,10 @@
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
         *** add issue number to each entity (Integer)
-
+    ** Enumeration-collection bridge exercise
+        *** create a collection, transform it to enumeration
+        *** transform enumeration to collection    
+    
 14.01:
 
 * Homework:
