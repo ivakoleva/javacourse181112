@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.oop.libraryexercise.model;
 
-public class Magazine extends AbstractItem implements Issue {
+public class Magazine extends AbstractItem implements Issuable {
     private int issue;
     @Override
     public void setIssue(int issue) {
