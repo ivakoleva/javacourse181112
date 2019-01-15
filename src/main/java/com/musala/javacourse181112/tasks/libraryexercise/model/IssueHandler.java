@@ -13,7 +13,6 @@ public class IssueHandler {
                 if (issue.getDate().equals(specialId.substring(specialId.indexOf('|') + 1))) {
                     issue.setIssueNumber(issue.getIssueNumber() + 1);
                 }
-
                 return issue.getIssueNumber();
             }
         }

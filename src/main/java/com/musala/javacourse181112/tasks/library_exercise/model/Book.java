@@ -7,7 +7,6 @@ public class Book implements Item {
     private String name;
     private String id;
     private LocalDate dayOfPublishing;
-    private int issue;
 
     public String getName() {
         return name;
@@ -49,13 +48,4 @@ public class Book implements Item {
         return name + "|" + dayOfPublishing;
     }
 
-    @Override
-    public int getIssue() {
-        return issue;
-    }
-
-    @Override
-    public void setIssue(int issue) {
-        setIssue(issue);
-    }
 }

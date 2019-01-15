@@ -2,14 +2,14 @@ package com.musala.javacourse181112.tasks.library_exercise.model;
 
 import java.time.LocalDate;
 
-public class Magazine implements Item {
+public class Magazine implements Issueable {
     private String ISBN;
     private String name;
     private String id;
-    private int issue;
+    private Integer issue;
     private LocalDate dayOfPublishing;
 
-    public int getIssue() {
+    public Integer getIssue() {
         return issue;
     }
 

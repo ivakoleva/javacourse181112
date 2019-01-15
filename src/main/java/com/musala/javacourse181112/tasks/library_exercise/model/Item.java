@@ -21,7 +21,4 @@ public interface Item {
 
     String getSpecialId();
 
-    int getIssue();
-
-    void setIssue(int issue);
 }

@@ -24,7 +24,7 @@ public class LibraryService {
         library.setPeople(people);
 
         IssueHandler issueHandler = new IssueHandler();
-        issueHandler.checkAndCorrect(items);
+        //issueHandler.checkAndCorrect(items);
         library.setIssueHandler(issueHandler);
 
         return library;
@@ -40,7 +40,7 @@ public class LibraryService {
         library.setName(name);
         library.setPeople(people);
 
-        issueHandler.checkAndCorrect(items);
+        //issueHandler.checkAndCorrect(items);
         library.setIssueHandler(issueHandler);
 
         return library;
