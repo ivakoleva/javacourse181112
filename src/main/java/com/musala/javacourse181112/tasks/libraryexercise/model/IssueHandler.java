@@ -10,8 +10,10 @@ public class IssueHandler {
 
     public int getNextIssue(String specialId) {
         for (Issue issue : lastIssue) {
-            if (issue.getSpecialId().equals(specialId)) {
-                issue.setIssueNumber(issue.getIssueNumber() + 1);
+            if (issue.getName().equals(specialId.substring(0, specialId.indexOf('|')))) {
+                if (issue.getDate().equals(specialId.substring(specialId.indexOf('|') + 1))) {
+                    issue.setIssueNumber(issue.getIssueNumber() + 1);
+                }
                 return issue.getIssueNumber();
             }
         }

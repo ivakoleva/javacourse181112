@@ -12,19 +12,23 @@ public class IssueHandler {
 
     public int getNextIssue(String specialId) {
 
-        if (lastIssue.containsKey(specialId)) {
-            int issue = lastIssue.get(specialId) + 1;
-            lastIssue.put(specialId, issue);
-            return issue;
-        } else {
-            lastIssue.put(specialId, 1);
-            return 1;
+        for (String key : lastIssue.keySet()) {
+            if (key.substring(0, key.indexOf('|')).equals(specialId.substring(0, specialId.indexOf('|')))) {
+                int issue = lastIssue.get(specialId);
+                if (key.substring(key.indexOf('|') + 1).compareTo(specialId.substring(specialId.indexOf('|') + 1)) < 0) {
+                    issue += 1;
+                    lastIssue.put(specialId, issue);
+                }
+                return issue;
+            }
         }
+        lastIssue.put(specialId, 1);
+        return 1;
     }
 
     public void checkAndCorrect(List<Item> items) {
         items.forEach(i -> {
-            if (lastIssue.containsKey(i.getSpecialId())) {
+            if (getNextIssue(i.getSpecialId()) != 1) {
                 if (i.getIssue() > lastIssue.get(i.getSpecialId())) {
                     lastIssue.put(i.getSpecialId(), i.getIssue());
                 }

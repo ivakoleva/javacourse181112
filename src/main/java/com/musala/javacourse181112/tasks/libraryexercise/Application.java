@@ -102,7 +102,7 @@ public class Application {
                     p.setSubscriptionRenewalSet(
                             IntStream.range(0, 3).boxed()
                                     .map(j -> {
-                                        if (j % 2 == 0) {
+                                        if ((j + i) % 2 == 0) {
                                             return LocalDateTime.now()
                                                     .minus((i * 10) + j, ChronoUnit.MONTHS)
                                                     .minus((i * 10) + j, ChronoUnit.DAYS);

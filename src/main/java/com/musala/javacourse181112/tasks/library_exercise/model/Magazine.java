@@ -55,6 +55,6 @@ public class Magazine implements Item {
 
     @Override
     public String getSpecialId() {
-        return name + dayOfPublishing;
+        return name + "|" + dayOfPublishing;
     }
 }
