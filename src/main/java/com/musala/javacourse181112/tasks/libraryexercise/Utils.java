@@ -1,8 +1,10 @@
 package com.musala.javacourse181112.tasks.libraryexercise;
 
+import com.musala.javacourse181112.tasks.libraryexercise.model.AbstractItem;
 import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
 import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -10,6 +12,17 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Utils {
+
+    public <T extends AbstractItem> T getInstance(final Class<T> clazz) {
+        T instance = null;
+        try {
+            instance = clazz.getConstructor().newInstance();
+        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return instance;
+    }
+
     public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(List<Person> people) {
         return people.stream()
                 .filter(Objects::nonNull)
@@ -74,4 +87,6 @@ public class Utils {
 
         return lastSubscriptionRenewal;*/
     };
+
+
 }

@@ -8,9 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
-/**
- * Created by Iva Koleva on 15.01.2019
- */
 public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
         List<Integer> list = IntStream.range(1, 6).boxed().collect(Collectors.toList());
