@@ -51,7 +51,26 @@ public class Application {
         person.setRoleSet(EnumSet.of(Role.CLIENT));
         person.setItemRentSet(new HashSet<>());
         person.getItemRentSet().add(itemRent);
+        person.setSubscriptionRenewalSet(LocalDate.of(2018,12,1));
         personList.add(person);
+
+        final Person person1 = new Person();
+        person1.setEgn("1234567890");
+        person1.setName("Rado Petrov");
+        person1.setRoleSet(EnumSet.of(Role.CLIENT));
+        person1.setItemRentSet(new HashSet<>());
+        person1.getItemRentSet().add(itemRent);
+        person1.setSubscriptionRenewalSet(LocalDate.of(2019,1,1));
+        personList.add(person1);
+
+        final Person person2 = new Person();
+        person2.setEgn("1234567890");
+        person2.setName("Anton Petrov");
+        person2.setRoleSet(EnumSet.of(Role.CLIENT));
+        person2.setItemRentSet(new HashSet<>());
+        person2.getItemRentSet().add(itemRent);
+        person2.setSubscriptionRenewalSet(LocalDate.of(2018,12,30));
+        personList.add(person2);
 
         final Library library = new Library();
         library.setName("National Library");
