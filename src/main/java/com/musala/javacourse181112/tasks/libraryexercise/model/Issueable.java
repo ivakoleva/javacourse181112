@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.libraryexercise;
+package com.musala.javacourse181112.tasks.libraryexercise.model;
 
 public interface Issueable {
 
