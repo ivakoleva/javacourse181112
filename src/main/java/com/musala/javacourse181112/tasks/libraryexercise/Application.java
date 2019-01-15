@@ -101,9 +101,15 @@ public class Application {
                     final Person p = new Person();
                     p.setSubscriptionRenewalSet(
                             IntStream.range(0, 3).boxed()
-                                    .map(j -> LocalDateTime.now()
-                                            .minus((i * 10) + j, ChronoUnit.MONTHS)
-                                            .minus((i * 10) + j, ChronoUnit.DAYS))
+                                    .map(j -> {
+                                        if (j % 2 == 0) {
+                                            return LocalDateTime.now()
+                                                    .minus((i * 10) + j, ChronoUnit.MONTHS)
+                                                    .minus((i * 10) + j, ChronoUnit.DAYS);
+                                        } else {
+                                            return null;
+                                        }
+                                    })
                                     .map(localDateTime -> {
                                         final SubscriptionRenewal subscriptionRenewal = new SubscriptionRenewal();
                                         subscriptionRenewal.setDateTimeOfPayment(localDateTime);
@@ -112,6 +118,7 @@ public class Application {
                                     .collect(Collectors.toSet()));
                     return p;
                 }).collect(Collectors.toList()));
+        personListSorted.forEach(System.out::println);
         System.out.println();
     }
 }

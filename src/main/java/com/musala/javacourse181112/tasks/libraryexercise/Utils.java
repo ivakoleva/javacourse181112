@@ -3,7 +3,9 @@ package com.musala.javacourse181112.tasks.libraryexercise;
 import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
 import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -11,6 +13,13 @@ public class Utils {
     public static List<Person> sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(List<Person> people) {
         return people.stream()
                 .filter(Objects::nonNull)
+                .filter(person -> person.getSubscriptionRenewalSet() != null)
+                .peek(person -> person.setSubscriptionRenewalSet(
+                        person.getSubscriptionRenewalSet()
+                                .stream()
+                                .filter(Objects::nonNull)
+                                .filter(subscriptionRenewal -> subscriptionRenewal.getDateTimeOfPayment() != null)
+                                .collect(Collectors.toSet())))
                 .sorted((p1, p2) -> Objects.compare(
                         latestSubscriptionFunction.apply(p1),
                         latestSubscriptionFunction.apply(p2),
