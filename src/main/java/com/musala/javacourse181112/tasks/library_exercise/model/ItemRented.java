@@ -13,7 +13,7 @@ public class ItemRented {
         return library;
     }
 
-    public void setLibrary(Library library) {
+    public void setLibrary(final Library library) {
         this.library = library;
     }
 
@@ -21,7 +21,7 @@ public class ItemRented {
         return rentedSince;
     }
 
-    public void setRentedSince(LocalDateTime rentedSince) {
+    public void setRentedSince(final LocalDateTime rentedSince) {
         this.rentedSince = rentedSince;
     }
 
@@ -29,7 +29,7 @@ public class ItemRented {
         return rentedUntil;
     }
 
-    public void setRentedUntil(LocalDateTime rentedUntil) {
+    public void setRentedUntil(final LocalDateTime rentedUntil) {
         this.rentedUntil = rentedUntil;
     }
 
@@ -37,7 +37,7 @@ public class ItemRented {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(final Item item) {
         this.item = item;
     }
 
@@ -45,7 +45,7 @@ public class ItemRented {
         return employeeServiced;
     }
 
-    public void setEmployeeServiced(Person employeeServiced) {
+    public void setEmployeeServiced(final Person employeeServiced) {
         this.employeeServiced = employeeServiced;
     }
 }

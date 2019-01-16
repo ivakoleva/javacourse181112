@@ -12,7 +12,7 @@ public class Book implements Item {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -21,7 +21,7 @@ public class Book implements Item {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(final String ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -29,7 +29,7 @@ public class Book implements Item {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -39,7 +39,7 @@ public class Book implements Item {
     }
 
     @Override
-    public void setDayOfPublishing(LocalDate dayOfPublishing) {
+    public void setDayOfPublishing(final LocalDate dayOfPublishing) {
         this.dayOfPublishing = dayOfPublishing;
     }
 

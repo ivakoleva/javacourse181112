@@ -24,7 +24,7 @@ public class Person {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(final Role role) {
         this.role = role;
     }
 
@@ -32,7 +32,7 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -40,7 +40,7 @@ public class Person {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -48,7 +48,7 @@ public class Person {
         return rentedItems;
     }
 
-    public void setRentedItems(List<ItemRented> rentedItems) {
+    public void setRentedItems(final List<ItemRented> rentedItems) {
         this.rentedItems = rentedItems;
     }
 

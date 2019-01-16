@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.tasks.library_exercise.model;
 
 import com.musala.javacourse181112.tasks.library_exercise.service.ItemService;
+import com.sun.istack.internal.NotNull;
 
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class Library {
         return itemService;
     }
 
-    public void setItemService(ItemService itemService) {
+    public void setItemService(final ItemService itemService) {
+        assert itemService != null;
+
         this.itemService = itemService;
     }
 
@@ -23,7 +26,9 @@ public class Library {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@NotNull final String name) {
+        assert name != null;
+
         this.name = name;
     }
 
@@ -31,7 +36,9 @@ public class Library {
         return items;
     }
 
-    public void setItems(List<Item> items) {
+    public void setItems(@NotNull final List<Item> items) {
+        assert items != null;
+
         this.items = items;
     }
 
@@ -39,7 +46,9 @@ public class Library {
         return people;
     }
 
-    public void setPeople(List<Person> people) {
+    public void setPeople(@NotNull final List<Person> people) {
+        assert people != null;
+
         this.people = people;
     }
 }

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class PersonService {
 
-    public Person generatePerson(Role role, String name, String id) {
-        Person person = new Person();
+    public Person generatePerson(final String id, final String name, final Role role) {
+        final Person person = new Person();
         person.setRole(role);
         person.setName(name);
         person.setId(id);

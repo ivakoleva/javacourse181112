@@ -1,60 +1,75 @@
 package com.musala.javacourse181112.tasks.library_exercise.service;
 
-// TODO: final everywhere; parameters ordering
-// redundant proxy type-strict methods of generic addItem() cleanup
-/*
+import com.musala.javacourse181112.tasks.library_exercise.model.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+// TODO:
+//  redundant proxy type-strict methods of generic addItem() cleanup
 public class LibraryService {
 
-    private ItemService itemService = new ItemService();
-    private PersonService personService = new PersonService();
+    final private PersonService personService = new PersonService();
 
     //generating library
     public Library generateLibrary(final String name,
                                    final List<Item> items,
                                    final List<Person> people) {
-        final Library library = new Library();
 
-        library.setItems(items);
-        library.setName(name);
-        library.setPeople(people);
-
-        IssueHandler issueHandler = new IssueHandler();
-        //issueHandler.checkAndCorrect(items);
-        //library.setItemService(issueHandler);
-
-        return library;
+        return generateLibrary(name, items, people, null);
     }
 
     public Library generateLibrary(final String name,
                                    final List<Item> items,
                                    final List<Person> people,
-                                   final IssueHandler issueHandler) {
+                                   final ItemService itemService) {
+        assert name != null;
+
         final Library library = new Library();
 
-        library.setItems(items);
         library.setName(name);
-        library.setPeople(people);
 
-        //issueHandler.checkAndCorrect(items);
-        library.setItemService(issueHandler);
+        if (items != null) {
+            library.setItems(items);
+        } else {
+            library.setItems(new ArrayList<>());
+        }
 
+        if (people != null) {
+            library.setPeople(people);
+        } else {
+            library.setPeople(new ArrayList<>());
+        }
+
+        if (itemService != null) {
+            library.setItemService(itemService);
+        } else {
+            library.setItemService(new ItemService());
+        }
         return library;
     }
 
     //adding people
-    public void addPerson(Library library, Person person) {
+    public void addPerson(final Library library, final Person person) {
+        assert library != null;
+        assert person != null;
+
         if(library.getPeople() == null) {
             library.setPeople(new ArrayList<>());
         }
         library.getPeople().add(person);
     }
 
-    public void addPerson(Library library, Role role, String name, String id) {
-        addPerson(library, personService.generatePerson(role, name, id));
+    public void addPerson(final Library library, final String id, final String name, final Role role) {
+        addPerson(library, personService.generatePerson(id, name, role));
     }
 
     //adding items
-    private <T extends Item> void addItem(Library library, T item) {
+    private <T extends Item> void addItem(final Library library, final T item) {
+        assert library != null;
+        assert item != null;
+
         if(library.getItems() == null) {
             library.setItems(new ArrayList<>());
         }
@@ -62,33 +77,30 @@ public class LibraryService {
     }
 
     //adding books
-    public void addBook(Library library, Book book) {
+    public void addBook(final Library library, final Book book) {
         addItem(library, book);
     }
 
-    public void addBook(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getItemService());
-        addBook(library, itemService.generateBook(isbn, name, id, dayOfPublishing));
+    public void addBook(final Library library, final String isbn, final String name, final String id, final LocalDate dayOfPublishing) {
+        addBook(library, library.getItemService().generateBook(isbn, name, id, dayOfPublishing));
     }
 
     //adding magazines
-    public void addMagazine(Library library, Magazine magazine) {
+    public void addMagazine(final Library library, final Magazine magazine) {
         addItem(library, magazine);
     }
 
-    public void addMagazine(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getItemService());
-        addMagazine(library, itemService.generateMagazine(isbn, name, id, dayOfPublishing));
+    public void addMagazine(final Library library, final String isbn, final String name, final String id, final LocalDate dayOfPublishing) {
+        addMagazine(library, library.getItemService().generateMagazine(isbn, name, id, dayOfPublishing));
     }
 
     //adding newspapers
-    public void addNewspaper(Library library, Newspaper newspaper) {
+    public void addNewspaper(final Library library, final Newspaper newspaper) {
         addItem(library, newspaper);
     }
 
-    public void addNewspaper(Library library, String isbn, String name, String id, LocalDate dayOfPublishing) {
-        itemService.setIssueHandler(library.getItemService());
-        addNewspaper(library, itemService.generateNewspaper(isbn, name, id, dayOfPublishing));
+    public void addNewspaper(final Library library, final String isbn, final String name, final String id, final LocalDate dayOfPublishing) {
+        addNewspaper(library, library.getItemService().generateNewspaper(isbn, name, id, dayOfPublishing));
     }
 }
-*/
+
