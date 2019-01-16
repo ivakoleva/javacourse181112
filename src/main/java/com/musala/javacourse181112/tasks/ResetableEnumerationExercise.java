@@ -12,8 +12,18 @@ public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
         List<Integer> list = IntStream.range(1, 6).boxed().collect(Collectors.toList());
         ResetableEnumeration<Integer> resetableEnumeration = (ResetableEnumeration<Integer>) enumeration(list);
-        for (; resetableEnumeration.hasMoreElements(); ) {
-            System.out.println(resetableEnumeration.nextElement());
+        for (int i = 0; resetableEnumeration.hasMoreElements(); i++) {
+            Integer currentEnumeration = resetableEnumeration.nextElement();
+            if (i % 2 == 0) {
+                System.out.println(currentEnumeration);
+            }
+        }
+        resetableEnumeration.reset();
+        for (int i = 0; resetableEnumeration.hasMoreElements(); i++) {
+            Integer currentEnumeration = resetableEnumeration.nextElement();
+            if (i % 2 != 0) {
+                System.out.println(currentEnumeration);
+            }
         }
         resetableEnumeration.reset();
     }

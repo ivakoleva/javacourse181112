@@ -1,13 +1,8 @@
 package com.musala.javacourse181112.tasks.library_exercise.service;
 
-import com.musala.javacourse181112.tasks.library_exercise.model.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 // TODO: final everywhere; parameters ordering
 // redundant proxy type-strict methods of generic addItem() cleanup
+/*
 public class LibraryService {
 
     private ItemService itemService = new ItemService();
@@ -25,7 +20,7 @@ public class LibraryService {
 
         IssueHandler issueHandler = new IssueHandler();
         //issueHandler.checkAndCorrect(items);
-        library.setItemService(issueHandler);
+        //library.setItemService(issueHandler);
 
         return library;
     }
@@ -96,3 +91,4 @@ public class LibraryService {
         addNewspaper(library, itemService.generateNewspaper(isbn, name, id, dayOfPublishing));
     }
 }
+*/
