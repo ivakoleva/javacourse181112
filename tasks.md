@@ -1,9 +1,28 @@
 15.01:
 
+* Homework:
+    ** Resetable enumeration exercise - complete tasks.ResetableEnumerationExercise
+    ** ProvincesEnum implementation (https://en.wikipedia.org/wiki/Provinces_of_Bulgaria)
+        *** 3 enum values
+        *** additional meta information per value
+            **** label
+            **** population
+            **** municipalities
+            
+            **** Bonus: planing region
+
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
         *** add issue number to each entity (Integer)
-
+    ** Enumeration-collection bridge exercise
+        *** create a collection, transform it to enumeration
+        *** transform enumeration to collection
+        *** loop over an enumeration, then print to stdout
+    ** Library exercise - implement static Utils generic generate method
+        *** supporting any extending AbstractItem - Book, Magazine, Newspaper
+        *** class supplied as parameter
+        *** a new instance returned
+   
 14.01:
 
 * Homework:
@@ -73,6 +92,7 @@
     ** CompositionAndInheritanceExercise
         *** implement Human class
         *** apply methods supported from main() method
+
 
 07.01:
 
@@ -344,14 +364,14 @@
             **** mark for deletion on exit
             **** list parent directory, containing this filename (to prove existence in runtime)
             **** exit program, then check manually if file exists
-         
+
 * Homework:
-    ** DataObjectStreamExercise 
+    ** DataObjectStreamExercise
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout  
+        *** loop data structure then print to stdout
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -406,11 +426,11 @@
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
         *** bonus: do input validation - natural numbers only; exit(1) if otherwise
-        
+
 * Loops exercise - for each loop type (while; do-while; for; foreach)
     ** automatically (using loop), initialize an array with values
     ** print the array to stdout
-    
+
 * Votes v0.3 application
     * refactor, using loops
 
@@ -420,7 +440,7 @@
     ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
     ** use switch-based check
     ** parameters supplied by user
-    ** prints chromosomes to stdout (letter by letter) 
+    ** prints chromosomes to stdout (letter by letter)
 * port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
