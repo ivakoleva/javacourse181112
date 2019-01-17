@@ -57,10 +57,11 @@ public class Library extends BaseEntity {
             System.out.println(
                     "name = '" + person.getName() + '\'' +
                             ", egn = '" + person.getEgn() + '\'' +
-                            ", role = " + person.getRoleSet() //+
+                            ", role = " + person.getRoleSet() +
                             //", itemRent = " + person.getItemRentSet().getItem().getName() +
                             //", date of Hiring = " + person.getItemRentSet().getDateOfRent() +
                             //", return date = " + person.getItemRentSet().getDateOfReturn()
+                    ", renewal date = " + person.getSubscriptionRenewalSet()
             );
         }
     }

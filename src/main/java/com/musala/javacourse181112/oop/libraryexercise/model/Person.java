@@ -1,5 +1,6 @@
 package com.musala.javacourse181112.oop.libraryexercise.model;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 public class Person extends BaseEntity {
@@ -7,7 +8,7 @@ public class Person extends BaseEntity {
     private String egn;
     private Set<Role> roleSet;
     private Set<ItemRent> itemRentSet;
-    private Set<SubscriptionRenewal> subscriptionRenewalSet;
+    private LocalDate subscriptionRenewalSet;
 
     public String getName() {
         return name;
@@ -41,11 +42,11 @@ public class Person extends BaseEntity {
         this.itemRentSet = itemRentSet;
     }
 
-    public Set<SubscriptionRenewal> getSubscriptionRenewalSet() {
+    public LocalDate getSubscriptionRenewalSet() {
         return subscriptionRenewalSet;
     }
 
-    public void setSubscriptionRenewalSet(Set<SubscriptionRenewal> subscriptionRenewalSet) {
+    public void setSubscriptionRenewalSet(LocalDate subscriptionRenewalSet) {
         this.subscriptionRenewalSet = subscriptionRenewalSet;
     }
 }
