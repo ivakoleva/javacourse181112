@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
         final List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toList());
-        final ResetableEnumeration<Integer> integerResetableEnumeration = (ResetableEnumeration<Integer>) enumeration(integerList);
+        final ResetableEnumeration<Integer> integerResetableEnumeration = enumeration(integerList);
 
         final List<Integer> integerList1 = new ArrayList<>();
 
@@ -27,8 +27,8 @@ public class ResetableEnumerationExercise {
     }
 
 
-    private static <T> Enumeration<T> enumeration(final Collection<T> collection) {
-        return new ResetableEnumeration<T>(collection);
+    private static <T> ResetableEnumeration<T> enumeration(final Collection<T> collection) {
+        return new ResetableEnumeration<>(collection);
     }
 
     private static class ResetableEnumeration<T> implements Enumeration {
@@ -36,11 +36,11 @@ public class ResetableEnumerationExercise {
         private Collection<T> collection;
         private Iterator<T> iterator;
 
-        public ResetableEnumeration(@NotNull Collection<T> collection) {
+        ResetableEnumeration(@NotNull Collection<T> collection) {
             setCollection(collection);
         }
 
-        public void resetIterator() {
+        void resetIterator() {
             iterator = collection.iterator();
         }
 
