@@ -23,11 +23,11 @@ public enum ProvincesEnumExercise {
     SOFIA_CITY("sofia city", 1291591, 1, PlanningRegion.SOUTH, PlanningRegion.WESTERN),
     BURGAS("burgas", 415817, 13, PlanningRegion.SOUTH, PlanningRegion.EASTERN);
 
-    private String label;
-    private int population;
-    private int municipalities;
-    private PlanningRegion planingRegion;
-    private PlanningRegion planingRegion2;
+    private final String label;
+    private final int population;
+    private final int municipalities;
+    private final PlanningRegion planingRegion;
+    private final PlanningRegion planingRegion2;
 
     ProvincesEnumExercise(final String label, final int population, final int municipalities, final PlanningRegion planingRegion, PlanningRegion planingRegion2) {
         this.label = label;
@@ -41,40 +41,20 @@ public enum ProvincesEnumExercise {
         return label;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
     public int getPopulation() {
         return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
     }
 
     public int getMunicipalities() {
         return municipalities;
     }
 
-    public void setMunicipalities(int municipalities) {
-        this.municipalities = municipalities;
-    }
-
     public PlanningRegion getPlaningRegion() {
         return planingRegion;
     }
 
-    public void setPlaningRegion(PlanningRegion planingRegion) {
-        this.planingRegion = planingRegion;
-    }
-
     public PlanningRegion getPlaningRegion2() {
         return planingRegion2;
-    }
-
-    public void setPlaningRegion2(PlanningRegion planingRegion2) {
-        this.planingRegion2 = planingRegion2;
     }
 
     @Override
@@ -85,7 +65,7 @@ public enum ProvincesEnumExercise {
                 ", planingRegion: " + planingRegion.toString().toLowerCase() + " " + planingRegion2.toString().toLowerCase();
     }
 
-    enum PlanningRegion {
+    public enum PlanningRegion {
         SOUTH,
         WESTERN,
         EASTERN,
