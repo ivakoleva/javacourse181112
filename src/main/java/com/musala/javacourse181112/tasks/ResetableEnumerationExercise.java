@@ -1,39 +1,66 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.Iterator;
+import com.sun.istack.internal.NotNull;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 15.01.2019
  */
 public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
-        // TODO: instantiate custom enumeration using private enumeration method
+        final List<Integer> integerList = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+        final ResetableEnumeration<Integer> integerResetableEnumeration = (ResetableEnumeration<Integer>) enumeration(integerList);
+
+        final List<Integer> integerList1 = new ArrayList<>();
+
+        while (integerResetableEnumeration.hasMoreElements()) {
+            integerList1.add(integerResetableEnumeration.nextElement());
+        }
+
+        integerResetableEnumeration.resetIterator();
+
+        while (integerResetableEnumeration.hasMoreElements()) {
+            System.out.println(integerResetableEnumeration.nextElement());
+        }
+
+
     }
 
-    // TODO: fix interface surface
-    private static <T> Enumeration<T> enumeration(final Collection<T> c) {
-        // TODO: instantiate ResetableEnumeration
-        return new Enumeration<T>() {
-            private Iterator<T> i = c.iterator(); // TODO: fix encapsulation - do not duplicate code
 
-            public boolean hasMoreElements() {
-                return i.hasNext();
-            }
-
-            public T nextElement() {
-                return i.next();
-            }
-
-            public void reset() {
-                i = c.iterator();
-            }
-        };
+    private static <T> Enumeration<T> enumeration(final Collection<T> collection) {
+        return new ResetableEnumeration<T>(collection);
     }
 
-    // TODO: implements Enumeration<T>
-    private static class ResetableEnumeration<T> {
+    private static class ResetableEnumeration<T> implements Enumeration {
+
+        private Collection<T> collection;
+        private Iterator<T> iterator;
+
+        public ResetableEnumeration(@NotNull Collection<T> collection) {
+            setCollection(collection);
+        }
+
+        public void resetIterator() {
+            iterator = collection.iterator();
+        }
+
+        @Override
+        public boolean hasMoreElements() {
+            return iterator.hasNext();
+        }
+
+        @Override
+        public T nextElement() {
+            return iterator.next();
+        }
+
+        public void setCollection(@NotNull Collection<T> collection) {
+            this.collection = collection;
+            resetIterator();
+        }
 
     }
 }
