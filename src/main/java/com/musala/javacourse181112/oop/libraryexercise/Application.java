@@ -2,6 +2,7 @@ package com.musala.javacourse181112.oop.libraryexercise;
 
 import com.musala.javacourse181112.oop.libraryexercise.model.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -82,6 +83,10 @@ public class Application {
 
         System.out.println();
 
-        System.out.println(Utils.getItemInstance(magazine.getClass()));
+        try {
+            System.out.println(Utils.getAbstractItemInstance(Magazine.class));
+        } catch (InvocationTargetException | NoSuchMethodException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 }

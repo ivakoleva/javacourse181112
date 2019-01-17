@@ -1,5 +1,6 @@
 package com.musala.javacourse181112.oop.libraryexercise;
 
+import com.musala.javacourse181112.oop.libraryexercise.model.AbstractItem;
 import com.musala.javacourse181112.oop.libraryexercise.model.Person;
 import com.musala.javacourse181112.oop.libraryexercise.model.SubscriptionRenewal;
 
@@ -37,12 +38,12 @@ public final class Utils {
                 .collect(Collectors.toList());
     }
 
-    public static <T> T getItemInstance(final Class<T> clazz) {
+    public static <T extends AbstractItem> T getAbstractItemInstance(final Class<T> clazz) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         try {
             return clazz.getDeclaredConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
+            throw e;
         }
-        return (T) clazz;
     }
 }
