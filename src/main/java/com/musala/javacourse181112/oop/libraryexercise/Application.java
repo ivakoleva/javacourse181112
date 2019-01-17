@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.oop.libraryexercise;
+/*package com.musala.javacourse181112.oop.libraryexercise;
 
 import com.musala.javacourse181112.oop.libraryexercise.model.*;
 
@@ -67,8 +67,8 @@ public class Application {
         final List<Person> personListSorted = Utils.sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(
                 IntStream.range(0, 3).boxed().map(i -> {
                     final Person p = new Person();
-                    p.setSubscriptionRenewalSet(
-                            IntStream.range(0, 3).boxed()
+                   *//* p.setSubscriptionRenewalSet(
+                           IntStream.range(0, 3).boxed()
                                     .map(j -> j % 2 == 0 ?
                                             LocalDateTime.now()
                                                     .minus((i * 10) + j, ChronoUnit.MONTHS)
@@ -79,9 +79,9 @@ public class Application {
                                 subscriptionRenewal.setDateTimeOfPayment(localDateTime);
                                 return subscriptionRenewal;
                             })
-                                    .collect(Collectors.toSet()));
+                                    .collect(Collectors.toSet()));*//*
                     return p;
                 }).collect(Collectors.toList()));
         System.out.println();
     }
-}
+}*/

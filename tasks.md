@@ -13,7 +13,7 @@
 15.01:
 
 * Homework:
-    ** Resetable enumeration exercise - complete tasks.ResetableEnumerationExercise
+    ** Resettable enumeration exercise - complete tasks.ResetableEnumerationExercise
     ** ProvincesEnum implementation (https://en.wikipedia.org/wiki/Provinces_of_Bulgaria)
         *** 3 enum values
         *** additional meta information per value

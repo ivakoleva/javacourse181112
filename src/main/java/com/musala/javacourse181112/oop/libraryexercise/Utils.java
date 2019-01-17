@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Iva Koleva on 14.01.2019
  */
-public final class Utils {
+/*public final class Utils {
     private Utils() {
     }
 
@@ -35,4 +35,4 @@ public final class Utils {
                         Comparator.comparing(SubscriptionRenewal::getDateTimeOfPayment).reversed()))
                 .collect(Collectors.toList());
     }
-}
+}*/
