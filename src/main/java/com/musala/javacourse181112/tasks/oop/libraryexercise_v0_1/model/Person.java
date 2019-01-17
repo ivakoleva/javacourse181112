@@ -1,16 +1,17 @@
-package com.musala.javacourse181112.oop.votesexercise.model;
+package com.musala.javacourse181112.tasks.oop.libraryexercise_v0_1.model;
 
-import com.musala.javacourse181112.tasks.oop.libraryexercise_v0_1.model.Role;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by Iva Koleva on 07.01.2019
- */
 public class Person {
     private String name;
     private String family;
     private LocalDate dateOfBirth;
+    private Role role;
+    private LocalDate returnItemTo;
+    private List<RentItem> rentItemList = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -36,6 +37,12 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public void setRole(Role client) {
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
+
