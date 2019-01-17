@@ -118,7 +118,7 @@ public enum ProvincesEnumExercise {
 
     public static void main(String[] args) {
         System.out.println("Choose a number to see the Province info: \n1 - Veliko Tarnovo\n2 - Sofia city\n3 - Burgas\nor 0 to EXIT");
-        while (scanner.hasNext()) {
+        while (scanner.hasNext()) { // don't know how to make it loop while 0 comes in
             pickProvince();
         }
     }
