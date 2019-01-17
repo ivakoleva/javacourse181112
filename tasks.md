@@ -1,3 +1,130 @@
+15.01:
+
+* Homework:
+    ** Resetable enumeration exercise - complete tasks.ResetableEnumerationExercise
+    ** ProvincesEnum implementation (https://en.wikipedia.org/wiki/Provinces_of_Bulgaria)
+        *** 3 enum values
+        *** additional meta information per value
+            **** label
+            **** population
+            **** municipalities
+            
+            **** Bonus: planing region
+
+* Exercise:
+    ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
+        *** add issue number to each entity (Integer)
+    ** Enumeration-collection bridge exercise
+        *** create a collection, transform it to enumeration
+        *** transform enumeration to collection
+        *** loop over an enumeration, then print to stdout
+    ** Library exercise - implement static Utils generic generate method
+        *** supporting any extending AbstractItem - Book, Magazine, Newspaper
+        *** class supplied as parameter
+        *** a new instance returned
+   
+14.01:
+
+* Homework:
+    ** Library exercise - Magazine & Newspaper - implement concept of sequential issues
+        *** add issue number to each entity (Integer)
+        *** add an interface, design and implement publishing pattern support (each day of week, once a month, etc)
+    ** Custom comparator exercise - SubscriptionRenewal null support
+        *** test with null Person's SubscriptionRenewal property
+        *** patch if needed
+        
+* Exercise:
+    ** Custom comparator exercise
+        *** Handle local changes; merge master branch to local one
+        *** Instantiate 3 Persons, each pearson with 3 SubscriptionRenewals with unique dateTimeOfPayment
+        *** Implement an utility class, that provides static method
+            **** accepts collection of Persons
+            **** uses custom Comparator<Person>
+            **** returns a new list of sorted Persons, based on latest to earliest dateTimeOfPayment 
+
+10.01:
+
+* Homework:
+    * Complete Library management software v0.1 domain model
+    * Implement Application class with main(), instantiate objects for POC (proof-of-concept)
+
+* Exercise: 
+    ** Complete innerexercise homework
+    ** Library management software v0.1 
+        *** tasks.libraryexercise_v0_1 package; model subpackage
+        *** create domain model, purposed for:
+            **** library organization itself
+                ***** name
+                ***** employees
+                ***** clients
+                ***** items inventory
+            **** roles (enum Role)
+                ***** clients
+                ***** employees
+            **** keeping personal records of all people
+            **** inventory of
+                ***** books
+                ***** magazines
+                ***** newspapers
+            **** each inventory item includes
+                ***** ISBN (String)
+                ***** name
+                ***** unique id (identifier, Long)
+            **** keeping history of items rented per person
+            **** monthly subscription
+                ***** 30 days, starting right away from date of payment
+            
+
+08.01:
+
+* Homework:
+    ** package task.innerexercise - define and instantiate one instance per each listed bellow; narrow scope of visibility outside outer context (minimum visibility using access modifiers)
+        *** Inner class (non-static) 
+        *** Static nested
+            **** class
+            **** interface
+            **** enum 
+        *** Local class
+        *** Anonymous class (using a functional interface)
+
+* Exercise:
+    ** CompositionAndInheritanceExercise
+        *** implement Human class
+        *** apply methods supported from main() method
+
+
+07.01:
+
+* Homework:
+    ** Votes v0.6 - package tasks.votes_v0_6_exercise
+        *** Complete data population regarding requirements
+        *** Implement PersonService, then refactor current Person instantiation
+        *** Elaborate Poll with anonymous setting (true/false) 
+        
+    ** Bonus: create data model for
+        *** AnswerGiven per Poll per Question (Person mapping optional (based on anon instance setting above)) 
+
+* Exercise:
+    ** Votes v0.5 - populate data (tasks.Votes05DataPopulationExercise.java):
+        *** Poll: Coffee poll
+            **** Question1: Do you like coffee?
+            **** Answers:
+                ***** Yes
+                ***** No
+            **** Question2: How do you enjoy your coffee?
+                ***** Milk
+                ***** Sugar
+                ***** Milk & sugar
+                ***** Black
+                ***** None of the above
+            **** Question3: How many coffees do you have a day?
+                ***** Less or equal of 2
+                ***** More than 2 but less than 5
+                ***** More or equal of 5
+                ***** None
+            **** Persons participating: 2
+        
+
 03.01:
 
 * Homework:
@@ -236,14 +363,14 @@
             **** mark for deletion on exit
             **** list parent directory, containing this filename (to prove existence in runtime)
             **** exit program, then check manually if file exists
-         
+
 * Homework:
-    ** DataObjectStreamExercise 
+    ** DataObjectStreamExercise
         *** implement a serializable class Company
         *** write diverse multiple primitives, persons and companies to file
         *** read them back from file
         *** collect them to data structure (array of objects or collection)
-        *** loop data structure then print to stdout  
+        *** loop data structure then print to stdout
     ** Code review of WatchServiceExample
     ** Code review of FileVisitorWalkTreeExample
 
@@ -298,11 +425,11 @@
     ** assume and rely on user input (int values)
     ** sum all of the parameters, then print to stdout (use while or do-while)
         *** bonus: do input validation - natural numbers only; exit(1) if otherwise
-        
+
 * Loops exercise - for each loop type (while; do-while; for; foreach)
     ** automatically (using loop), initialize an array with values
     ** print the array to stdout
-    
+
 * Votes v0.3 application
     * refactor, using loops
 
@@ -312,7 +439,7 @@
     ** based on human gender, prints chromosomes (male: yx/xy; female: xx)
     ** use switch-based check
     ** parameters supplied by user
-    ** prints chromosomes to stdout (letter by letter) 
+    ** prints chromosomes to stdout (letter by letter)
 * port the code to use Gender enum instead of any string required1
 
 * Votes v0.2 application
