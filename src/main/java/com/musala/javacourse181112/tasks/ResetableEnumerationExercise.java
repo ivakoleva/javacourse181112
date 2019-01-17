@@ -1,22 +1,30 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by Iva Koleva on 15.01.2019
  */
 public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
-        // TODO: instantiate custom enumeration using private enumeration method
+        List<String> stringList = new ArrayList<>();
+        stringList.add("blue");
+        stringList.add("pink");
+
+        ResetableEnumeration<String> stringEnumeration = (ResetableEnumeration<String>) enumeration(stringList);
+        while(stringEnumeration.hasMoreElements()){
+            System.out.println(stringEnumeration.nextElement());
+        }
+
     }
 
-    // TODO: fix interface surface
+
     private static <T> Enumeration<T> enumeration(final Collection<T> c) {
-        // TODO: instantiate ResetableEnumeration
+
+
         return new Enumeration<T>() {
-            private Iterator<T> i = c.iterator(); // TODO: fix encapsulation - do not duplicate code
+
+            private Iterator<T> i = c.iterator();
 
             public boolean hasMoreElements() {
                 return i.hasNext();
@@ -32,8 +40,19 @@ public class ResetableEnumerationExercise {
         };
     }
 
-    // TODO: implements Enumeration<T>
-    private static class ResetableEnumeration<T> {
 
+    private static class ResetableEnumeration<T> implements Enumeration<T>{
+        private Iterator<T> iterator;
+        private Collection<T> collection;
+
+        @Override
+        public boolean hasMoreElements() {
+            return iterator.hasNext();
+        }
+
+        @Override
+        public T nextElement() {
+            return iterator.next();
+        }
     }
 }
