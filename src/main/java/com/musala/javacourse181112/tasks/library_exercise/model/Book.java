@@ -44,8 +44,8 @@ public class Book implements Item {
     }
 
     @Override
+    @Deprecated
     public String getSpecialId() {
         return name + "|" + dayOfPublishing;
     }
-
 }

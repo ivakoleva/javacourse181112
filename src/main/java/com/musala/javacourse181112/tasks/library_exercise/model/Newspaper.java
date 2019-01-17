@@ -53,6 +53,7 @@ public class Newspaper implements Issueable {
     }
 
     @Override
+    @Deprecated
     public String getSpecialId() {
         return name + "|" + dayOfPublishing;
     }

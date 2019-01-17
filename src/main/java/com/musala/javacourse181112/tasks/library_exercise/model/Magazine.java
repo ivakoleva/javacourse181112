@@ -54,6 +54,7 @@ public class Magazine implements Issueable {
     }
 
     @Override
+    @Deprecated
     public String getSpecialId() {
         return name + "|" + dayOfPublishing;
     }

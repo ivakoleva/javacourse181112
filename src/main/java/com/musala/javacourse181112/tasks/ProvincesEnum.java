@@ -1,5 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
+// TODO: recommend population meta-information to be modifiable
 public enum ProvincesEnum {
     BLAGOEVGRAD("Blagoevgrad", 323552, 14, PlanningRegionEnum.SOUTH_WESTERN),
     BURGAS("Burgas", 415817, 13, PlanningRegionEnum.SOUTH_EASTERN),
@@ -29,12 +30,13 @@ public enum ProvincesEnum {
     VIDIN("Vidin", 101018, 11, PlanningRegionEnum.NORTH_WESTERN),
     VRATSHA("Vratsa", 186848, 10, PlanningRegionEnum.NORTH_WESTERN),
     YAMBOL("Yambol", 131447, 5, PlanningRegionEnum.NORTH_EASTERN);
-    String label;
-    Integer population;
-    Integer municipalities;
-    PlanningRegionEnum planningRegion;
 
-    ProvincesEnum(String label, Integer population, Integer municipalities, PlanningRegionEnum planningRegion) {
+    private final String label;
+    private final Integer population;
+    private final Integer municipalities;
+    private final PlanningRegionEnum planningRegion;
+
+    ProvincesEnum(final String label, final Integer population, final Integer municipalities, final PlanningRegionEnum planningRegion) {
         this.label = label;
         this.population = population;
         this.municipalities = municipalities;
@@ -57,34 +59,28 @@ public enum ProvincesEnum {
         return planningRegion;
     }
 
-    public void setPopulation(Integer population) {
-        this.population = population;
-    }
-
-    public void setMunicipalities(Integer municipalities) {
-        this.municipalities = municipalities;
-    }
-
     @Override
     public String toString() {
-        return getLabel();
-    }
-}
-
-enum PlanningRegionEnum {
-    NORTH_WESTERN("North Western"),
-    NORTH_CENTRAL("North Central"),
-    NORTH_EASTERN("North Eastern"),
-    SOUTH_WESTERN("South Western"),
-    SOUTH_CENTRAL("South Central"),
-    SOUTH_EASTERN("South Eastern");
-    String label;
-
-    PlanningRegionEnum(String label) {
-        this.label = label;
-    }
-
-    public String toString() {
         return label;
+    }
+
+    private enum PlanningRegionEnum {
+        NORTH_WESTERN("North Western"),
+        NORTH_CENTRAL("North Central"),
+        NORTH_EASTERN("North Eastern"),
+        SOUTH_WESTERN("South Western"),
+        SOUTH_CENTRAL("South Central"),
+        SOUTH_EASTERN("South Eastern");
+
+        private final String label;
+
+        PlanningRegionEnum(final String label) {
+            this.label = label;
+        }
+
+        @Override
+        public String toString() {
+            return label;
+        }
     }
 }

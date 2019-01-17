@@ -56,7 +56,7 @@ public class Person {
         return subscribedUntil;
     }
 
-    public void subscribe() {
-        subscribedUntil = LocalDate.now().plusMonths(1L);
+    public void setSubscribedUntil(final LocalDate subscribedUntil) {
+        this.subscribedUntil = subscribedUntil;
     }
 }

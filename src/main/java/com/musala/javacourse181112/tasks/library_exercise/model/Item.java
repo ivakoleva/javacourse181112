@@ -5,20 +5,27 @@ import java.time.LocalDate;
 public interface Item {
     String getISBN();
 
-    void setISBN(final String ISBN);
+    void setISBN(String ISBN);
 
     String getName();
 
-    void setName(final String id);
+    void setName(String id);
 
     String getId();
 
-    void setId(final String id);
+    void setId(String id);
 
     LocalDate getDayOfPublishing();
 
-    void setDayOfPublishing(final LocalDate dayOfPublishing);
+    void setDayOfPublishing(LocalDate dayOfPublishing);
 
+    /**
+     *
+     * @return
+     *
+     * @see
+     * @deprecated
+     */
+    @Deprecated
     String getSpecialId();
-
 }
