@@ -110,7 +110,8 @@ public class DataObjectStreamExample {
 
         @Override
         public String toString() {
-            return "PersonMultipleAtt name [" + name + "] age [" + age + "]";
+           // return "Person name [" + name + "] age [" + age + "]";
+            return "Answer name [" + name + "] age [" + age + "]";
         }
 
         private void readObject(final ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
