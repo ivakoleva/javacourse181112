@@ -4,6 +4,9 @@ public class Sample {
     private int age;
     private String name;
 
+    private Sample() {
+    }
+
     public Sample(int age) {
         this.age = age;
     }
