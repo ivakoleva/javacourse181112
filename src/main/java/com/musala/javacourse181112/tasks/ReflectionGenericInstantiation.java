@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReflectionGenericInstantiation {
-    public static void main(final String[] args) throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException, TypeNotPresentException, SecurityException {
-        Sample.class.getDeclaredConstructor();
+    public static void main(final String[] args) throws NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException, TypeNotPresentException {
+        Sample.class.getConstructor();
         final Sample constructor1 = Sample.class.newInstance();
         final Sample constructor2 = Sample.class.getDeclaredConstructor(String.class, String.class, Integer.class).newInstance("Petar", "Petrov", 25);
         final Sample constructor3 = Sample.class.getDeclaredConstructor(String.class, String.class).newInstance("Ivan", "Ivanov");
@@ -19,14 +19,14 @@ public class ReflectionGenericInstantiation {
         constructorList.add(constructor4);
 
         for (int i = 0; i < constructorList.size(); i++) {
-            System.out.println(constructorList.get(i));
+            System.out.println(constructorList.get(i).toString());
         }
     }
 
     private static class Sample {
         private String name;
         private String surname;
-        private int age;
+        private Integer age;
 
         public String getName() {
             return name;
@@ -48,11 +48,11 @@ public class ReflectionGenericInstantiation {
             return age;
         }
 
-        public void setAge(int age) {
+        public void setAge(Integer age) {
             this.age = age;
         }
 
-        public Sample(String name, String surname, int age) {
+        public Sample(String name, String surname, Integer age) {
             this.name = name;
             this.surname = surname;
             this.age = age;
@@ -64,10 +64,20 @@ public class ReflectionGenericInstantiation {
             this.age = 100;
         }
 
-        public Sample(int age) {
+        public Sample(Integer age) {
             this.name = "Gosho";
             this.surname = "Georgiev";
             this.age = age;
+        }
+
+        public Sample() {
+        }
+
+        @Override
+        public String toString() {
+            return "name: " + name +
+                    ", surname: " + surname +
+                    ", age: " + age;
         }
     }
 }
