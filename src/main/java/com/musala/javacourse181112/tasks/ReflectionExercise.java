@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /*
@@ -16,8 +17,8 @@ import java.util.stream.Collectors;
  */
 public class ReflectionExercise {
     private static class Sample {
-        Integer integer;
-        String string;
+        private Integer integer;
+        private String string;
 
         public Sample() {
             this(-1, "no_string");
@@ -67,55 +68,48 @@ public class ReflectionExercise {
         }*/
 
         Arrays.stream(Sample.class.getDeclaredConstructors())
-                .map(i -> {
-                    int parameterLength = i.getParameterTypes().length;
+                .map(constructor -> {
+                    final int parameterLength = constructor.getParameterTypes().length;
+
                     Sample sample = null;
-                    if (parameterLength == 2) {
-                        try {
-                            sample = (Sample) i.newInstance(5, "string_&_int");
-                        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                            e.printStackTrace();
+                    try {
+                        switch (parameterLength) {
+                            case 1:
+                                if (Integer.class.equals(constructor.getParameterTypes()[0])) { // TODO: isAssignableFrom
+                                    sample = (Sample) constructor.newInstance(4);
+                                } else if (String.class.equals(constructor.getParameterTypes()[0])) {
+                                    sample = (Sample) constructor.newInstance("only_string");
+                                }
+                                break;
+                            case 2:
+                                sample = (Sample) constructor.newInstance(5, "string_&_int");
+                                break;
+                            default:
+                                sample = (Sample) constructor.newInstance();
                         }
-                    } else if (parameterLength == 1) {
-                        if (i.getParameterTypes()[0].equals(Integer.class)) {
-                            try {
-                                sample = (Sample) i.newInstance(4);
-                            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                                e.printStackTrace();
-                            }
-                        } else if (i.getParameterTypes()[0].equals(String.class)) {
-                            try {
-                                sample = (Sample) i.newInstance("only_string");
-                            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    } else {
-                        try {
-                            sample = (Sample) i.newInstance();
-                        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                            e.printStackTrace();
-                        }
+                    } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                        e.printStackTrace();
                     }
                     return sample;
                 })
                 .filter(Objects::nonNull)
                 .forEach(System.out::println);
-        Sample sample = new Sample(3, "asd");
-        Arrays.stream(sample.getClass().getDeclaredMethods()).filter(i -> isSetter(i.getName())).forEach(i -> {
-            try {
-                i.invoke(sample, getInstanceOf(i.getParameterTypes()[0]));
-            } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-        });
+
+        final Sample sample = new Sample(3, "asd");
+        Arrays.stream(sample.getClass().getDeclaredMethods())
+                .filter(method -> isSetterPredicate.test(method.getName()))
+                .forEach(method -> {
+                    try {
+                        method.invoke(sample, getInstanceOf(method.getParameterTypes()[0]));
+                    } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
+                });
 
         System.out.println(System.lineSeparator() + "With setters" + System.lineSeparator() + sample);
     }
 
-    private static boolean isSetter(String name) {
-        return name.contains("set");
-    }
+    private static final Predicate<String> isSetterPredicate = name -> name.contains("set");
 
     private static <T> T getInstanceOf(Class<T> clazz) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
         if (Arrays.stream(clazz.getDeclaredConstructors()).map(i -> i.getParameterTypes().length).collect(Collectors.toList()).contains(0)) {
