@@ -29,13 +29,12 @@ public enum ProvincesEnumExercise {
     private PlanningRegion planingRegion;
     private PlanningRegion planingRegion2;
 
-    ProvincesEnumExercise(String label, int population, int municipalities, PlanningRegion planingRegion, PlanningRegion planingRegion2) {
+    ProvincesEnumExercise(final String label, final int population, final int municipalities, final PlanningRegion planingRegion, PlanningRegion planingRegion2) {
         this.label = label;
         this.population = population;
         this.municipalities = municipalities;
         this.planingRegion = planingRegion;
         this.planingRegion2 = planingRegion2;
-
     }
 
     public String getLabel() {
@@ -77,7 +76,6 @@ public enum ProvincesEnumExercise {
     public void setPlaningRegion2(PlanningRegion planingRegion2) {
         this.planingRegion2 = planingRegion2;
     }
-
 
     @Override
     public String toString() {
@@ -122,7 +120,6 @@ public enum ProvincesEnumExercise {
         System.out.println("Choose a number to see the Province info: \n1 - Veliko Tarnovo\n2 - Sofia city\n3 - Burgas\nor 0 to EXIT");
         while (scanner.hasNext()) {
             pickProvince();
-
         }
     }
 }
