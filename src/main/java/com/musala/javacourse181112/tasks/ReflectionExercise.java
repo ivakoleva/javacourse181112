@@ -19,11 +19,11 @@ public class ReflectionExercise {
         String string;
 
         public Sample() {
-            this(-1, "bez_string");
+            this(-1, "no_string");
         }
 
         public Sample(Integer integer) {
-            this(integer, "bez_string");
+            this(integer, "no_string");
         }
 
         public Sample(String string) {
@@ -37,6 +37,14 @@ public class ReflectionExercise {
 
         public String toString() {
             return string + " " + integer;
+        }
+
+        public void setInteger(Integer integer) {
+            this.integer = integer;
+        }
+
+        public void setString(String string) {
+            this.string = string;
         }
     }
 
@@ -63,7 +71,7 @@ public class ReflectionExercise {
                     Sample sample = null;
                     if (parameterLength == 2) {
                         try {
-                            sample = (Sample) i.newInstance(5, "string_i_int");
+                            sample = (Sample) i.newInstance(5, "string_&_int");
                         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                             e.printStackTrace();
                         }
@@ -76,7 +84,7 @@ public class ReflectionExercise {
                             }
                         } else if (i.getParameterTypes()[0].equals(String.class)) {
                             try {
-                                sample = (Sample) i.newInstance("samo_string");
+                                sample = (Sample) i.newInstance("only_string");
                             } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                                 e.printStackTrace();
                             }
@@ -92,5 +100,22 @@ public class ReflectionExercise {
                 })
                 .filter(Objects::nonNull)
                 .forEach(System.out::println);
+        Sample sample = new Sample();
+        Arrays.stream(sample.getClass().getDeclaredMethods()).filter(i -> isSetter(i.getName())).peek(i -> {
+            try {
+                i.invoke(sample, getInstanceOf(i.getParameterTypes()[0]));
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                e.printStackTrace();
+            }
+        });
+        System.out.println(System.lineSeparator() + "With setters" + System.lineSeparator() + sample);
+    }
+
+    private static boolean isSetter(String name) {
+        return "set".equals(name.substring(0, 3));
+    }
+
+    private static <T> T getInstanceOf(Class<T> clazz) throws IllegalAccessException, InstantiationException {
+        return clazz.newInstance();
     }
 }
