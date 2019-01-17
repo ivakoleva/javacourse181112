@@ -100,11 +100,11 @@ public class ReflectionExercise {
                 })
                 .filter(Objects::nonNull)
                 .forEach(System.out::println);
-        Sample sample = new Sample();
-        Arrays.stream(sample.getClass().getDeclaredMethods()).filter(i -> isSetter(i.getName())).peek(i -> {
+        Sample sample = new Sample(3, "asd");
+        Arrays.stream(sample.getClass().getDeclaredMethods()).filter(i -> isSetter(i.getName())).forEach(i -> {
             try {
                 i.invoke(sample, getInstanceOf(i.getParameterTypes()[0]));
-            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
                 e.printStackTrace();
             }
         });
@@ -112,10 +112,10 @@ public class ReflectionExercise {
     }
 
     private static boolean isSetter(String name) {
-        return "set".equals(name.substring(0, 3));
+        return name.contains("set");
     }
 
-    private static <T> T getInstanceOf(Class<T> clazz) throws IllegalAccessException, InstantiationException {
-        return clazz.newInstance();
+    private static <T> T getInstanceOf(Class<T> clazz) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        return clazz.getConstructor(String.class).newInstance("2");
     }
 }
