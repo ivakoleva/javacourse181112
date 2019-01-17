@@ -18,17 +18,15 @@ public class GenericsInstance {
     }
 
 
-
-
     // TODO: Not implemented
-    public static <T,U extends Number> Collection<T> getAllConstructors(final Class<T> inputClass, final Class<U> compareClass) {
+    public static <T, U extends Number> Collection<T> getAllConstructors(final Class<T> inputClass, final Class<U> compareClass) {
         assert inputClass != null;
-        final Predicate<Class<U>> isAssignablePredicate = param-> param.isAssignableFrom(compareClass);
+        final Predicate<Class<U>> isAssignablePredicate = param -> param.isAssignableFrom(compareClass);
         try {
             return toStream(inputClass.getDeclaredConstructors())
-                .filter(constructor -> toStream(constructor.getParameterTypes())
-                        .filter(param-> isAssignablePredicate.test((Class<U>) param)))
-                .collect(Collectors.toList());
+                    .filter(constructor -> toStream(constructor.getParameterTypes())
+                            .filter(param -> isAssignablePredicate.test((Class<U>) param)))
+                    .collect(Collectors.toList());
 
         } catch (/*IllegalAccessException | InvocationTargetException |
                 NoSuchMethodException | InstantiationException */ Exception e) {
@@ -38,11 +36,11 @@ public class GenericsInstance {
     }
 
     // TODO: Not implemented
-    private static<T,U extends Number> void getAllInstancesFromConstructors(Class<T> aClass, Class<U> aClass1) {
+    private static <T, U extends Number> void getAllInstancesFromConstructors(final Class<T> aClass,final Class<U> aClass1) {
 
     }
 
-    public static<T> Stream<T> toStream(final T array[]){
+    public static <T> Stream<T> toStream(final T array[]) {
         return Arrays.stream(array);
     }
 }
