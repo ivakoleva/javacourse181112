@@ -1,3 +1,15 @@
+17.01:
+
+* Exercise:
+    ** Reflection generic instantiation
+        *** Constructors
+            **** create a sample class, with a few overloaded constructors
+            **** instantiate that class, by each of the overloaded constructors, using reflection
+            
+        *** Setters
+            **** implement initial data bootstrap evaluating all setters, supporting at least 3 data types
+    
+
 15.01:
 
 * Homework:
@@ -9,7 +21,7 @@
             **** population
             **** municipalities
             
-            **** Bonus: planing region
+            **** Bonus: planning region
 
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
