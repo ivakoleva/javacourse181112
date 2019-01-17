@@ -23,8 +23,5 @@ public class EnumerationTask {
         while(enumeration.hasMoreElements()) {
             System.out.println("Enumeration: "+enumeration.nextElement());
         }
-
-
-
     }
 }
