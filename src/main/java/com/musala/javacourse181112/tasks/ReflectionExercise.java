@@ -3,6 +3,7 @@ package com.musala.javacourse181112.tasks;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /*
  ** Reflection generic instantiation
@@ -108,6 +109,7 @@ public class ReflectionExercise {
                 e.printStackTrace();
             }
         });
+
         System.out.println(System.lineSeparator() + "With setters" + System.lineSeparator() + sample);
     }
 
@@ -116,6 +118,11 @@ public class ReflectionExercise {
     }
 
     private static <T> T getInstanceOf(Class<T> clazz) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        return clazz.getConstructor(String.class).newInstance("2");
+        if (Arrays.stream(clazz.getDeclaredConstructors()).map(i -> i.getParameterTypes().length).collect(Collectors.toList()).contains(0)) {
+            return clazz.getConstructor().newInstance();
+        } else {
+            return clazz.getConstructor(String.class).newInstance("2");
+        }
+
     }
 }
