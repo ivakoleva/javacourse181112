@@ -7,8 +7,8 @@ import java.util.List;
 
 public class ReflectionExercise {
     private String aString;
-    private int anInteger;
-    private double aDouble;
+    private Integer anInteger;
+    private Double aDouble;
 
     public ReflectionExercise(){}
 
@@ -16,12 +16,12 @@ public class ReflectionExercise {
         this.aString = aString;
     }
 
-    public ReflectionExercise(String aString, int anInteger){
+    public ReflectionExercise(String aString, Integer anInteger){
         this.aString = aString;
         this.anInteger = anInteger;
     }
 
-    public ReflectionExercise(String aString, int anInteger, double aDouble){
+    public ReflectionExercise(String aString, Integer anInteger, Double aDouble){
         this.aString = aString;
         this.anInteger = anInteger;
         this.aDouble = aDouble;
@@ -31,7 +31,10 @@ public class ReflectionExercise {
         //ReflectionExercise reflectionExercise = new ReflectionExercise();
        // Constructor[] constructors1 = ReflectionExercise.class.getConstructors();
         try {
-            Constructor<ReflectionExercise> constructor = ReflectionExercise.class.getConstructor();//add constructors with diff params
+            Constructor<ReflectionExercise> constructor = ReflectionExercise.class.getConstructor();
+            Constructor<ReflectionExercise> constructor1 = ReflectionExercise.class.getDeclaredConstructor(String.class);
+            Constructor<ReflectionExercise> constructor2 = ReflectionExercise.class.getDeclaredConstructor(String.class, Integer.class);
+            Constructor<ReflectionExercise> constructor3 = ReflectionExercise.class.getDeclaredConstructor(String.class, Integer.class, Double.class);
             final ReflectionExercise reflectionExercise = constructor.newInstance();
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
