@@ -7,43 +7,38 @@ import java.util.*;
  */
 public class ResetableEnumerationExercise {
     public static void main(final String[] args) {
-        List<String> stringList = new ArrayList<>();
+        final List<String> stringList = new ArrayList<>();
         stringList.add("blue");
         stringList.add("pink");
 
-        ResetableEnumeration<String> stringEnumeration = (ResetableEnumeration<String>) enumeration(stringList);
-        while(stringEnumeration.hasMoreElements()){
-            System.out.println(stringEnumeration.nextElement());
+        final ResetableEnumeration<String> stringEnumeration = (ResetableEnumeration<String>) enumeration(stringList);
+        printEnumerationToStdout(stringEnumeration);
+
+        stringEnumeration.reset();
+        printEnumerationToStdout(stringEnumeration);
+    }
+
+    private static void printEnumerationToStdout(final Enumeration<?> enumeration) {
+        while (enumeration.hasMoreElements()) {
+            System.out.println(enumeration.nextElement());
         }
-
     }
 
 
-    private static <T> Enumeration<T> enumeration(final Collection<T> c) {
-
-
-        return new Enumeration<T>() {
-
-            private Iterator<T> i = c.iterator();
-
-            public boolean hasMoreElements() {
-                return i.hasNext();
-            }
-
-            public T nextElement() {
-                return i.next();
-            }
-
-            public void reset() {
-                i = c.iterator();
-            }
-        };
+    private static <T> Enumeration<T> enumeration(final Collection<T> collection) {
+        return new ResetableEnumeration<>(collection);
     }
 
 
-    private static class ResetableEnumeration<T> implements Enumeration<T>{
+    private static class ResetableEnumeration<T> implements Enumeration<T> {
+        private final Collection<T> collection;
         private Iterator<T> iterator;
-        private Collection<T> collection;
+
+        public ResetableEnumeration(final Collection<T> collection) {
+            assert collection != null;
+            this.collection = collection;
+            reset();
+        }
 
         @Override
         public boolean hasMoreElements() {
@@ -53,6 +48,10 @@ public class ResetableEnumerationExercise {
         @Override
         public T nextElement() {
             return iterator.next();
+        }
+
+        public void reset() {
+            this.iterator = collection.iterator();
         }
     }
 }

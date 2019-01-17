@@ -5,7 +5,6 @@ import com.musala.javacourse181112.oop.libraryexercise.model.Person;
 import com.musala.javacourse181112.oop.libraryexercise.model.SubscriptionRenewal;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -39,13 +38,12 @@ public final class Utils {
                 .collect(Collectors.toList());
     }
 
-   public static <T extends AbstractItem> T generateGenericItem (final Class<T> clazz){
-
-       try {
-           return clazz.getConstructor().newInstance();
-       } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-           e.printStackTrace();
-       }
-       return null;
-   }
+    public static <T extends AbstractItem> T generateItem(final Class<T> clazz) {
+        try {
+            return clazz.getConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

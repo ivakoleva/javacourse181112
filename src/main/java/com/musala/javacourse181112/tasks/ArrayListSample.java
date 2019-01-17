@@ -2,7 +2,7 @@ package com.musala.javacourse181112.tasks;
 
 import java.util.List;
 
-public class ArrayList {
+public class ArrayListSample {
     public static void main(String[] args) {
         List<Integer> integerList = new java.util.ArrayList<>();
         integerList.add(100, 1);
