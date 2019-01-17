@@ -122,6 +122,7 @@ public enum ProvincesEnumExercise {
         System.out.println("Choose a number to see the Province info: \n1 - Veliko Tarnovo\n2 - Sofia city\n3 - Burgas\nor 0 to EXIT");
         while (scanner.hasNext()) {
             pickProvince();
+
         }
     }
 }
