@@ -31,9 +31,9 @@ public class ThreadExercise {
                 Long time = System.currentTimeMillis();
                 concurrentHashMap.put(time, "Current time- " + time);
                 try {
-                    Thread.sleep(500);
-                } catch (InterruptedException ignore) {
-
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -45,11 +45,11 @@ public class ThreadExercise {
             for (int i = 0; i < VALUES_READ; ) {
                 entry = entryFunction.apply(concurrentHashMap);
                 if (entry != null) {
-                    System.out.println(i+"Key: " + entry.getKey() + " Value :" + entry.getValue());
+                    System.out.println(i + " Key: " + entry.getKey() + " Value :" + entry.getValue());
                     i++;
                 }
             }
-            if(!producerThread.isInterrupted()){
+            if (!producerThread.isInterrupted()) {
                 producerThread.interrupt();
             }
 
