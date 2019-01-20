@@ -1,7 +1,10 @@
 package com.musala.javacourse181112.tasks;
 
 import java.io.*;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 public class PipedOutputInputStreamExercise {
     private static BiConsumer<InputStream, OutputStream> inputStreamOutputStreamBiConsumer = ((inputStream, outputStream) -> {
@@ -72,4 +75,5 @@ public class PipedOutputInputStreamExercise {
             }
         }
     }
+
 }
