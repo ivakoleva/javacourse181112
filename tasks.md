@@ -1,14 +1,14 @@
 17.01:
 
+* Homework:
+    ** Reflection generic instantiation - Setters
+        *** instantiate a class in a generic way
+        *** invoke all setters, assigning default values, supporting at least 3 data types
+
 * Exercise:
-    ** Reflection generic instantiation
-        *** Constructors
-            **** create a sample class, with a few overloaded constructors
-            **** instantiate that class, by each of the overloaded constructors, using reflection
-            
-        *** Setters
-            **** implement initial data bootstrap evaluating all setters, supporting at least 3 data types
-    
+    ** Reflection generic instantiation - Constructors
+        *** create a sample class, with a few overloaded constructors
+        *** instantiate that class, by each of the overloaded constructors, using reflection
 
 15.01:
 
