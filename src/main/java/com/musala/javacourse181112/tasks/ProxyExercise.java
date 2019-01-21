@@ -11,7 +11,7 @@ public class ProxyExercise {
         sampleInterface = (SampleInterface) Proxy.newProxyInstance(
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{SampleInterface.class},
-                new SampleInvocationHandler<SampleClass>());
+                new SampleInvocationHandler<>(new SampleClass()));
         sampleInterface.setStringValue("123");
         System.out.println(sampleInterface.getStringValue());
     }
