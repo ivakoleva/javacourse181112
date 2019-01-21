@@ -1,4 +1,6 @@
+
 package com.musala.javacourse181112.oop;
+
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -18,7 +20,7 @@ public class StandardUtilsSampleRunner {
 
         // utils class callback workaround
         try {
-            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat", String[].class);
+            final Method method = StandardUtilsSample.class.getDeclaredMethod("capitalizeFirstLettersThenConcat");
             doSomething(method, "asd", "asd");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -60,6 +62,7 @@ final class LambdaUtilsSample {
             Arrays.stream(strings)
                     .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1))
                     .collect(Collectors.joining());
+    // TODO: implement capitalizeFirstLettersThenConcat function
 }
 
 // classical utils class

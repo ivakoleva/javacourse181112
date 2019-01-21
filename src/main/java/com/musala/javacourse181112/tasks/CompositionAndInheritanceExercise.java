@@ -8,11 +8,14 @@ public class CompositionAndInheritanceExercise {
         final Human human1 = new Human();
         // TODO: set alive
         //TODO: final Human human2 = human1.giveBirth();
+
+      final Human human2 = human1.giveBirth();
     }
 }
 
 interface Being {
     boolean isAlive();
+
 }
 
 abstract class Mammal implements Being {
@@ -28,7 +31,7 @@ class Human extends Mammal {
     }
 
     @Override
-    Mammal giveBirth() {
-        return null;
+    Human giveBirth() {
+        return new Human();
     }
 }
