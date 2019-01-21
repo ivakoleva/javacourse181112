@@ -11,9 +11,11 @@ public class ProxyExercise {
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{SampleInterface.class},
                 new SampleInvocationHandler<>(new SampleClass()));
+
         sampleInterface.setStringValue("asd");
         sampleInterface.setIntegerValue(1);
         sampleInterface.setStringValue1("AsdswQw");
+
         System.out.println(sampleInterface.getStringValue()
                 + " " + sampleInterface.getIntegerValue()
                 + " " + sampleInterface.getStringValue1());
@@ -21,7 +23,7 @@ public class ProxyExercise {
     }
 
     private static class SampleInvocationHandler<T> implements InvocationHandler {
-        T object;
+        final private T object;
 
         public SampleInvocationHandler(T object) {
             this.object = object;
