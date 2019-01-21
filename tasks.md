@@ -12,7 +12,7 @@
         *** intercept all setters of String values
         *** then modify the value to upper-case
         *** set the modified value
-        *** print instance fields to stdout
+        *** print proxied instance fields to stdout
 
 17.01:
 
