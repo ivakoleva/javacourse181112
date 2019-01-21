@@ -5,7 +5,6 @@ import com.musala.javacourse181112.oop.libraryexercise.model.Person;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GenericsInstance {
@@ -23,11 +22,11 @@ public class GenericsInstance {
         assert inputClass != null;
         final Predicate<Class<U>> isAssignablePredicate = param -> param.isAssignableFrom(compareClass);
         try {
-            return toStream(inputClass.getDeclaredConstructors())
+            return null;/*toStream(inputClass.getDeclaredConstructors())
                     .filter(constructor -> toStream(constructor.getParameterTypes())
                             .filter(param -> isAssignablePredicate.test((Class<U>) param)))
                     .collect(Collectors.toList());
-
+*/
         } catch (/*IllegalAccessException | InvocationTargetException |
                 NoSuchMethodException | InstantiationException */ Exception e) {
             System.out.println(e.getMessage());
