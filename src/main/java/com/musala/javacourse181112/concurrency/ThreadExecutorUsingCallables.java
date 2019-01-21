@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.concurrency;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -6,20 +6,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class ThreadExecutorWithCallables {
+public class ThreadExecutorUsingCallables {
     public static void main(final String[] args) {
         final ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-        AtomicInteger l = new AtomicInteger(0);
-        Callable<Integer> callable = () -> l.getAndIncrement();
+        final AtomicInteger atomicInteger = new AtomicInteger(0);
+        final Callable<Integer> callable = atomicInteger::getAndIncrement;
 
         final List<Future<Integer>> futureList = IntStream.range(0, 10)
                 .boxed()
                 .map(i -> callable)
                 .map(executorService::submit)
                 .collect(Collectors.toList());
-
-        executorService.shutdown();
 
         futureList.forEach(future -> {
             try {
@@ -28,5 +26,7 @@ public class ThreadExecutorWithCallables {
                 e.printStackTrace();
             }
         });
+
+        executorService.shutdown();
     }
 }
