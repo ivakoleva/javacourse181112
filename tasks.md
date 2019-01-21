@@ -7,6 +7,12 @@
         *** collect the result of all submitted callables
         *** shut down the executor service
         *** exit the program
+        
+    ** Proxy exercise 
+        *** intercept all setters of String values
+        *** then modify the value to upper-case
+        *** set the modified value
+        *** print instance fields to stdout
 
 17.01:
 
