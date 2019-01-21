@@ -3,6 +3,9 @@ package com.musala.javacourse181112.collections;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by Iva Koleva on 06.12.2018
+ */
 public class ListExample {
     public static void main(final String[] args) {
         final List<String> stringList = new ArrayList<>();
@@ -17,7 +20,6 @@ public class ListExample {
 
         System.out.println();
         stringList.subList(0, 2).forEach(System.out::println);
-
 
         stringList.remove("asd");
         stringList.remove(0);

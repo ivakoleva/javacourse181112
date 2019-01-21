@@ -5,23 +5,25 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 
+/**
+ * Created by Iva Koleva on 26.11.2018
+ */
 public class StringToStreamExample {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         printReaderToStdout(new StringReader("asd"));
-
-
-
-
-        printInputStreamToStdout(new ByteArrayInputStream("asd".getBytes())); //data
-
+        //StringWriter
+        //CharArrayReader
+        //CharArrayWriter
+        //final byte[] data = {'a', 'b', 'c'};
+        printInputStreamToStdout(new ByteArrayInputStream("asd".getBytes())); // data
+        //ByteArrayOutputStream
     }
 
-    public static void printReaderToStdout(final Reader reader){
-
-        // TODO: 26.11.2018 г.
+    public static void printReaderToStdout(final Reader reader) {
+        // TODO
     }
-    public static void printInputStreamToStdout(final InputStream inputStream){
-        // TODO: 26.11.2018 г.
+
+    public static void printInputStreamToStdout(final InputStream inputStream) {
+        // TODO
     }
 }
-

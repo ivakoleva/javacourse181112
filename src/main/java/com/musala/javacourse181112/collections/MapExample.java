@@ -2,10 +2,12 @@ package com.musala.javacourse181112.collections;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Created by Iva Koleva on 06.12.2018
+ */
 public class MapExample {
     public static void main(final String[] args) {
         final Map<String, String> stringStringMap = new HashMap<>();

@@ -4,12 +4,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
+/**
+ * Created by Iva Koleva on 22.11.2018
+ */
 public class InputStreamExample {
     public static void main(final String[] args) throws IOException {
-//        Input stream/ output stream  ,
-//        reader/writer
-
+        // TODO: try-catch later. ! It is really important, to do try-catch.
 
         final InputStream inputStream = new FileInputStream("sketch.txt");
         int i;

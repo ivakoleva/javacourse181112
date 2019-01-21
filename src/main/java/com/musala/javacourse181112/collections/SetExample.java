@@ -6,8 +6,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * Created by Iva Koleva on 06.12.2018
+ */
 public class SetExample {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final Set<String> stringSet = new HashSet<>();
         stringSet.add("asd");
         stringSet.add("asd");
@@ -35,4 +38,3 @@ public class SetExample {
 
     }
 }
-

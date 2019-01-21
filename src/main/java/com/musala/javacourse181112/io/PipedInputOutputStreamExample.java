@@ -3,17 +3,22 @@ package com.musala.javacourse181112.io;
 import java.io.*;
 import java.util.function.BiConsumer;
 
+/**
+ * Created by Iva Koleva on 06.12.2018
+ */
 public class PipedInputOutputStreamExample {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         PipedInputStream pipedInputStream = null;
         PipedOutputStream pipedOutputStream = null;
+        // TODO: try-with-resources
         try {
             pipedInputStream = new PipedInputStream();
             pipedOutputStream = new PipedOutputStream(pipedInputStream);
-            useInputOutputStream(pipedInputStream, pipedOutputStream);
-            inputStreamOutputStreamBiConsumer.accept(pipedInputStream, pipedOutputStream);
 
+            //useInputOutputStream(pipedInputStream, pipedOutputStream);
+            inputStreamOutputStreamBiConsumer.accept(pipedInputStream, pipedOutputStream);
         } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             if (pipedInputStream != null) {
                 try {
@@ -24,7 +29,6 @@ public class PipedInputOutputStreamExample {
             if (pipedOutputStream != null) {
                 try {
                     pipedOutputStream.close();
-
                 } catch (IOException ignored) {
                 }
             }
@@ -81,7 +85,5 @@ public class PipedInputOutputStreamExample {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     });
-
 }
