@@ -9,6 +9,13 @@ public class Person extends BaseEntity {
     private Set<ItemRent> itemRentSet;
     private Set<SubscriptionRenewal> subscriptionRenewalSet;
 
+    public Person() {
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
