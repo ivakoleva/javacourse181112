@@ -3,7 +3,6 @@ package com.musala.javacourse181112.tasks;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Arrays;
 
 public class ProxyExercise {
     public static void main(String[] args) {
@@ -12,7 +11,7 @@ public class ProxyExercise {
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{SampleInterface.class},
                 new SampleInvocationHandler<>(new SampleClass()));
-        sampleInterface.setStringValue("123");
+        sampleInterface.setStringValue("asd");
         System.out.println(sampleInterface.getStringValue());
     }
 
@@ -26,12 +25,7 @@ public class ProxyExercise {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             if ("set".equals(method.getName().substring(0, 3))) {
-                Arrays.stream(args).forEach(arg -> {
-                    if (String.class.equals(arg.getClass())) {
-                        String s = (String) arg;
-                        arg = s.toUpperCase();
-                    }
-                });
+                args[0] = args[0].toString().toUpperCase();
             }
             return method.invoke(object, args);
         }
