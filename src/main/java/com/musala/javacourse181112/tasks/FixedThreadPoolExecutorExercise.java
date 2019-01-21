@@ -18,8 +18,8 @@ public class FixedThreadPoolExecutorExercise {
                 .map(executorService::submit)
                 .collect(Collectors.toList());*/
         final List<Future<Integer>> futureList = IntStream.range(0, 10).boxed()
-             .map(i -> executorService.submit(callable))
-             .collect(Collectors.toList());
+                .map(i -> executorService.submit(callable))
+                .collect(Collectors.toList());
 
         executorService.shutdown();
 
