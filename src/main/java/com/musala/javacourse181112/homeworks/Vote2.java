@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.homeworks;
 
 public class Vote2 {
     public static final int QUESTION = 2;

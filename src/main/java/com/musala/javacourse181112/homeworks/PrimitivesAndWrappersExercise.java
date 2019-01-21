@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks;
+package com.musala.javacourse181112.homeworks;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

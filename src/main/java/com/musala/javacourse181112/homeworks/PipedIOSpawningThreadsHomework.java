@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.homework;
+package com.musala.javacourse181112.homeworks;
 
 import java.io.*;
 
