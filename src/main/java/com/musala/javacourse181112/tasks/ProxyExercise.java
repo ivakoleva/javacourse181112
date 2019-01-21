@@ -12,7 +12,12 @@ public class ProxyExercise {
                 new Class[]{SampleInterface.class},
                 new SampleInvocationHandler<>(new SampleClass()));
         sampleInterface.setStringValue("asd");
-        System.out.println(sampleInterface.getStringValue());
+        sampleInterface.setIntegerValue(1);
+        sampleInterface.setStringValue1("AsdswQw");
+        System.out.println(sampleInterface.getStringValue()
+                + " " + sampleInterface.getIntegerValue()
+                + " " + sampleInterface.getStringValue1());
+
     }
 
     private static class SampleInvocationHandler<T> implements InvocationHandler {
@@ -25,7 +30,9 @@ public class ProxyExercise {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             if ("set".equals(method.getName().substring(0, 3))) {
-                args[0] = args[0].toString().toUpperCase();
+                if (args[0].getClass().equals(String.class)) {
+                    args[0] = args[0].toString().toUpperCase();
+                }
             }
             return method.invoke(object, args);
         }
@@ -35,10 +42,20 @@ public class ProxyExercise {
         String getStringValue();
 
         void setStringValue(String stringValue);
+
+        String getStringValue1();
+
+        void setStringValue1(String stringValue);
+
+        Integer getIntegerValue();
+
+        void setIntegerValue(Integer integerValue);
     }
 
     private static class SampleClass implements SampleInterface {
         private String stringValue;
+        private String stringValue1;
+        private Integer integerValue;
 
         @Override
         public String getStringValue() {
@@ -48,6 +65,25 @@ public class ProxyExercise {
         @Override
         public void setStringValue(String stringValue) {
             this.stringValue = stringValue;
+        }
+
+        @Override
+        public Integer getIntegerValue() {
+            return integerValue;
+        }
+
+        @Override
+        public void setIntegerValue(Integer integerValue) {
+            this.integerValue = integerValue;
+        }
+
+        @Override
+        public String getStringValue1() {
+            return stringValue1;
+        }
+
+        public void setStringValue1(String stringValue1) {
+            this.stringValue1 = stringValue1;
         }
     }
 }
