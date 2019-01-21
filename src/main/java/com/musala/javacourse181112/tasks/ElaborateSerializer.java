@@ -11,9 +11,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /*
-The task isn't finished. It compiles so far, but doesn't execute how it is supposed to, I suppose my use of WatchEvent
-    isn't entirely correct, but I haven't used the debugger to figure out how to fix it. Please give review and recommendations.
-Missing code: producer doesn't put to queue and the the bonus part
+The task isn't finished. It compiles so far, but doesn't execute how it is supposed to
+Missing code: the the bonus part - use AtomicInteger
  */
 
 // OOK
@@ -26,12 +25,12 @@ public class ElaborateSerializer implements Serializable {
             true,
             Collections.nCopies(10, INTEGER_LIST)); // TODO: rather function than reusing same collection reference
 
-    private final static String PATH_NAME = "test";
+    private final static String PATH_NAME = "D:\\course\\test"; // TODO: change relative path so it works on every platform
     //private final static Path FILE_PATH = Paths.get(PATH_NAME);
     //private final static File FILE = FILE_PATH.toFile();
-    private final static File FILE = new File(PATH_NAME); // TODO: business-oriented naming
-    private final static Path FILE_PATH = FILE.toPath();
-    private final static File FILE1 = new File(FILE, "serialized_objects.txt");
+    private final static File FILEPATH_SERIALIZED_OBJECTS = new File(PATH_NAME);
+    private final static Path FILE_PATH = FILEPATH_SERIALIZED_OBJECTS.toPath();
+    private final static File FILE_SERIALIZED_OBJECTS = new File(FILEPATH_SERIALIZED_OBJECTS, "serialized_objects.txt");
 
     private static final Supplier<List<Integer>> POLL_INTEGER_LIST_FROM_QUEUE = INTEGER_QUEUE::poll;
 
@@ -43,7 +42,7 @@ public class ElaborateSerializer implements Serializable {
     private static void spawnThreads() {
         final Thread consumerThread = new Thread(() -> {
             while (!Thread.interrupted()) {
-                try (final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE1))) {
+                try (final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(FILE_SERIALIZED_OBJECTS))) {
                     objectOutputStream.writeObject(POLL_INTEGER_LIST_FROM_QUEUE.get());
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -65,10 +64,11 @@ public class ElaborateSerializer implements Serializable {
                             System.out.println("Watched [eventType=" + kind + ", FILE_PATH=" + event.context() + "]");
 
                             List<Integer> oneIntegerList = null;
-                            try (final ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE1))) {
+                            try (final ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(FILE_SERIALIZED_OBJECTS))) {
                                 oneIntegerList = (List<Integer>) objectInputStream.readObject();
                             }
-                            // TODO: put to queue
+
+                            INTEGER_QUEUE.offer(oneIntegerList);
 
                             Files.delete(FILE_PATH);
                         }

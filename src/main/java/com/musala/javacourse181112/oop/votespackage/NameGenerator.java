@@ -11,7 +11,7 @@ public class NameGenerator implements Votable {
     String generate() {
         final StringBuilder stringBuilder = new StringBuilder();
         // would suggest some bounds for a feasible name length
-        final int length = RANDOM.nextInt();
+        final int length = RANDOM.nextInt(10);
         for (int i = 0; i < length; i++) {
             stringBuilder.append(
                     LETTERS.charAt(

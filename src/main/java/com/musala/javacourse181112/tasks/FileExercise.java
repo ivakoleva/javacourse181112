@@ -10,7 +10,7 @@ import java.util.Optional;
  */
 public class FileExercise {
     public static void main(final String[] args) throws IOException {
-        //doCreation();
+        doCreation();
         doDeleteOnExit();
     }
 

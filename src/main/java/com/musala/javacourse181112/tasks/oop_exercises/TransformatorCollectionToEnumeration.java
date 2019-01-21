@@ -1,9 +1,6 @@
 package com.musala.javacourse181112.tasks.oop_exercises;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
+import java.util.*;
 
 public class TransformatorCollectionToEnumeration {
     public static void main(String[] args) {
@@ -16,6 +13,6 @@ public class TransformatorCollectionToEnumeration {
         }
 
         List<String> stringList1 = Collections.list(stringEnumeration);
-
+        stringList1.stream().forEach(System.out::println);
     }
 }
