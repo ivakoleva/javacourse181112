@@ -16,7 +16,6 @@ public class ThreadPoolExecutorSample {
     public static void main(final String[] args) throws InterruptedException {
         final ExecutorService executorService = Executors.newFixedThreadPool(5, new ThreadFactory() {
                     private final AtomicInteger atomicInteger = new AtomicInteger();
-
                     @Override
                     public Thread newThread(final Runnable runnable) {
                         final Thread thread = new Thread(runnable);
@@ -40,6 +39,7 @@ public class ThreadPoolExecutorSample {
     }
 
     private static void executeRunnableJoin(final ExecutorService executorService, final Runnable runnable, final int count) throws InterruptedException {
+
         assert executorService != null;
         assert runnable != null;
         final List<Future<?>> futureList = IntStream.range(0, count).boxed()
