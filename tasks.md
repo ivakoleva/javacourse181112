@@ -1,5 +1,7 @@
 18.01:
 
+* Homework: wrap-up exercises 
+    
 * Exercise:
     ** FixedThreadPoolExecutor exercise
         *** instantiate a fixed thread pool executor of size 3
