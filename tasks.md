@@ -1,3 +1,13 @@
+18.01:
+
+* Exercise:
+    ** FixedThreadPoolExecutor exercise
+        *** instantiate a fixed thread pool executor of size 3
+        *** submit 10 Callable instances, returning an object instance
+        *** collect the result of all submitted callables
+        *** shut down the executor service
+        *** exit the program
+
 17.01:
 
 * Homework:
