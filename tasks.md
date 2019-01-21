@@ -1,14 +1,24 @@
-17.01:
+18.01:
 
 * Exercise:
-    ** Reflection generic instantiation
-        *** Constructors
-            **** create a sample class, with a few overloaded constructors
-            **** instantiate that class, by each of the overloaded constructors, using reflection
-            
-        *** Setters
-            **** implement initial data bootstrap evaluating all setters, supporting at least 3 data types
-    
+    ** FixedThreadPoolExecutor exercise
+        *** instantiate a fixed thread pool executor of size 3
+        *** submit 10 Callable instances, returning an object instance
+        *** collect the result of all submitted callables
+        *** shut down the executor service
+        *** exit the program
+
+17.01:
+
+* Homework:
+    ** Reflection generic instantiation - Setters
+        *** instantiate a class in a generic way
+        *** invoke all setters, assigning default values, supporting at least 3 data types
+
+* Exercise:
+    ** Reflection generic instantiation - Constructors
+        *** create a sample class, with a few overloaded constructors
+        *** instantiate that class, by each of the overloaded constructors, using reflection
 
 15.01:
 
