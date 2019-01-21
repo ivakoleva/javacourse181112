@@ -1,4 +1,27 @@
+17.01:
+
+* Homework:
+    ** Reflection generic instantiation - Setters
+        *** instantiate a class in a generic way
+        *** invoke all setters, assigning default values, supporting at least 3 data types
+
+* Exercise:
+    ** Reflection generic instantiation - Constructors
+        *** create a sample class, with a few overloaded constructors
+        *** instantiate that class, by each of the overloaded constructors, using reflection
+
 15.01:
+
+* Homework:
+    ** Resetable enumeration exercise - complete tasks.ResetableEnumerationExercise
+    ** ProvincesEnum implementation (https://en.wikipedia.org/wiki/Provinces_of_Bulgaria)
+        *** 3 enum values
+        *** additional meta information per value
+            **** label
+            **** population
+            **** municipalities
+            
+            **** Bonus: planning region
 
 * Exercise:
     ** Library exercise - Magazine & Newspaper - implement concept of sequential issues - do homework
@@ -7,7 +30,10 @@
         *** create a collection, transform it to enumeration
         *** transform enumeration to collection
         *** loop over an enumeration, then print to stdout
-    ** Resetable enumeration exercise
+    ** Library exercise - implement static Utils generic generate method
+        *** supporting any extending AbstractItem - Book, Magazine, Newspaper
+        *** class supplied as parameter
+        *** a new instance returned
    
 14.01:
 
