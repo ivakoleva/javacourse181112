@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public class PopulatePersonClassGenericAlgorithmExample {
     public static void main(final String[] args) throws IOException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, URISyntaxException {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         /*final Person person = new Person();
 =======
             /*final Answer person = new Answer();

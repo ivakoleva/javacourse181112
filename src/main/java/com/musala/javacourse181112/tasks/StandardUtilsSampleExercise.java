@@ -65,13 +65,7 @@ final class LambdaUtilsSample {
             Arrays.stream(strings)
                     .map(string -> string.substring(0, 1).toUpperCase() + string.substring(1))
                     .collect(Collectors.joining());
-<<<<<<< HEAD
 
-    //   static final Function<String[], String> capitalizeFirstLettersThenConcat = (String... strings) ->
-
-=======
-    // TODO: implement capitalizeFirstLettersThenConcat function
->>>>>>> origin/master
 }
 
 // classical utils class

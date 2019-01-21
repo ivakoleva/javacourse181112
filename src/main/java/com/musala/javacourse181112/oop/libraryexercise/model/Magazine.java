@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.oop.libraryexercise.model;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 public class Magazine extends AbstractItem implements Issueable {
     private int issue;
 
@@ -12,7 +12,7 @@ public class Magazine extends AbstractItem implements Issueable {
     @Override
     public void setIssue(int issue) {
         this.issue = issue;
-=======
+/*=======
 public class Magazine extends AbstractItem {
     private Long number;
 
@@ -24,6 +24,7 @@ public class Magazine extends AbstractItem {
         this.number = number;
 
 >>>>>>> origin/master
-    }
+    }*/
 
+}
 }

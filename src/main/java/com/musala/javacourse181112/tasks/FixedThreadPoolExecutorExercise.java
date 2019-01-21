@@ -11,12 +11,9 @@ public class FixedThreadPoolExecutorExercise {
         final ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         AtomicInteger atomicInteger = new AtomicInteger(0);
-        final Callable callable = () -> atomicInteger.getAndIncrement();
+        final Callable<Integer> callable = () -> atomicInteger.getAndIncrement();
 
-        /*final List<Future<Integer>> futureList = (List<Future<Integer>>) IntStream.range(0, 10).boxed()
-                .map(i -> callable)
-                .map(executorService::submit)
-                .collect(Collectors.toList());*/
+
         final List<Future<Integer>> futureList = IntStream.range(0, 10).boxed()
                 .map(i -> executorService.submit(callable))
                 .collect(Collectors.toList());
