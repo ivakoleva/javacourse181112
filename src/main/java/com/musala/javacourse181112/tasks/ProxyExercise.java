@@ -19,6 +19,9 @@ public class ProxyExercise {
                 },
                 new ProxyExercise.SampleInvocationHandler(new ProxyExercise.StringClass())
         );
+
+        stringInstance.setStringValue("test");
+        System.out.println(stringInstance.getStringValue());
     }
 
     private static class SampleInvocationHandler implements InvocationHandler {
@@ -31,15 +34,12 @@ public class ProxyExercise {
         @Override
         public Object invoke(final Object proxy,
                              final Method method,
-                             final Object[] args) throws Throwable {//getParameterTypes() да се провери дали е 1 стринг
+                             final Object[] args) throws Throwable {
             if ((method.getName().startsWith("set")) &&
-                    (method.getParameterTypes().getClass().equals(String)) &&
-                    (args != null)) {
-                method.getName().toUpperCase();
+                    (method.getParameterTypes().getClass().equals(String.class)) &&
+                    (args[0] != null)) {
+                args[0].toString().toUpperCase();
             }
-//            System.out.println("Method " + method.getName() +
-//                    " with args [" + Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", ")) +
-//                    "] intercepted.");
             return method.invoke(instance, args);
         }
     }
