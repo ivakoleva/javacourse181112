@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
  */
 public class ProxySample {
     public static void main(final String[] args) {
+
         final SampleStringPropertyInterface sampleStringInstance = (SampleStringPropertyInterface) Proxy.newProxyInstance(
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{
@@ -21,6 +22,7 @@ public class ProxySample {
         );
 
         sampleStringInstance.setStringValue("asd");
+
         System.out.println();
 
         final SampleIntegerPropertyInterface sampleIntegerInstance = (SampleIntegerPropertyInterface) sampleStringInstance;
