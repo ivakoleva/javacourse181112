@@ -29,7 +29,10 @@ public class ProxyExercise {
         public Object invoke(final Object proxy,
                              final Method method,
                              final Object[] args) throws Throwable {
-            if (method.getName().contains("set") && args[0].getClass().equals(String.class)) {
+            if (method.getName().startsWith("set") &&
+                    method.getParameterTypes().length == 1 &&
+                    String.class.equals(method.getParameterTypes()[0]) &&
+                    args[0] != null) {
                 args[0] = args[0].toString().toUpperCase();
             }
             return method.invoke(instance, args);
