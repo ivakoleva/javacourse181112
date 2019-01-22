@@ -12,12 +12,12 @@ public class ProxyExercise {
      *** print instance fields to stdout
      * */
     public static void main(final String[] args) {
-        final ProxyExercise.StingInterface stringInstance = (ProxyExercise.StingInterface) Proxy.newProxyInstance(
+        final StingInterface stringInstance = (StingInterface) Proxy.newProxyInstance(
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{
-                        ProxyExercise.StingInterface.class
+                        StingInterface.class
                 },
-                new ProxyExercise.SampleInvocationHandler(new ProxyExercise.StringClass())
+                new SampleInvocationHandler(new StringClass())
         );
 
         stringInstance.setStringValue("test");
@@ -36,9 +36,10 @@ public class ProxyExercise {
                              final Method method,
                              final Object[] args) throws Throwable {
             if ((method.getName().startsWith("set")) &&
-                    (method.getParameterTypes().getClass().equals(String.class)) &&
+                    (method.getParameterTypes().length == 1 &&
+                            String.class.equals(method.getParameterTypes()[0])) &&
                     (args[0] != null)) {
-                args[0].toString().toUpperCase();
+                args[0] = ((String) args[0]).toUpperCase();
             }
             return method.invoke(instance, args);
         }
