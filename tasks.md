@@ -1,5 +1,12 @@
+22.01:
+
+* Homework:
+    ** Review Executors util, interface surface
+
 18.01:
 
+* Homework: wrap-up exercises 
+    
 * Exercise:
     ** FixedThreadPoolExecutor exercise
         *** instantiate a fixed thread pool executor of size 3
@@ -12,7 +19,7 @@
         *** intercept all setters of String values
         *** then modify the value to upper-case
         *** set the modified value
-        *** print instance fields to stdout
+        *** print proxied instance fields to stdout
 
 17.01:
 

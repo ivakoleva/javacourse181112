@@ -14,7 +14,7 @@ public class ProxySample {
         final SampleStringPropertyInterface sampleStringInstance = (SampleStringPropertyInterface) Proxy.newProxyInstance(
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{
-                        //SampleIntegerPropertyInterface.class,
+                        SampleIntegerPropertyInterface.class,
                         SampleStringPropertyInterface.class
                 },
                 new SampleInvocationHandler(new SampleClass())
@@ -23,6 +23,9 @@ public class ProxySample {
         sampleStringInstance.setStringValue("asd");
         System.out.println();
 
+        final SampleIntegerPropertyInterface sampleIntegerInstance = (SampleIntegerPropertyInterface) sampleStringInstance;
+        sampleIntegerInstance.setIntValue(1);
+        System.out.println();
     }
 
     private static class SampleInvocationHandler implements InvocationHandler {
