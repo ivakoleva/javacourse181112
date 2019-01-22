@@ -131,3 +131,5 @@ static inner(non-static) class == nested(static) class
 StringBuilder / StringBuffer (thread-safe)
 
 authentication (credentials) / authorization (access to resources)
+
+XML, XSD/DTD, XPath, XQuery
