@@ -11,18 +11,16 @@ import java.util.stream.Collectors;
  */
 public class ProxySample {
     public static void main(final String[] args) {
-        final SampleStringPropertyInterface sampleStringInstance = (SampleStringPropertyInterface) Proxy.newProxyInstance(
+        final ExampleInterface exampleInterface = (ExampleInterface) Proxy.newProxyInstance(
                 ClassLoader.getSystemClassLoader(),
                 new Class[]{
-                        //SampleIntegerPropertyInterface.class,
-                        SampleStringPropertyInterface.class
+                        ExampleInterface.class
                 },
-                new SampleInvocationHandler(new SampleClass())
+                new SampleInvocationHandler(new ExampleClass())
         );
 
-        sampleStringInstance.setStringValue("asd");
-        System.out.println();
-
+        exampleInterface.setStringValue("hello");
+        System.out.println(exampleInterface.getStringValue());
     }
 
     private static class SampleInvocationHandler implements InvocationHandler {
@@ -36,40 +34,24 @@ public class ProxySample {
         public Object invoke(final Object proxy,
                              final Method method,
                              final Object[] args) throws Throwable {
-            System.out.println("Method " + method.getName() +
-                    " with args [" + Arrays.stream(args).map(Object::toString).collect(Collectors.joining(", ")) +
-                    "] intercepted.");
-            //throw new Exception("no recursion here.");
+            if (method.getName().startsWith("set") &&
+                    method.getParameterTypes().length == 1 &&
+                    String.class.equals(method.getParameterTypes()[0]) &&
+                    args[0] != null) {
+                args[0] = args[0].toString().toUpperCase();
+            }
             return method.invoke(instance, args);
         }
     }
 
-    private interface SampleIntegerPropertyInterface {
-        int getIntValue();
-
-        void setIntValue(int intValue);
-    }
-
-    private interface SampleStringPropertyInterface {
+    private interface ExampleInterface {
         String getStringValue();
 
         void setStringValue(String stringValue);
     }
 
-
-    private static class SampleClass implements SampleIntegerPropertyInterface, SampleStringPropertyInterface {
-        private int intValue;
+    private static class ExampleClass implements ExampleInterface {
         private String stringValue;
-
-        @Override
-        public int getIntValue() {
-            return intValue;
-        }
-
-        @Override
-        public void setIntValue(int intValue) {
-            this.intValue = intValue;
-        }
 
         @Override
         public String getStringValue() {

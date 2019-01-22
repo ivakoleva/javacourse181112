@@ -51,6 +51,9 @@ public class ThreadPoolExecutorSample {
             Thread.sleep(1000);
         }
         System.out.println("All threads done.");
+        for (int i = 0; i < futureList.size(); i++) {
+            System.out.println(futureList.get(i));
+        }
     }
 
     private static void executeRunnable(final ExecutorService executorService, final Runnable runnable, final int count) {
