@@ -131,3 +131,14 @@ static inner(non-static) class == nested(static) class
 StringBuilder / StringBuffer (thread-safe)
 
 authentication (credentials) / authorization (access to resources)
+
+XML, XSD/DTD, XPath, XQuery
+
+web server / application server/container / java ee compliant container
+deployment
+
+Apache Tomcat 8.5.37
+* edit conf/tomcat-users.xml, add:
+<role rolename="manager-gui"/>
+<user username="tomcat" password="s3cret" roles="manager-gui"/>
+

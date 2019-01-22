@@ -1,3 +1,26 @@
+22.01:
+
+* Homework:
+    ** Review Executors util, interface surface
+
+18.01:
+
+* Homework: wrap-up exercises 
+    
+* Exercise:
+    ** FixedThreadPoolExecutor exercise
+        *** instantiate a fixed thread pool executor of size 3
+        *** submit 10 Callable instances, returning an object instance
+        *** collect the result of all submitted callables
+        *** shut down the executor service
+        *** exit the program
+        
+    ** Proxy exercise 
+        *** intercept all setters of String values
+        *** then modify the value to upper-case
+        *** set the modified value
+        *** print proxied instance fields to stdout
+
 17.01:
 
 * Homework:
