@@ -32,4 +32,19 @@ class CustomClass1 {
         integerField = field;
         intField = field;
     }
+    class DateTimeOfPayment{
+        private Number date;
+        public void setDate(Number date){this.date=date;}
+
+        public Number getDate() {
+            return date;
+        }
+    }
+final class  Utils {
+
+private Utils(){
+
+}
+
+}
 }
