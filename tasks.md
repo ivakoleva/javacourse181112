@@ -13,7 +13,7 @@
                 ***** persons
             **** listing all details of one particular data item per id (id would be in-memory index of data item in list)
             
-            **** Bonus: create form with post method, for adding a new data item   
+            **** Bonus: create a JSP, with HTTP form (post method), for adding a new data item   
     
 * Exercise:
     ** Build & deploy web app using tomcat maven plugin, in debug mode
