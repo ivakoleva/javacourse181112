@@ -1,3 +1,12 @@
+24.01P:
+
+* Homework:
+    ** Review Executors util, interface surface
+    
+* Exercise:
+    ** Build & deploy web app using tomcat maven plugin, in debug mode
+        *** stop breakpoint at init, doGet and destroy methods
+
 22.01:
 
 * Homework:
