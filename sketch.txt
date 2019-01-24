@@ -144,3 +144,11 @@ Apache Tomcat 8.5.37
 
 hot deploy / web manager deploy / Application Servers IntelliJ IDEA / maven tomcat plugin
 
+HTTP [header, cookie, session, body]
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+
+MIME type - https://en.wikipedia.org/wiki/Media_type
+JavaScript
+CSS
+Browser developer tools
