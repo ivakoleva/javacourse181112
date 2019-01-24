@@ -15,17 +15,23 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>3.0-alpha-1</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--<dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>3.2.10</version>
-        </dependency>
+        </dependency>-->
 
         <!--<dependency>
             <groupId>junit</groupId>
@@ -90,6 +96,27 @@
                         </resource>
                     </webResources>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!--<artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1655215</version>-->
+                <configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>TomcatServer</server>
+                    <username>tomcat</username>
+                    <password>s3cret</password>
+                    <path>/javacourse181112</path>
+                </configuration>
+                <!--<configuration>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>TomcatServer</server>
+                    <username>tomcat</username>
+                    <password>s3cret</password>
+                    <path>/ROOT</path>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>
