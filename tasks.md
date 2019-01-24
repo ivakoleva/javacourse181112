@@ -1,8 +1,23 @@
+24.01P:
+
+* Homework:
+    ** Review Executors util, interface surface
+    
+* Exercise:
+    ** Build & deploy web app using tomcat maven plugin, in debug mode
+        *** stop breakpoint at init, doGet and destroy methods
+        *** find out how many instances of HelloWorldServlet, and life cycle 
+
 22.01:
 
 * Homework:
     ** Review Executors util, interface surface
-
+    ** Locate latest Java Servlet specification, Java community process website (jcp.org, Java EE platform)
+        *** review specification PDF
+    ** Deploy web app using Tomcat manager (web interface)
+        *** maven clean & package project
+        *** use packaged .war, upload and deploy using web manager
+    
 18.01:
 
 * Homework: wrap-up exercises 
