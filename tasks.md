@@ -6,6 +6,7 @@
 * Exercise:
     ** Build & deploy web app using tomcat maven plugin, in debug mode
         *** stop breakpoint at init, doGet and destroy methods
+        *** find out how many instances of HelloWorldServlet, and life cycle 
 
 22.01:
 
