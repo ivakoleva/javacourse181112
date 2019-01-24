@@ -3,11 +3,15 @@ package com.musala.javacourse181112.oop.libraryexercise;
 import com.musala.javacourse181112.oop.libraryexercise.model.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Application {
 
@@ -58,6 +62,26 @@ public class Application {
 
         library.printPersonList();
 
+        System.out.println();
+
+        final List<Person> personListSorted = Utils.sortPeopleByLatestSubscriptionRenewalDateTimeOfPayment(
+                IntStream.range(0, 3).boxed().map(i -> {
+                    final Person p = new Person();
+                    p.setSubscriptionRenewalSet(
+                            IntStream.range(0, 3).boxed()
+                                    .map(j -> j % 2 == 0 ?
+                                            LocalDateTime.now()
+                                                    .minus((i * 10) + j, ChronoUnit.MONTHS)
+                                                    .minus((i * 10) + j, ChronoUnit.DAYS) :
+                                            null
+                                    ).map(localDateTime -> {
+                                final SubscriptionRenewal subscriptionRenewal = new SubscriptionRenewal();
+                                subscriptionRenewal.setDateTimeOfPayment(localDateTime);
+                                return subscriptionRenewal;
+                            })
+                                    .collect(Collectors.toSet()));
+                    return p;
+                }).collect(Collectors.toList()));
         System.out.println();
     }
 }
