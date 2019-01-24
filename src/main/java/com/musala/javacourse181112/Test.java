@@ -1,58 +1,112 @@
 package com.musala.javacourse181112;
 
-import java.io.Serializable;
-import java.util.*;
+import java.io.*;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class Test  {
-    private final static int LIMIT = 10;
-    private static Map<Long, String> LONG_STRING_MAP = Collections.synchronizedSortedMap(new TreeMap<>());
+/*
+ ** Threads, serializing/deserializing data and put/take to queue
+ *** first, populate a queue with 10 lists of integers 0-20
+ *** create a specific directory on FS (file system), dedicated to store serialized data
+ *** then spawn two threads
+ **** consumer thread, while not interrupted:
+ ***** takes a list from queue
+ ***** for each list, serializes to one file
+ **** producer thread, while not interrupted:
+ ***** watches the directory for a new file
+ ***** reads file, deserializes file data, removes file
+ ***** puts to queue
+ */
+public class Test {
+    public static void main(String[] args) {
+        doWithQueue();
+        //doWithWrappedQueuedMap();
+    }
 
-    public static void main(final String[] args) {
-        LONG_STRING_MAP = Collections.checkedMap(new TreeMap<>(), Long.class, String.class);
+    public static void doWithQueue() {
+        Function<Integer, List<Integer>> IntegerListGenerator = nIntegers ->
+                IntStream
+                        .range(0, nIntegers + 1)
+                        .boxed()
+                        .collect(Collectors.toList());
 
-        /*final BiConsumer<Long, String> printToStdout = (key, message) ->
-            System.out.println(Thread.currentThread().getName() + " (" + key + "): " + message);*/
-        final Thread producerThread = new Thread(() -> {
-            final String value = "producer";
-            while (!Thread.interrupted()) {
-                try {
-                    LONG_STRING_MAP.put(System.currentTimeMillis(), value);
-                    Thread.sleep(3000);
-                } catch (InterruptedException ignored) {
-                    //e.printStackTrace();
-                    System.out.println("producerThread interrupted.");
+        BiFunction<Integer, Integer, Queue<List<Integer>>> IntegerQueueGenerator = (nLists, nIntegers) ->
+                IntStream
+                        .range(0, nLists + 1)
+                        .boxed()
+                        .map(i -> IntegerListGenerator.apply(nIntegers))
+                        .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
+        ConcurrentLinkedQueue<List<Integer>> integerListQueue = (ConcurrentLinkedQueue<List<Integer>>) IntegerQueueGenerator.apply(10, 0);
+
+        File queueFile = new File("src\\main\\java\\com\\musala" +
+                "\\javacourse181112\\tasks" +
+                "\\Serializing\\");
+        queueFile.mkdirs();
+        File file = new File("src\\main\\java\\com\\musala" +
+                "\\javacourse181112\\tasks" +
+                "\\Serializing", "WithQueue.bin");
+        Thread serializingThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while (!Thread.interrupted()) {
+
+                    try {
+                        file.createNewFile();
+                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+                        if (!integerListQueue.isEmpty()) {
+                            System.out.println("Serializing:");
+                            integerListQueue.forEach(i -> System.out.print(i + " "));
+                            System.out.println();
+                            objectOutputStream.writeObject(integerListQueue.poll());
+                            //Thread.sleep(1,979);
+                        }
+                        objectOutputStream.close();
+                    } catch (IOException ignore) {
+                    }
                 }
             }
         });
 
-        final Thread consumerThread = new Thread(() -> {
-            //final String value = "consumer";
-            int i = 0;
-            while (!Thread.interrupted() && i < LIMIT) {
-                if (LONG_STRING_MAP.isEmpty()) {
-                    continue;
-                }
-                for (Map.Entry<Long, String> entry : LONG_STRING_MAP.entrySet()) {
-                    System.out.println("key: " + entry.getKey() + "value: " + entry.getValue());
-                }
-                i++;
-                System.out.println("Print LONG_STRING_MAP.size()" + LONG_STRING_MAP.size());
-            }
-            producerThread.interrupt();
-        });
+        Thread deserializingThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (!Thread.interrupted()) {
 
-        producerThread.start();
-        consumerThread.start();
+                    try {
+                        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file));
+                        Object tempObject = objectInputStream.readObject();
+                        if (tempObject instanceof List) {
+                            System.out.println("before:");
+                            integerListQueue.forEach(i -> System.out.print(i + " "));
+                            System.out.println();
+                            integerListQueue.offer((List<Integer>) tempObject);
+                            System.out.println("after:");
+                            integerListQueue.forEach(i -> System.out.print(i + " "));
+                            System.out.println();
+                        }
+                        objectInputStream.close();
+                        file.delete();
+                    } catch (IOException | ClassNotFoundException ignore) {
+                    }
+                }
+            }
+        });
+        serializingThread.start();
+        deserializingThread.start();
         try {
-            producerThread.join();
-            consumerThread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            serializingThread.join();
+            deserializingThread.join();
+        } catch (InterruptedException ignore) {
         }
-
-        System.exit(0);
-    }
-        
     }
 
+    public static void doWithWrappedQueuedMap() {
 
+    }
+}
