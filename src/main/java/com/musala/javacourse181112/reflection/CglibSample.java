@@ -1,20 +1,12 @@
 package com.musala.javacourse181112.reflection;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
-
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 /**
  * Created by Iva Koleva on 22.01.2019
  *
  * @see net.sf.cglib.proxy.Enhancer
  */
 public class CglibSample {
-    public static void main(final String[] args) {
+    /*public static void main(final String[] args) {
         final Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(SampleClass.class);
         enhancer.setCallback(new MethodInterceptor() {
@@ -53,5 +45,5 @@ public class CglibSample {
         public void setStringValue(String stringValue) {
             this.stringValue = stringValue;
         }
-    }
+    }*/
 }
