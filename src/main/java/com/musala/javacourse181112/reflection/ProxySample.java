@@ -59,7 +59,6 @@ public class ProxySample {
         void setStringValue(String stringValue);
     }
 
-
     private static class SampleClass implements SampleIntegerPropertyInterface, SampleStringPropertyInterface {
         private int intValue;
         private String stringValue;
