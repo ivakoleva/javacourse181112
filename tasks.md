@@ -1,5 +1,44 @@
+28.01:
+
+* Exercise:
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+
+24.01:
+
+* Homework:
+    ** Review Executors util, interface surface
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+        *** Create a class (purpose of application memory storage) with static class members:
+            **** data lists, getters, setters
+            **** initialize them with sample data
+        *** Create servlets & JSPs for:
+            **** listing summary (HTML table-like)
+                ***** library details 
+                ***** inventory items
+                ***** persons
+            **** listing all details of one particular data item per id (id would be in-memory index of data item in list)
+            
+            **** Bonus: create a JSP, with HTTP form (post method), for adding a new data item   
+    
+* Exercise:
+    ** Build & deploy web app using tomcat maven plugin, in debug mode
+        *** stop breakpoint at init, doGet and destroy methods
+        *** find out how many instances of HelloWorldServlet, and life cycle 
+
+22.01:
+
+* Homework:
+    ** Review Executors util, interface surface
+    ** Locate latest Java Servlet specification, Java community process website (jcp.org, Java EE platform)
+        *** review specification PDF
+    ** Deploy web app using Tomcat manager (web interface)
+        *** maven clean & package project
+        *** use packaged .war, upload and deploy using web manager
+    
 18.01:
 
+* Homework: wrap-up exercises 
+    
 * Exercise:
     ** FixedThreadPoolExecutor exercise
         *** instantiate a fixed thread pool executor of size 3
@@ -12,7 +51,7 @@
         *** intercept all setters of String values
         *** then modify the value to upper-case
         *** set the modified value
-        *** print instance fields to stdout
+        *** print proxied instance fields to stdout
 
 17.01:
 
