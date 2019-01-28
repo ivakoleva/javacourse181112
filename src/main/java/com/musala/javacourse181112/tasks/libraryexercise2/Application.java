@@ -1,6 +1,6 @@
-package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise;
+package com.musala.javacourse181112.tasks.libraryexercise2;
 
-import com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model.*;
+import com.musala.javacourse181112.tasks.libraryexercise2.model.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -113,9 +113,10 @@ public class Application {
         return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
 
-    private  static SubscriptionRenewal randomSubscriptionRenewal(){
+   /* private  static SubscriptionRenewal randomSubscriptionRenewal(){
         SubscriptionRenewal randomSubscriptionRenewal = new SubscriptionRenewal();
         randomSubscriptionRenewal.setDateTimeOfPayment
-                (LocalDateTime.of((int) (2000+18*Math.random()),(int)(12*Math.random()),(int) (28*Math.random()),(int) (24*Math.random()),(int) (60*Math.random()),(int) (60*Math.random())));
-    }
+                (LocalDateTime.of());
+                //to be continue...
+    }*/
 }

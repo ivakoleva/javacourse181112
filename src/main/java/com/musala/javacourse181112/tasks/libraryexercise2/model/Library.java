@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model;
+package com.musala.javacourse181112.tasks.libraryexercise2.model;
 
 import java.util.List;
 

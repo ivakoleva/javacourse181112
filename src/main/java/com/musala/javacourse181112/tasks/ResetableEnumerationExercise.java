@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
-import com.sun.istack.internal.NotNull;
+
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -36,7 +36,8 @@ public class ResetableEnumerationExercise {
         private Collection<T> collection;
         private Iterator<T> iterator;
 
-        ResetableEnumeration(@NotNull Collection<T> collection) {
+        ResetableEnumeration( Collection<T> collection) {
+            assert collection != null;
             setCollection(collection);
         }
 
@@ -54,7 +55,8 @@ public class ResetableEnumerationExercise {
             return iterator.next();
         }
 
-        public void setCollection(@NotNull Collection<T> collection) {
+        public void setCollection( Collection<T> collection) {
+            assert collection != null;
             this.collection = collection;
             resetIterator();
         }

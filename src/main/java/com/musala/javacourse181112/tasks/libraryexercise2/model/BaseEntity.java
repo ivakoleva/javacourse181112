@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model;
+package com.musala.javacourse181112.tasks.libraryexercise2.model;
 
 /**
  * Created by Iva Koleva on 14.01.2019
