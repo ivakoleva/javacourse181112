@@ -10,7 +10,7 @@ import java.util.*;
 public class Utils {
     public static List<Person> sortPoepleByDateTimeOfPayment(List<Person> people) {
 
-        public <T extends AbstractItem > T getInstance( final Class<T> clazz){
+        /*public <T extends AbstractItem > T getInstance( final Class<T> clazz){
             T instance = null;
             try {
                 instance = clazz.getConstructor().newInstance();
@@ -18,7 +18,7 @@ public class Utils {
                 e.printStackTrace();
             }
             return instance;
-        }
+        }*/
 
         Comparator<Person> comparator = new Comparator<Person>() {
             @Override
