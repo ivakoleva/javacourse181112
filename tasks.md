@@ -1,4 +1,9 @@
-24.01P:
+28.01:
+
+* Exercise:
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+
+24.01:
 
 * Homework:
     ** Review Executors util, interface surface
