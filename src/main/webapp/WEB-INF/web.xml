@@ -18,19 +18,19 @@
         Filters
     -->
     <filter>
-        <filter-name>populateAssignLibraryFilter</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.PopulateAssignFilter</filter-class>
+        <filter-name>populateLibraryFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.PopulateLibraryFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>populateAssignLibraryFilter</filter-name>
+        <filter-name>populateLibraryFilter</filter-name>
         <url-pattern>/person*</url-pattern>
     </filter-mapping>
     <filter>
-        <filter-name>populateAssignBookFilter</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.PopulateAssignFilter</filter-class>
+        <filter-name>populateBookFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.PopulateBookFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>populateAssignBookFilter</filter-name>
+        <filter-name>populateBookFilter</filter-name>
         <url-pattern>/person*</url-pattern>
     </filter-mapping>
 

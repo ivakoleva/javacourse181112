@@ -11,30 +11,32 @@ import java.util.List;
 import java.util.Random;
 
 public class PopulateBookFilter implements Filter {
+    private static final Random random = new Random();
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        Library library = (Library) request.getAttribute("library");
-        List<Item> itemList = library.getItemList();
+    public void doFilter(final ServletRequest request,
+                         final ServletResponse servletResponse,
+                         final FilterChain filterChain) throws IOException, ServletException {
+        final Library library = (Library) request.getAttribute("library");
+        assert library != null;
 
-        if (itemList != null) {
-            itemList.add(createNewBook());
-        } else {
+        List<Item> itemList = library.getItemList();
+        if (itemList == null) {
             itemList = new ArrayList<>();
         }
+        itemList.add(createNewBook());
 
-        request.setAttribute("BookList", itemList);
         filterChain.doFilter(request, servletResponse);
     }
 
 
-    private Book createNewBook() {
-        Book book = new Book();
-        Random random = new Random();
+    private static Book createNewBook() {
+        final Book book = new Book();
         book.setId(random.nextLong());
         book.setName("Bla bla best seller");
         book.setIsbn("BG" + random.nextLong() + "Book");
