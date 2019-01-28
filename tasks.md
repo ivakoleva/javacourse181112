@@ -53,7 +53,7 @@
         
     ** Proxy exercise 
         *** intercept all setters of String values
-        *** then modify the value to upper-case
+        *** then modifwy the value to upper-case
         *** set the modified value
         *** print proxied instance fields to stdout
 

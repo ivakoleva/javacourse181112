@@ -14,6 +14,27 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--
+        Filters
+    -->
+    <filter>
+        <filter-name>populateAssignLibraryFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.PopulateAssignFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>populateAssignLibraryFilter</filter-name>
+        <url-pattern>/person*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>populateAssignBookFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.PopulateAssignFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>populateAssignBookFilter</filter-name>
+        <url-pattern>/person*</url-pattern>
+    </filter-mapping>
+
+
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
         <servlet-class>com.musala.javacourse181112.servlet.HelloWorldServlet</servlet-class>
