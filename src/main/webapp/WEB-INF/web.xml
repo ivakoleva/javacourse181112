@@ -22,4 +22,13 @@
         <servlet-name>personListServlet</servlet-name>
         <url-pattern>/person-list</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>personServlet</servlet-name>
+        <servlet-class>com.musala.javacourse181112.servlet.TestPersonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personServlet</servlet-name>
+        <url-pattern>/person-test</url-pattern>
+    </servlet-mapping>
 </web-app>
