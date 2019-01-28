@@ -1,12 +1,24 @@
 package com.musala.javacourse181112.tasks.libraryexercise;
 
+import com.musala.javacourse181112.tasks.libraryexercise.model.AbstractItem;
 import com.musala.javacourse181112.tasks.libraryexercise.model.Person;
 import com.musala.javacourse181112.tasks.libraryexercise.model.SubscriptionRenewal;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Utils {
     public static List<Person> sortPoepleByDateTimeOfPayment(List<Person> people) {
+
+        public <T extends AbstractItem > T getInstance( final Class<T> clazz){
+            T instance = null;
+            try {
+                instance = clazz.getConstructor().newInstance();
+            } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            return instance;
+        }
 
         Comparator<Person> comparator = new Comparator<Person>() {
             @Override
