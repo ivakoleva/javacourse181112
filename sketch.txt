@@ -152,3 +152,5 @@ MIME type - https://en.wikipedia.org/wiki/Media_type
 JavaScript
 CSS
 Browser developer tools
+
+JSP (Java Server Pages)
