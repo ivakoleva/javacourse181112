@@ -5,6 +5,7 @@
         *** add 2 Filters
             **** populate Library & assign to request
             **** populate Books to library inventory
+            **** map filters in a particular order, only before all URLs starting with "person"
 
 24.01:
 
