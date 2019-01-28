@@ -6,6 +6,7 @@
 
 <body>
 <div>
+    Hello, ${user}!
     <h2>Persons</h2>
 
     <!--Person List-->
