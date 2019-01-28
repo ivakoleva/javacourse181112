@@ -13,4 +13,13 @@
         <servlet-name>helloWorldServlet</servlet-name>
         <url-pattern>/hello-world</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>personListServlet</servlet-name>
+        <servlet-class>com.musala.javacourse181112.servlet.PersonListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personListServlet</servlet-name>
+        <url-pattern>/person-list</url-pattern>
+    </servlet-mapping>
 </web-app>
