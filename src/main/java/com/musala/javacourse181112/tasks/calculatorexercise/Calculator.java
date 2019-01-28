@@ -1,14 +1,13 @@
 package com.musala.javacourse181112.tasks.calculatorexercise;
 
 import com.musala.javacourse181112.tasks.Generics.Person;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 
 public class Calculator{
 
     private Person person;
     private int ageToAdd;
 
-    public Calculator(Person person, int ageToAdd) throws InvalidArgumentException{
+    public Calculator(Person person, int ageToAdd) throws IllegalArgumentException{
         setPerson(person);
         setAgeToAdd(ageToAdd);
     }
@@ -31,10 +30,10 @@ public class Calculator{
         this.ageToAdd = ageToAdd;
     }
 
-    public void setPerson(Person person) throws InvalidArgumentException {
+    public void setPerson(Person person) throws IllegalArgumentException {
         if (person != null){
             this.person = person;
-        }else throw new InvalidArgumentException(null);
+        }else throw new IllegalArgumentException();
     }
 
     public int getAgeToAdd() {

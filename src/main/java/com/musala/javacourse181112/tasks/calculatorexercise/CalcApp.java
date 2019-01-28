@@ -1,7 +1,6 @@
 package com.musala.javacourse181112.tasks.calculatorexercise;
 
 import com.musala.javacourse181112.tasks.Generics.Person;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,7 +17,7 @@ public class CalcApp {
                 Calculator calc = new Calculator(person, 22);
                 calc.calculate();
                 Calculator.calculateStatic(person,22);
-            } catch (InvalidArgumentException e) {
+            } catch (IllegalArgumentException e) {
                 e.printStackTrace();
             }
         });

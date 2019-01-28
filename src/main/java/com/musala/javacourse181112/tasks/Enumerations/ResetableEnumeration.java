@@ -1,7 +1,5 @@
 package com.musala.javacourse181112.tasks.Enumerations;
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -15,11 +13,11 @@ public class ResetableEnumeration<T> implements Enumeration {
     private Collection<T> c;
     private Iterator<T> i;
 
-    public ResetableEnumeration(@NotNull Collection<T> c) {
+    public ResetableEnumeration( Collection<T> c) {
         setCollection(c);
     }
 
-    public void zeroColectionIterator(@NotNull Collection<T> c) {
+    public void zeroColectionIterator( Collection<T> c) {
         if (c != null) {
             this.i = c.iterator();
         }
@@ -35,7 +33,7 @@ public class ResetableEnumeration<T> implements Enumeration {
         return i.next();
     }
 
-    public void setCollection(@NotNull Collection<T> c) {
+    public void setCollection( Collection<T> c) {
         this.c = c;
         zeroColectionIterator(c);
     }
@@ -69,7 +67,7 @@ public class ResetableEnumeration<T> implements Enumeration {
             return c;
         }
 
-        public void setCollection(@NotNull Collection<T> c) {
+        public void setCollection( Collection<T> c) {
             this.c = c;
             zeroIterator(c);
         }
@@ -78,7 +76,7 @@ public class ResetableEnumeration<T> implements Enumeration {
             return i;
         }
 
-        public void zeroIterator(@NotNull Collection<T> c) {
+        public void zeroIterator( Collection<T> c) {
             if (c != null) {
                 this.i = c.iterator();
             }
