@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class ResetableEnumerationExercise {
+/*public class ResetableEnumerationExercise {
     public static void main(String[] args) {
         List<Integer> list = IntStream.range(1, 6).boxed().collect(Collectors.toList());
         ResetableEnumeration<Integer> resetableEnumeration = (ResetableEnumeration<Integer>) enumeration(list);
@@ -41,4 +41,4 @@ class ResetableEnumeration<T> implements Enumeration<T> {
     public boolean hasMoreElements() {
         return iterator.hasNext();
     }
-}
+}*/
