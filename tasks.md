@@ -2,6 +2,9 @@
 
 * Exercise:
     ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+        *** add 2 Filters
+            **** populate Library & assign to request
+            **** populate Books to library inventory
 
 24.01:
 
