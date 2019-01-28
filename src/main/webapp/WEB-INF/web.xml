@@ -5,6 +5,15 @@
 
     <display-name>Sample Web Application</display-name>
 
+    <filter>
+        <filter-name>guestUserFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.GuestUserFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>guestUserFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
         <servlet-class>com.musala.javacourse181112.servlet.HelloWorldServlet</servlet-class>
@@ -23,12 +32,6 @@
         <url-pattern>/person-list</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>personServlet</servlet-name>
-        <servlet-class>com.musala.javacourse181112.servlet.TestPersonServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>personServlet</servlet-name>
-        <url-pattern>/person-test</url-pattern>
-    </servlet-mapping>
+
+
 </web-app>
