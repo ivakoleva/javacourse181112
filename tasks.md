@@ -1,7 +1,28 @@
-24.01P:
+28.01:
+
+* Exercise:
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+        *** add 2 Filters
+            **** populate Library & assign to request
+            **** populate Books to library inventory
+            **** map filters in a particular order, only before all URLs starting with "person"
+
+24.01:
 
 * Homework:
     ** Review Executors util, interface surface
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+        *** Create a class (purpose of application memory storage) with static class members:
+            **** data lists, getters, setters
+            **** initialize them with sample data
+        *** Create servlets & JSPs for:
+            **** listing summary (HTML table-like)
+                ***** library details 
+                ***** inventory items
+                ***** persons
+            **** listing all details of one particular data item per id (id would be in-memory index of data item in list)
+            
+            **** Bonus: create a JSP, with HTTP form (post method), for adding a new data item   
     
 * Exercise:
     ** Build & deploy web app using tomcat maven plugin, in debug mode
