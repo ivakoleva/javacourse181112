@@ -29,6 +29,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>libraryServlet</servlet-name>
-        <url-pattern>/library_jsp</url-pattern>
+        <url-pattern>/library</url-pattern> <!--by convention, - would be better instead of _; jsp string is obsolete-->
     </servlet-mapping>
 </web-app>
