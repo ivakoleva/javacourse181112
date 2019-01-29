@@ -1,7 +1,7 @@
 package com.musala.javacourse181112.homeworks.staticnonstaticmethodshw;
 
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
+
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;

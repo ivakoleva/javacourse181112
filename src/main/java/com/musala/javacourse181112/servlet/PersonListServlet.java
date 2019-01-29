@@ -2,16 +2,16 @@ package com.musala.javacourse181112.servlet;
 
 import com.musala.javacourse181112.oop.votesexercise.service.PersonService;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+        import javax.servlet.RequestDispatcher;
+        import javax.servlet.ServletException;
+        import javax.servlet.http.HttpServlet;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
+        import java.io.IOException;
+        import java.time.LocalDate;
+        import java.time.temporal.ChronoUnit;
+        import java.util.stream.Collectors;
+        import java.util.stream.IntStream;
 
 /**
  * Created by Iva Koleva on 24.01.2019
