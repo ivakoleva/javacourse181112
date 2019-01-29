@@ -1,6 +1,6 @@
-package com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise;
+package com.musala.javacourse181112.tasks.libraryexercise2;
 
-import com.musala.javacourse181112.tasks.libraryexercise2.libraryexercise.model.*;
+import com.musala.javacourse181112.tasks.libraryexercise2.model.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -80,7 +80,7 @@ public class Application {
         System.out.println();
     }
 
-    private static Person createRandomClient() {
+    public static Person createRandomClient() {
         final Person person = new Person();
         person.setEgn(randomEgn());
         person.setName(randomFullName(2));
@@ -116,6 +116,7 @@ public class Application {
     private  static SubscriptionRenewal randomSubscriptionRenewal(){
         SubscriptionRenewal randomSubscriptionRenewal = new SubscriptionRenewal();
         randomSubscriptionRenewal.setDateTimeOfPayment
-                (LocalDateTime.of((int) (2000+18*Math.random()),(int)(12*Math.random()),(int) (28*Math.random()),(int) (24*Math.random()),(int) (60*Math.random()),(int) (60*Math.random())));
+                (LocalDateTime.now().minusDays(((int)(Math.random()*30))));
+        return randomSubscriptionRenewal;
     }
 }
