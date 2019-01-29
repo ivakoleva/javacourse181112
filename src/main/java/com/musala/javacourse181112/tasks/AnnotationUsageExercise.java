@@ -5,6 +5,7 @@ import com.musala.javacourse181112.annotations.SampleAnnotation;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Created by Iva Koleva on 29.01.2019
@@ -46,22 +47,19 @@ public class AnnotationUsageExercise {
     public static void main(final String[] args) {
         final Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
 
-        for(final Method method : annotationUsageExerciseClass.getDeclaredMethods()){
-            if(method.isAnnotationPresent(SampleAnnotation.class)){
-               System.out.println("Method: " + method.getName());
-            }
-        }
+        Arrays.stream(annotationUsageExerciseClass.getDeclaredMethods())
+                .filter(method -> method.isAnnotationPresent(SampleAnnotation.class))
+                .map(method -> "Method: " + method.getName())
+                .forEach(System.out::println);
 
-        for(final Field field : annotationUsageExerciseClass.getDeclaredFields()){
-            if(field.isAnnotationPresent(SampleAnnotation.class)){
-                System.out.println("Field: " + field.getName());
-            }
-        }
+        Arrays.stream(annotationUsageExerciseClass.getDeclaredFields())
+                .filter(field -> field.isAnnotationPresent(SampleAnnotation.class))
+                .map(field -> "Field: " + field.getName())
+                .forEach(System.out::println);
 
-        for(final Annotation annotation : annotationUsageExerciseClass.getDeclaredAnnotations()){
-            if(annotation instanceof SampleAnnotation){
-                System.out.println("Annotation: " + annotation.annotationType().getSimpleName());
-            }
-        }
+        Arrays.stream(annotationUsageExerciseClass.getDeclaredAnnotations())
+                .filter(annotation -> annotation instanceof SampleAnnotation)
+                .map(annotation -> "Annotation: " + annotation.annotationType().getSimpleName())
+                .forEach(System.out::println);
     }
 }
