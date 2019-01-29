@@ -41,7 +41,7 @@ public class AnnotationUsageSample {
     public static void main(final String[] args) {
         final Class<AnnotationUsageSample> clazz = AnnotationUsageSample.class;
 
-        PrintMethodsWithAnotationsExample.printMethodsWithAnotations(clazz);
+        PrintMethodsWithAnotationsExample.printClassAnnotationsInfo(clazz);
     }
 
 }
