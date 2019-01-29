@@ -17,7 +17,6 @@ public class BookPopulatingFilter implements Filter {
     public void doFilter(ServletRequest servletRequest,
                          ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
-        servletRequest.setAttribute("name1", );
         servletRequest.getAttribute("library");//by setters & getters set the book attribute
 //        servletRequest.setAttribute("book0", new Book());
         filterChain.doFilter(servletRequest, servletResponse);
