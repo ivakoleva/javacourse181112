@@ -7,7 +7,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * Created by Iva Koleva on 29.01.2019
  */
-@Retention(value=RUNTIME)
+@Retention(RUNTIME)
 public @interface SampleAnnotation {
     //String value();
 }
