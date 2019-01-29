@@ -7,6 +7,11 @@
 <body>
 <div>
     Hello, ${user}!
+    <br>
+    Library, ${library.name}  ${library.address}
+    <br>
+    Book, ${item.name} ${item.isbn} ${item.id}
+
     <h2>Persons</h2>
 
     <!--Person List-->
@@ -42,7 +47,6 @@
             </div>
         </c:otherwise>
     </c:choose>
-
 </div>
 </body>
 </html>
