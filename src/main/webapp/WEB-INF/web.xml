@@ -32,6 +32,14 @@
         <url-pattern>/person-list</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>listServlet</servlet-name>
+        <servlet-class>com.musala.javacourse181112.tasks.librarywebapp.LIbraryServletbraryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listServlet</servlet-name>
+        <url-pattern>/library-app</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

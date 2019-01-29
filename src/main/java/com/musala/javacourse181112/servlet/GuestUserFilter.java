@@ -18,7 +18,7 @@ public class GuestUserFilter implements Filter {
                          final ServletResponse response,
                          final FilterChain chain) throws IOException, ServletException {
         if(request.getAttribute("user") == null) {
-            request.setAttribute("user", "guest");
+            request.setAttribute("user", "guest1");
         }
         chain.doFilter(request, response);
     }
