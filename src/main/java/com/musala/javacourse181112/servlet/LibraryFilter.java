@@ -1,18 +1,12 @@
 package com.musala.javacourse181112.servlet;
 
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.*;
-
 import com.musala.javacourse181112.tasks.libraryexercise_v0_1.model.Library;
 
+import javax.servlet.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
-
 
 public class LibraryFilter implements Filter {
-    private static final Random random = new Random();
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -20,9 +14,9 @@ public class LibraryFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest,
-                         ServletResponse servletResponse,
-                         FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(final ServletRequest servletRequest,
+                         final ServletResponse servletResponse,
+                         final FilterChain filterChain) throws IOException, ServletException {
         if (servletRequest.getAttribute("library") == null) {
             servletRequest.setAttribute("library", createNewLibrary());
         }

@@ -22,7 +22,6 @@
         <filter-name>libraryFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
     <filter>
         <filter-name>inventoryFilter</filter-name>
         <filter-class>com.musala.javacourse181112.servlet.InventoryFilter</filter-class>
@@ -31,6 +30,7 @@
         <filter-name>inventoryFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!--TODO: add LibraryServlet, re-map filters above; add JSP ?-->
 
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
