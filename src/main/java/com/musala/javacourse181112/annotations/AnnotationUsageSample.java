@@ -3,7 +3,6 @@ package com.musala.javacourse181112.annotations;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 /**
  * Created by Iva Koleva on 29.01.2019
@@ -42,35 +41,30 @@ public class AnnotationUsageSample {
     }
 
     public static void main(final String[] args) {
-        final Class<AnnotationUsageSample> clazz =AnnotationUsageSample.class;
-int counter=0;
-      final Method[] methods= clazz.getDeclaredMethods();
-        final Field[] fields= clazz.getDeclaredFields();
+        final Class<AnnotationUsageSample> clazz = AnnotationUsageSample.class;
+        final Method[] methods = clazz.getDeclaredMethods();
+        final Field[] fields = clazz.getDeclaredFields();
 
-       for (int i=0 ;i<methods.length;i++){
+        for (final Method method : methods) {
+            if (method.isAnnotationPresent(SampleAnnotation.class)) {
+                System.out.println(method.getName() + " Has an annotation SampleAnnotation");
+            }
 
-           if(methods[i].getAnnotation(SampleAnnotation.class)!= null){
-               System.out.println(methods[i].getName()+ "Has an annotation");
-           }
+            int counter = 0;
+            for (final Annotation[] annotations : method.getParameterAnnotations()) {
+                for (final Annotation annotation : annotations) {
+                    if (annotation instanceof SampleAnnotation) {
+                        counter++;
+                    }
+                }
+            }
+            System.out.println(method.getName() + " Has " + counter + " annotation SampleAnnotation in its parameters");
 
-               Annotation[][] annotation=methods[i].getParameterAnnotations();
-               for (Annotation[] annotations:annotation){
-                   for(Annotation annotations1:annotations){
-                       if(annotations1 instanceof SampleAnnotation){
-                          counter++;
-                       }
-                   }
-               }
-               System.out.println(methods[i].getName()+" Has " +counter+" anotations in its parameters");
-
-
-    }
-       for(int i=0;i<fields.length;i++){
-           if(fields[i].getAnnotation(SampleAnnotation.class)!=null){
-               System.out.println(fields[i].getName()+" Has an annotation");
-           }
-       }
-
-
+        }
+        for (final Field field : fields) {
+            if (field.isAnnotationPresent(SampleAnnotation.class)) {
+                System.out.println(field.getName() + " Has an annotation SampleAnnotation");
+            }
+        }
     }
 }
