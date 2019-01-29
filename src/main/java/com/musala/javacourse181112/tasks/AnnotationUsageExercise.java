@@ -51,14 +51,14 @@ public class AnnotationUsageExercise {
         // loop over all declared methods, filtering them by annotations array not empty
 
         final Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
-        Method[] methods = annotationUsageExerciseClass.getDeclaredMethods();
-        Field[] fields = annotationUsageExerciseClass.getDeclaredFields();
 
-        Arrays.stream(methods).filter(field -> field.isAnnotationPresent(SampleAnnotation.class))
+        Arrays.stream(annotationUsageExerciseClass.getDeclaredMethods())
+                .filter(field -> field.isAnnotationPresent(SampleAnnotation.class))
                 .map(field -> "Field: " + field.getName())
                 .forEachOrdered(System.out::println);
 
-        Arrays.stream(fields).filter(method -> method.isAnnotationPresent(SampleAnnotation.class))
+        Arrays.stream(annotationUsageExerciseClass.getDeclaredFields())
+                .filter(method -> method.isAnnotationPresent(SampleAnnotation.class))
                 .map(method -> "Method: " + method.getName())
                 .forEachOrdered(System.out::println);
     }
