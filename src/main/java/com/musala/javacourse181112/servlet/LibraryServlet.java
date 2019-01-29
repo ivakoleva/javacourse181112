@@ -1,6 +1,5 @@
 package com.musala.javacourse181112.servlet;
 
-import com.musala.javacourse181112.oop.libraryexercise.LibraryService;
 import com.musala.javacourse181112.oop.libraryexercise.model.*;
 
 import javax.servlet.RequestDispatcher;
@@ -15,24 +14,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryServlet extends HttpServlet {
+    @Deprecated
     private static final List<Person> personList = new ArrayList<>();
+    @Deprecated
     private static final List<Item> itemList = new ArrayList<>();
+    @Deprecated
     private static final List<ItemRent> itemRentList = new ArrayList<>();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    protected void doGet(final HttpServletRequest req,
+                         final HttpServletResponse resp) throws ServletException, IOException {
         final RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/library.jsp");
-        final LibraryService libraryService = new LibraryService();
+
+        /*final LibraryService libraryService = new LibraryService();
         populatingData();
-
-
         req.setAttribute("library",
-                libraryService.generateLibrary("National Library", "Sofia 1234", personList, itemList, itemRentList));
+                libraryService.generateLibrary("National Library", "Sofia 1234", personList, itemList, itemRentList));*/
 
         dispatcher.forward(req, resp);
     }
 
+    @Deprecated
     private static void populatingData() {
         final Person person = new Person();
         person.setName("Ivan");
