@@ -80,7 +80,7 @@ public class Application {
         System.out.println();
     }
 
-    private static Person createRandomClient() {
+    public static Person createRandomClient() {
         final Person person = new Person();
         person.setEgn(randomEgn());
         person.setName(randomFullName(2));
@@ -113,10 +113,10 @@ public class Application {
         return builder.toString().substring(0, 1).toUpperCase() + builder.toString().substring(1);
     }
 
-   /* private  static SubscriptionRenewal randomSubscriptionRenewal(){
+    private  static SubscriptionRenewal randomSubscriptionRenewal(){
         SubscriptionRenewal randomSubscriptionRenewal = new SubscriptionRenewal();
         randomSubscriptionRenewal.setDateTimeOfPayment
-                (LocalDateTime.of());
-                //to be continue...
-    }*/
+                (LocalDateTime.now().minusDays(((int)(Math.random()*30))));
+        return randomSubscriptionRenewal;
+    }
 }

@@ -5,11 +5,13 @@ import java.util.List;
 public class Library extends BaseEntity {
     public final static int MAX_DAYS = 30;
 
+
     private String name;
     private String address;
     private List<Person> personList;
     private List<Item> itemList;
     private List<ItemRent> itemRentList;
+
 
     public String getName() {
         return name;
