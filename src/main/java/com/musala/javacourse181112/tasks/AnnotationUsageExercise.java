@@ -61,8 +61,5 @@ public class AnnotationUsageExercise {
         Arrays.stream(fields).filter(method -> method.isAnnotationPresent(SampleAnnotation.class))
                 .map(method -> "Method: " + method.getName())
                 .forEachOrdered(System.out::println);
-
-        //annotationUsageExerciseClass.getDeclaredFields()[0]
-        //annotationUsageExerciseClass.getMethods()[0],annotation;
     }
 }
