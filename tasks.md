@@ -1,4 +1,13 @@
-24.01P:
+28.01:
+
+* Exercise:
+    ** Library Web App - port Library exercise to a Web application, reusing existing code-base
+        *** add 2 Filters
+            **** populate Library & assign to request
+            **** populate Books to library inventory
+            **** map filters in a particular order, only before all URLs starting with "person"
+
+24.01:
 
 * Homework:
     ** Review Executors util, interface surface
