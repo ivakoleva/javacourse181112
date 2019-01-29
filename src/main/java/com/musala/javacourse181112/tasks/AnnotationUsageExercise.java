@@ -2,6 +2,9 @@ package com.musala.javacourse181112.tasks;
 
 import com.musala.javacourse181112.annotations.SampleAnnotation;
 
+import java.util.Arrays;
+
+
 /**
  * Created by Iva Koleva on 29.01.2019
  */
@@ -40,6 +43,14 @@ public class AnnotationUsageExercise {
 
     @SampleAnnotation
     public static void main(final String[] args) {
-        // TODO: implement
+        final Class<AnnotationUsageExercise> annotationUsageExercise = AnnotationUsageExercise.class;
+
+        Arrays.stream(annotationUsageExercise.getDeclaredMethods())
+                .filter(method ->method.getAnnotations().length!=0)
+                .forEach(method -> System.out.println(method.getName()));
+
+        Arrays.stream(annotationUsageExercise.getDeclaredFields())
+                .filter(field ->field.getAnnotations().length!=0)
+                .forEach(field -> System.out.println(field.getName()));
     }
 }
