@@ -60,7 +60,7 @@ public class AnnotationUsageExercise {
 
         for(final Annotation annotation : annotationUsageExerciseClass.getDeclaredAnnotations()){
             if(annotation instanceof SampleAnnotation){
-                System.out.println("Annotation: " + annotation.toString());
+                System.out.println("Annotation: " + annotation.annotationType().getSimpleName());
             }
         }
     }
