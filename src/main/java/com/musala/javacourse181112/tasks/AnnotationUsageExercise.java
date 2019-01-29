@@ -2,6 +2,9 @@ package com.musala.javacourse181112.tasks;
 
 import com.musala.javacourse181112.annotations.SampleAnnotation;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 /**
  * Created by Iva Koleva on 29.01.2019
  */
@@ -40,6 +43,20 @@ public class AnnotationUsageExercise {
 
     @SampleAnnotation
     public static void main(final String[] args) {
-        // TODO: implement
+        final Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
+
+        for (Field field : annotationUsageExerciseClass.getDeclaredFields()) {
+            if (field.isAnnotationPresent(SampleAnnotation.class)) {
+                System.out.println("Field: " + field.getName());
+            }
+        }
+
+        for (Method method : annotationUsageExerciseClass.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(SampleAnnotation.class)) {
+                System.out.println("Method: " + method.getName());
+            }
+        }
+
+
     }
 }
