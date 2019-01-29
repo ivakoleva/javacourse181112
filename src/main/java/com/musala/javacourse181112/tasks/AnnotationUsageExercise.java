@@ -2,6 +2,8 @@ package com.musala.javacourse181112.tasks;
 
 import com.musala.javacourse181112.annotations.SampleAnnotation;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
@@ -49,11 +51,18 @@ public class AnnotationUsageExercise {
         // loop over all declared methods, filtering them by annotations array not empty
 
         final Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
-        Arrays.stream(annotationUsageExerciseClass.getDeclaredMethods())
-                .filter(method ->)
+        Method[] methods = annotationUsageExerciseClass.getDeclaredMethods();
+        Field[] fields = annotationUsageExerciseClass.getDeclaredFields();
+
+        Arrays.stream(methods).filter(field -> field.isAnnotationPresent(SampleAnnotation.class))
+                .map(field -> "Field: " + field.getName())
+                .forEachOrdered(System.out::println);
+
+        Arrays.stream(fields).filter(method -> method.isAnnotationPresent(SampleAnnotation.class))
+                .map(method -> "Method: " + method.getName())
+                .forEachOrdered(System.out::println);
 
         //annotationUsageExerciseClass.getDeclaredFields()[0]
         //annotationUsageExerciseClass.getMethods()[0],annotation;
-
     }
 }
