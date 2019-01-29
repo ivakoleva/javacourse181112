@@ -18,27 +18,24 @@ import java.util.ArrayList;
  * Created by Aykut Ismailov on 26.1.2019 г.
  */
 public class LibraryServlet extends HttpServlet {
+    private static final LibraryService libraryService = new LibraryService();
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
-
-        final RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/jsp/library_jsp.jsp");
-        final LibraryService libraryService = new LibraryService();
-        final Library library = DummyClass.dummyPopulator(libraryService);
-
-        req.setAttribute("library", library);
+    protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
+        final RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/jsp/library.jsp");
+        req.setAttribute("library", populateDummyData(libraryService));
 
         requestDispatcher.forward(req, resp);
     }
-}
 
-final class DummyClass {
-    static Library dummyPopulator(LibraryService libraryService) {
+
+    // TODO: extract to service
+    private static Library populateDummyData(final LibraryService libraryService) {
         final Library library = libraryService.generateLibrary("TU Library", new ArrayList<>(), new ArrayList<>());
 
         libraryService.addBook(library, "123", "Random Book", "123", LocalDate.now().minus(1L, ChronoUnit.MONTHS));
-        libraryService.addMagazine(library, "124", "Random Magazine", "124", LocalDate.now().minus(3L, ChronoUnit.DAYS));
-        libraryService.addNewspaper(library, "125", "Random Newspaper", "125", LocalDate.now());
+        /*libraryService.addMagazine(library, "124", "Random Magazine", "124", LocalDate.now().minus(3L, ChronoUnit.DAYS));
+        libraryService.addNewspaper(library, "125", "Random Newspaper", "125", LocalDate.now());*/
 
         libraryService.addPerson(library, "1", "First Person", Role.EMPLOYEE);
         libraryService.addPerson(library, "2", "Second Person", Role.CLIENT);
