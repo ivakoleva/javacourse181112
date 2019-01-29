@@ -16,20 +16,21 @@
 
     <filter>
         <filter-name>populateLibrary</filter-name>
-        <filter-class>com.musala.javacourse181112.tasks.LibraryWebApp.PopulateLibrary</filter-class>
+        <filter-class>com.musala.javacourse181112.tasks.library_web_app.LibraryPopulatingFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>populateLibrary</filter-name>
         <url-pattern>/person*</url-pattern>
     </filter-mapping>
     <filter>
-        <filter-name>populateBook</filter-name>
-        <filter-class>com.musala.javacourse181112.tasks.LibraryWebApp.PopulateBooks</filter-class>
+        <filter-name>booksPopulatingFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.tasks.library_web_app.BooksPopulatingFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>populateBookFilter</filter-name>
+        <filter-name>booksPopulatingFilter</filter-name>
         <url-pattern>/person*</url-pattern>
     </filter-mapping>
+    <!--TODO: add LibraryServlet, re-map filters above; add JSP ?-->
 
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
@@ -48,7 +49,4 @@
         <servlet-name>personListServlet</servlet-name>
         <url-pattern>/person-list</url-pattern>
     </servlet-mapping>
-
-
-
 </web-app>
