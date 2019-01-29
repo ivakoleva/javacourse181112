@@ -1,5 +1,14 @@
 29.01:
 
+* Homework:
+    ** Validation framework
+        *** implement custom StringLength annotation, accepting min and max int values
+            **** applicable to fields only
+            **** available at runtime
+        *** annotate Person name field using StringLength, min 1 max 255
+        *** implement method performing entity validation
+        *** instantiate a Person object, populate name, then validate and print to stdout
+
 * Exercise:
     ** Annotation usage exercise - using template class tasks.AnnotationUsageExercise
         *** print to stdout all annotated class members
