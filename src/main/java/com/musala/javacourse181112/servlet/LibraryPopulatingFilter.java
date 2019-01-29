@@ -20,9 +20,14 @@ public class LibraryPopulatingFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        com.musala.javacourse181112.oop.libraryexercise.model.Library library = new com.musala.javacourse181112.oop.libraryexercise.model.Library();
-        servletRequest.setAttribute("name", library);
+    public void doFilter(final ServletRequest servletRequest,
+                         final ServletResponse servletResponse,
+                         final FilterChain filterChain) throws IOException, ServletException {
+        if (servletRequest.getAttribute("library") == null) {
+            final Library library = new Library();
+            library.setName("Sample library");
+            servletRequest.setAttribute("library", library);
+        }
     }
 
     @Override
