@@ -44,19 +44,23 @@ public class AnnotationUsageExercise {
 
     @SampleAnnotation
     public static void main(final String[] args) {
-        Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
-        Method[] methods = annotationUsageExerciseClass.getDeclaredMethods();
-        Field[] fields = annotationUsageExerciseClass.getDeclaredFields();
+        final Class<AnnotationUsageExercise> annotationUsageExerciseClass = AnnotationUsageExercise.class;
 
-        for(Method method : methods){
+        for(final Method method : annotationUsageExerciseClass.getDeclaredMethods()){
             if(method.isAnnotationPresent(SampleAnnotation.class)){
                System.out.println("Method: " + method.getName());
             }
         }
 
-        for(Field field : fields){
+        for(final Field field : annotationUsageExerciseClass.getDeclaredFields()){
             if(field.isAnnotationPresent(SampleAnnotation.class)){
                 System.out.println("Field: " + field.getName());
+            }
+        }
+
+        for(final Annotation annotation : annotationUsageExerciseClass.getDeclaredAnnotations()){
+            if(annotation instanceof SampleAnnotation){
+                System.out.println("Annotation: " + annotation.toString());
             }
         }
     }
