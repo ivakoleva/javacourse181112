@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.annotations;
 
+import com.musala.javacourse181112.tasks.anotations.PrintMethodsWithAnotationsExample;
+
 /**
  * Created by Iva Koleva on 29.01.2019
  */
@@ -37,6 +39,9 @@ public class AnnotationUsageSample {
     }
 
     public static void main(final String[] args) {
+        final Class<AnnotationUsageSample> clazz = AnnotationUsageSample.class;
 
+        PrintMethodsWithAnotationsExample.printMethodsWithAnotations(clazz);
     }
+
 }
