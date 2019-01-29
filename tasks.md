@@ -1,3 +1,10 @@
+29.01:
+
+* Exercise:
+    ** Annotation usage exercise - using template class tasks.AnnotationUsageExercise
+        *** print to stdout all annotated class members
+    
+
 28.01:
 
 * Exercise:
