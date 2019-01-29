@@ -15,21 +15,21 @@
     </filter-mapping>
 
     <filter>
-        <filter-name>ServletFilterLibrary</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.ServletFilter</filter-class>
+        <filter-name>libraryPopulatingFilter</filter-name>
+        <filter-class>com.musala.javacourse181112.servlet.LibraryPopulatingFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>libraryFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <filter-name>libraryPopulatingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--TODO: refactor url pattern, library-specific-->
     </filter-mapping>
 
     <filter>
-        <filter-name>ServletFilterBook</filter-name>
+        <filter-name>bookPopulatingFilter</filter-name>
         <filter-class>com.musala.javacourse181112.servlet.BookPopulatingFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>BookFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <filter-name>bookPopulatingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--TODO: refactor url pattern, library-specific-->
     </filter-mapping>
 
     <servlet>
@@ -50,8 +50,5 @@
         <url-pattern>/person-list</url-pattern>
     </servlet-mapping>
 
-
-
-
-
+    <!--TODO: add LibraryServlet-->
 </web-app>
