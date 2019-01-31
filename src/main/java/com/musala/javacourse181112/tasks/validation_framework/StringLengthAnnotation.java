@@ -15,6 +15,5 @@ public @interface StringLengthAnnotation {
      **** available at runtime
      * */
     int minValue();
-
     int maxValue();
 }
