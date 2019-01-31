@@ -1,9 +1,14 @@
 package com.musala.javacourse181112.tasks.libraryexercise_v0_1.model;
 
+import com.musala.javacourse181112.tasks.validationFramework.StringLength;
+
 import java.util.Set;
 
 public class Person extends BaseEntity {
+
+    @StringLength(minimumSize = 1, maximumSize = 255)
     private String name;
+
     private String egn;
     private Set<Role> roleSet;
     private Set<ItemRent> itemRentSet;
