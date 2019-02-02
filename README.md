@@ -12,3 +12,8 @@ Open Maven Projects facet (at the right of IDEA), then double-click:
 ### Using Manager web application, distributed (usually) with Tomcat
 
 ## Using Application Servers IDEA's integration (only available with Intellij IDEA Enterprise Edition)
+
+
+## Running Spring boot application (by plugin)
+### clean
+### spring-boot -> run (right-click, run or debug mode)
