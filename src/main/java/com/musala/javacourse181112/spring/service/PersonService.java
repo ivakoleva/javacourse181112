@@ -17,12 +17,12 @@ public class PersonService {
         final List<PersonDTO> personDTOList = new ArrayList<>();
 
         final PersonDTO personDTO1 = new PersonDTO();
-        personDTO1.setId(1l);
+        personDTO1.setId(1L);
         personDTO1.setName("Ivan Ivanov");
         personDTO1.setGender(Gender.MALE);
 
         final PersonDTO personDTO2 = new PersonDTO();
-        personDTO2.setId(2l);
+        personDTO2.setId(2L);
         personDTO2.setName("Maria Ivanova");
         personDTO2.setGender(Gender.FEMALE);
 
