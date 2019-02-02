@@ -41,6 +41,7 @@ public class AnnotationUsageSample {
     }
 
     public static void main(final String[] args) {
+       // TODO:With lambda in exercises
         final Class<AnnotationUsageSample> clazz = AnnotationUsageSample.class;
         final Method[] methods = clazz.getDeclaredMethods();
         final Field[] fields = clazz.getDeclaredFields();
