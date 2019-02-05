@@ -1,11 +1,12 @@
 package com.musala.javacourse181112.tasks.paw_inc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Center {
     private String name;
-    private List<Dog> dogs;
-    private List<Cat> cats;
+    private static List<Dog> dogs = new ArrayList<>();
+    private static List<Cat> cats = new ArrayList<>();
 
     public String getName() {
         return name;
