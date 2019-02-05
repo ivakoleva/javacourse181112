@@ -6,7 +6,7 @@ package com.musala.javacourse181112.reflection;
  * @see net.sf.cglib.proxy.Enhancer
  */
 public class CglibSample {
-    /*public static void main(final String[] args) {
+    /*public static void PawIncorporation(final String[] args) {
         final Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(SampleClass.class);
         enhancer.setCallback(new MethodInterceptor() {

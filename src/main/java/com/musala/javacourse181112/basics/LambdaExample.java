@@ -1,8 +1,5 @@
 package com.musala.javacourse181112.basics;
 
-import java.util.Arrays;
-import java.util.function.Function;
-
 /**
  * Created by Iva Koleva on 22.11.2018
  */
@@ -39,6 +36,6 @@ class MyRunnable implements Runnable {
         System.out.println("Run.");
     }
 
-    /*public static void main(final String[] args) {
+    /*public static void PawIncorporation(final String[] args) {
     }*/
 }

@@ -1,9 +1,10 @@
 package com.musala.javacourse181112.tasks;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /*
  ** spawning two threads, sharing a map instance
@@ -15,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *** reads 10 map entries
  *** prints them on stdout
  *** interrupts producer thread
- ** main thread exits with 0
+ ** PawIncorporation thread exits with 0
  */
 public class ThreadExercise {
     public static void main(String[] args) {

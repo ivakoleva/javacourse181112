@@ -1,9 +1,6 @@
 package com.musala.javacourse181112.tasks;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -46,11 +43,11 @@ public class Serializing_DeserializingThreads {
                         .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
         ConcurrentLinkedQueue<List<Integer>> integerListQueue = (ConcurrentLinkedQueue<List<Integer>>) IntegerQueueGenerator.apply(10, 0);
 
-        File queueFile = new File("src\\main\\java\\com\\musala" +
+        File queueFile = new File("src\\PawIncorporation\\java\\com\\musala" +
                 "\\javacourse181112\\tasks" +
                 "\\Serializing\\");
         queueFile.mkdirs();
-        File file = new File("src\\main\\java\\com\\musala" +
+        File file = new File("src\\PawIncorporation\\java\\com\\musala" +
                 "\\javacourse181112\\tasks" +
                 "\\Serializing", "WithQueue.bin");
         Thread serializingThread = new Thread(new Runnable() {
