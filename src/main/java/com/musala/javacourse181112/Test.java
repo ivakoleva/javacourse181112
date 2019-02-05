@@ -1,112 +1,47 @@
 package com.musala.javacourse181112;
 
 import java.io.*;
-import java.util.List;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
-/*
- ** Threads, serializing/deserializing data and put/take to queue
- *** first, populate a queue with 10 lists of integers 0-20
- *** create a specific directory on FS (file system), dedicated to store serialized data
- *** then spawn two threads
- **** consumer thread, while not interrupted:
- ***** takes a list from queue
- ***** for each list, serializes to one file
- **** producer thread, while not interrupted:
- ***** watches the directory for a new file
- ***** reads file, deserializes file data, removes file
- ***** puts to queue
- */
 public class Test {
-    public static void main(String[] args) {
-        doWithQueue();
-        //doWithWrappedQueuedMap();
+
+class Robot{
+  private int currentX=0;
+  private int currentY=5;
+  private int previousX;
+  private int previousY;
+
+
+    public Robot(int currentX, int currentY) {
+        this.previousX=this.currentX;
+        this.previousY=this.currentY;
+        this.currentX = currentX;
+        this.currentY = currentY;
+    }
+    void moveX(int dx){
+        this.previousX=this.currentX;
+        this.currentX+=dx;
+    }
+    void moveY(int dy){
+        this.previousY=this.currentY;
+        this.currentY+=dy;
     }
 
-    public static void doWithQueue() {
-        Function<Integer, List<Integer>> IntegerListGenerator = nIntegers ->
-                IntStream
-                        .range(0, nIntegers + 1)
-                        .boxed()
-                        .collect(Collectors.toList());
-
-        BiFunction<Integer, Integer, Queue<List<Integer>>> IntegerQueueGenerator = (nLists, nIntegers) ->
-                IntStream
-                        .range(0, nLists + 1)
-                        .boxed()
-                        .map(i -> IntegerListGenerator.apply(nIntegers))
-                        .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
-        ConcurrentLinkedQueue<List<Integer>> integerListQueue = (ConcurrentLinkedQueue<List<Integer>>) IntegerQueueGenerator.apply(10, 0);
-
-        File queueFile = new File("src\\main\\java\\com\\musala" +
-                "\\javacourse181112\\tasks" +
-                "\\Serializing\\");
-        queueFile.mkdirs();
-        File file = new File("src\\main\\java\\com\\musala" +
-                "\\javacourse181112\\tasks" +
-                "\\Serializing", "WithQueue.bin");
-        Thread serializingThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                while (!Thread.interrupted()) {
-
-                    try {
-                        file.createNewFile();
-                        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-                        if (!integerListQueue.isEmpty()) {
-                            System.out.println("Serializing:");
-                            integerListQueue.forEach(i -> System.out.print(i + " "));
-                            System.out.println();
-                            objectOutputStream.writeObject(integerListQueue.poll());
-                            //Thread.sleep(1,979);
-                        }
-                        objectOutputStream.close();
-                    } catch (IOException ignore) {
-                    }
-                }
-            }
-        });
-
-        Thread deserializingThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!Thread.interrupted()) {
-
-                    try {
-                        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file));
-                        Object tempObject = objectInputStream.readObject();
-                        if (tempObject instanceof List) {
-                            System.out.println("before:");
-                            integerListQueue.forEach(i -> System.out.print(i + " "));
-                            System.out.println();
-                            integerListQueue.offer((List<Integer>) tempObject);
-                            System.out.println("after:");
-                            integerListQueue.forEach(i -> System.out.print(i + " "));
-                            System.out.println();
-                        }
-                        objectInputStream.close();
-                        file.delete();
-                    } catch (IOException | ClassNotFoundException ignore) {
-                    }
-                }
-            }
-        });
-        serializingThread.start();
-        deserializingThread.start();
-        try {
-            serializingThread.join();
-            deserializingThread.join();
-        } catch (InterruptedException ignore) {
-        }
+    void printCurrentCoordinates(){
+        System.out.println("Current Robot cordinates are "
+                +"x=" + this.currentX
+                +"y=" + this.currentY);
     }
 
-    public static void doWithWrappedQueuedMap() {
 
-    }
+}
 }
