@@ -1,4 +1,4 @@
-package Paw_Inc.Classes.Centers;
+package com.musala.javacourse181112.paw_inc.classes.centers;
 
 /**
  * Created by Aykut Ismailov on 5.2.2019 г.

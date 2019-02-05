@@ -1,6 +1,6 @@
-package Paw_Inc;
+package com.musala.javacourse181112.paw_inc;
 
-import Paw_Inc.Classes.Command;
+import com.musala.javacourse181112.paw_inc.classes.Command;
 
 import java.util.Scanner;
 

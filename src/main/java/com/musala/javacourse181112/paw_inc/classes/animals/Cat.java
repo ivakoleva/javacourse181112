@@ -1,6 +1,6 @@
-package Paw_Inc.Classes.Animals;
+package com.musala.javacourse181112.paw_inc.classes.animals;
 
-import Paw_Inc.Classes.Centers.AdoptionCenter;
+import com.musala.javacourse181112.paw_inc.classes.centers.AdoptionCenter;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
