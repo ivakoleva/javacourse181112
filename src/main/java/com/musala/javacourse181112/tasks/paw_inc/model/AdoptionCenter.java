@@ -2,7 +2,7 @@ package com.musala.javacourse181112.tasks.paw_inc.model;
 
 import com.musala.javacourse181112.tasks.paw_inc.Center;
 
-public class CleansingCenter extends Center {
+public class AdoptionCenter extends Center {
     private String name;
     private int storedAnimals;
 
@@ -22,4 +22,3 @@ public class CleansingCenter extends Center {
         this.storedAnimals = storedAnimals;
     }
 }
-
