@@ -1,6 +1,6 @@
-package Paw_Inc.Classes;
+package com.musala.javacourse181112.paw_inc.classes;
 
-import Paw_Inc.AnimalCenterManager;
+import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
 
 /**
  * Created by Aykut Ismailov on 5.2.2019 г.
@@ -22,6 +22,15 @@ public enum Command {
             assert animalCenterManager != null;
 
             animalCenterManager.registerAdoptionCenter(arguments[1]);
+        }
+    },
+    REGISTER_CASTRATION_CENTER("RegisterCastrationCenter") {
+        @Override
+        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+            assert arguments.length == 2;
+            assert animalCenterManager != null;
+
+            animalCenterManager.registerCastrationCenter(arguments[1]);
         }
     },
     REGISTER_DOG("RegisterDog") {
@@ -51,6 +60,15 @@ public enum Command {
             animalCenterManager.sendForCleansing(arguments[1], arguments[2]);
         }
     },
+    SEND_FOR_CASTRATION("SendForCastration") {
+        @Override
+        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+            assert arguments.length == 3;
+            assert animalCenterManager != null;
+
+            animalCenterManager.sendForCastration(arguments[1], arguments[2]);
+        }
+    },
     CLEANSE("Cleanse") {
         @Override
         public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
@@ -67,6 +85,24 @@ public enum Command {
             assert animalCenterManager != null;
 
             animalCenterManager.adopt(arguments[1]);
+        }
+    },
+    CASTRATE("Castrate") {
+        @Override
+        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+            assert arguments.length == 2;
+            assert animalCenterManager != null;
+
+            animalCenterManager.castrate(arguments[1]);
+        }
+    },
+    CASTRATION_STATISTICS("CastrationStatistics") {
+        @Override
+        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+            assert arguments.length == 0;
+            assert animalCenterManager != null;
+
+            animalCenterManager.castrationStatistics();
         }
     },
     PAW_PAW_PAWAH("Paw Paw Pawah") {

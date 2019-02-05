@@ -14,7 +14,7 @@ public class AdoptionCenter implements Center {
     private String name;
     private List<Animal> animals;
 
-    public List<Animal> adopt() {
+    public List<Animal> adoptAnimals() {
         List<Animal> adoptedAnimals = new ArrayList<>();
         Iterator<Animal> animalIterator = animals.iterator();
 
@@ -34,6 +34,17 @@ public class AdoptionCenter implements Center {
             Animal animal = animalIterator.next();
             if (!animal.isCleansed()) {
                 cleansingCenter.getAnimals().add(animal);
+                animalIterator.remove();
+            }
+        }
+    }
+
+    public void sendForCastration(CastrationCenter castrationCenter) {
+        Iterator<Animal> animalIterator = animals.iterator();
+        for (; animalIterator.hasNext(); ) {
+            Animal animal = animalIterator.next();
+            if (!animal.isCastrated()) {
+                castrationCenter.getAnimals().add(animal);
                 animalIterator.remove();
             }
         }

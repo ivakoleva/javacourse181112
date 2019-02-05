@@ -1,12 +1,9 @@
-package Paw_Inc;
+package com.musala.javacourse181112.paw_inc;
 
-import Paw_Inc.Classes.Animals.Animal;
-import Paw_Inc.Classes.Animals.Cat;
-import Paw_Inc.Classes.Animals.Dog;
-import Paw_Inc.Classes.Centers.AdoptionCenter;
-import Paw_Inc.Classes.Centers.Center;
-import Paw_Inc.Classes.Centers.CleansingCenter;
-import Paw_Inc.Classes.Centers.TypeOfCenter;
+import com.musala.javacourse181112.paw_inc.classes.animals.Animal;
+import com.musala.javacourse181112.paw_inc.classes.animals.Cat;
+import com.musala.javacourse181112.paw_inc.classes.animals.Dog;
+import com.musala.javacourse181112.paw_inc.classes.centers.*;
 
 import java.util.*;
 
@@ -14,28 +11,35 @@ import java.util.*;
  * Created by Aykut Ismailov on 4.2.2019 г.
  */
 public class AnimalCenterManager {
-    private final EnumMap<TypeOfCenter, List<Center>> centersEnumMap = new EnumMap<>(TypeOfCenter.class);
-    private final List<Animal> adoptedAnimals;
-    private final List<Animal> cleansedAnimals;
+    private final EnumMap<TypeOfActivity, List<Center>> centersEnumMap = new EnumMap<>(TypeOfActivity.class);
+    private final EnumMap<TypeOfActivity, List<Animal>> animalsEnumMap = new EnumMap<>(TypeOfActivity.class);
 
     public AnimalCenterManager() {
-        Arrays.stream(TypeOfCenter.values()).forEach(center -> centersEnumMap.put(center, new ArrayList<>()));
-        adoptedAnimals = new ArrayList<>();
-        cleansedAnimals = new ArrayList<>();
+        Arrays.stream(TypeOfActivity.values()).forEach(activity -> {
+            centersEnumMap.put(activity, new ArrayList<>());
+            animalsEnumMap.put(activity, new ArrayList<>());
+        });
     }
 
     public void registerCleansingCenter(String name) {
         CleansingCenter cleansingCenter = new CleansingCenter();
         cleansingCenter.setName(name);
         cleansingCenter.setAnimals(new ArrayList<>());
-        centersEnumMap.get(TypeOfCenter.CLEANSING).add(cleansingCenter);
+        centersEnumMap.get(TypeOfActivity.CLEANSING).add(cleansingCenter);
     }
 
     public void registerAdoptionCenter(String name) {
         AdoptionCenter adoptionCenter = new AdoptionCenter();
         adoptionCenter.setName(name);
         adoptionCenter.setAnimals(new ArrayList<>());
-        centersEnumMap.get(TypeOfCenter.ADOPTION).add(adoptionCenter);
+        centersEnumMap.get(TypeOfActivity.ADOPTION).add(adoptionCenter);
+    }
+
+    public void registerCastrationCenter(String name) {
+        CastrationCenter castrationCenter = new CastrationCenter();
+        castrationCenter.setName(name);
+        castrationCenter.setAnimals(new ArrayList<>());
+        centersEnumMap.get(TypeOfActivity.CASTRATION).add(castrationCenter);
     }
 
     public void registerDog(String name, int age, int learnedCommands, String adoptionCenterName) {
@@ -75,11 +79,23 @@ public class AnimalCenterManager {
         }
     }
 
+    public void sendForCastration(String adoptionCenterName, String castrationCenterName) {
+        AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+        CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
+
+        if (adoptionCenter != null && castrationCenter != null) {
+            adoptionCenter.sendForCastration(castrationCenter);
+        } else {
+            System.err.println("Center not found!");
+            System.exit(1);
+        }
+    }
+
     public void cleanse(String cleansingCenterName) {
         CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
 
         if (cleansingCenter != null) {
-            cleansedAnimals.addAll(cleansingCenter.cleanseAnimals());
+            animalsEnumMap.get(TypeOfActivity.CLEANSING).addAll(cleansingCenter.cleanseAnimals());
         } else {
             System.err.println("CLEANSING Center not found!");
             System.exit(1);
@@ -90,34 +106,53 @@ public class AnimalCenterManager {
         AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter != null) {
-            adoptedAnimals.addAll(adoptionCenter.adopt());
+            animalsEnumMap.get(TypeOfActivity.ADOPTION).addAll(adoptionCenter.adoptAnimals());
         } else {
             System.err.println("ADOPTION Center not found!");
             System.exit(1);
         }
     }
 
+    public void castrate(String castrationCenterName) {
+        CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
+
+        if (castrationCenter != null) {
+            animalsEnumMap.get(TypeOfActivity.CASTRATION).addAll(castrationCenter.castrateAnimals());
+        } else {
+            System.err.println("CASTRATION Center not found!");
+        }
+    }
+
+    public void castrationStatistics() {
+        System.out.println("Paw Incorporation Regular Castration Statistics");
+
+        System.out.println("CASTRATION Centers: " + centersEnumMap.get(TypeOfActivity.CASTRATION).size());
+
+        animalsEnumMap.get(TypeOfActivity.CASTRATION).sort(Comparator.comparing(Animal::getName));
+        System.out.println("Castrated Animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.CASTRATION)));
+    }
     public void printStatistics() {
         System.out.println("Paw Incorporation Regular Statistics");
 
-        System.out.println("ADOPTION TypeOfCenter: " + centersEnumMap.get(TypeOfCenter.ADOPTION).size());
-        System.out.println("CLEANSING TypeOfCenter: " + centersEnumMap.get(TypeOfCenter.CLEANSING).size());
+        System.out.println("ADOPTION Centers: " + centersEnumMap.get(TypeOfActivity.ADOPTION).size());
+        System.out.println("CLEANSING Centers: " + centersEnumMap.get(TypeOfActivity.CLEANSING).size());
 
-        adoptedAnimals.sort(Comparator.comparing(Animal::getName));
-        System.out.println("Adopted Animals: " + printAnimalList(adoptedAnimals));
 
-        cleansedAnimals.sort(Comparator.comparing(Animal::getName));
-        System.out.println("Cleansed Animal: " + printAnimalList(cleansedAnimals));
+        animalsEnumMap.get(TypeOfActivity.ADOPTION).sort(Comparator.comparing(Animal::getName));
+        System.out.println("Adopted animals: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.ADOPTION)));
+
+        animalsEnumMap.get(TypeOfActivity.CLEANSING).sort(Comparator.comparing(Animal::getName));
+        System.out.println("Cleansed Animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.CLEANSING)));
 
         int toBeAdopted = 0, toBeCleansed = 0;
-        for (Center center : centersEnumMap.get(TypeOfCenter.ADOPTION)) {
+        for (Center center : centersEnumMap.get(TypeOfActivity.ADOPTION)) {
             for (Animal animal : center.getAnimals()) {
                 if (animal.isCleansed()) {
                     toBeAdopted++;
                 }
             }
         }
-        for (Center center : centersEnumMap.get(TypeOfCenter.CLEANSING)) {
+        for (Center center : centersEnumMap.get(TypeOfActivity.CLEANSING)) {
             toBeCleansed += center.getAnimals().size();
         }
 
@@ -128,7 +163,7 @@ public class AnimalCenterManager {
     }
 
     private String printAnimalList(List<Animal> animals) {
-        if (animals.size() == 0) {
+        if (animals == null || animals.size() == 0) {
             return "None";
         } else {
             StringBuilder stringBuilder = new StringBuilder();
@@ -143,25 +178,39 @@ public class AnimalCenterManager {
 
     private AdoptionCenter findAdoptionCenter(String adoptionCenterName) {
         AdoptionCenter adoptionCenter = null;
-        for (Center curAdoptionCenter : centersEnumMap.get(TypeOfCenter.ADOPTION)) {
+        for (Center curAdoptionCenter : centersEnumMap.get(TypeOfActivity.ADOPTION)) {
             if (curAdoptionCenter.getName().equals(adoptionCenterName)) {
                 adoptionCenter = (AdoptionCenter) curAdoptionCenter;
                 break;
             }
         }
+
         return adoptionCenter;
     }
 
     private CleansingCenter findCleansingCenter(String cleansingCenterCenterName) {
         CleansingCenter cleansingCenter = null;
 
-        for (Center curAdoptionCenter : centersEnumMap.get(TypeOfCenter.CLEANSING)) {
-            if (curAdoptionCenter.getName().equals(cleansingCenterCenterName)) {
-                cleansingCenter = (CleansingCenter) curAdoptionCenter;
+        for (Center curCleansingCenter : centersEnumMap.get(TypeOfActivity.CLEANSING)) {
+            if (curCleansingCenter.getName().equals(cleansingCenterCenterName)) {
+                cleansingCenter = (CleansingCenter) curCleansingCenter;
                 break;
             }
         }
+
         return cleansingCenter;
     }
 
+    private CastrationCenter findCastrationCenter(String castrationCenterName) {
+        CastrationCenter castrationCenter = null;
+
+        for (Center curCastrationCenter : centersEnumMap.get(TypeOfActivity.CASTRATION)) {
+            if (curCastrationCenter.getName().equals(castrationCenterName)) {
+                castrationCenter = (CastrationCenter) curCastrationCenter;
+                break;
+            }
+        }
+
+        return castrationCenter;
+    }
 }

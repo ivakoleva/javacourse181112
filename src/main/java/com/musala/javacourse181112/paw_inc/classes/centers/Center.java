@@ -1,6 +1,6 @@
-package Paw_Inc.Classes.Centers;
+package com.musala.javacourse181112.paw_inc.classes.centers;
 
-import Paw_Inc.Classes.Animals.Animal;
+import com.musala.javacourse181112.paw_inc.classes.animals.Animal;
 
 import java.util.List;
 

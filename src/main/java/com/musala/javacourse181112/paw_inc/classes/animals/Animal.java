@@ -7,6 +7,7 @@ import com.musala.javacourse181112.paw_inc.classes.centers.AdoptionCenter;
  */
 public abstract class Animal {
     private boolean cleansed;
+    private boolean castrated;
     private String name;
     private int age;
     protected AdoptionCenter adoptionCenter;
@@ -46,4 +47,11 @@ public abstract class Animal {
 
     public abstract void setAdoptionCenter(AdoptionCenter adoptionCenter);
 
+    public boolean isCastrated() {
+        return castrated;
+    }
+
+    public void castrate() {
+        this.castrated = true;
+    }
 }
