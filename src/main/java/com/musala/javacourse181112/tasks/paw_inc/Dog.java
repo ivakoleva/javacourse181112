@@ -1,27 +1,13 @@
-package com.musala.javacourse181112.tasks.paw_inc.model;
+package com.musala.javacourse181112.tasks.paw_inc;
 
-import com.musala.javacourse181112.tasks.paw_inc.Animals;
-
-public class Cat extends Animals {
-    private String name;
-    private int age;
+public class Dog extends Animal {
     private boolean cleansingStatus;
     private int intelligenceCoefficient;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public Dog(String name, int age, boolean cleansingStatus, int intelligenceCoefficient) {
+        super(name, age);
+        this.cleansingStatus = cleansingStatus;
+        this.intelligenceCoefficient = intelligenceCoefficient;
     }
 
     public boolean isCleansingStatus() {
@@ -40,3 +26,4 @@ public class Cat extends Animals {
         this.intelligenceCoefficient = intelligenceCoefficient;
     }
 }
+
