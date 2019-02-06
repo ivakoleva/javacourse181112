@@ -3,17 +3,16 @@ package com.musala.javacourse181112.pawinc.animals;
 public class Dog extends Animal {
     private int commandsAmount;
 
-
-    public int getCommandsAmoun() {
+    public int getCommandsAmount() {
         return commandsAmount;
     }
 
-    public void setCommandsAmoun(int commandsAmoun) {
-        this.commandsAmount = commandsAmoun;
+    public void setCommandsAmount(int commandsAmount) {
+        this.commandsAmount = commandsAmount;
     }
 
-    public Dog(String name, int age, String adoptionCenter, int commandsAmoun) {
+    public Dog(String name, int age, String adoptionCenter, int commandsAmount) {
         super(name, age, adoptionCenter);
-        this.commandsAmount = commandsAmoun;
+        this.commandsAmount = commandsAmount;
     }
 }
