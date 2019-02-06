@@ -1,24 +1,24 @@
 package com.musala.javacourse181112.pawinc.animals;
 
-import com.musala.javacourse181112.pawinc.CleanseStatus;
-
 public class Cat extends Animal {
-    int intelligencecoef;
+private int intelligenceCoefficient;
 
-    public int getIntelligencecoef() {
-        return intelligencecoef;
+    public int getIntelligenceCoefficient() {
+        return intelligenceCoefficient;
     }
 
-    public void setIntelligencecoef(int intelligencecoef) {
-        this.intelligencecoef = intelligencecoef;
+
+    public void setIntelligenceCoefficient(int intelligencecoef) {
+        this.intelligenceCoefficient = intelligencecoef;
     }
 
     public Cat() {
         super();
     }
 
-    public Cat(String name, int age, String adoptionCenter, int intelligencecoef) {
+    public Cat(String name, int age, String adoptionCenter, int intelligenceCoefficient) {
         super(name, age,adoptionCenter);
-        this.intelligencecoef = intelligencecoef;
+        this.intelligenceCoefficient = intelligenceCoefficient;
+
     }
 }

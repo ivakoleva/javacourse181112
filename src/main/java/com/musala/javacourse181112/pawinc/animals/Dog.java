@@ -1,7 +1,7 @@
 package com.musala.javacourse181112.pawinc.animals;
 
 public class Dog extends Animal {
-    int commandsAmount;
+    private int commandsAmount;
 
 
     public int getCommandsAmoun() {

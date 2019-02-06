@@ -2,12 +2,13 @@ package com.musala.javacourse181112.pawinc.centers;
 
 import com.musala.javacourse181112.pawinc.animals.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Center {
-    String name;
-    List<Cat> catList;
-    List<Dog> dogList;
+    private String name;
+   protected final List<Cat> catList=new ArrayList<>();
+   protected final List<Dog> dogList=new ArrayList<>();
 
     public String getName() {
         return name;
@@ -21,17 +22,11 @@ public class Center {
         return catList;
     }
 
-    public void setCatList(List<Cat> catList) {
-        this.catList = catList;
-    }
-
     public List<Dog> getDogList() {
         return dogList;
     }
 
-    public void setDogList(List<Dog> dogList) {
-        this.dogList = dogList;
-    }
+
 
 
     public Center(String name) {

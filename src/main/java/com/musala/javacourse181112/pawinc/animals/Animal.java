@@ -1,12 +1,12 @@
 package com.musala.javacourse181112.pawinc.animals;
 
-import com.musala.javacourse181112.pawinc.CleanseStatus;
+import com.musala.javacourse181112.pawinc.AnimalStatus;
 
 public class Animal {
-    String name;
-    int age;
-    CleanseStatus cleanseStatus;
-    String adoptionCenter;
+   private String name;
+    private int age;
+    private AnimalStatus animalStatus;
+    private String adoptionCenter;
 
     public String getName() {
         return name;
@@ -24,12 +24,16 @@ public class Animal {
         this.age = age;
     }
 
-    public CleanseStatus getCleanseStatus() {
-        return cleanseStatus;
+    public AnimalStatus getAnimalStatus() {
+        return animalStatus;
     }
 
-    public void setCleanseStatus(CleanseStatus cleanseStatus) {
-        this.cleanseStatus = cleanseStatus;
+    public void setAnimalStatus(AnimalStatus animalStatus) {
+        this.animalStatus = animalStatus;
+    }
+
+    public String getAdoptionCenter() {
+        return adoptionCenter;
     }
 
     public Animal() {
@@ -39,6 +43,6 @@ public class Animal {
         this.name = name;
         this.age = age;
         this.adoptionCenter=adoptionCenter;
-        this.cleanseStatus = CleanseStatus.UNCLEANSED;
+        this.animalStatus = AnimalStatus.UNCLEANSED;
     }
 }

@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.pawinc;
 
-public enum CleanseStatus {
+public enum AnimalStatus {
     CLEANSED,
-    UNCLEANSED
+    UNCLEANSED,
+    ADOPTED
 }
