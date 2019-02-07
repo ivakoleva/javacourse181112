@@ -8,6 +8,5 @@ import java.util.regex.Pattern;
  */
 public final class Utils {
     public static final Predicate<String> isASCII = line -> Pattern.matches("[\\x00-\\x7F]+", line);
-    public static final Predicate<String> isInteger = string -> Pattern.matches("[0-9]+", string);
-    public static final Predicate<Integer> isValidInteger = integer -> integer >= 0;
+    public static final Predicate<String> isInteger = string -> Pattern.matches("[0-9]+", string) && Long.valueOf(string) <= Integer.MAX_VALUE;
 }

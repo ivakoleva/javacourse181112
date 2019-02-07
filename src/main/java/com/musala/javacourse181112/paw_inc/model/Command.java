@@ -3,7 +3,6 @@ package com.musala.javacourse181112.paw_inc.model;
 import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
 
 import static com.musala.javacourse181112.paw_inc.Utils.isInteger;
-import static com.musala.javacourse181112.paw_inc.Utils.isValidInteger;
 
 /**
  * Created by Aykut Ismailov on 5.2.2019 г.
@@ -124,8 +123,6 @@ public enum Command {
     private static void validate(String[] arguments) {
         assert isInteger.test(arguments[2]);
         assert isInteger.test(arguments[3]);
-        assert isValidInteger.test(Integer.parseInt(arguments[2]));
-        assert isValidInteger.test(Integer.parseInt(arguments[3]));
     }
 
     private final String label;
