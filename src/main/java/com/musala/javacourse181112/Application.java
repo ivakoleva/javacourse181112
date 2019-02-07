@@ -1,3 +1,4 @@
+/*
 package com.musala.javacourse181112;
 
 import org.springframework.boot.CommandLineRunner;
@@ -8,9 +9,11 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
+*/
 /**
  * Created by Iva Koleva on 31.01.2019
- */
+ *//*
+
 @SpringBootApplication
 public class Application {
 
@@ -30,4 +33,4 @@ public class Application {
             }
         };
     }
-}
+}*/
