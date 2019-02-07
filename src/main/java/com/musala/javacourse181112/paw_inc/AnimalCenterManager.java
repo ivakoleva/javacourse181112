@@ -97,7 +97,7 @@ public class AnimalCenterManager {
         if (cleansingCenter != null) {
             animalsEnumMap.get(TypeOfActivity.CLEANSING).addAll(cleansingCenter.cleanseAnimals());
         } else {
-            System.err.println("CLEANSING Center not found!");
+            System.err.println("Cleansing Center not found!");
             System.exit(1);
         }
     }
@@ -108,7 +108,7 @@ public class AnimalCenterManager {
         if (adoptionCenter != null) {
             animalsEnumMap.get(TypeOfActivity.ADOPTION).addAll(adoptionCenter.adoptAnimals());
         } else {
-            System.err.println("ADOPTION Center not found!");
+            System.err.println("Adoption Center not found!");
             System.exit(1);
         }
     }
@@ -119,14 +119,14 @@ public class AnimalCenterManager {
         if (castrationCenter != null) {
             animalsEnumMap.get(TypeOfActivity.CASTRATION).addAll(castrationCenter.castrateAnimals());
         } else {
-            System.err.println("CASTRATION Center not found!");
+            System.err.println("Castration Center not found!");
         }
     }
 
     public void castrationStatistics() {
         System.out.println("Paw Incorporation Regular Castration Statistics");
 
-        System.out.println("CASTRATION Centers: " + centersEnumMap.get(TypeOfActivity.CASTRATION).size());
+        System.out.println("Castration Centers: " + centersEnumMap.get(TypeOfActivity.CASTRATION).size());
 
         animalsEnumMap.get(TypeOfActivity.CASTRATION).sort(Comparator.comparing(Animal::getName));
         System.out.println("Castrated Animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.CASTRATION)));
@@ -134,8 +134,8 @@ public class AnimalCenterManager {
     public void printStatistics() {
         System.out.println("Paw Incorporation Regular Statistics");
 
-        System.out.println("ADOPTION Centers: " + centersEnumMap.get(TypeOfActivity.ADOPTION).size());
-        System.out.println("CLEANSING Centers: " + centersEnumMap.get(TypeOfActivity.CLEANSING).size());
+        System.out.println("Adoption Centers: " + centersEnumMap.get(TypeOfActivity.ADOPTION).size());
+        System.out.println("Cleansing Centers: " + centersEnumMap.get(TypeOfActivity.CLEANSING).size());
 
 
         animalsEnumMap.get(TypeOfActivity.ADOPTION).sort(Comparator.comparing(Animal::getName));
@@ -156,8 +156,8 @@ public class AnimalCenterManager {
             toBeCleansed += center.getAnimals().size();
         }
 
-        System.out.println("Animals Awaiting ADOPTION: " + toBeAdopted);
-        System.out.println("Animals Awaiting CLEANSING: " + toBeCleansed);
+        System.out.println("Animals Awaiting Adoption: " + toBeAdopted);
+        System.out.println("Animals Awaiting Cleansing: " + toBeCleansed);
 
 
     }
