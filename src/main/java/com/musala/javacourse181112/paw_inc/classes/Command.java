@@ -8,7 +8,7 @@ import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
 public enum Command {
     REGISTER_CLEANSING_CENTER("RegisterCleansingCenter") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -17,7 +17,7 @@ public enum Command {
     },
     REGISTER_ADOPTION_CENTER("RegisterAdoptionCenter") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -26,7 +26,7 @@ public enum Command {
     },
     REGISTER_CASTRATION_CENTER("RegisterCastrationCenter") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -35,7 +35,7 @@ public enum Command {
     },
     REGISTER_DOG("RegisterDog") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 5;
             assert animalCenterManager != null;
 
@@ -44,7 +44,7 @@ public enum Command {
     },
     REGISTER_CAT("RegisterCat") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 5;
             assert animalCenterManager != null;
 
@@ -53,7 +53,7 @@ public enum Command {
     },
     SEND_FOR_CLEANSING("SendForCleansing") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 3;
             assert animalCenterManager != null;
 
@@ -62,7 +62,7 @@ public enum Command {
     },
     SEND_FOR_CASTRATION("SendForCastration") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 3;
             assert animalCenterManager != null;
 
@@ -71,7 +71,7 @@ public enum Command {
     },
     CLEANSE("Cleanse") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -80,7 +80,7 @@ public enum Command {
     },
     ADOPT("Adopt") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -89,7 +89,7 @@ public enum Command {
     },
     CASTRATE("Castrate") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 2;
             assert animalCenterManager != null;
 
@@ -98,7 +98,7 @@ public enum Command {
     },
     CASTRATION_STATISTICS("CastrationStatistics") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 0;
             assert animalCenterManager != null;
 
@@ -107,7 +107,7 @@ public enum Command {
     },
     PAW_PAW_PAWAH("Paw Paw Pawah") {
         @Override
-        public void invoke(AnimalCenterManager animalCenterManager, String[] arguments) {
+        public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 0;
             assert animalCenterManager != null;
 
@@ -115,9 +115,9 @@ public enum Command {
             System.exit(0);
         }
     };
-    private String label;
+    final private String label;
 
-    Command(String label) {
+    Command(final String label) {
         this.label = label;
     }
 
@@ -125,5 +125,5 @@ public enum Command {
         return label;
     }
 
-    public abstract void invoke(AnimalCenterManager animalCenterManager, String[] arguments);
+    public abstract void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments);
 }

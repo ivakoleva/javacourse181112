@@ -15,8 +15,8 @@ public class AdoptionCenter implements Center {
     private List<Animal> animals;
 
     public List<Animal> adoptAnimals() {
-        List<Animal> adoptedAnimals = new ArrayList<>();
-        Iterator<Animal> animalIterator = animals.iterator();
+        final List<Animal> adoptedAnimals = new ArrayList<>();
+        final Iterator<Animal> animalIterator = animals.iterator();
 
         for (; animalIterator.hasNext(); ) {
             Animal animal = animalIterator.next();
@@ -28,7 +28,7 @@ public class AdoptionCenter implements Center {
         return adoptedAnimals;
     }
 
-    public void sendForCleansing(CleansingCenter cleansingCenter) {
+    public void sendForCleansing(final CleansingCenter cleansingCenter) {
         Iterator<Animal> animalIterator = animals.iterator();
         for (; animalIterator.hasNext(); ) {
             Animal animal = animalIterator.next();

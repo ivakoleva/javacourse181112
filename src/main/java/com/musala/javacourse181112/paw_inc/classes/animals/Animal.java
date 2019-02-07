@@ -13,7 +13,7 @@ public abstract class Animal {
     protected AdoptionCenter adoptionCenter;
 
 
-    protected Animal(String name, int age) {
+    protected Animal(final String name, final int age) {
         this.age = age;
         this.name = name;
         this.cleansed = false;

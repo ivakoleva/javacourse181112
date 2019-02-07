@@ -15,8 +15,8 @@ public class CleansingCenter implements Center {
     private List<Animal> animals;
 
     public List<Animal> cleanseAnimals() {
-        Iterator<Animal> animalIterator = animals.iterator();
-        List<Animal> cleansedAnimals = new ArrayList<>();
+        final Iterator<Animal> animalIterator = animals.iterator();
+        final List<Animal> cleansedAnimals = new ArrayList<>();
         for (; animalIterator.hasNext(); ) {
             Animal animal = animalIterator.next();
             animal.cleanse();
@@ -31,7 +31,7 @@ public class CleansingCenter implements Center {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -39,7 +39,7 @@ public class CleansingCenter implements Center {
         return animals;
     }
 
-    public void setAnimals(List<Animal> animals) {
+    public void setAnimals(final List<Animal> animals) {
         this.animals = animals;
     }
 }

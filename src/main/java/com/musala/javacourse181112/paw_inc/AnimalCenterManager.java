@@ -21,55 +21,55 @@ public class AnimalCenterManager {
         });
     }
 
-    public void registerCleansingCenter(String name) {
-        CleansingCenter cleansingCenter = new CleansingCenter();
+    public void registerCleansingCenter(final String name) {
+        final CleansingCenter cleansingCenter = new CleansingCenter();
         cleansingCenter.setName(name);
         cleansingCenter.setAnimals(new ArrayList<>());
         centersEnumMap.get(TypeOfActivity.CLEANSING).add(cleansingCenter);
     }
 
-    public void registerAdoptionCenter(String name) {
-        AdoptionCenter adoptionCenter = new AdoptionCenter();
+    public void registerAdoptionCenter(final String name) {
+        final AdoptionCenter adoptionCenter = new AdoptionCenter();
         adoptionCenter.setName(name);
         adoptionCenter.setAnimals(new ArrayList<>());
         centersEnumMap.get(TypeOfActivity.ADOPTION).add(adoptionCenter);
     }
 
-    public void registerCastrationCenter(String name) {
-        CastrationCenter castrationCenter = new CastrationCenter();
+    public void registerCastrationCenter(final String name) {
+        final CastrationCenter castrationCenter = new CastrationCenter();
         castrationCenter.setName(name);
         castrationCenter.setAnimals(new ArrayList<>());
         centersEnumMap.get(TypeOfActivity.CASTRATION).add(castrationCenter);
     }
 
-    public void registerDog(String name, int age, int learnedCommands, String adoptionCenterName) {
+    public void registerDog(final String name, final int age, final int learnedCommands, final String adoptionCenterName) {
         final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter != null) {
             final Dog dog = new Dog(name, age, learnedCommands, adoptionCenter);
             adoptionCenter.getAnimals().add(dog);
         } else {
-            System.err.println("ADOPTION Center not found!");
+            System.err.println("Adoption Center not found!");
             System.exit(1);
         }
 
     }
 
-    public void registerCat(String name, int age, int intelligenceCoefficient, String adoptionCenterName) {
-        AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+    public void registerCat(final String name, final int age, final int intelligenceCoefficient, final String adoptionCenterName) {
+        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter != null) {
             final Cat cat = new Cat(name, age, intelligenceCoefficient, adoptionCenter);
             adoptionCenter.getAnimals().add(cat);
         } else {
-            System.err.println("ADOPTION Center not found!");
+            System.err.println("Adoption Center not found!");
             System.exit(1);
         }
     }
 
-    public void sendForCleansing(String adoptionCenterName, String cleansingCenterName) {
-        AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
-        CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
+    public void sendForCleansing(final String adoptionCenterName, final String cleansingCenterName) {
+        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+        final CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
 
         if (adoptionCenter != null && cleansingCenter != null) {
             adoptionCenter.sendForCleansing(cleansingCenter);
@@ -79,9 +79,9 @@ public class AnimalCenterManager {
         }
     }
 
-    public void sendForCastration(String adoptionCenterName, String castrationCenterName) {
-        AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
-        CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
+    public void sendForCastration(final String adoptionCenterName, final String castrationCenterName) {
+        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+        final CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
 
         if (adoptionCenter != null && castrationCenter != null) {
             adoptionCenter.sendForCastration(castrationCenter);
@@ -91,8 +91,8 @@ public class AnimalCenterManager {
         }
     }
 
-    public void cleanse(String cleansingCenterName) {
-        CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
+    public void cleanse(final String cleansingCenterName) {
+        final CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
 
         if (cleansingCenter != null) {
             animalsEnumMap.get(TypeOfActivity.CLEANSING).addAll(cleansingCenter.cleanseAnimals());
@@ -102,8 +102,8 @@ public class AnimalCenterManager {
         }
     }
 
-    public void adopt(String adoptionCenterName) {
-        AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+    public void adopt(final String adoptionCenterName) {
+        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter != null) {
             animalsEnumMap.get(TypeOfActivity.ADOPTION).addAll(adoptionCenter.adoptAnimals());
@@ -113,8 +113,8 @@ public class AnimalCenterManager {
         }
     }
 
-    public void castrate(String castrationCenterName) {
-        CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
+    public void castrate(final String castrationCenterName) {
+        final CastrationCenter castrationCenter = findCastrationCenter(castrationCenterName);
 
         if (castrationCenter != null) {
             animalsEnumMap.get(TypeOfActivity.CASTRATION).addAll(castrationCenter.castrateAnimals());
@@ -162,7 +162,7 @@ public class AnimalCenterManager {
 
     }
 
-    private String printAnimalList(List<Animal> animals) {
+    private String printAnimalList(final List<Animal> animals) {
         if (animals == null || animals.size() == 0) {
             return "None";
         } else {
@@ -176,7 +176,7 @@ public class AnimalCenterManager {
         }
     }
 
-    private AdoptionCenter findAdoptionCenter(String adoptionCenterName) {
+    private AdoptionCenter findAdoptionCenter(final String adoptionCenterName) {
         AdoptionCenter adoptionCenter = null;
         for (Center curAdoptionCenter : centersEnumMap.get(TypeOfActivity.ADOPTION)) {
             if (curAdoptionCenter.getName().equals(adoptionCenterName)) {
@@ -188,7 +188,7 @@ public class AnimalCenterManager {
         return adoptionCenter;
     }
 
-    private CleansingCenter findCleansingCenter(String cleansingCenterCenterName) {
+    private CleansingCenter findCleansingCenter(final String cleansingCenterCenterName) {
         CleansingCenter cleansingCenter = null;
 
         for (Center curCleansingCenter : centersEnumMap.get(TypeOfActivity.CLEANSING)) {
@@ -201,7 +201,7 @@ public class AnimalCenterManager {
         return cleansingCenter;
     }
 
-    private CastrationCenter findCastrationCenter(String castrationCenterName) {
+    private CastrationCenter findCastrationCenter(final String castrationCenterName) {
         CastrationCenter castrationCenter = null;
 
         for (Center curCastrationCenter : centersEnumMap.get(TypeOfActivity.CASTRATION)) {

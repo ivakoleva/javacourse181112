@@ -10,9 +10,9 @@ import java.util.List;
 public interface Center {
     String getName();
 
-    void setName(String name);
+    void setName(final String name);
 
     List<Animal> getAnimals();
 
-    void setAnimals(List<Animal> animals);
+    void setAnimals(final List<Animal> animals);
 }

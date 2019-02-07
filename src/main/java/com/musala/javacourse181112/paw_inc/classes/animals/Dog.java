@@ -9,7 +9,7 @@ public class Dog extends Animal {
     private int amountOfCommands;
 
 
-    public Dog(String name, int age, int amountOfCommands, AdoptionCenter adoptionCenter) {
+    public Dog(final String name, final int age, final int amountOfCommands, final AdoptionCenter adoptionCenter) {
         super(name, age);
         this.amountOfCommands = amountOfCommands;
         this.adoptionCenter = adoptionCenter;
@@ -19,7 +19,7 @@ public class Dog extends Animal {
         return amountOfCommands;
     }
 
-    public void setAmountOfCommands(int amountOfCommands) {
+    public void setAmountOfCommands(final int amountOfCommands) {
         this.amountOfCommands = amountOfCommands;
     }
 
@@ -27,7 +27,7 @@ public class Dog extends Animal {
         return adoptionCenter;
     }
 
-    public void setAdoptionCenter(AdoptionCenter adoptionCenter) {
+    public void setAdoptionCenter(final AdoptionCenter adoptionCenter) {
         this.adoptionCenter = adoptionCenter;
     }
 }

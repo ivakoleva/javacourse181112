@@ -9,9 +9,9 @@ public class Cat extends Animal {
     private int intelligenceCoefficient;
     private AdoptionCenter adoptionCenter;
 
-    public Cat(String name, int age, int inteligenceCoefficient, AdoptionCenter adoptionCenter) {
+    public Cat(final String name, final int age, final int intelligenceCoefficient, final AdoptionCenter adoptionCenter) {
         super(name, age);
-        this.intelligenceCoefficient = inteligenceCoefficient;
+        this.intelligenceCoefficient = intelligenceCoefficient;
         this.adoptionCenter = adoptionCenter;
     }
 
@@ -19,7 +19,7 @@ public class Cat extends Animal {
         return intelligenceCoefficient;
     }
 
-    public void setIntelligenceCoefficient(int intelligenceCoefficient) {
+    public void setIntelligenceCoefficient(final int intelligenceCoefficient) {
         this.intelligenceCoefficient = intelligenceCoefficient;
     }
 
@@ -27,7 +27,7 @@ public class Cat extends Animal {
         return adoptionCenter;
     }
 
-    public void setAdoptionCenter(AdoptionCenter adoptionCenter) {
+    public void setAdoptionCenter(final AdoptionCenter adoptionCenter) {
         this.adoptionCenter = adoptionCenter;
     }
 }

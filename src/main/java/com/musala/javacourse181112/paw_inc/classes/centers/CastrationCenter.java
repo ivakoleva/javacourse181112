@@ -32,7 +32,7 @@ public class CastrationCenter implements Center {
     }
 
     @Override
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -42,7 +42,7 @@ public class CastrationCenter implements Center {
     }
 
     @Override
-    public void setAnimals(List<Animal> animals) {
+    public void setAnimals(final List<Animal> animals) {
         this.animals = animals;
     }
 }

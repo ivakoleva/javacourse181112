@@ -8,9 +8,9 @@ public enum TypeOfActivity {
     CLEANSING(CleansingCenter.class),
     CASTRATION(CastrationCenter.class);
 
-    private Class clazz;
+    final private Class clazz;
 
-    TypeOfActivity(Class clazz) {
+    TypeOfActivity(final Class clazz) {
         this.clazz = clazz;
     }
 
