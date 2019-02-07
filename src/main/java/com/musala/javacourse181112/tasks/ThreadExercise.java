@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentMap;
  *** reads 10 map entries
  *** prints them on stdout
  *** interrupts producer thread
- ** PawIncorporation thread exits with 0
+ ** PawIncorporated thread exits with 0
  */
 public class ThreadExercise {
     public static void main(String[] args) {

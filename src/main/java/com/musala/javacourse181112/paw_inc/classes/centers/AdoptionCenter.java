@@ -14,42 +14,6 @@ public class AdoptionCenter implements Center {
     private String name;
     private List<Animal> animals;
 
-    public List<Animal> adoptAnimals() {
-        final List<Animal> adoptedAnimals = new ArrayList<>();
-        final Iterator<Animal> animalIterator = animals.iterator();
-
-        for (; animalIterator.hasNext(); ) {
-            Animal animal = animalIterator.next();
-            if (animal.isCleansed()) {
-                adoptedAnimals.add(animal);
-                animalIterator.remove();
-            }
-        }
-        return adoptedAnimals;
-    }
-
-    public void sendForCleansing(final CleansingCenter cleansingCenter) {
-        Iterator<Animal> animalIterator = animals.iterator();
-        for (; animalIterator.hasNext(); ) {
-            Animal animal = animalIterator.next();
-            if (!animal.isCleansed()) {
-                cleansingCenter.getAnimals().add(animal);
-                animalIterator.remove();
-            }
-        }
-    }
-
-    public void sendForCastration(CastrationCenter castrationCenter) {
-        Iterator<Animal> animalIterator = animals.iterator();
-        for (; animalIterator.hasNext(); ) {
-            Animal animal = animalIterator.next();
-            if (!animal.isCastrated()) {
-                castrationCenter.getAnimals().add(animal);
-                animalIterator.remove();
-            }
-        }
-    }
-
     public String getName() {
         return name;
     }
@@ -64,5 +28,41 @@ public class AdoptionCenter implements Center {
 
     public void setAnimals(List<Animal> animals) {
         this.animals = animals;
+    }
+
+    public List<Animal> adoptAnimals() {
+        final List<Animal> adoptedAnimals = new ArrayList<>();
+        final Iterator<Animal> animalIterator = animals.iterator();
+
+        for (; animalIterator.hasNext(); ) {
+            final Animal animal = animalIterator.next();
+            if (animal.isCleansed()) {
+                adoptedAnimals.add(animal);
+                animalIterator.remove();
+            }
+        }
+        return adoptedAnimals;
+    }
+
+    public void sendForCleansing(final CleansingCenter cleansingCenter) {
+        final Iterator<Animal> animalIterator = animals.iterator();
+        for (; animalIterator.hasNext(); ) {
+            final Animal animal = animalIterator.next();
+            if (!animal.isCleansed()) {
+                cleansingCenter.getAnimals().add(animal);
+                animalIterator.remove();
+            }
+        }
+    }
+
+    public void sendForCastration(final CastrationCenter castrationCenter) {
+        final Iterator<Animal> animalIterator = animals.iterator();
+        for (; animalIterator.hasNext(); ) {
+            final Animal animal = animalIterator.next();
+            if (!animal.isCastrated()) {
+                castrationCenter.getAnimals().add(animal);
+                animalIterator.remove();
+            }
+        }
     }
 }

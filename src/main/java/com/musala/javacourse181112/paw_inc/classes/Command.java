@@ -115,7 +115,7 @@ public enum Command {
             System.exit(0);
         }
     };
-    final private String label;
+    private final String label;
 
     Command(final String label) {
         this.label = label;
@@ -125,5 +125,6 @@ public enum Command {
         return label;
     }
 
-    public abstract void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments);
+    public abstract void invoke(AnimalCenterManager animalCenterManager, String[] arguments);
+
 }

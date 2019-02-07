@@ -52,7 +52,7 @@ public class PopulatePersonClassGenericAlgorithmExample {
     // TODO: move to class EntitySaver
     public static <T extends Entity> void entitySaver(final T entity) throws IOException {
         ENTITY_SET.clear();
-        Path path = Paths.get("src" + File.separator + "PawIncorporation" + File.separator + "resources");
+        Path path = Paths.get("src" + File.separator + "PawIncorporated" + File.separator + "resources");
         path.toFile().mkdirs();
 
         path = Paths.get(path.toString() +

@@ -43,11 +43,11 @@ public class Serializing_DeserializingThreads {
                         .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
         ConcurrentLinkedQueue<List<Integer>> integerListQueue = (ConcurrentLinkedQueue<List<Integer>>) IntegerQueueGenerator.apply(10, 0);
 
-        File queueFile = new File("src\\PawIncorporation\\java\\com\\musala" +
+        File queueFile = new File("src\\PawIncorporated\\java\\com\\musala" +
                 "\\javacourse181112\\tasks" +
                 "\\Serializing\\");
         queueFile.mkdirs();
-        File file = new File("src\\PawIncorporation\\java\\com\\musala" +
+        File file = new File("src\\PawIncorporated\\java\\com\\musala" +
                 "\\javacourse181112\\tasks" +
                 "\\Serializing", "WithQueue.bin");
         Thread serializingThread = new Thread(new Runnable() {

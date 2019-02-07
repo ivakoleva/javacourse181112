@@ -36,6 +36,6 @@ class MyRunnable implements Runnable {
         System.out.println("Run.");
     }
 
-    /*public static void PawIncorporation(final String[] args) {
+    /*public static void PawIncorporated(final String[] args) {
     }*/
 }

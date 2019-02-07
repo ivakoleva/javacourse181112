@@ -13,7 +13,7 @@ public class CarSimple {
     System.out.println("Max speed is: " + maxSpeed);
   }
 
-    // Inside PawIncorporation, call the methods on the myCar object
+    // Inside PawIncorporated, call the methods on the myCar object
   public static void main(String[] args) {
     CarSimple myCarSimple = new CarSimple();     // Create a myCarSimple object
     myCarSimple.fullThrottle();      // Call the fullThrottle() method

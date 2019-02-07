@@ -8,7 +8,6 @@ import com.musala.javacourse181112.paw_inc.classes.centers.AdoptionCenter;
 public class Dog extends Animal {
     private int amountOfCommands;
 
-
     public Dog(final String name, final int age, final int amountOfCommands, final AdoptionCenter adoptionCenter) {
         super(name, age);
         this.amountOfCommands = amountOfCommands;

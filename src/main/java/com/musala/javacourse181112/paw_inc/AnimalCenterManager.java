@@ -52,7 +52,6 @@ public class AnimalCenterManager {
             System.err.println("Adoption Center not found!");
             System.exit(1);
         }
-
     }
 
     public void registerCat(final String name, final int age, final int intelligenceCoefficient, final String adoptionCenterName) {
@@ -131,6 +130,7 @@ public class AnimalCenterManager {
         animalsEnumMap.get(TypeOfActivity.CASTRATION).sort(Comparator.comparing(Animal::getName));
         System.out.println("Castrated Animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.CASTRATION)));
     }
+
     public void printStatistics() {
         System.out.println("Paw Incorporation Regular Statistics");
 
@@ -158,59 +158,45 @@ public class AnimalCenterManager {
 
         System.out.println("Animals Awaiting Adoption: " + toBeAdopted);
         System.out.println("Animals Awaiting Cleansing: " + toBeCleansed);
-
-
     }
 
     private String printAnimalList(final List<Animal> animals) {
         if (animals == null || animals.size() == 0) {
             return "None";
-        } else {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < animals.size() - 1; i++) {
-                stringBuilder.append(animals.get(i).getName());
-                stringBuilder.append(", ");
-            }
-            stringBuilder.append(animals.get(animals.size() - 1).getName());
-            return stringBuilder.toString();
         }
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < animals.size() - 1; i++) {
+            stringBuilder.append(animals.get(i).getName()).append(", ");
+        }
+        stringBuilder.append(animals.get(animals.size() - 1).getName());
+        return stringBuilder.toString();
     }
 
     private AdoptionCenter findAdoptionCenter(final String adoptionCenterName) {
-        AdoptionCenter adoptionCenter = null;
         for (Center curAdoptionCenter : centersEnumMap.get(TypeOfActivity.ADOPTION)) {
             if (curAdoptionCenter.getName().equals(adoptionCenterName)) {
-                adoptionCenter = (AdoptionCenter) curAdoptionCenter;
-                break;
+                return (AdoptionCenter) curAdoptionCenter;
+
             }
         }
-
-        return adoptionCenter;
+        return null;
     }
 
     private CleansingCenter findCleansingCenter(final String cleansingCenterCenterName) {
-        CleansingCenter cleansingCenter = null;
-
         for (Center curCleansingCenter : centersEnumMap.get(TypeOfActivity.CLEANSING)) {
             if (curCleansingCenter.getName().equals(cleansingCenterCenterName)) {
-                cleansingCenter = (CleansingCenter) curCleansingCenter;
-                break;
+                return (CleansingCenter) curCleansingCenter;
             }
         }
-
-        return cleansingCenter;
+        return null;
     }
 
     private CastrationCenter findCastrationCenter(final String castrationCenterName) {
-        CastrationCenter castrationCenter = null;
-
-        for (Center curCastrationCenter : centersEnumMap.get(TypeOfActivity.CASTRATION)) {
-            if (curCastrationCenter.getName().equals(castrationCenterName)) {
-                castrationCenter = (CastrationCenter) curCastrationCenter;
-                break;
+        for (Center center : centersEnumMap.get(TypeOfActivity.CASTRATION)) {
+            if (center.getName().equals(castrationCenterName)) {
+                return (CastrationCenter) center;
             }
         }
-
-        return castrationCenter;
+        return null;
     }
 }

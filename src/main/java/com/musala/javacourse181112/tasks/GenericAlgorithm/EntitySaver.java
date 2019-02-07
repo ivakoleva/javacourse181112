@@ -20,7 +20,7 @@ public class EntitySaver {
 
     public <T extends Entity> void entitySaver(final T entity) throws IOException {
         this.ENTITY_SET.clear();
-        Path path = Paths.get("src" + File.separator + "PawIncorporation" + File.separator + "resources" + File.separator + "GenericAlgorithm");
+        Path path = Paths.get("src" + File.separator + "PawIncorporated" + File.separator + "resources" + File.separator + "GenericAlgorithm");
         path.toFile().mkdirs();
 
         path = Paths.get(path.toString() +

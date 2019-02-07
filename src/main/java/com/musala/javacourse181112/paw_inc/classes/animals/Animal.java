@@ -12,7 +12,6 @@ public abstract class Animal {
     private int age;
     protected AdoptionCenter adoptionCenter;
 
-
     protected Animal(final String name, final int age) {
         this.age = age;
         this.name = name;
