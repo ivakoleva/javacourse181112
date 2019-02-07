@@ -70,7 +70,7 @@ final class LambdaUtilsSample {
 }
 
 // classical utils class
-final class StandardUtilsSample { // Utils
+final class StandardUtilsSample { // util
     private StandardUtilsSample() {
     }
 
