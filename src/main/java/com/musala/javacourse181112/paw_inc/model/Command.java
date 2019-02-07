@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.paw_inc.classes;
+package com.musala.javacourse181112.paw_inc.model;
 
 import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
 

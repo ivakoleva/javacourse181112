@@ -1,8 +1,9 @@
 package com.musala.javacourse181112.paw_inc;
 
-import com.musala.javacourse181112.paw_inc.classes.Command;
+import com.musala.javacourse181112.paw_inc.model.Command;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
@@ -17,12 +18,17 @@ public class PawIncorporated {
 
         while (true) {
             line = scan.nextLine();
-            final String[] command = line.split("[ ][|][ ]");
-            Command thisCommand = findCommand(command[0]);
-            if (thisCommand != null) {
-                thisCommand.invoke(animalCenterManager, command);
+            if (Pattern.matches("[\\x00-\\x7F]+", line)) {
+                final String[] command = line.split("[ ][|][ ]");
+                Command thisCommand = findCommand(command[0]);
+                if (thisCommand != null) {
+                    thisCommand.invoke(animalCenterManager, command);
+                } else {
+                    System.err.println("Invalid command2");
+                    System.exit(1);
+                }
             } else {
-                System.err.println("Invalid command");
+                System.err.println("Invalid command1");
                 System.exit(1);
             }
         }

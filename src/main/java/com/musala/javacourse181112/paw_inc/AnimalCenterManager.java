@@ -1,9 +1,9 @@
 package com.musala.javacourse181112.paw_inc;
 
-import com.musala.javacourse181112.paw_inc.classes.animals.Animal;
-import com.musala.javacourse181112.paw_inc.classes.animals.Cat;
-import com.musala.javacourse181112.paw_inc.classes.animals.Dog;
-import com.musala.javacourse181112.paw_inc.classes.centers.*;
+import com.musala.javacourse181112.paw_inc.model.animal.Animal;
+import com.musala.javacourse181112.paw_inc.model.animal.Cat;
+import com.musala.javacourse181112.paw_inc.model.animal.Dog;
+import com.musala.javacourse181112.paw_inc.model.center.*;
 
 import java.util.*;
 
@@ -139,7 +139,7 @@ public class AnimalCenterManager {
 
 
         animalsEnumMap.get(TypeOfActivity.ADOPTION).sort(Comparator.comparing(Animal::getName));
-        System.out.println("Adopted animals: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.ADOPTION)));
+        System.out.println("Adopted animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.ADOPTION)));
 
         animalsEnumMap.get(TypeOfActivity.CLEANSING).sort(Comparator.comparing(Animal::getName));
         System.out.println("Cleansed Animal: " + printAnimalList(animalsEnumMap.get(TypeOfActivity.CLEANSING)));
