@@ -2,6 +2,9 @@ package com.musala.javacourse181112.paw_inc.model;
 
 import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
 
+import static com.musala.javacourse181112.paw_inc.Utils.isInteger;
+import static com.musala.javacourse181112.paw_inc.Utils.isValidInteger;
+
 /**
  * Created by Aykut Ismailov on 5.2.2019 г.
  */
@@ -38,6 +41,7 @@ public enum Command {
         public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 5;
             assert animalCenterManager != null;
+            validate(arguments);
 
             animalCenterManager.registerDog(arguments[1], Integer.valueOf(arguments[2]), Integer.valueOf(arguments[3]), arguments[4]);
         }
@@ -47,6 +51,7 @@ public enum Command {
         public void invoke(final AnimalCenterManager animalCenterManager, final String[] arguments) {
             assert arguments.length == 5;
             assert animalCenterManager != null;
+            validate(arguments);
 
             animalCenterManager.registerCat(arguments[1], Integer.valueOf(arguments[2]), Integer.valueOf(arguments[3]), arguments[4]);
         }
@@ -115,6 +120,14 @@ public enum Command {
             System.exit(0);
         }
     };
+
+    private static void validate(String[] arguments) {
+        assert isInteger.test(arguments[2]);
+        assert isInteger.test(arguments[3]);
+        assert isValidInteger.test(Integer.parseInt(arguments[2]));
+        assert isValidInteger.test(Integer.parseInt(arguments[3]));
+    }
+
     private final String label;
 
     Command(final String label) {

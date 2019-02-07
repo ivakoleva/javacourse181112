@@ -3,7 +3,8 @@ package com.musala.javacourse181112.paw_inc;
 import com.musala.javacourse181112.paw_inc.model.Command;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
+
+import static com.musala.javacourse181112.paw_inc.Utils.isASCII;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
@@ -18,7 +19,7 @@ public class PawIncorporated {
 
         while (true) {
             line = scan.nextLine();
-            if (Pattern.matches("[\\x00-\\x7F]+", line)) {
+            if (isASCII.test(line)) {
                 final String[] command = line.split("[ ][|][ ]");
                 Command thisCommand = findCommand(command[0]);
                 if (thisCommand != null) {
