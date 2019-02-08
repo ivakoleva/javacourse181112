@@ -4,6 +4,9 @@ import com.musala.javacourse181112.paw_inc.model.center.AdoptionCenter;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
+ *
+ * Dog class
+ * Extends Animal
  */
 public class Dog extends Animal {
     private int amountOfCommands;

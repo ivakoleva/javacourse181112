@@ -8,6 +8,9 @@ import java.util.List;
 
 /**
  * Created by Aykut Ismailov on 6.2.2019 г.
+ *
+ * CastrationCenter class
+ * Implements Center
  */
 public class CastrationCenter implements Center {
     private String name;

@@ -8,6 +8,9 @@ import java.util.List;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
+ *
+ * AdoptionCenter class
+ * Implements Center
  */
 
 public class AdoptionCenter implements Center {

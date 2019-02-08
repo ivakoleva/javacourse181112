@@ -1,7 +1,5 @@
 package com.musala.javacourse181112.tasks;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
@@ -11,7 +9,7 @@ import java.util.stream.Collectors;
  ** Primitives and Wrappers exercise
  *** define and initialize all supported types of primitives and their respective wrappers
  *** loop and print array to stdout
- *** stream the array (Arrays util)
+ *** stream the array (Arrays validation)
  *** using instanceof, filter by boolean
  *** collect to list
  */

@@ -9,10 +9,16 @@ import java.util.*;
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
+ *
+ * Manager class
+ *
+ * Manages the centers and animals
  */
 public class AnimalCenterManager {
     private final EnumMap<TypeOfActivity, List<Center>> centersEnumMap = new EnumMap<>(TypeOfActivity.class);
+
     private final EnumMap<TypeOfActivity, List<Animal>> animalsEnumMap = new EnumMap<>(TypeOfActivity.class);
+
 
     public AnimalCenterManager() {
         Arrays.stream(TypeOfActivity.values()).forEach(activity -> {
@@ -20,6 +26,7 @@ public class AnimalCenterManager {
             animalsEnumMap.put(activity, new ArrayList<>());
         });
     }
+
 
     public void registerCleansingCenter(final String name) {
         final CleansingCenter cleansingCenter = new CleansingCenter();
