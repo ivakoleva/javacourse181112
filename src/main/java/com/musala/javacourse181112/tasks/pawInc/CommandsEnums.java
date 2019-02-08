@@ -1,8 +1,8 @@
-package com.musala.javacourse181112.tasks.paw_inc;
+package com.musala.javacourse181112.tasks.pawInc;
 
 import java.util.Arrays;
 
-public enum BasicEnums {
+public enum CommandsEnums {
     YES("Yes", 1),
     NO("No", 1),
     REGISTER_CLEANSING_CENTER("RegisterCleaningCenter", 1),
@@ -12,7 +12,9 @@ public enum BasicEnums {
     SEND_FOR_CLEANSING("SendForCleansing", 1),
     CLEANSE("Cleanse", 1),
     ADOPT("Adopt", 1),
-    PRINT_STATISTICS("PrintStatistics", 1);
+    PRINT_STATISTICS("PrintStatistics", 1),
+    PAW_PAW_PAWAH("Paw Paw Pawah", 1);
+
 
     private String label;
     private int order;
@@ -33,7 +35,7 @@ public enum BasicEnums {
         this.order = order;
     }
 
-    BasicEnums(final String label, final int order) {
+    CommandsEnums(final String label, final int order) {
         this.label = label;
         this.order = order;
     }
@@ -43,7 +45,7 @@ public enum BasicEnums {
         return name() + " " + label + " " + order;
     }
 
-    public BasicEnums fromString(final String label) {
+    public static CommandsEnums fromString(final String label) {
         return Arrays.stream(values())
                 .filter(extendedEnumSample -> extendedEnumSample.getLabel().equals(label))
                 .findAny()

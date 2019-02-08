@@ -1,12 +1,12 @@
-package com.musala.javacourse181112.tasks.paw_inc;
+package com.musala.javacourse181112.tasks.pawInc;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Center {
     private String name;
-    private static List<Dog> dogs = new ArrayList<>();
-    private static List<Cat> cats = new ArrayList<>();
+    private List<Dog> dogs = new ArrayList<>();
+    private List<Cat> cats = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -16,23 +16,24 @@ public class Center {
         this.name = name;
     }
 
-    public List<Dog> getDogs() {
+    public List<Dog> getDog() {
         return dogs;
     }
 
-    public void addDogs(Dog dogs) {
+    public void addDog(Dog dogs) {
         this.dogs.add(dogs);
     }
 
-    public List<Cat> getCats() {
+    public List<Cat> getCat() {
         return cats;
     }
 
-    public void addCats(Cat cats) {
+    public void addCat(Cat cats) {
         this.cats.add(cats);
     }
 
     public Center(String name) {
         this.name = name;
     }
+
 }

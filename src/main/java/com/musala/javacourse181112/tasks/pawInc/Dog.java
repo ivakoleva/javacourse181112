@@ -1,14 +1,14 @@
-package com.musala.javacourse181112.tasks.paw_inc;
+package com.musala.javacourse181112.tasks.pawInc;
 
-public class Cat extends Animal {
+public class Dog extends Animal {
     private boolean cleansingStatus;
-    private int intelligenceCoefficient;
+    private int amountOfCommands;
     private String tag;
 
-    public Cat(String name, int age, int intelligenceCoefficient, String tag) {
+    public Dog(String name, int age, int amountOfCommands, String tag) {
         super(name, age);
         this.cleansingStatus = false;
-        this.intelligenceCoefficient = intelligenceCoefficient;
+        this.amountOfCommands = amountOfCommands;
         this.tag = tag;
     }
 
@@ -20,12 +20,12 @@ public class Cat extends Animal {
         this.cleansingStatus = cleansingStatus;
     }
 
-    public int getIntelligenceCoefficient() {
-        return intelligenceCoefficient;
+    public int getAmountOfCommands() {
+        return amountOfCommands;
     }
 
-    public void setIntelligenceCoefficient(int intelligenceCoefficient) {
-        this.intelligenceCoefficient = intelligenceCoefficient;
+    public void setAmountOfCommands(int amountOfCommands) {
+        this.amountOfCommands = amountOfCommands;
     }
 
     public String getTag() {
@@ -35,4 +35,6 @@ public class Cat extends Animal {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
 }
+
