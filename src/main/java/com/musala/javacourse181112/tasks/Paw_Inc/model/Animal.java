@@ -1,15 +1,15 @@
-package com.musala.javacourse181112.tasks.Paw_Inc.model;
+package com.musala.javacourse181112.tasks.paw_inc.model;
 
-public abstract class Animals {
-
+public abstract class Animal {
     private String name;
     private int age;
     private boolean cleaningStatus;
+    private String adoptionCenter;
 
-
-    public Animals(final String name, final int age) {
+    public Animal(final String name, final int age, final String adoptionCenter) {
         this.name = name;
         this.age = age;
+        this.adoptionCenter = adoptionCenter;
     }
 
     public String getName() {
@@ -35,4 +35,13 @@ public abstract class Animals {
     public void setCleaningStatus(boolean cleaningStatus) {
         this.cleaningStatus = cleaningStatus;
     }
+
+    public String getAdoptionCenter() {
+        return adoptionCenter;
+    }
+
+    public void setAdoptionCenter(String adoptionCenter) {
+        this.adoptionCenter = adoptionCenter;
+    }
 }
+
