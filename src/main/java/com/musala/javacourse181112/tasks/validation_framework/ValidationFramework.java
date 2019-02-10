@@ -1,7 +1,5 @@
 package com.musala.javacourse181112.tasks.validation_framework;
 
-import com.musala.javacourse181112.oop.votesexercise.model.Person;
-
 import java.util.Scanner;
 
 public class ValidationFramework {
@@ -15,13 +13,13 @@ public class ValidationFramework {
         Person person = new Person();
         System.out.print("Set person's name: ");
         person.setName("");
-        if (entityValidation()) {
-            System.out.println("Validation successful " + person.getName());
-        } else {
-            System.out.println("Invalid name!");
-        }
+        System.out.println(person.getName());
+//        if (entityValidation()) {
+//            System.out.println("Validation successful " + person.getName());
+//        } else {
+//            System.out.println("Invalid name!");
+//        }
     }
-
 
     @StringLengthAnnotation(minValue = 1, maxValue = 255)
     static Person person = new Person();

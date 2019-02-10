@@ -1,17 +1,15 @@
 package com.musala.javacourse181112.pawinc.animal;
 
-import com.musala.javacourse181112.pawinc.center.AdoptionCenter;
-
 public class Animal {
     private String name;
     private int age;
-    private CleansingStatus cleansingStatus;
-    private AdoptionCenter adoptionCenter;
+    private boolean isCleansed;
+    private String adoptionCenterName;
 
     public Animal(String name, int age) {
         this.name = name;
         this.age = age;
-        cleansingStatus = CleansingStatus.UNCLEANSED;
+        isCleansed = false;
     }
 
     public String getName() {
@@ -30,19 +28,15 @@ public class Animal {
         this.age = age;
     }
 
-    public CleansingStatus getCleansingStatus() {
-        return cleansingStatus;
+    public boolean isCleansed() { return isCleansed; }
+
+    public void setCleansed(boolean cleansed) { isCleansed = cleansed; }
+
+    public String getAdoptionCenterName() {
+        return adoptionCenterName;
     }
 
-    public void setCleansingStatus(CleansingStatus cleansingStatus) {
-        this.cleansingStatus = cleansingStatus;
-    }
-
-    public AdoptionCenter getAdoptionCenter() {
-        return adoptionCenter;
-    }
-
-    public void setAdoptionCenter(AdoptionCenter adoptionCenter) {
-        this.adoptionCenter = adoptionCenter;
+    public void setAdoptionCenterName(String adoptionCenterName) {
+        this.adoptionCenterName = adoptionCenterName;
     }
 }

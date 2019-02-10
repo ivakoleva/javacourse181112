@@ -1,14 +1,16 @@
 package com.musala.javacourse181112.pawinc.center;
 
-import java.util.LinkedList;
+import com.musala.javacourse181112.pawinc.animal.Animal;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Center {
     String name;
-    List storedAnimals = new LinkedList();
+    List<Animal> storedAnimals = new ArrayList<>();
 
     public Center(String name) {
-        this.name = name;
+        this.setName(name);
     }
 
     public String getName() {
@@ -19,9 +21,7 @@ public class Center {
         this.name = name;
     }
 
-    public List getStoredAnimals() {
-        return storedAnimals;
-    }
+    public List getStoredAnimals() { return storedAnimals; }
 
     public void setStoredAnimals(List storedAnimals) {
         this.storedAnimals = storedAnimals;
