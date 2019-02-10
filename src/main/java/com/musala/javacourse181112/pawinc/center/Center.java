@@ -21,7 +21,9 @@ public class Center {
         this.name = name;
     }
 
-    public List getStoredAnimals() { return storedAnimals; }
+    public List getStoredAnimals() {
+        return storedAnimals;
+    }
 
     public void setStoredAnimals(List storedAnimals) {
         this.storedAnimals = storedAnimals;

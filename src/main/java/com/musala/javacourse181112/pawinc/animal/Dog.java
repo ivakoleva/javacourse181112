@@ -1,12 +1,10 @@
 package com.musala.javacourse181112.pawinc.animal;
 
-import com.musala.javacourse181112.pawinc.center.AdoptionCenter;
-
 public class Dog extends Animal {
     private int amountOfCommands;
 
-    public Dog(String name, int age, int amountOfCommands) {
-        super(name, age);
+    public Dog(final String name, final int age, final int amountOfCommands, final String adoptionCenterName) {
+        super(name, age, adoptionCenterName);
         this.amountOfCommands = amountOfCommands;
     }
 
