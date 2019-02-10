@@ -22,9 +22,14 @@ public class AnimalCenterManager {
     private static final List<Animal> CASTRATED_ANIMALS_LIST = new ArrayList<>();
 
     static void registerCleansingCenter(String name) {
-        final CleansingCenter cleansingCenter = new CleansingCenter(name);
-        cleansingCenter.setStoredAnimalsList(new ArrayList<>());
-        CLEANSING_CENTER_LIST.add(cleansingCenter);
+        if (name.matches("\\A\\p{ASCII}*\\z")) {
+            final CleansingCenter cleansingCenter = new CleansingCenter(name);
+            cleansingCenter.setStoredAnimalsList(new ArrayList<>());
+            CLEANSING_CENTER_LIST.add(cleansingCenter);
+        } else {
+            System.out.println("Invalid Name!");
+        }
+
     }
 
     static void registerAdoptionCenter(String name) {
@@ -47,6 +52,7 @@ public class AnimalCenterManager {
     }
 
     static void registerCat(String name, int age, int intelligenceCoefficient, String adoptionCenterName) {
+
         final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
         final Cat cat = new Cat(name, age, intelligenceCoefficient, adoptionCenter);
         adoptionCenter.getStoredAnimalsList().add(cat);
@@ -57,6 +63,7 @@ public class AnimalCenterManager {
         final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
         final CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
         adoptionCenter.sendForCleansing(cleansingCenter);
+//        adoptionCenter.setStoredAnimalsList(cleansingCenter.getStoredAnimalsList());
     }
 
     static void sendForCastration(String adoptionCenterName, String castrationCenterName) {
@@ -69,11 +76,15 @@ public class AnimalCenterManager {
         final CleansingCenter cleansingCenter = findCleansingCenter(cleansingCenterName);
         cleansingCenter.cleanse();
         CLEANSED_ANIMALS_LIST.addAll(cleansingCenter.getStoredAnimalsList());
+        for (Animal animal : CLEANSED_ANIMALS_LIST) {
+            animal.getAdoptionCenter()
+                    .addAnimalToStoredAnimals(animal);
+        }
     }
 
     static void adopt(final String adoptionCenterName) {
         final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
-        ADOPTED_ANIMALS_LIST.addAll(adoptionCenter.adopt());
+        ADOPTED_ANIMALS_LIST.addAll(adoptionCenter.adoptAnimals());
     }
 
     static void castrate(final String castrationCenterName) {
@@ -106,19 +117,23 @@ public class AnimalCenterManager {
 
         AtomicInteger awaitingAdoption = new AtomicInteger();
         AtomicInteger awaitingCleansing = new AtomicInteger();
-        for (int i = 0; i < ADOPTION_CENTER_LIST.size(); i++) {
-            ADOPTION_CENTER_LIST.get(i).getStoredAnimalsList().forEach(animal -> {
+        for (AdoptionCenter adoptionCenter : ADOPTION_CENTER_LIST) {
+            adoptionCenter.getStoredAnimalsList().forEach(animal -> {
                 if (animal.isCleansed()) {
                     awaitingAdoption.getAndIncrement();
                 }
             });
-            CLEANSING_CENTER_LIST.get(i).getStoredAnimalsList().forEach(animal -> {
+
+        }
+        for (CleansingCenter cleansingCenter : CLEANSING_CENTER_LIST) {
+            cleansingCenter.getStoredAnimalsList().forEach(animal -> {
                 if (!animal.isCleansed()) {
                     awaitingCleansing.getAndIncrement();
                 }
             });
 
         }
+
         System.out.println("Animals Awaiting Adoption: " + awaitingAdoption);
         System.out.println("Animals Awaiting Cleansing: " + awaitingCleansing);
 
@@ -131,10 +146,12 @@ public class AnimalCenterManager {
             final StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < animalList.size(); i++) {
                 stringBuilder.append(animalList.get(i).getName());
-                if (i == animalList.size()) {
+                if (i == animalList.size() - 1) {
                     break;
+                } else {
+                    stringBuilder.append(", ");
                 }
-                stringBuilder.append(", ");
+
 
             }
             return stringBuilder.toString();

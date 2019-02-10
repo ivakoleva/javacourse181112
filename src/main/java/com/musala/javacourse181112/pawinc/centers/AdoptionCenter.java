@@ -35,6 +35,10 @@ public class AdoptionCenter implements Center {
 
     }
 
+    public void addAnimalToStoredAnimals(Animal animal) {
+        storedAnimalsList.add(animal);
+    }
+
     //Sends animals for cleansing to the cleansing center
     public void sendForCleansing(CleansingCenter cleansingCenter) {
         final Iterator<Animal> animalIterator = storedAnimalsList.iterator();
@@ -60,14 +64,18 @@ public class AdoptionCenter implements Center {
 
 
     //All animals that are cleansed get adopted and removed from the stored animals list
-    public List<Animal> adopt() {
-        final List<Animal> animalForAdoptionList = new ArrayList<>();
-        storedAnimalsList.forEach(animal -> {
+    public List<Animal> adoptAnimals() {
+        final List<Animal> animalsForAdoptionList = new ArrayList<>();
+
+        final Iterator<Animal> animalIterator = storedAnimalsList.iterator();
+
+        for (; animalIterator.hasNext(); ) {
+            final Animal animal = animalIterator.next();
             if (animal.isCleansed()) {
-                animalForAdoptionList.add(animal);
-                storedAnimalsList.remove(animal);
+                animalsForAdoptionList.add(animal);
+                animalIterator.remove();
             }
-        });
-        return animalForAdoptionList;
+        }
+        return animalsForAdoptionList;
     }
 }
