@@ -1,6 +1,6 @@
 package com.musala.javacourse181112.tasks.pawInc;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
 

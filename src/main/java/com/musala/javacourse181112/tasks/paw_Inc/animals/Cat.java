@@ -11,7 +11,7 @@ public class Cat extends Animal {
         return intelligrenceCoefficient;
     }
 
-    public void setIntelligrenceCoefficient(int intelligrenceCoefficient) {
+    public void setIntelligenceCoefficient(int intelligrenceCoefficient) {
         this.intelligrenceCoefficient = intelligrenceCoefficient;
     }
 }

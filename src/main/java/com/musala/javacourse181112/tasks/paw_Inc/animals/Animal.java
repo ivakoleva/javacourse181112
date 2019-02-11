@@ -2,7 +2,7 @@ package com.musala.javacourse181112.tasks.paw_Inc.animals;
 
 import com.musala.javacourse181112.tasks.paw_Inc.centers.AdoptionCenter;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private AdoptionCenter initialAdoptionCenter;

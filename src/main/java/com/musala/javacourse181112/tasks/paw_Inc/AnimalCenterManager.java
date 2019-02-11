@@ -74,7 +74,7 @@ public class AnimalCenterManager {
     public void registerCat(final String name, final int age, final int intelligenceCoefficient, final String adoptionCenterName) {
         AdoptionCenter adoptionCenter = null;
         Cat cat = new Cat(name, age);
-        cat.setIntelligrenceCoefficient(intelligenceCoefficient);
+        cat.setIntelligenceCoefficient(intelligenceCoefficient);
         for (Center currentAdoptionCenter : centerList) {
             if (currentAdoptionCenter.getName().equals(adoptionCenterName)) {
                 adoptionCenter = (AdoptionCenter) currentAdoptionCenter;

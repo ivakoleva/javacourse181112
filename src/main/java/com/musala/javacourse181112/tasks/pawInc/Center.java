@@ -3,7 +3,7 @@ package com.musala.javacourse181112.tasks.pawInc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Center {
+public abstract class Center {
     private String name;
     private List<Dog> dogs = new ArrayList<>();
     private List<Cat> cats = new ArrayList<>();
