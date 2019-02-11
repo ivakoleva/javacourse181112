@@ -1,5 +1,13 @@
 package com.musala.javacourse181112.tasks.paw_Inc;
 
+import com.musala.javacourse181112.tasks.paw_Inc.animals.Animal;
+import com.musala.javacourse181112.tasks.paw_Inc.animals.Cat;
+import com.musala.javacourse181112.tasks.paw_Inc.animals.Dog;
+import com.musala.javacourse181112.tasks.paw_Inc.centers.AdoptionCenter;
+import com.musala.javacourse181112.tasks.paw_Inc.centers.CastrationCenter;
+import com.musala.javacourse181112.tasks.paw_Inc.centers.Center;
+import com.musala.javacourse181112.tasks.paw_Inc.centers.CleansingCenter;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

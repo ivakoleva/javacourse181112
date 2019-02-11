@@ -1,5 +1,7 @@
 package com.musala.javacourse181112.tasks.paw_Inc.centers;
 
+import com.musala.javacourse181112.tasks.paw_Inc.animals.Animal;
+
 import java.util.ArrayList;
 import java.util.List;
 

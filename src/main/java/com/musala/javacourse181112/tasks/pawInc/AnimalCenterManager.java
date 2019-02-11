@@ -1,5 +1,9 @@
 package com.musala.javacourse181112.tasks.pawInc;
 
+import com.musala.javacourse181112.pawInc.BasicCommands;
+import com.musala.javacourse181112.pawInc.Cat;
+import com.musala.javacourse181112.pawInc.Dog;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +17,12 @@ public class AnimalCenterManager {
 
         String correspondence = in.nextLine();
         String[] result = correspondence.split(" | ");
+        switch (correspondence) {
+            case "Paw Paw Pawah":
+                printStatistics();
+                break;
+        }
+        switch (BasicCommands.fromString(result[0].replace(" ", "_")))
 
         switch (CommandsEnums.fromString(result[0])) {
             case REGISTER_ADOPTION_CENTER:
@@ -29,46 +39,45 @@ public class AnimalCenterManager {
                 cleanse(result[2]);
             case SEND_FOR_CLEANSING:
                 sendForCleansing(result[2], result[4]);
-            case PAW_PAW_PAWAH:
-                printStatistics();
-                break;
         }
     }
 
 
     static void registerCleansingCenter(String name) {
-        CleansingCenter cleansingCenter = new CleansingCenter(name);
-        cleansingCenterList.add(cleansingCenter);
+        cleansingCenterList.add(new CleansingCenter(name));
         menu();
     }
 
     static void registerAdoptionCenter(String name) {
-        AdoptionCenter adoptionCenter = new AdoptionCenter(name);
-        adoptionCenterList.add(adoptionCenter);
+        adoptionCenterList.add(new AdoptionCenter(name));
         menu();
     }
 
     static void registerDog(String name, int age, int amountOfCommands, String tag) {
-        for (int i = 0; i < adoptionCenterList.size(); i++) {
-            if (adoptionCenterList.get(i).getName().equals(tag)) {
-                Dog dog1 = new Dog(name, age, amountOfCommands, tag);
-                adoptionCenterList.get(i).addDogs(dog1);
-            } else {
-                System.out.println("4No such center");
+        try {
+            for (int i = 0; i < adoptionCenterList.size(); i++) {
+                if (adoptionCenterList.get(i).getName().equals(tag)) {
+                    com.musala.javacourse181112.pawInc.Dog a = new Dog(name, age, amountOfCommands, tag);
+                    adoptionCenterList.get(i).addDogs(a);
+                }
             }
+        } catch (Exception a) {
+            System.out.println("There is no such center");
         }
         menu();
     }
 
     static void registerCat(String name, int age, int intelligenceCoefficient, String tag) {
 
-        for (int i = 0; i < adoptionCenterList.size(); i++) {
-            if (adoptionCenterList.get(i).getName().equals(tag)) {
-                Cat cat1 = new Cat(name, age, intelligenceCoefficient, tag);
-                adoptionCenterList.get(i).addCats(cat1);
-            } else {
-                System.out.println("3No such center");
+        try {
+            for (int i = 0; i < adoptionCenterList.size(); i++) {
+                if (adoptionCenterList.get(i).getName().equals(tag)) {
+                    com.musala.javacourse181112.pawInc.Cat a = new Cat(name, age, intelligenceCoefficient, tag);
+                    adoptionCenterList.get(i).addCats(a);
+                }
             }
+        } catch (Exception a) {
+            System.out.println("There is no such center");
         }
         menu();
     }
@@ -202,7 +211,6 @@ public class AnimalCenterManager {
         }
         System.out.println(b);
     }
-
 
 
     public static void main(final String[] args) {
