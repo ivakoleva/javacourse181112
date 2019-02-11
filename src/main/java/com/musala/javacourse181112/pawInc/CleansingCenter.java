@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.pawInc;
+package com.musala.javacourse181112.pawInc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,4 +34,5 @@ public class CleansingCenter extends Center {
     public void addCleansedCats(Cat cleansedCat) {
         cleansedCats.add(cleansedCat);
     }
+
 }

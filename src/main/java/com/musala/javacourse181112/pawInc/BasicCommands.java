@@ -1,20 +1,21 @@
-package com.musala.javacourse181112.tasks.pawInc;
+package com.musala.javacourse181112.pawInc;
+
+import com.musala.javacourse181112.oop.ExtendedEnumSample;
 
 import java.util.Arrays;
 
-public enum CommandsEnums {
+public enum BasicCommands {
     YES("Yes", 1),
     NO("No", 1),
+    ADOPT("Adopt", 1),
+    CLEANSE("Cleanse", 1),
+    SEND_FOR_CLEANSE("SendForCleansing", 1),
+    REGISTER_ADOPTION_CENTER("RegisterAdoptionCenter", 2),
     REGISTER_CLEANSING_CENTER("RegisterCleansingCenter", 1),
-    REGISTER_ADOPTION_CENTER("RegisterAdoptionCenter", 1),
     REGISTER_DOG("RegisterDog", 1),
     REGISTER_CAT("RegisterCat", 1),
-    SEND_FOR_CLEANSING("SendForCleansing", 1),
-    CLEANSE("Cleanse", 1),
-    ADOPT("Adopt", 1),
-    PRINT_STATISTICS("PrintStatistics", 1),
-    PAW_PAW_PAWAH("End", 1);
-
+    PRINT_STATS("PrintStats", 1),
+    PAW_PAW_PAW("End", 1);
 
     private String label;
     private int order;
@@ -35,7 +36,11 @@ public enum CommandsEnums {
         this.order = order;
     }
 
-    CommandsEnums(final String label, final int order) {
+        /*ExtendedEnum(final String label) {
+            this(label, 10);
+        }*/
+
+    BasicCommands(final String label, final int order) {
         this.label = label;
         this.order = order;
     }
@@ -45,9 +50,10 @@ public enum CommandsEnums {
         return name() + " " + label + " " + order;
     }
 
-    public static CommandsEnums fromString(final String label) {
+
+    public static BasicCommands fromString(final String label) {
         return Arrays.stream(values())
-                .filter(extendedEnumSample -> extendedEnumSample.getLabel().equals(label))
+                .filter(BasicCommands -> BasicCommands.getLabel().equals(label))
                 .findAny()
                 .orElseThrow(() -> new RuntimeException("not found"));
     }
