@@ -61,8 +61,7 @@ public class AnimalCenterManager {
         try {
             for (int i = 0; i < ListAdoptionCenters.size(); i++) {
                 if (ListAdoptionCenters.get(i).getName().equals(tag)) {
-                    Dog a = new Dog(name, age, Commands, tag);
-                    ListAdoptionCenters.get(i).addDogs(a);
+                    ListAdoptionCenters.get(i).addDogs(new Dog(name, age, Commands, tag));
                 }
             }
         } catch (Exception a) {
@@ -75,8 +74,7 @@ public class AnimalCenterManager {
         try {
             for (int i = 0; i < ListAdoptionCenters.size(); i++) {
                 if (ListAdoptionCenters.get(i).getName().equals(tag)) {
-                    Cat a = new Cat(name, age, IQ, tag);
-                    ListAdoptionCenters.get(i).addCats(a);
+                    ListAdoptionCenters.get(i).addCats(new Cat(name, age, IQ, tag));
                 }
             }
         } catch (Exception a) {
@@ -238,9 +236,18 @@ public class AnimalCenterManager {
         System.out.println(a);
         System.out.print("Animals awaiting cleansing: ");
         for (int i = 0; i < ListCleansingCenters.size(); i++) {
-            System.out.println(ListCleansingCenters.get(i).getDogs().size());
+            for (j = 0; j < ListCleansingCenters.get(i).getCats().size(); j++) {
+                if (ListCleansingCenters.get(i).getCats().get(j).getCleansingStatus().equals(false)) {
+                    b++;
+                }
+            }
+            for (j = 0; j < ListCleansingCenters.get(i).getDogs().size(); j++) {
+                if (ListCleansingCenters.get(i).getDogs().get(j).getCleansingStatus().equals(false)) {
+                    b++;
+                }
+            }
         }
-
+        System.out.println(b);
         System.exit(0);
     }
 
