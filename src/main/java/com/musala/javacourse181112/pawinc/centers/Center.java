@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.pawinc.centers;
 
 import com.musala.javacourse181112.pawinc.animals.Animal;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
 public class Center {
     private String name;
 
-    protected List<Animal> storedAnimals = new ArrayList<>();
+    protected final List<Animal> storedAnimals = new ArrayList<>();
 
     public Center(String name) {
         this.name = name;
@@ -19,13 +20,11 @@ public class Center {
     public List<Animal> getStoredAnimals() {
         return storedAnimals;
     }
-    public void setStoredAnimals(List<Animal> storedAnimals) {
-        this.storedAnimals = storedAnimals;
-    }
 
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }

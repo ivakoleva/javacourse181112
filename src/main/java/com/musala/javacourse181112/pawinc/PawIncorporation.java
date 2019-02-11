@@ -9,44 +9,112 @@ import java.util.Scanner;
 
 public class PawIncorporation {
     public static void main(String[] args) {
+        long startTime = 0;
+
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             String commands = scanner.nextLine();
+            if (startTime == 0) {
+                startTime = System.currentTimeMillis();
+            }
 
             String[] eachCommand = commands.split("[ ][|][ ]");
 
             switch (eachCommand[0]) {
                 case "RegisterAdoptionCenter":
-                    AnimalCenterManager.registerAdoptionCenter(eachCommand[1]);
+                    if (PawIncUtils.isAscii(eachCommand[1]))
+                        AnimalCenterManager.registerAdoptionCenter(eachCommand[1]);
+                    else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "RegisterCleansingCenter":
-                    AnimalCenterManager.registerCleansingCenter(eachCommand[1]);
+                    if (PawIncUtils.isAscii(eachCommand[1]))
+                        AnimalCenterManager.registerCleansingCenter(eachCommand[1]);
+                    else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
+                    break;
+                case "RegisterCastrationCenter":
+                    if (PawIncUtils.isAscii(eachCommand[1]))
+                        AnimalCenterManager.registerCastrationCenter(eachCommand[1]);
+                    else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "RegisterDog":
-                    AnimalCenterManager.registerDog
-                            (eachCommand[1], Integer.parseInt(eachCommand[2]),
-                                    Integer.parseInt(eachCommand[3]), eachCommand[4]);
+                    if (PawIncUtils.isAscii(eachCommand[1]) && PawIncUtils.isAscii(eachCommand[4])
+                            && PawIncUtils.isValidInt(Integer.parseInt(eachCommand[2])) && PawIncUtils.isValidInt(Integer.parseInt(eachCommand[3]))) {
+                        AnimalCenterManager.registerDog
+                                (eachCommand[1], Integer.parseInt(eachCommand[2]),
+                                        Integer.parseInt(eachCommand[3]), eachCommand[4]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "RegisterCat":
-                    AnimalCenterManager.registerCat
-                            (eachCommand[1], Integer.parseInt(eachCommand[2]),
-                                    Integer.parseInt(eachCommand[3]), eachCommand[4]);
+                    if (PawIncUtils.isAscii(eachCommand[1]) && PawIncUtils.isAscii(eachCommand[4])
+                            && PawIncUtils.isValidInt(Integer.parseInt(eachCommand[2])) && PawIncUtils.isValidInt(Integer.parseInt(eachCommand[3]))) {
+                        AnimalCenterManager.registerCat
+                                (eachCommand[1], Integer.parseInt(eachCommand[2]),
+                                        Integer.parseInt(eachCommand[3]), eachCommand[4]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "SendForCleansing":
-                    AnimalCenterManager.sendForCleansing
-                            (eachCommand[1], eachCommand[2]);
+                    if (PawIncUtils.isAscii(eachCommand[1]) && PawIncUtils.isAscii(eachCommand[2])) {
+                        AnimalCenterManager.sendForCleansing
+                                (eachCommand[1], eachCommand[2]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
+                case "SendForCastration":
+                    if (PawIncUtils.isAscii(eachCommand[1]) && PawIncUtils.isAscii(eachCommand[2])) {
+                        AnimalCenterManager.sendForCastration(eachCommand[1], eachCommand[2]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
+                    break;
+
                 case "Cleanse":
-                    AnimalCenterManager.cleanse
-                            (eachCommand[1]);
+                    if (PawIncUtils.isAscii(eachCommand[1])) {
+                        AnimalCenterManager.cleanse(eachCommand[1]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "Adopt":
-                    AnimalCenterManager.adopt
-                            (eachCommand[1]);
+                    if (PawIncUtils.isAscii(eachCommand[1])) {
+                        AnimalCenterManager.adopt
+                                (eachCommand[1]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
+                    break;
+                case "Castrate":
+                    if (PawIncUtils.isAscii(eachCommand[1])) {
+                        AnimalCenterManager.castrate(eachCommand[1]);
+                    } else {
+                        System.out.println("Error: You have entered an invalid input.");
+                        System.exit(1);
+                    }
                     break;
                 case "Paw Paw Pawah":
                     AnimalCenterManager.printStatics();
+                    PawIncUtils.isInAllowedMemoryAndTime(startTime);
+                    System.exit(0);
             }
         }
     }

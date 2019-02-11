@@ -22,10 +22,9 @@ public class AdoptionCenter extends Center {
         Iterator<Animal> iterator = storedAnimals.iterator();
         while (iterator.hasNext()) {
             Animal animal = iterator.next();
-            for(CleansingCenter cleansingCenter:AnimalCenterManager.getCleansingCenters()) {
-                if(cleansingCenter.getName().equals(cleansingCenterName))
-                {
-                    if (animal.getCleansingStatus().equals(CleansingStatus.NOT_CLEANSED)){
+            for (CleansingCenter cleansingCenter : AnimalCenterManager.getCleansingCenters()) {
+                if (cleansingCenter.getName().equals(cleansingCenterName)) {
+                    if (animal.getCleansingStatus().equals(CleansingStatus.NOT_CLEANSED)) {
                         cleansingCenter.getStoredAnimals().add(animal);
                         iterator.remove();
                     }
@@ -37,14 +36,31 @@ public class AdoptionCenter extends Center {
     }
 
     public void adoptAnimals() {
-       Iterator<Animal> animalIterator = storedAnimals.iterator();
-       while (animalIterator.hasNext()){
-           Animal animal = animalIterator.next();
-           if(animal.getCleansingStatus().equals(CleansingStatus.CLEANSED)){
-               adoptedAnimals.add(animal);
-               animalIterator.remove();
-           }
-       }
+        Iterator<Animal> animalIterator = storedAnimals.iterator();
+        while (animalIterator.hasNext()) {
+            Animal animal = animalIterator.next();
+            if (animal.getCleansingStatus().equals(CleansingStatus.CLEANSED)) {
+                adoptedAnimals.add(animal);
+                animalIterator.remove();
+            }
+        }
+    }
+
+    public void sendAnimalsForCastration(String castrationCenterName) {
+        Iterator<Animal> iterator = storedAnimals.iterator();
+        while (iterator.hasNext()) {
+            Animal animal = iterator.next();
+            for (CastrationCenter castrationCenter : AnimalCenterManager.getCastrationCenters()) {
+                if (castrationCenter.getName().equals(castrationCenterName)) {
+                    if (animal.getCleansingStatus().equals(CleansingStatus.NOT_CLEANSED)) {
+                        castrationCenter.getStoredAnimals().add(animal);
+                        iterator.remove();
+                    }
+                }
+
+            }
+
+        }
     }
 
     public List<Animal> getAdoptedAnimals() {
