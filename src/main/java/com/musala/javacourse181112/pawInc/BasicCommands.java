@@ -5,20 +5,19 @@ import com.musala.javacourse181112.oop.ExtendedEnumSample;
 import java.util.Arrays;
 
 public enum BasicCommands {
-    YES("Yes",1),
-    NO("No",1),
-    ADOPT("Adopt",1),
-    CLEANSE("Cleanse",1),
-    SEND_FOR_CLEANSE("SendForCleansing",1),
-    REGISTER_ADOPTION_CENTER("RegisterAdoptionCenter",2),
-    REGISTER_CLEANSING_CENTER("RegisterCleansingCenter",1),
-    REGISTER_DOG("RegisterDog",1),
-    REGISTER_CAT("RegisterCat",1),
-    PRINT_STATS("PrintStats",1),
-    PAW_PAW_PAW("Paw_Paw_Paw",1);
+    YES("Yes"),
+    NO("No"),
+    ADOPT("Adopt"),
+    CLEANSE("Cleanse"),
+    SEND_FOR_CLEANSE("SendForCleansing"),
+    REGISTER_ADOPTION_CENTER("RegisterAdoptionCenter"),
+    REGISTER_CLEANSING_CENTER("RegisterCleansingCenter"),
+    REGISTER_DOG("RegisterDog"),
+    REGISTER_CAT("RegisterCat"),
+    PRINT_STATS("PrintStats"),
+    PAW_PAW_PAW("Paw_Paw_Paw");
 
     private  String label;
-    private int order;
 
     public String getLabel() {
         return label;
@@ -28,26 +27,17 @@ public enum BasicCommands {
         this.label = label;
     }
 
-    public int getOrder() {
-        return order;
-    }
-
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
         /*ExtendedEnum(final String label) {
             this(label, 10);
         }*/
 
-    BasicCommands(final String label, final int order) {
+    BasicCommands(final String label) {
         this.label = label;
-        this.order = order;
     }
 
     @Override
     public String toString() {
-        return name() + " " + label + " " + order;
+        return name() + " " + label + " " ;
     }
 
 

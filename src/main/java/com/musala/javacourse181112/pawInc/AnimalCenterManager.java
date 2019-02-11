@@ -238,18 +238,9 @@ public class AnimalCenterManager {
         System.out.println(a);
         System.out.print("Animals awaiting cleansing: ");
         for (int i = 0; i < ListCleansingCenters.size(); i++) {
-            for (j = 0; j < ListCleansingCenters.get(i).getCats().size(); j++) {
-                if (ListCleansingCenters.get(i).getCats().get(j).getCleansingStatus().equals(false)) {
-                    b++;
-                }
-            }
-            for (j = 0; j < ListCleansingCenters.get(i).getDogs().size(); j++) {
-                if (ListCleansingCenters.get(i).getDogs().get(j).getCleansingStatus().equals(false)) {
-                    b++;
-                }
-            }
+            System.out.println(ListCleansingCenters.get(i).getDogs().size());
         }
-        System.out.println(b);
+
         System.exit(0);
     }
 
