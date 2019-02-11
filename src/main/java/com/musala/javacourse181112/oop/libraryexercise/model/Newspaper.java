@@ -1,14 +1,14 @@
 package com.musala.javacourse181112.oop.libraryexercise.model;
 
-public class Newspaper extends AbstractItem {
-
- private Long number;
-
-    public void setNumber(Long number) {
-        this.number = number;
+public class Newspaper extends AbstractItem implements Issuable{
+    private Integer uniqueId;
+    @Override
+    public Integer getUniqueId() {
+        return uniqueId;
     }
 
-    public Long getNumber() {
-        return number;
+    @Override
+    public void setUniqueId(Integer uniqueId) {
+        this.uniqueId = uniqueId;
     }
 }

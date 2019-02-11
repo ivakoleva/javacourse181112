@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 /**
  * Created by Iva Koleva on 11.12.2018
  */
-public class ArrayBlockingQueueExample {
+public class    ArrayBlockingQueueExample {
     private static final BlockingQueue<String> MESSAGES_BLOCKING_QUEUE = new ArrayBlockingQueue<>(10);
 
     public static void showOldSchoolThreadInstantiation() {

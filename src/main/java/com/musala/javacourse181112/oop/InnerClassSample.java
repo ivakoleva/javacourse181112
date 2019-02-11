@@ -19,7 +19,7 @@ public class InnerClassSample {
         final InnerClassSample.InnerClass innerClass =
                 innerClassSample.new InnerClass();
         innerClass.printValuesToStdout();
-        //new InnerClassSample().new InnerClass();
+        //new InnerClassSample().new OuterClass();
 
         final InnerClassSample.InnerClass innerClass1 =
                 innerClassSample.new InnerClass();
@@ -48,5 +48,5 @@ public class InnerClassSample {
 }
 
 // inner class needs to be static nested in order to be extended outside outer class
-/*class Test extends InnerClassSample.InnerClass {
+/*class Test extends InnerClassSample.OuterClass {
 }*/

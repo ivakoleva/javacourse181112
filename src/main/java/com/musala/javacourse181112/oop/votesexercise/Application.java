@@ -1,13 +1,11 @@
 package com.musala.javacourse181112.oop.votesexercise;
 
-import com.musala.javacourse181112.oop.votesexercise.model.Answer;
 import com.musala.javacourse181112.oop.votesexercise.model.Person;
 import com.musala.javacourse181112.oop.votesexercise.model.Poll;
-import com.musala.javacourse181112.oop.votesexercise.service.PersonService;
-import com.musala.javacourse181112.oop.votesexercise.service.PollService;
-import com.musala.javacourse181112.oop.votesexercise.service.exception.PersonAlreadyVotedQuestionException;
+import com.musala.javacourse181112.oop.votesexercise.model.Question;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,50 +15,26 @@ import java.util.List;
  */
 public class Application {
     public static void main(final String[] args) {
-        final PollService pollService = new PollService();
-        final PersonService personService = new PersonService();
+        final Person ivanIvanov = new Person();
+        ivanIvanov.setName("Ivan");
+        ivanIvanov.setFamily("Ivanov");
+        ivanIvanov.setDateOfBirth(LocalDate.of(1990, Month.JANUARY, 1));
 
-        final Person person1 = personService.generatePerson(
-                "Ivan",
-                "Ivanov",
-                LocalDate.of(1990, Month.JANUARY, 1));
+        final Poll coffeePoll = new Poll();
+        coffeePoll.setName("Coffee poll");
+        coffeePoll.setStartDateTime(LocalDateTime.of(2019, Month.JANUARY, 1, 0, 0));
+        coffeePoll.setEndDateTime(LocalDateTime.of(2020, Month.JANUARY, 1, 0, 0));
+        coffeePoll.setCreatedBy(ivanIvanov);
 
-        final Poll coffeePoll = pollService.generatePoll(
-                "Coffee poll",
-                true,
-                () -> pollService.generateQuestion(
-                        "Do you like coffee?",
-                        () -> pollService.generateAnswer("Yes"),
-                        () -> pollService.generateAnswer("No")),
-                () -> pollService.generateQuestion(
-                        "How do you enjoy your coffee?",
-                        () -> pollService.generateAnswer("Milk"),
-                        () -> pollService.generateAnswer("Sugar"),
-                        () -> pollService.generateAnswer("Milk & sugar"),
-                        () -> pollService.generateAnswer("Black"),
-                        () -> pollService.generateAnswer("None of the above"))
-                // TODO: implement the rest of the questions & answers
-        );
-        coffeePoll.setCreatedBy(person1);
-        coffeePoll.setPersonList(new ArrayList<>());
-        coffeePoll.getPersonList().add(person1);
+        final List<Question> questionList = new ArrayList<>();
+        coffeePoll.setQuestionList(questionList);
 
+        final Question question1 = new Question();
+        question1.setName("Do you like coffee?");
+        //question1.setAnswerList();
 
-        coffeePoll.getQuestionList().forEach(question -> {
-            final List<Answer> answerAvailableList = question.getAnswerAvailableList();
-            if (answerAvailableList != null && !answerAvailableList.isEmpty()) {
-                try {
-                    pollService.giveAnswer(
-                            person1,
-                            coffeePoll,
-                            question,
-                            answerAvailableList.get(0));
-                } catch (PersonAlreadyVotedQuestionException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        questionList.add(question1);
 
-        System.out.println();
+        // TODO: populate 3 questions, consult tasks.md
     }
 }
