@@ -14,22 +14,16 @@ public class Cleint {
 
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
-            String[] words = line.split("\\s*|\\s*");
-            Object[] arguments = Arrays.copyOfRange(words, 1, words.length + 1);
+            String[] words = line.split("\\s\\|\\s");
+            Object[] arguments = {Arrays.copyOfRange(words, 1, words.length + 1)};
             Method[] methods = clazz.getDeclaredMethods();
             for(Method method : methods){
-                Class<?>[] parameterTypes = method.getParameterTypes();
-                method = clazz.getDeclaredMethod(words[0], parameterTypes);
-                method.invoke(object, arguments);
+                if(method.getName().startsWith(words[0])){
+                    Class<?>[] parameterTypes = method.getParameterTypes();
+                    method = clazz.getDeclaredMethod(words[0], parameterTypes);
+                    method.invoke(object, new Object[] {arguments});
+                }
             }
-
-            /*Method method = clazz.getDeclaredMethod(words[0]);
-            Class<?>[] parameterTypes = method.getParameterTypes();
-            Object[] methodArguments = new Object[parameterTypes.length];
-            for (int i = 0; i < parameterTypes.length; i++) {
-                methodArguments[i] = parameterTypes[i].newInstance();
-            }
-            method.invoke(object, methodArguments);*/
         }
         scanner.close();
     }
