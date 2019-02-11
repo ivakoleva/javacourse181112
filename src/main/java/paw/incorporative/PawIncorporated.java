@@ -1,18 +1,14 @@
 package paw.incorporative;
 
 import java.nio.charset.Charset;
-//import java.time.Instant;
 import java.util.Scanner;
 
 public class PawIncorporated {
-    //public static Instant start = Instant.now();
-
     public static void main(final String[] args) {
         final Scanner scan = new Scanner(System.in);
         final AnimalCenterManager animalCenterManager = new AnimalCenterManager();
 
         String line = scan.nextLine();
-        //start = Instant.now();
         while (true) {
             if (Charset.forName("US-ASCII").newEncoder().canEncode(line)) {
                 final String[] command = line.split("[ ][|][ ]");

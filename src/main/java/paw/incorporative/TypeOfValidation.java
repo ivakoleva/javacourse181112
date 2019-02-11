@@ -2,11 +2,11 @@ package paw.incorporative;
 
 import java.nio.charset.Charset;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 
 public enum TypeOfValidation {
     IS_ASCII(1, string -> Charset.forName("US-ASCII").newEncoder().canEncode(string)),
-    IS_INTEGER(2, string -> 0 < Double.valueOf(string) && Double.valueOf(string) <= Integer.MAX_VALUE && Double.valueOf(string) % 1 == 0);
-
+    IS_INTEGER(2, string -> Pattern.matches("[0-9]+",string)&&0 < Double.valueOf(string) && Double.valueOf(string) <= Integer.MAX_VALUE && Double.valueOf(string) % 1 == 0);
     private Integer label;
     private Predicate<String> checker;
 
@@ -22,6 +22,7 @@ public enum TypeOfValidation {
     public Integer getLabel() {
         return label;
     }
+
 
     public static TypeOfValidation findTypeOrPredicate(final TypeOfValidation searchedPredicate) {
         for (TypeOfValidation typeOfValidation : TypeOfValidation.values()) {

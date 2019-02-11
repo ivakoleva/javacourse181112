@@ -38,7 +38,6 @@ public class AnimalCenterManager {
     }
 
     public void registerCleansingCenter(final String name) {
-
         CleansingCenter cleansingCenter = new CleansingCenter();
         cleansingCenter.setName(name);
         centerList.add(cleansingCenter);
@@ -129,7 +128,7 @@ public class AnimalCenterManager {
         System.out.println();
         System.out.println("Paw Inc. Regular Castration Statistics");
         System.out.println("Castration Centers: " + centerList.stream().filter(center -> center instanceof CastrationCenter).count());
-        System.out.print("Castrated Animals: " + prepareAnimalListForPrint(getAllCastratedAnimalsInOrder()));
+        System.out.println("Castrated Animals: " + prepareAnimalListForPrint(getAllCastratedAnimalsInOrder()));
     }
 
     private Center findCenter(final String centerName) {

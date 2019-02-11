@@ -1,7 +1,5 @@
 package paw.incorporative;
 
-//import java.time.Duration;
-//import java.time.Instant;
 
 public enum Command {
     REGISTER_CLEANSING_CENTER("RegisterCleansingCenter") {
@@ -165,8 +163,6 @@ public enum Command {
                     validateArgumentsOfInvokedMethod(arguments, TypeOfValidation.IS_ASCII)) {
 
                 animalCenterManager.printStatistics();
-                //System.err.println(((double) Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " MB");
-                //System.err.println(Duration.between(PawIncorporated.start, Instant.now()).toMillis());
                 System.exit(0);
             } else {
                 System.err.println("Something went wrong");
@@ -202,7 +198,7 @@ public enum Command {
         for (int i = 0; i < arguments.length; i++) {
             TypeOfValidation currentTypeOfValidation = TypeOfValidation.findTypeOrPredicate(typeOfValidations[i]);
             if (currentTypeOfValidation != null) {
-                result = currentTypeOfValidation.test(arguments[i]);
+                result = result && currentTypeOfValidation.test(arguments[i]);
             } else {
                 return false;
             }
