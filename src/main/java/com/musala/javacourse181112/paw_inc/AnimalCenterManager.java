@@ -9,9 +9,7 @@ import com.musala.javacourse181112.paw_inc.centers.CleansingCenter;
 import com.musala.javacourse181112.paw_inc.enums.CleansingAndAdoptionStatus;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class AnimalCenterManager {
     private static AnimalCenterManager singleInstance;
@@ -124,11 +122,10 @@ public class AnimalCenterManager {
             tempAnimalList.addAll(castrationCenter.getCastratedAnimals());
         }
 
-        printList(tempAnimalList);
+        PawIncUtils.printList(tempAnimalList);
         System.out.println();
 
     }
-
 
     public void printStatistics() {
         System.out.println("Paw Incorporated Regular Statistics");
@@ -141,7 +138,7 @@ public class AnimalCenterManager {
 
 
         }
-        printList(tempAnimalList);
+        PawIncUtils.printList(tempAnimalList);
         System.out.print("Cleansed Animals: ");
 
         for (AdoptionCenter adoptionCenter : adoptionCenters) {
@@ -153,7 +150,7 @@ public class AnimalCenterManager {
             }
         }
 
-        printList(tempAnimalList);
+        PawIncUtils.printList(tempAnimalList);
         System.out.print("Animals Awaiting Adoption: ");
         int animalsAwaitingAdoption = 0;
         for (AdoptionCenter adoptionCenter : adoptionCenters) {
@@ -176,24 +173,11 @@ public class AnimalCenterManager {
         System.out.println();
         System.out.println("Memory Usage: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory())/1024/1024 +" MB");
         long endTime = System.currentTimeMillis();
-        System.out.println("Time taken: " + (endTime - Aplication.startTime) + " MS");
+        System.out.println("Time taken: " + (endTime - PawIncAplication.startTime) + " MS");
         System.exit(0);
     }
 
-    private void printList(List<Animal> tempAnimalList) {
-        tempAnimalList.sort(Comparator.comparing(Animal::getName));
-        if (tempAnimalList.isEmpty()) {
-            System.out.println("None");
-        } else {
-            System.out.println(tempAnimalList
-                    .stream()
-                    .map(Animal::toString)
-                    .collect(Collectors.joining(", ")));
 
-        }
-        tempAnimalList.clear();
-
-    }
 
 
 

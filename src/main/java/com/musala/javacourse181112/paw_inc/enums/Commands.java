@@ -1,7 +1,7 @@
 package com.musala.javacourse181112.paw_inc.enums;
 
 import com.musala.javacourse181112.paw_inc.AnimalCenterManager;
-import com.musala.javacourse181112.paw_inc.ValidationUtils;
+import com.musala.javacourse181112.paw_inc.PawIncUtils;
 
 public enum Commands {
     REGISTER_CLEANSING_CENTER("RegisterCleansingCenter") {
@@ -106,9 +106,9 @@ AnimalCenterManager.getInstance().castrationStatistics();
     };
 
     private static void validateInteger(String[] inputCommands) {
-        if(!ValidationUtils.isPositiveInt.test(Integer.parseInt(inputCommands[2]))
+        if(!PawIncUtils.isPositiveInt.test(Integer.parseInt(inputCommands[2]))
                 ||
-                !ValidationUtils.isPositiveInt.test(Integer.parseInt(inputCommands[3])))
+                !PawIncUtils.isPositiveInt.test(Integer.parseInt(inputCommands[3])))
         {
             System.out.println("Number is negative");
             System.exit(1);

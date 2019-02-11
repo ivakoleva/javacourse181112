@@ -4,7 +4,7 @@ import com.musala.javacourse181112.paw_inc.enums.Commands;
 
 import java.util.Scanner;
 
-public class Aplication {
+public class PawIncAplication {
     static final Scanner IN = new Scanner(System.in);
     public static long startTime = 0;
 
@@ -18,7 +18,7 @@ public class Aplication {
                 startTime = System.currentTimeMillis();
             }
 
-            if (ValidationUtils.isASCII.test(line)) {
+            if (PawIncUtils.isASCII.test(line)) {
 
 
                 final String[] inputCommands = line.split("[ ][|][ ]");
