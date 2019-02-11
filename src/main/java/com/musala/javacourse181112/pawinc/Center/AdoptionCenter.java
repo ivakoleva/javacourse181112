@@ -33,7 +33,5 @@ public class AdoptionCenter extends Center {
             }
         }
         this.storedAnimals.removeAll(adoptedAnimals);
-
     }
-
 }

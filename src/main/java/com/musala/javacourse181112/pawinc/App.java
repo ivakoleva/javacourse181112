@@ -1,3 +1,4 @@
+/*
 package com.musala.javacourse181112.pawinc;
 
 import java.util.Scanner;
@@ -63,3 +64,4 @@ public class App {
         }
     }
 }
+*/

@@ -16,6 +16,8 @@ public class AnimalCenterManager {
 
     public static List<Animal> cleansedAnimalsList = new ArrayList<>();
     public static List<Animal> adoptedAnimalsList = new ArrayList<>();
+    public static List<Cat> catsList = new ArrayList<>();
+    public static List<Dog> dogsList = new ArrayList<>();
     public static List<CleansingCenter> cleansingCentersList = new ArrayList<>();
     public static List<AdoptionCenter> adoptionCentersList = new ArrayList<>();
 
@@ -32,6 +34,24 @@ public class AnimalCenterManager {
         for (Animal getAdoptedAnimals : adoptedAnimalsList) {
             if (getAdoptedAnimals.getName().equals(name)) {
                 return getAdoptedAnimals;
+            }
+        }
+        return null;
+    }
+
+    private Cat getCats(String name) {
+        for (Cat getCats : catsList) {
+            if (getCats.getName().equals(name)) {
+                return getCats;
+            }
+        }
+        return null;
+    }
+
+    private Dog getDogs(String name) {
+        for (Dog getDogs : dogsList) {
+            if (getDogs.getName().equals(name)) {
+                return getDogs;
             }
         }
         return null;
@@ -67,27 +87,25 @@ public class AnimalCenterManager {
 
     static void registerDog(String name, int age, int learnedCommands, String adoptionCenterName) {
         Dog dog = new Dog(name, age, learnedCommands);
-        //dogsList.add(dog);
         AdoptionCenter adoptionCenter = getAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter == null) {
             System.out.println(errorMsgNoAdoptionCenter);
         } else {
             adoptionCenter.addAnimal(dog);
+            dogsList.add(dog);
         }
-
-
     }
 
     static void registerCat(String name, int age, int intelligenceCoefficient, String adoptionCenterName) {
         Cat cat = new Cat(name, age, intelligenceCoefficient);
-        //catsList.add(cat);
         AdoptionCenter adoptionCenter = getAdoptionCenter(adoptionCenterName);
 
         if (adoptionCenter == null) {
             System.out.println(errorMsgNoAdoptionCenter);
         } else {
             adoptionCenter.addAnimal(cat);
+            catsList.add(cat);
         }
     }
 
@@ -108,7 +126,6 @@ public class AnimalCenterManager {
             System.out.println(errorMsgNoCleansingCenter);
         } else {
             cleansingCenter.cleanse();
-
         }
     }
 
