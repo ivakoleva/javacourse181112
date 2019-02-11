@@ -1,6 +1,6 @@
-package com.musala.javacourse181112.pawinc.centers;
+package com.musala.javacourse181112.paw_inc.centers;
 
-import com.musala.javacourse181112.pawinc.animals.Animal;
+import com.musala.javacourse181112.paw_inc.animals.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
