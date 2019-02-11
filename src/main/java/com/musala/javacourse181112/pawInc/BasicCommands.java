@@ -15,7 +15,7 @@ public enum BasicCommands {
     REGISTER_DOG("RegisterDog",1),
     REGISTER_CAT("RegisterCat",1),
     PRINT_STATS("PrintStats",1),
-    PAW_PAW_PAW("End",1);
+    PAW_PAW_PAW("Paw_Paw_Paw",1);
 
     private  String label;
     private int order;
