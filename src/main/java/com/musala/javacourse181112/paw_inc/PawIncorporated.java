@@ -9,7 +9,7 @@ import static com.musala.javacourse181112.paw_inc.validation.Validator.validateA
 
 /**
  * Created by Aykut Ismailov on 4.2.2019 г.
- *
+ * <p>
  * Entry point
  */
 public class PawIncorporated {
@@ -23,7 +23,7 @@ public class PawIncorporated {
         String line;
         line = scan.nextLine();
         start = Instant.now();
-        for (; true; ) {
+        for (; ; ) {
             if (validateASCII(line)) {
                 final String[] command = line.split("[ ][|][ ]");
                 Command thisCommand = findCommand(command[0]);
