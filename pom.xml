@@ -14,6 +14,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+    </parent>
+
+
     <dependencies>
         <!--<dependency>
             <groupId>javax.servlet</groupId>
@@ -21,7 +28,7 @@
             <version>3.0-alpha-1</version>
             <scope>provided</scope>
         </dependency>-->
-        <dependency>
+        <!--<dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
@@ -31,7 +38,7 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-        </dependency>
+        </dependency>-->
 
         <!--<dependency>
             <groupId>cglib</groupId>
@@ -52,6 +59,10 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -123,6 +134,10 @@
                     <password>s3cret</password>
                     <path>/ROOT</path>
                 </configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
