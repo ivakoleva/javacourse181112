@@ -13,7 +13,7 @@ public enum CommandsEnums {
     CLEANSE("Cleanse", 1),
     ADOPT("Adopt", 1),
     PRINT_STATISTICS("PrintStatistics", 1),
-    PAW_PAW_PAWAH("Paw Paw Pawah", 1);
+    PAW_PAW_PAWAH("End", 1);
 
 
     private String label;

@@ -12,11 +12,11 @@ public class Dog extends Animal {
         this.tag = tag;
     }
 
-    public boolean isCleansingStatus() {
+    public Boolean getCleansingStatus() {
         return cleansingStatus;
     }
 
-    public void setCleansingStatus(boolean cleansingStatus) {
+    public void setCleansingStatus(Boolean cleansingStatus) {
         this.cleansingStatus = cleansingStatus;
     }
 
