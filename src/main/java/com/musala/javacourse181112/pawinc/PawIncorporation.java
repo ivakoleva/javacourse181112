@@ -111,10 +111,14 @@ public class PawIncorporation {
                         System.exit(1);
                     }
                     break;
+                case "CastrationStatistics":
+                    AnimalCenterManager.printCastrationStatistics();
+                    break;
                 case "Paw Paw Pawah":
                     AnimalCenterManager.printStatics();
                     PawIncUtils.isInAllowedMemoryAndTime(startTime);
                     System.exit(0);
+                    break;
             }
         }
     }

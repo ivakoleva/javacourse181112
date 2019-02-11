@@ -107,13 +107,12 @@ public class AnimalCenterManager {
         }
     }
 
-    static void printStatics() {
+    static void  printCastrationStatistics(){
         searchAdoptionCenterAdoptedAnimals();
         searchAdoptionCenterStoredAnimals();
         searchCleansingCenterStoredAnimals();
         allAnimalsCleansed.addAll(allAnimalsAdopted);
         sortLists();
-
         System.out.println("Paw Inc. Regular Castration Statistics\n" +
                 "Castration Centers: " + castrationCenters.size());
         if (!allAnimalsCastrated.isEmpty())
@@ -121,6 +120,14 @@ public class AnimalCenterManager {
                     String.join(", ", allAnimalsCastrated));
         else
             System.out.print("Castrated Animals: None \n");
+    }
+
+    static void printStatics() {
+        searchAdoptionCenterAdoptedAnimals();
+        searchAdoptionCenterStoredAnimals();
+        searchCleansingCenterStoredAnimals();
+        allAnimalsCleansed.addAll(allAnimalsAdopted);
+        sortLists();
 
         System.out.print("Paw Incorporative Regular Statistics\n" +
                 "Adoption Centers: " + adoptionCenters.size() + "\n" +
