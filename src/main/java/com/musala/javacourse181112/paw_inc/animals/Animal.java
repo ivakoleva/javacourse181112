@@ -3,15 +3,13 @@ package com.musala.javacourse181112.paw_inc.animals;
 import com.musala.javacourse181112.paw_inc.enums.CastrationStatus;
 import com.musala.javacourse181112.paw_inc.enums.CleansingAndAdoptionStatus;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private CleansingAndAdoptionStatus cleansingAndAdoptionStatus;
     private CastrationStatus castrationStatus;
     private String adoptionCenter;
 
-    public Animal() {
-    }
 
     public Animal(String name, int age, String adoptionCenter) {
         this.name = name;

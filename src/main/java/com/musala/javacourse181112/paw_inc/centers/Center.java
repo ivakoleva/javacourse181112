@@ -5,7 +5,7 @@ import com.musala.javacourse181112.paw_inc.animals.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Center {
+public abstract class Center {
     protected final List<Animal> animalList = new ArrayList<>();
     private String name;
 

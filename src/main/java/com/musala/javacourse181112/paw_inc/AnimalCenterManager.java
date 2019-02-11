@@ -173,7 +173,7 @@ public class AnimalCenterManager {
         System.out.println();
         System.out.println("Memory Usage: "+ (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory())/1024/1024 +" MB");
         long endTime = System.currentTimeMillis();
-        System.out.println("Time taken: " + (endTime - PawIncAplication.startTime) + " MS");
+        System.out.println("Time taken: " + (endTime - PawIncApplication.startTime) + " MS");
         System.exit(0);
     }
 
