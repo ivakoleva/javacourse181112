@@ -186,7 +186,7 @@ public enum Command {
                     validateArgumentsOfInvokedMethod(arguments, TypeOfValidation.IS_ASCII)) {
 
                 animalCenterManager.printStatistics();
-                System.err.println(((double) Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " MB");
+                //System.err.println(((double) Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " MB");
                 //System.err.println(Duration.between(PawIncorporated.start, Instant.now()).toMillis());
                 System.exit(0);
             } else {

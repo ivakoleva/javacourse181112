@@ -23,7 +23,7 @@ public class PawIncorporated {
         String line;
         line = scan.nextLine();
         start = Instant.now();
-        while (true) {
+        for (; true; ) {
             if (validateASCII(line)) {
                 final String[] command = line.split("[ ][|][ ]");
                 Command thisCommand = findCommand(command[0]);
