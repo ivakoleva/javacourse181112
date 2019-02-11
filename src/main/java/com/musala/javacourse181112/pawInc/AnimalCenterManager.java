@@ -84,48 +84,46 @@ public class AnimalCenterManager {
     }
 
     static void sendForCleansing(String adoptionCenterName, String cleansingCenterName) {
-        try {
-            for (int i = 0; i < ListAdoptionCenters.size(); i++) {
-                for (int j = 0; j < ListCleansingCenters.size(); j++) {
-                    if (ListAdoptionCenters.get(i).getName().equals(adoptionCenterName) && ListCleansingCenters.get(j).getName().equals(cleansingCenterName)) {
-                        for (int k = 0; k < ListAdoptionCenters.get(i).getCats().size(); k++) {
-                            if (ListAdoptionCenters.get(i).getCats().get(k).getCleansingStatus().equals(false)) {
-                                ListCleansingCenters.get(j).addCats(ListAdoptionCenters.get(i).getCats().get(k));
-                                ListAdoptionCenters.get(i).getCats().remove(k);
-                            }
+        for (int i = 0; i < ListAdoptionCenters.size(); i++) {
+            for (int j = 0; j < ListCleansingCenters.size(); j++) {
+                if (ListAdoptionCenters.get(i).getName().equals(adoptionCenterName) && ListCleansingCenters.get(j).getName().equals(cleansingCenterName)) {
+                    for (int k = 0; k < ListAdoptionCenters.get(i).getCats().size(); k++) {
+                        if (ListAdoptionCenters.get(i).getCats().get(k).getCleansingStatus().equals(false)) {
+                            ListCleansingCenters.get(j).addCats(ListAdoptionCenters.get(i).getCats().get(k));
+                            ListAdoptionCenters.get(i).getCats().remove(k);
                         }
-                        for (int k = 0; k < ListAdoptionCenters.get(i).getDogs().size(); k++) {
-                            if (ListAdoptionCenters.get(i).getDogs().get(k).getCleansingStatus().equals(false)) {
-                                ListCleansingCenters.get(j).addDogs(ListAdoptionCenters.get(i).getDogs().get(k));
-                                ListAdoptionCenters.get(i).getDogs().remove(k);
-                            }
+                    }
+                    for (int k = 0; k < ListAdoptionCenters.get(i).getDogs().size(); k++) {
+                        if (ListAdoptionCenters.get(i).getDogs().get(k).getCleansingStatus().equals(false)) {
+                            ListCleansingCenters.get(j).addDogs(ListAdoptionCenters.get(i).getDogs().get(k));
+                            ListAdoptionCenters.get(i).getDogs().remove(k);
                         }
                     }
                 }
             }
-        } catch (Exception a) {
-            System.out.println("There is no such center");
         }
         menu();
     }
+
 
     static void cleanse(String cleansingCenterName) {
         try {
             for (int j = 0; j < ListCleansingCenters.size(); j++) {
                 if (ListCleansingCenters.get(j).getName().equals(cleansingCenterName)) {
                     for (int i = 0; i < ListCleansingCenters.get(j).getCats().size(); i++) {
-                        if(ListCleansingCenters.get(j).getCats().size()>0){
-                        ListCleansingCenters.get(j).getCats().get(i).setCleansingStatus(true);
-                        for (int k = 0; k < ListAdoptionCenters.size(); k++) {
-                            if (ListAdoptionCenters.get(k).getName().equals(ListCleansingCenters.get(j).getCats().get(i).getTag())) {
-                                ListCleansingCenters.get(j).addCleansedCats(ListCleansingCenters.get(j).getCats().get(i));
-                                ListAdoptionCenters.get(k).addCats(ListCleansingCenters.get(j).getCats().get(i));
-                                ListCleansingCenters.get(j).getCats().remove(i);
+                        if (ListCleansingCenters.get(j).getCats().size() > 0) {
+                            ListCleansingCenters.get(j).getCats().get(i).setCleansingStatus(true);
+                            for (int k = 0; k < ListAdoptionCenters.size(); k++) {
+                                if (ListAdoptionCenters.get(k).getName().equals(ListCleansingCenters.get(j).getCats().get(i).getTag())) {
+                                    ListCleansingCenters.get(j).addCleansedCats(ListCleansingCenters.get(j).getCats().get(i));
+                                    ListAdoptionCenters.get(k).addCats(ListCleansingCenters.get(j).getCats().get(i));
+                                    ListCleansingCenters.get(j).getCats().remove(i);
+                                }
                             }
                         }
-                    }}
+                    }
                     for (int i = 0; i < ListCleansingCenters.get(j).getDogs().size(); i++) {
-                        if (ListCleansingCenters.get(j).getDogs().size()>0){
+                        if (ListCleansingCenters.get(j).getDogs().size() > 0) {
                             ListCleansingCenters.get(j).getDogs().get(i).setCleansingStatus(true);
                             for (int k = 0; k < ListAdoptionCenters.size(); k++) {
                                 if (ListAdoptionCenters.get(k).getName().equals(ListCleansingCenters.get(j).getDogs().get(i).getTag())) {
@@ -183,29 +181,29 @@ public class AnimalCenterManager {
 
             while (j < ListAdoptionCenters.get(i).getAdoptedCats().size()) {
                 System.out.print(ListAdoptionCenters.get(i).getAdoptedCats().get(j).getName());
-                if(ListAdoptionCenters.get(ListAdoptionCenters.size()-1).getAdoptedDogs().size()!=0 || i<ListAdoptionCenters.size() - 1 || j<ListAdoptionCenters.get(i).getAdoptedCats().size() - 1){
+                if (ListAdoptionCenters.get(ListAdoptionCenters.size() - 1).getAdoptedDogs().size() != 0 || i < ListAdoptionCenters.size() - 1 || j < ListAdoptionCenters.get(i).getAdoptedCats().size() - 1) {
                     System.out.print(", ");
                 }
                 j++;
             }
-            j=0;
+            j = 0;
             while (j < ListAdoptionCenters.get(i).getAdoptedDogs().size()) {
                 System.out.print(ListAdoptionCenters.get(i).getAdoptedDogs().get(j).getName());
                 j++;
-                if(i<ListAdoptionCenters.size() - 1 || j<ListAdoptionCenters.get(i).getAdoptedDogs().size() - 1){
+                if (i < ListAdoptionCenters.size() - 1 || j < ListAdoptionCenters.get(i).getAdoptedDogs().size() - 1) {
                     System.out.print(", ");
                 }
 
             }
 
         }
-        j=0;
-        for (int i = 0; i <ListAdoptionCenters.size() ; i++) {
-            if(ListAdoptionCenters.get(i).getAdoptedCats().size()!=0 ||ListAdoptionCenters.get(i).getAdoptedDogs().size()!=0){
+        j = 0;
+        for (int i = 0; i < ListAdoptionCenters.size(); i++) {
+            if (ListAdoptionCenters.get(i).getAdoptedCats().size() != 0 || ListAdoptionCenters.get(i).getAdoptedDogs().size() != 0) {
                 j++;
             }
         }
-        if(j==0){
+        if (j == 0) {
             System.out.print(j);
         }
         System.out.println();
@@ -235,19 +233,24 @@ public class AnimalCenterManager {
         }
         System.out.println(a);
         System.out.print("Animals awaiting cleansing: ");
+        a = 0;
         for (int i = 0; i < ListCleansingCenters.size(); i++) {
             for (j = 0; j < ListCleansingCenters.get(i).getCats().size(); j++) {
+                b = 0;
                 if (ListCleansingCenters.get(i).getCats().get(j).getCleansingStatus().equals(false)) {
                     b++;
                 }
+                a += b;
             }
             for (j = 0; j < ListCleansingCenters.get(i).getDogs().size(); j++) {
+                b = 0;
                 if (ListCleansingCenters.get(i).getDogs().get(j).getCleansingStatus().equals(false)) {
                     b++;
                 }
+                a += b;
             }
         }
-        System.out.println(b);
+        System.out.println(a);
         System.exit(0);
     }
 
