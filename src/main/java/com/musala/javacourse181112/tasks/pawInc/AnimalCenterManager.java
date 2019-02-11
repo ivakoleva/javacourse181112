@@ -54,7 +54,7 @@ public class AnimalCenterManager {
                 Dog dog1 = new Dog(name, age, amountOfCommands, tag);
                 adoptionCenterList.get(i).addDogs(dog1);
             } else {
-                System.out.println("No such center");
+                System.out.println("4No such center");
             }
         }
         menu();
@@ -67,7 +67,7 @@ public class AnimalCenterManager {
                 Cat cat1 = new Cat(name, age, intelligenceCoefficient, tag);
                 adoptionCenterList.get(i).addCats(cat1);
             } else {
-                System.out.println("No such center");
+                System.out.println("3No such center");
             }
         }
         menu();
@@ -90,7 +90,7 @@ public class AnimalCenterManager {
         for (int i = 0; i < adoptionCenterList.size(); i++) {
             for (int j = 0; j < cleansingCenterList.size(); j++) {
                 if (adoptionCenterList.get(i).getName().equals(adoptionCenterName)
-                        && cleansingCenterList.get(i).getName().equals(cleansingCenterName)) {
+                        && cleansingCenterList.get(j).getName().equals(cleansingCenterName)) {
                     for (int k = 0; k < adoptionCenterList.get(i).getCats().size(); k++) {
                         if (adoptionCenterList.get(i).getCats().get(k).getCleansingStatus().equals(false)) {
                             cleansingCenterList.get(j).addCats(adoptionCenterList.get(i).getCats().get(k));
@@ -104,7 +104,7 @@ public class AnimalCenterManager {
                         }
                     }
                 } else {
-                    System.out.println("There is no such Center.");
+                    System.out.println("1There is no such Center.");
                 }
             }
 
@@ -136,32 +136,18 @@ public class AnimalCenterManager {
                     }
                 }
             } else {
-                System.out.println("There is no such Center");
+                System.out.println("2There is no such Center");
             }
             menu();
         }
     }
 
-/*    static void adopt(String name) {
-        for (int i = 0; i < adoptionCenterList.size(); i++) {
-            if (adoptionCenterList.get(i).getName().equals(name)) {
-                for (int j = 0; j < adoptionCenterList.get(i).getCats().size(); j++) {
-                    if (adoptionCenterList.get(i).getCats().get(j).getCleansingStatus().equals(true)) {
-                        adoptionCenterList.get(i).addAdoptedCats(adoptionCenterList.get(i).getCats().get(j));
-                        adoptionCenterList.get(i).getCats().remove(j);
-                    }
-                }
-
-            }
-        }
-    }*/
-
     private static void printStatistics() {
         int a, b;
         a = b = 0;
         System.out.println("Paw Incorporative Regular Statistics");
-        System.out.println("Adoption Centers: " + adoptionCenterList.size());
-        System.out.println("Cleansing Centers: " + cleansingCenterList.size());
+        System.out.println("Adoption centers: " + adoptionCenterList.size());
+        System.out.println("Cleansing centers: " + cleansingCenterList.size());
         System.out.print("Adopted animals: ");
         for (int i = 0; i < adoptionCenterList.size(); i++) {
             int j = 0;

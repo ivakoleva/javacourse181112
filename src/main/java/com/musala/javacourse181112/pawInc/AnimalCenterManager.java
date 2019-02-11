@@ -151,8 +151,8 @@ public class AnimalCenterManager {
         int a, b;
         a = b = 0;
         System.out.println("Paw Incorporative Regular Statistics");
-        System.out.println("Adoption Centers: " + ListAdoptionCenters.size());
-        System.out.println("Cleansing Centers: " + ListCleansingCenters.size());
+        System.out.println("Adoption centers: " + ListAdoptionCenters.size());
+        System.out.println("Cleansing centers: " + ListCleansingCenters.size());
         System.out.print("Adopted animals: ");
         for (int i = 0; i < ListAdoptionCenters.size(); i++) {
             int j = 0;
