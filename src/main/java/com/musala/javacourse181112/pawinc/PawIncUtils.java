@@ -5,6 +5,7 @@ import java.nio.charset.Charset;
 class PawIncUtils {
     static boolean isAscii(String str) {
         return Charset.forName("US-ASCII").newEncoder().canEncode(str);
+
     }
 
     static boolean isValidInt(int num) {
