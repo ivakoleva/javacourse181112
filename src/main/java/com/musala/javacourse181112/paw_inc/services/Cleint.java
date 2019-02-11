@@ -17,16 +17,27 @@ public class Cleint {
             String[] words = line.split("\\s\\|\\s");
             Object[] arguments = {Arrays.copyOfRange(words, 1, words.length + 1)};
             Method[] methods = clazz.getDeclaredMethods();
-            for(Method method : methods){
-                if(method.getName().startsWith(words[0])){
+            for (Method method : methods) {
+                if (method.getName().startsWith(words[0])) {
                     Class<?>[] parameterTypes = method.getParameterTypes();
-                    method = clazz.getDeclaredMethod(words[0], parameterTypes);
-                    method.invoke(object, new Object[] {arguments});
+                    for (int i = 0; i < parameterTypes.length; i++) {
+                        if (parameterTypes[i].equals(Integer.class)) {
+                            int tmpInt = Integer.parseInt((String) arguments[i]);
+
+                        } else if (parameterTypes[i].equals((String.class))) {
+                           String tmpString = (String) arguments[i];
+                           //String[] stringArguments = Arrays.stream(arguments).toArray(String[]::new);
+                        }
+                        method = clazz.getDeclaredMethod(words[0], parameterTypes);
+                        method.invoke(object, new Object[]{arguments});
+
+                    }
                 }
             }
+            scanner.close();
         }
-        scanner.close();
-    }
 
+    }
 }
+
 

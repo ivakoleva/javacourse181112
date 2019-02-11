@@ -88,7 +88,7 @@ class AnimalCenterManager {
 
         List<Animal> animalsAwaitingCleansing = CENTERS.get(CenterType.CLEANSING_CENTER).stream()
                 .flatMap(center -> center.getAnimalList().stream())
-                .filter(animal -> animal.isCleansed())
+                .filter(Animal::isCleansed)
                 .collect(Collectors.toList());
         System.out.println("Animals Awaiting Cleansing: " + animalsAwaitingCleansing.size());
     }
