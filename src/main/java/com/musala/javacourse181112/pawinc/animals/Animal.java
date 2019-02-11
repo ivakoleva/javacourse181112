@@ -48,10 +48,6 @@ public abstract class Animal {
         this.cleansingStatus = cleansingStatus;
     }
 
-    public void cleanse() {
-        cleansingStatus = true;
-    }
-
     public abstract AdoptionCenter getAdoptionCenter();
 
     public abstract void setAdoptionCenter(AdoptionCenter adoptionCenter);

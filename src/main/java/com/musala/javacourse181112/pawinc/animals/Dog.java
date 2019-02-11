@@ -21,11 +21,12 @@ public class Dog extends Animal {
         this.amountOfCommands = amountOfCommands;
     }
 
-
+    @Override
     public AdoptionCenter getAdoptionCenter() {
         return adoptionCenter;
     }
 
+    @Override
     public void setAdoptionCenter(AdoptionCenter adoptionCenter) {
         this.adoptionCenter = adoptionCenter;
 

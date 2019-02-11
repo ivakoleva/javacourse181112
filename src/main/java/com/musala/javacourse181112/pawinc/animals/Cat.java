@@ -20,11 +20,12 @@ public class Cat extends Animal {
         this.intelligenceCoefficient = intelligenceCoefficient;
     }
 
-
+    @Override
     public AdoptionCenter getAdoptionCenter() {
         return adoptionCenter;
     }
 
+    @Override
     public void setAdoptionCenter(AdoptionCenter adoptionCenter) {
         this.adoptionCenter = adoptionCenter;
 

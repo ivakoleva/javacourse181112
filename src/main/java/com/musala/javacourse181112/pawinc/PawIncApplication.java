@@ -2,19 +2,25 @@ package com.musala.javacourse181112.pawinc;
 
 import java.util.Scanner;
 
-public class Application {
 
+/**
+ * Runner calss for Paw Inc.
+ */
+
+public class PawIncApplication {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        readInputAndRunFunctions();
+
+        readInputAndRunCommands();
 
     }
 
-    private static void readInputAndRunFunctions() {
-        while (Application.SCANNER.hasNext()) {
-            String commandsString = Application.SCANNER.nextLine();
-
+    private static void readInputAndRunCommands() {
+//        long start = System.currentTimeMillis();
+        whileloop:
+        while (PawIncApplication.SCANNER.hasNext()) {
+            String commandsString = PawIncApplication.SCANNER.nextLine();
             String[] commandsArray = commandsString.split("[ ][|][ ]");
 
             switch (commandsArray[0]) {
@@ -60,7 +66,12 @@ public class Application {
                     break;
                 case "Paw Paw Pawah":
                     AnimalCenterManager.printStatistics();
+                    break whileloop;
             }
+
         }
+//        long end = System.currentTimeMillis();
+//        System.out.println(end - start);
+
     }
 }

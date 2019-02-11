@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class AnimalCenterManager {
+class AnimalCenterManager {
     private static final List<AdoptionCenter> ADOPTION_CENTER_LIST = new ArrayList<>();
     private static final List<CleansingCenter> CLEANSING_CENTER_LIST = new ArrayList<>();
     private static final List<CastrationCenter> CASTRATION_CENTER_LIST = new ArrayList<>();
@@ -33,29 +33,48 @@ public class AnimalCenterManager {
     }
 
     static void registerAdoptionCenter(String name) {
-        final AdoptionCenter adoptionCenter = new AdoptionCenter(name);
-        adoptionCenter.setStoredAnimalsList(new ArrayList<>());
-        ADOPTION_CENTER_LIST.add(adoptionCenter);
+        if (name.matches("\\A\\p{ASCII}*\\z")) {
+            final AdoptionCenter adoptionCenter = new AdoptionCenter(name);
+            adoptionCenter.setStoredAnimalsList(new ArrayList<>());
+            ADOPTION_CENTER_LIST.add(adoptionCenter);
+        } else {
+            System.out.println("Invalid Name!");
+        }
+
     }
 
     static void registerCastrationCenter(String name) {
-        final CastrationCenter castrationCenter = new CastrationCenter(name);
-        castrationCenter.setStoredAnimalsList(new ArrayList<>());
-        CASTRATION_CENTER_LIST.add(castrationCenter);
+        if (name.matches("\\A\\p{ASCII}*\\z")) {
+            final CastrationCenter castrationCenter = new CastrationCenter(name);
+            castrationCenter.setStoredAnimalsList(new ArrayList<>());
+            CASTRATION_CENTER_LIST.add(castrationCenter);
+        } else {
+            System.out.println("Invalid Name!");
+        }
+
     }
 
     static void registerDog(String name, int age, int learnedCommands, String adoptionCenterName) {
-        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
-        final Dog dog = new Dog(name, age, learnedCommands, adoptionCenter);
-        adoptionCenter.getStoredAnimalsList().add(dog);
+        if (name.matches("\\A\\p{ASCII}*\\z") && age > 0 && learnedCommands > 0) {
+            final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+            final Dog dog = new Dog(name, age, learnedCommands, adoptionCenter);
+            adoptionCenter.getStoredAnimalsList().add(dog);
+        } else {
+            System.out.println("Invalid Name ,age or commands count!");
+        }
+
 
     }
 
     static void registerCat(String name, int age, int intelligenceCoefficient, String adoptionCenterName) {
+        if (name.matches("\\A\\p{ASCII}*\\z") && age > 0 && intelligenceCoefficient > 0) {
+            final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
+            final Cat cat = new Cat(name, age, intelligenceCoefficient, adoptionCenter);
+            adoptionCenter.getStoredAnimalsList().add(cat);
+        } else {
+            System.out.println("Invalid Name , age or IQ!");
+        }
 
-        final AdoptionCenter adoptionCenter = findAdoptionCenter(adoptionCenterName);
-        final Cat cat = new Cat(name, age, intelligenceCoefficient, adoptionCenter);
-        adoptionCenter.getStoredAnimalsList().add(cat);
 
     }
 
