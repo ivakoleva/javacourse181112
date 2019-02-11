@@ -1,5 +1,9 @@
 package com.musala.javacourse181112.tasks.VoteApp;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class VotesApp2 {
     public static final int QUESTIONS_COUNT = 2;
     public static final int VOTES_COUNT = 30;
@@ -20,11 +24,20 @@ public class VotesApp2 {
 
         int qIndex;
 
-        for(qIndex = 0; qIndex < QUESTIONS_COUNT; qIndex++) {
+        List<Vote> voteChoises = new ArrayList<>();
+        voteChoises.add(Vote.YES);
+        voteChoises.add(Vote.NO);
+
+        //for(qIndex = 0; qIndex < QUESTIONS_COUNT; qIndex++) {
+        for (qIndex = 0; qIndex < 2; ++qIndex) {
             //populate data
-            votes[qIndex][0] = Vote.YES;
+           /* votes[qIndex][0] = Vote.YES;
             votes[qIndex][1] = Vote.NO;
-            votes[qIndex][2] = Vote.YES;
+            votes[qIndex][2] = Vote.YES;*/
+
+            for (int voteIndex = 0; voteIndex < 30; ++qIndex) {
+                votes[qIndex][voteIndex] = voteChoises.get(new Random().nextInt(voteChoises.size()));
+            }
 
             // print data
             printQuestion(qIndex, questions[qIndex]);
@@ -32,7 +45,7 @@ public class VotesApp2 {
         }
 
         countVotes(votes);
-
+        //should add 30 more DB
         people[0][0] = "9010234590";
         people[0][1] = "Penka";
         people[0][2] = Vote.YES;

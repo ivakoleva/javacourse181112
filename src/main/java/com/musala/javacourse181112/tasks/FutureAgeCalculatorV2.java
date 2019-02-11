@@ -44,16 +44,11 @@ public class FutureAgeCalculatorV2 {
             int user = Integer.parseInt(args[counter++]);
             age = age + user;
         } while (counter < args.length);
-        System.out.println("Future age calculated: " + (age));*/
+        System.out.println("Future age calculated: " + (age)); */
 
         //final int age = Integer.parseInt(args[0]);
     //final int yearToAdd = Integer.parseInt(args[1]);
 
-
-
-
-
     }
-
 
 }
