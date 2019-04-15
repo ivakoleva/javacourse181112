@@ -73,7 +73,7 @@ public abstract class Center {
         this.animalsCount=animalList.size();
     }
 
-    @Override
+    /*@Override
     public String toString() {
         StringBuilder b = new StringBuilder();
         b.append("Center{" +
@@ -81,7 +81,7 @@ public abstract class Center {
                 ", animalsCount=" + animalsCount).append(", animalList=");
         animalList.forEach(b::append);
         return b.toString();
-    }
+    }*/
 
     public Set<Animal> getHistoryAnimalSet() {
         return historyAnimalSet;

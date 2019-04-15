@@ -1,6 +1,7 @@
 package com.musala.javacourse181112.tasks.pawIncProject.model.centers;
 
 import com.musala.javacourse181112.tasks.pawIncProject.model.animals.Animal;
+import com.musala.javacourse181112.tasks.pawIncProject.model.exceptions.InvalidInputException;
 
 import java.util.HashSet;
 import java.util.List;
@@ -9,8 +10,12 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class CastrationCenter extends Center {
-    public static final Predicate<Animal> isNotCastrated = animal -> !animal.isCastrated();
-    private Set<Animal> castrateAnimalsHistory;
+
+    public static final Predicate<Animal> isCastrated= Animal::isCastrated;
+    public static final Predicate<Animal> isNotCastrated= animal -> !animal.isCastrated();
+
+
+   private Set<Animal> castrateAnimalsHistory;
 
     public CastrationCenter(String name, int animalsCount) {
         super(name, animalsCount);
@@ -32,8 +37,15 @@ public class CastrationCenter extends Center {
                 .filter(isNotCastrated)
                 .collect(Collectors.toList());
 
-        castrationCenter.removeAll(forCastrateList);
+        forCastrateList.forEach(animal -> {
+            try {
+                animal.getAdoptionCenter().addAnimal(animal);
+            } catch (InvalidInputException e) {
+                e.printStackTrace();
+            }
+        });
         castrateAnimalsHistory.addAll(forCastrateList);
+        castrationCenter.removeAll(forCastrateList);
     }
 
     public Set<Animal> getCastrateAnimalsHistory() {

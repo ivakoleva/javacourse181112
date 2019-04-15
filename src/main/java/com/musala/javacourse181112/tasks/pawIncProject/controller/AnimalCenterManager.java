@@ -139,29 +139,40 @@ public class AnimalCenterManager {
 
         System.out.println("Adoption Centers: " + centerMap.get(CenterType.ADOPTION).size());
         System.out.println("Cleansing Centers: " + centerMap.get(CenterType.CLEANSING).size());
+        Set<Animal> sortedHistoryAdoptionAnimals = getAnimalsFiltered(animal -> animal.isAdopted(),getAllAnimals());
+        ArrayList<Animal> cleansedAnimals = new ArrayList<>(getAnimalsFiltered(CleansingCenter.isCleansed, getAllAnimals()));
 
+        System.out.println("Adopted animal: " + sortedHistoryAdoptionAnimals);//Animal.animalToString(sortedHistoryAdoptionAnimals));
+        System.out.println("Cleansed animal: "+ Animal.animalToString(cleansedAnimals));
+
+        System.out.println("Animals Awaiting Adoption: "  + getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION,CleansingCenter.dontFilter, false).size());
+        System.out.println("Animals Awaiting Cleansing: " + cleansedAnimals.size());
 
         //List<List<Animal>> allAdoptedAnimals = centerMap.get(CenterType.ADOPTION).stream().map(center -> center.getAnimalList()).collect(Collectors.toList());
         //List<Animal> collect = allAdoptedAnimals.stream().flatMap(Collection::stream).collect(Collectors.toList());
+        //List<Animal> sortedHistoryAdoptionAnimals = getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION, CleansingCenter.dontFilter, true);
 
-        //TODO:
-        List<Animal> sortedHistoryAdoptionAnimals = getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION, CleansingCenter.dontFilter, true);
-        List<Animal> sortedAdoptionAnimals = getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION, CleansingCenter.dontFilter , false);
+        //List<Animal> sortedAdoptionAnimals = getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION, CleansingCenter.isCleansed , false);
         //List<Animal> sortedCleansedAnimals = getAllSortedAnimalsFromCenterByType(CenterType.ADOPTION, CleansingCenter.dontFilter,false);
-        //List<Animal> sortedCleansedAnimals = centerMap.get(CenterType.ADOPTION);
-        ArrayList<Animal> cleansedAnimals = new ArrayList<>(getAnimalsFiltered(CleansingCenter.isCleansed, getAllAnimals()));
-        System.out.println("Adopted animal: " + Animal.animalToString(sortedHistoryAdoptionAnimals));
-        System.out.println("Cleansed animal: "+ Animal.animalToString(cleansedAnimals));
 
-        System.out.println("Animals Awaiting Adoption: "  + sortedAdoptionAnimals.size());
-        System.out.println("Animals Awaiting Cleansing: " + cleansedAnimals.size());
-    }
+           }
 
 
     public void printCastrationStatistics(final String castrationCenter){
         getCenterByType(CenterType.CASTRATION, castrationCenter);
-        //TODO: !!!
+
         System.out.println(castrationCenter);
+
+        System.out.println("Paw Incorporation Regular Castration Statistics");
+
+        System.out.println("Castration Centers: " + centerMap.get(CenterType.CASTRATION).size());
+
+
+        List<Animal> allSortedAnimalsFromCastration = (new ArrayList<>(getAnimalsFiltered(CastrationCenter.isCastrated, getAllAnimals())));
+
+        List<Animal> animalStream = getAnimalStreamByCenterType(CenterType.CASTRATION).flatMap(center -> center.getHistoryAnimalSet().stream()).collect(Collectors.toList());
+
+        System.out.println("Castrated Animal: " + Animal.animalToString(animalStream));
     }
 
     public <T extends Animal & SpecialTalent> void registerGivenAnimal(final Class<T> animalClazz, final CenterType centerType,
@@ -223,7 +234,7 @@ public class AnimalCenterManager {
 
         for (Map.Entry<CenterType, List<Center>> set: centerMap.entrySet()) {
 
-            if (CenterType.ADOPTION.equals(set.getKey().getType())){
+            if (true/*CenterType.ADOPTION.equals(set.getKey().getType())*/){
                 set.getValue().forEach(center -> result.addAll(center.getHistoryAnimalSet()));
             }
             set.getValue().forEach(center -> result.addAll(center.getAnimalList()));
@@ -231,27 +242,35 @@ public class AnimalCenterManager {
         return result;
     }
 
-    private Set<Animal> getAnimalsFiltered(Predicate<Animal> animalPredicate, Set<Animal> animals){
+    private Set<Animal> getAnimalsFiltered(final Predicate<Animal> animalPredicate,final Set<Animal> animals){
         return animals.stream()
                 .filter(animalPredicate)
                 .collect(Collectors.toSet());
     }
 
-    private List<Animal> getAllSortedAnimalsFromCenterByType(final CenterType centerType, Predicate<Animal> filterPredicate, boolean doesToGetHistoryList) {
-        return getAnimalStreamByCenterName(centerType)
+    private List<Animal> getAllSortedAnimalsFromCenterByType(final CenterType centerType, final Predicate<Animal> filterPredicate,final boolean willGetAdoptedList) {
+        return getAnimalStreamByCenterType(centerType)
                 .flatMap(center -> {
                     // for now only Adoption center have history
-                    if (doesToGetHistoryList && CenterType.ADOPTION.equals(centerType)) {
+                    if (willGetAdoptedList /*&& CenterType.ADOPTION.equals(centerType)*/) {
                         return center.getHistoryAnimalSet().stream();
-                    }else return center.getAnimalList().stream();
+                    }
+                    return center.getAnimalList().stream();
                 })
                 .filter(filterPredicate)
                 .distinct()
                 .sorted(Comparator.comparing(Animal::getName))
                 .collect(Collectors.toList());
+        /*   if (CenterType.ADOPTION){
+
+                        if (willGetAdoptedList){
+                            return Stream.concat(center.getHistoryAnimalSet().stream(),center.getAnimalList().stream());
+                        }else return center.getHistoryAnimalSet();
+                    }
+                    */
     }
    /* private List<Animal> getAllSortedHistAnimalsFrom(CenterType centerType) {
-        return getAnimalStreamByCenterName(centerType)
+        return getAnimalStreamByCenterType(centerType)
                 .flatMap(center -> center.getAnimalList().stream() )
                 .sorted(Comparator.comparing(Animal::getName))
                 .collect(Collectors.toList());
@@ -261,7 +280,7 @@ public class AnimalCenterManager {
 
     }*/
 
-    private Stream<Center> getAnimalStreamByCenterName(final CenterType centerType) {
+    private Stream<Center> getAnimalStreamByCenterType(final CenterType centerType) {
          return  centerMap.get(centerType).stream();
     }
 

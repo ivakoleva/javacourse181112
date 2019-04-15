@@ -24,6 +24,7 @@ public class AdoptionCenter extends Center {
 
         final List<Animal> forAdoptionList = adoptionAnimalList.stream()
                 .filter(CleansingCenter.isCleansed)
+                .peek(animal -> animal.setAdopted(true))
                 .collect(Collectors.toList());
 
         adoptionAnimalList.removeAll(forAdoptionList);

@@ -12,6 +12,7 @@ public class Animal {
     private String name;
     private int age;
     private boolean cleansed;
+    private boolean adopted;
     private boolean castrated;
     private AdoptionCenter adoptionCenter;
 
@@ -79,6 +80,11 @@ public class Animal {
         return Objects.hash(getName());
     }
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public static String animalToString(List<Animal> animalsList) {
         if (animalsList == null || animalsList.size() == 0) {
             return "None";
@@ -86,8 +92,16 @@ public class Animal {
 
         final StringBuilder stringBuilder = new StringBuilder();
         IntStream.range(0, animalsList.size())
-                .forEach(i -> stringBuilder.append(animalsList.get(i).getName()).append(", "));
+                .forEach(i -> stringBuilder.append(animalsList.get(i).toString()).append(", "));
         return stringBuilder.toString();
+    }
+
+    public boolean isAdopted() {
+        return adopted;
+    }
+
+    public void setAdopted(boolean adopted) {
+        this.adopted = adopted;
     }
 
     /*public static String animalSetToString(Set<Animal> animalSet) {

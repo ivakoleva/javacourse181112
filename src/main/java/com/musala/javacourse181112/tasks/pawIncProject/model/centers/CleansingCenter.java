@@ -22,12 +22,12 @@ public class CleansingCenter extends Center {
      * */
     public void onCleansingCommand() {
         getAnimalList().forEach(animal -> {
-            assert !animal.isCleansed();
+            //assert isUncleansed.test(animal);
             animal.setCleansed(true);
 
             animal.getAdoptionCenter()
                     .getAnimalList()
-                    .addAll(this.getAnimalList());
+                    .addAll(getAnimalList());
         });
 
         this.getAnimalList().clear();
