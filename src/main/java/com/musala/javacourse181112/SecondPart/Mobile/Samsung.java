@@ -1,4 +1,4 @@
-package com.musala.javacourse181112.tasks.Mobile;
+package com.musala.javacourse181112.SecondPart.Mobile;
 
 public class Samsung extends Modem {
 
