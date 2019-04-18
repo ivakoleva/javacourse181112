@@ -10,13 +10,20 @@ public abstract class Account implements AccountActions {
     }
 
     @Override
-    public void deposit(){
-        System.out.println("Deposit in"+ name+ "account");
+    public void deposit(double amount){
+        if(amount>0) {
+            accountBalance += amount;
+            System.out.println("Deposit: "+ amount +" in " + name + " account");
+        }
     }
 
     @Override
-    public void withdraw(){
-        System.out.println("Withdraw from "+ name + "account" );
+    public void withdraw(double amount){
+        if (accountBalance - amount > 0) {
+            System.out.println("Withdraw "+ amount +" from account: " + name);
+        }else {
+            System.out.println("Not enough money, Withdraw from " + name + " account failed");
+        }
     }
 
     @Override
@@ -24,6 +31,10 @@ public abstract class Account implements AccountActions {
 
     @Override
     public void getAccountBalance(){
-        System.out.println("account balance: "+ accountBalance);
+        System.out.println("Account("+ name +") balance: "+ accountBalance);
+    }
+
+    public double getBalance(){
+        return accountBalance;
     }
 }

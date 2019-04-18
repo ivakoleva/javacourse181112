@@ -61,7 +61,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.musala.javacourse181112.MainClass</mainClass>
+                            <mainClass>com.musala.javacourse181112.FirstPartJava.MainClass</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

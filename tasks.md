@@ -228,7 +228,7 @@
     * Random person names generator
         ** configure charset (symbols allowed)
         ** configure min/max length per word
-        ** random generator component implementation should be dedicated to be reused
+        ** random generator PizzaPlate implementation should be dedicated to be reused
         ** when producing a name - first letter always upper case, other letters lower case
         ** words joined using a space
         ** sample runner, for POC purposes

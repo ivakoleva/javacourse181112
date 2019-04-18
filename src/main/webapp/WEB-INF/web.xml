@@ -7,7 +7,7 @@
 
     <filter>
         <filter-name>guestUserFilter</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.GuestUserFilter</filter-class>
+        <filter-class>com.musala.javacourse181112.FirstPartJava.servlet.GuestUserFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>guestUserFilter</filter-name>
@@ -19,7 +19,7 @@
     -->
     <filter>
         <filter-name>populateLibraryFilter</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.PopulateLibraryFilter</filter-class>
+        <filter-class>com.musala.javacourse181112.FirstPartJava.servlet.PopulateLibraryFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>populateLibraryFilter</filter-name>
@@ -27,7 +27,7 @@
     </filter-mapping>
     <filter>
         <filter-name>populateBookFilter</filter-name>
-        <filter-class>com.musala.javacourse181112.servlet.PopulateBookFilter</filter-class>
+        <filter-class>com.musala.javacourse181112.FirstPartJava.servlet.PopulateBookFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>populateBookFilter</filter-name>
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>helloWorldServlet</servlet-name>
-        <servlet-class>com.musala.javacourse181112.servlet.HelloWorldServlet</servlet-class>
+        <servlet-class>com.musala.javacourse181112.FirstPartJava.servlet.HelloWorldServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>helloWorldServlet</servlet-name>
@@ -46,7 +46,7 @@
 
     <servlet>
         <servlet-name>personListServlet</servlet-name>
-        <servlet-class>com.musala.javacourse181112.servlet.PersonListServlet</servlet-class>
+        <servlet-class>com.musala.javacourse181112.FirstPartJava.servlet.PersonListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>personListServlet</servlet-name>

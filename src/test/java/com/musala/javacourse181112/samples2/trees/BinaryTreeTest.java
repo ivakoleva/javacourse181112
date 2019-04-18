@@ -1,8 +1,9 @@
 package com.musala.javacourse181112.samples2.trees;
 
-import static org.junit.Assert.*;
-
+import com.musala.javacourse181112.FirstPartJava.samples2.trees.BinaryTree;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Unit test of {@link BinaryTree}.
