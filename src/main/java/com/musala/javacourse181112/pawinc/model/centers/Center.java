@@ -36,7 +36,7 @@ public abstract class Center {
   public List<Animal> getAnimals() {
 
     return Collections.unmodifiableList(this.animals);
-  }
+}
 
   public void removeAnimals(List<Animal> animals) {
 

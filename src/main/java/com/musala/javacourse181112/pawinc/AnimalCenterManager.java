@@ -21,7 +21,7 @@ public class AnimalCenterManager {
     private HashMap<String, CleansingCenter> cleansingCenters;
     private HashMap<String, CastrationCenter> castrationCenters;
     private List<Animal> cleansedAnimals;
-    private List<Animal> adoptedAniamls;
+    private List<Animal> adoptedAnimals;
     private List<Animal> castratedAnimals;
 
     public AnimalCenterManager() {
@@ -29,7 +29,7 @@ public class AnimalCenterManager {
         this.cleansingCenters = new HashMap<>();
         this.castrationCenters = new HashMap<>();
         this.cleansedAnimals = new ArrayList<>();
-        this.adoptedAniamls = new ArrayList<>();
+        this.adoptedAnimals = new ArrayList<>();
         this.castratedAnimals = new ArrayList<>();
     }
 
@@ -94,7 +94,7 @@ public class AnimalCenterManager {
         List<Animal> adoptedAnimals =
                 this.adoptionCenters.get(adoptionCenterName).adopt();
 
-        this.adoptedAniamls.addAll(adoptedAnimals);
+        this.adoptedAnimals.addAll(adoptedAnimals);
     }
 
     public void printStatistics() {
@@ -104,7 +104,7 @@ public class AnimalCenterManager {
         builder.append(String.format("Castration Centers: %d\n",this.adoptionCenters.size()));
         builder.append(String.format("Adoption Centers: %d\n", this.adoptionCenters.size()));
         builder.append(String.format("Cleansing Centers: %d\n", this.cleansingCenters.size()));
-        builder.append(String.format("Adopted Animals: %s\n", getSortedAnimals(this.adoptedAniamls)));
+        builder.append(String.format("Adopted Animals: %s\n", getSortedAnimals(this.adoptedAnimals)));
         builder.append(String.format("Cleansed Animals: %s\n", getSortedAnimals(this.cleansedAnimals)));
         builder.append(String.format("Animals Awaiting Adoption: %d\n", getAwaitingAdoptionCount()));
         builder.append(String.format("Animals Awaiting Cleansing: %d\n", getAwaitingCleansingCount()));
@@ -121,7 +121,7 @@ public class AnimalCenterManager {
     }
 
     private int getAwaitingCleansingCount() {
-        int count = this.cleansingCenters.values().stream()
+        int count = cleansingCenters.values().stream()
                 .flatMap(c -> c.getAnimals().stream())
                 .collect(Collectors.toList())
                 .size();

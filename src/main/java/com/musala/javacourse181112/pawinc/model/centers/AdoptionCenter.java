@@ -17,7 +17,7 @@ public class AdoptionCenter extends Center {
                 .filter(a -> !a.isCleansed())
                 .collect(Collectors.toList());
 
-        this.removeAnimals(animals);
+        super.removeAnimals(animals);
         center.registerAll(animals);
     }
 
